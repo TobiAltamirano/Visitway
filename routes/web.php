@@ -7,20 +7,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// // Provincias
-// Route::get('/provincias', [\App\Http\Controllers\ProvinciasController::class, 'provincias']);
+// Provincias
+Route::get('/provincias', [\App\Http\Controllers\ProvinciasController::class, 'mostrarProvincias']);
 
-// // Introducción
-// Route::get('/provincias/{id}/introduccion', [\App\Http\Controllers\ProvinciasController::class, 'introduccionProvincia']);
+    // Introducción
+Route::get('/provincias/{id}/introduccion', [\App\Http\Controllers\ProvinciasController::class, 'mostrarIntroduccion'])
+    ->Name('provincia.introduccion');
     
-//     // Actividades
-// Route::get('/provincias/{id}/actividades', [\App\Http\Controllers\ProvinciasController::class, 'actividadesProvincia']);
+    // Actividades
+Route::get('/provincias/{id}/actividades', [\App\Http\Controllers\ProvinciasController::class, 'mostrarActividades'])
+    ->name('provincia.actividades');
 
-//     // Gastronomia
-// Route::get('/provincias/{id}/gastronomia', [\App\Http\Controllers\ProvinciasController::class, 'gastronomiaProvincia']);
+    // Gastronomia
+Route::get('/provincias/{id}/gastronomia', [\App\Http\Controllers\ProvinciasController::class, 'mostrarGastronomia'])
+    ->name('provincia.gastronomia');
 
-//     // Alojamientos
-// Route::get('/provincias/{id}/alojamientos', [\App\Http\Controllers\ProvinciasController::class, 'alojamientosProvincia']);
+    // Alojamientos
+Route::get('/provincias/{id}/alojamientos', [\App\Http\Controllers\ProvinciasController::class, 'mostrarAlojamientos'])
+    ->name('provincia.alojamientos');
+
+Route::get('/provincias/{id}/alojamientos/{tipoAlojamiento}', [\App\Http\Controllers\ProvinciasController::class, 'mostrarAlojamientosPorTipo'])->name('mostrarAlojamientosPorTipo');
 
 // // Detalle del servicio - Actividad
 // Route::get('/provincias/{id}/actividades/{actividadId}', [\App\Http\Controllers\ProvinciasController::class, 'detalleActividad']);

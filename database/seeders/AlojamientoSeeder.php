@@ -17,7 +17,7 @@ class AlojamientoSeeder extends Seeder
             [
                 'id_alojamiento' => 1,
                 'provincia_id' => 1,
-                'tipo_alojamiento' => 'Hotel',
+                'tipo_alojamiento_id' => 1,
                 'nombre_alojamiento' => 'Sheraton Mendoza Hotel',
                 'imagen_alojamiento' => 'alojamientos_sheraton_mendoza.jpg',
                 'precio_alojamiento' => 160.937,
@@ -38,7 +38,7 @@ class AlojamientoSeeder extends Seeder
             [
                 'id_alojamiento' => 2,
                 'provincia_id' => 1,
-                'tipo_alojamiento' => 'Hotel',
+                'tipo_alojamiento_id' => 1,
                 'nombre_alojamiento' => 'Villa Mansa Wine Hotel & Spa',
                 'imagen_alojamiento' => 'alojamientos_villa_mansa_wine_hotel_spa.jpg',
                 'precio_alojamiento' => 71.998,
@@ -59,7 +59,7 @@ class AlojamientoSeeder extends Seeder
             [
                 'id_alojamiento' => 3,
                 'provincia_id' => 1,
-                'tipo_alojamiento' => 'Cabaña',
+                'tipo_alojamiento_id' => 2,
                 'nombre_alojamiento' => 'El Mangrullo',
                 'imagen_alojamiento' => 'alojamientos_el_mangrullo.jpeg',
                 'precio_alojamiento' => 71.998,
@@ -81,7 +81,7 @@ class AlojamientoSeeder extends Seeder
             [
                 'idAlojamientos' => 4,
                 'provincia_id' => 1,
-                'tipo_alojamiento' => 'Camping',
+                'tipo_alojamiento_id' => 2,
                 'nombre_alojamiento' => 'Casco El Trapiche',
                 'imagen_alojamiento' => 'alojamientos_el_trapiche.jpg',
                 'precio_alojamiento' => 71.998,

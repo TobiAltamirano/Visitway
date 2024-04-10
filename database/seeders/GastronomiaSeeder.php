@@ -17,7 +17,7 @@ class GastronomiaSeeder extends Seeder
             [
                 'id_local_gastronomico' => 1,
                 'provincia_id' => 1,
-                'tipo_local_gastronomico' => 'Autoctono',
+                'tipo_gastronomia_id' => 1,
                 'nombre_local_gastronomico' => 'Anna Bistró',
                 'imagen_local_gastronomico' => 'gastronomia_anna_bistro.jpg',
                 'horarios_local_gastronomico' => 'Lunes a Domingos de 8hs a 00:30hs',
@@ -41,7 +41,7 @@ class GastronomiaSeeder extends Seeder
             [
                 'id_local_gastronomico' => 2,
                 'provincia_id' => 1,
-                'tipo_local_gastronomico' => 'Autoctono',
+                'tipo_gastronomia_id' => 2,
                 'nombre_local_gastronomico' => 'Don Mario',
                 'imagen_local_gastronomico' => 'gastronomia_don_mario.jpg',
                 'horarios_local_gastronomico' => 'Lunes a Domingos de 8hs a 00:30hs',
@@ -65,7 +65,7 @@ class GastronomiaSeeder extends Seeder
             [
                 'id_local_gastronomico' => 3,
                 'provincia_id' => 1,
-                'tipo_local_gastronomico' => 'Pizzeria',
+                'tipo_gastronomia_id' => 3,
                 'nombre_local_gastronomico' => 'Bianco&Nero',
                 'imagen_local_gastronomico' => 'gastronomia_bianco_nero.jpg',
                 'horarios_local_gastronomico' => 'Lunes a Domingos de 9:30hs a 21:00hs',
@@ -89,7 +89,7 @@ class GastronomiaSeeder extends Seeder
             [
                 'id_local_gastronomico' => 4,
                 'provincia_id' => 1,
-                'tipo_local_gastronomico' => 'Mexicano',
+                'tipo_gastronomia_id' => 3,
                 'nombre_local_gastronomico' => 'Azafrán',
                 'imagen_local_gastronomico' => 'gastronomia_azafran.jpg',
                 'horarios_local_gastronomico' => 'Lunes a Domingos de 11:00hs a 23:00hs',

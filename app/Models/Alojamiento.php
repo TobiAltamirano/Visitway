@@ -40,4 +40,10 @@ class Alojamiento extends Model
         // Pasamos por parametro el FQN, nombre de foreing key y owner key
         return $this->belongsTo(Provincia::class, 'provincia_id', 'idProvincias');
     }
+
+    // Relación con la tabla Tipo Alojamientos
+    public function tipoAlojamiento()
+    {
+        return $this->belongsTo(TipoAlojamiento::class);
+    }
 }

@@ -42,4 +42,10 @@ class Actividad extends Model
         // Pasamos por parametro el FQN, nombre de foreing key y owner key
         return $this->belongsTo(Provincia::class, 'provincia_id', 'id_provincia');
     }
+
+    // Relación con la tabla Tipo Actividades
+    public function tipoActividad()
+    {
+        return $this->belongsTo(TipoActividad::class);
+    }
 }

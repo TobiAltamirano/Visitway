@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('alojamientos', function (Blueprint $table) {
             $table->id('id_alojamiento');
-            $table->string('tipo_alojamiento')->nullable();
             $table->string('nombre_alojamiento');
             $table->string('imagen_alojamiento');
             $table->unsignedInteger('precio_alojamiento');

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('gastronomia', function (Blueprint $table) {
             $table->id('id_local_gastronomico');
-            $table->string('tipo_local_gastronomico')->nullable();
             $table->string('nombre_local_gastronomico');
             $table->string('imagen_local_gastronomico');
             $table->text('horarios_local_gastronomico');

@@ -43,4 +43,10 @@ class Gastronomia extends Model
         // Pasamos por parametro el FQN, nombre de foreing key y owner key
         return $this->belongsTo(Provincia::class, 'provincia_id', 'idProvincias');
     }
+
+    // Relación con la tabla tipo Gastronomía
+    public function tipoGastronomia()
+    {
+        return $this->belongsTo(TipoGastronomia::class);
+    }
 }

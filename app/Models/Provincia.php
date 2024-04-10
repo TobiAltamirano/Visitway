@@ -13,9 +13,22 @@ class Provincia extends Model
     // Nombre de la tabla
     protected $table = "provincias";
 
-    // Asignamos nombre de la PK.
-    protected $primaryKey = "id_provincias";
+    // Nombre de la PK
+    protected $primaryKey = "id_provincia";
 
-    protected $fillable = ["id_provincia", "region_provincia","nombre_provincia", "imagen_provincia", "descripcion_provincia", "ubicacion_provincia", "imagen_ubicacion_provincia", "cultura_caracteristicas_provincia", "flora_fauna", "historia", "id_caracteristicas_principales", "id_datos_interesantes" ];
+    protected $fillable = [
+        "id_provincia",
+        "region_provincia",
+        "nombre_provincia",
+        "imagen_provincia",
+        "descripcion_provincia",
+        "ubicacion_provincia",
+        "imagen_ubicacion_provincia",
+        "cultura_caracteristicas_provincia",
+        "flora_fauna",
+        "historia",
+        "id_caracteristicas_principales",
+        "id_datos_interesantes" 
+    ];
     
 }
