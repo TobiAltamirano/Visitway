@@ -15,27 +15,43 @@ Route::get('/provincias/{id}/introduccion', [\App\Http\Controllers\ProvinciasCon
     ->Name('provincia.introduccion');
     
     // Actividades
-Route::get('/provincias/{id}/actividades', [\App\Http\Controllers\ProvinciasController::class, 'mostrarActividades'])
-    ->name('provincia.actividades');
+Route::get('/provincias/{id}/tipos-actividades', [\App\Http\Controllers\ActividadesController::class, 'mostrarTiposActividades'])
+    ->name('provincia.tipos-actividades');
+
+        // Actividades por "Tipo Gastronomia"
+        Route::get('/provincias/{id}/actividades/{idTipoActividad}', [\App\Http\Controllers\ActividadesController::class, 'mostrarActividadesPorTipo'])->name('provincia.actividades');
 
     // Gastronomia
-Route::get('/provincias/{id}/gastronomia', [\App\Http\Controllers\ProvinciasController::class, 'mostrarGastronomia'])
-    ->name('provincia.gastronomia');
+Route::get('/provincias/{id}/tipos-gastronomia', [\App\Http\Controllers\GastronomiaController::class, 'mostrarTiposGastronomia'])
+    ->name('provincia.tipos-gastronomia');
+
+        // Gastronomia por "Tipo Gastronomia"
+        Route::get('/provincias/{id}/gastronomia/{idTipoGastronomia}', [\App\Http\Controllers\GastronomiaController::class, 'mostrarGastronomiaPorTipo'])->name('provincia.gastronomia');
 
     // Alojamientos
-Route::get('/provincias/{id}/alojamientos', [\App\Http\Controllers\ProvinciasController::class, 'mostrarAlojamientos'])
+Route::get('/provincias/{id}/tipos-alojamientos', [\App\Http\Controllers\AlojamientosController::class, 'mostrarTiposAlojamientos'])
+    ->name('provincia.tipos-alojamientos');
+
+        // Alojamientos por "Tipo Alojamientos"
+Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}', [\App\Http\Controllers\AlojamientosController::class, 'mostrarAlojamientosPorTipo'])
     ->name('provincia.alojamientos');
 
-Route::get('/provincias/{id}/alojamientos/{tipoAlojamiento}', [\App\Http\Controllers\ProvinciasController::class, 'mostrarAlojamientosPorTipo'])->name('mostrarAlojamientosPorTipo');
+// Detalle del servicio - Alojamiento
+Route::get('/provincias/{id}/alojamientos/{alojamientoId}/detalle', [\App\Http\Controllers\AlojamientosController::class, 'detalleAlojamiento'])
+    ->name('provincia.detalleAlojamiento');
 
-// // Detalle del servicio - Actividad
-// Route::get('/provincias/{id}/actividades/{actividadId}', [\App\Http\Controllers\ProvinciasController::class, 'detalleActividad']);
+// Detalle del servicio - Actividad
+Route::get('/provincias/{id}/actividades/{actividadId}/detalle', [\App\Http\Controllers\ActividadesController::class, 'detalleActividad'])
+    ->name('provincia.detalleActividad');
 
-// // Detalle del servicio - Gastronomía
-// Route::get('/provincias/{id}/gastronomia/{actividadId}', [\App\Http\Controllers\ProvinciasController::class, 'detalleGastronomia']);
+// Detalle del servicio - Gastronomía
+Route::get('/provincias/{id}/gastronomia/{actividadId}/detalle', [\App\Http\Controllers\GastronomiaController::class, 'detalleGastronomia'])
+    ->name('provincia.detalleGastronomia');
 
-// // Detalle del servicio - Alojamiento
-// Route::get('/provincias/{id}/alojamientos/{alojamientoId}', [\App\Http\Controllers\ProvinciasController::class, 'detalleAlojamiento']);
+
+// Alojamientos por "Tipo Alojamientos" + filtro
+// Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}', [\App\Http\Controllers\FiltrosController::class, 'filtrarAlojamientos']);
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
