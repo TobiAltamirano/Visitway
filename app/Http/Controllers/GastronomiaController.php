@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Provincia;
 use App\Models\TipoGastronomia;
 use App\Models\Gastronomia;
+use App\Models\Favorito;
 
 class GastronomiaController extends Controller
 {
@@ -31,16 +33,24 @@ class GastronomiaController extends Controller
     
         return view('provincias.submenu.gastronomia', [
             'provincia' => $provincia,
-            'localesGastronomicos' => $localesGastronomicos
+            'localesGastronomicos' => $localesGastronomicos,
+            'idTipoGastronomia' => $idTipoGastronomia
         ]);
     }
     
     public function detalleGastronomia($id, $idLocales_gastronomicos){
 
+        $idUsuario = Auth::id();
+
+        // Verificar si el alojamiento ya está en favoritos para este usuario
+        $favoritoExistente = Favorito::where('id_usuario', $idUsuario)
+                                    ->where('tipo_favorito', 'gastronomia')
+                                    ->exists();
+
         $provincia = Provincia::findOrFail($id);
 
         $gastronomia = Gastronomia::findOrFail($idLocales_gastronomicos);
 
-        return view('provincias.submenu.detalles.detalleGastronomia', compact('provincia', 'gastronomia'));
+        return view('provincias.submenu.detalles.detalleGastronomia', compact('provincia', 'gastronomia', 'favoritoExistente'));
     }
 }

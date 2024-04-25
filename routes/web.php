@@ -48,19 +48,38 @@ Route::get('/provincias/{id}/actividades/{actividadId}/detalle', [\App\Http\Cont
 Route::get('/provincias/{id}/gastronomia/{actividadId}/detalle', [\App\Http\Controllers\GastronomiaController::class, 'detalleGastronomia'])
     ->name('provincia.detalleGastronomia');
 
+    // Filtrado especial de alojamientos
+Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}/filtrar-alojamientos', [\App\Http\Controllers\FiltrosController::class, 'filtrarAlojamientos'])
+    ->name('provincia.filtrarAlojamientos');
 
-// Alojamientos por "Tipo Alojamientos" + filtro
-// Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}', [\App\Http\Controllers\FiltrosController::class, 'filtrarAlojamientos']);
+    // Filtrado especial de actividades
+Route::get('/provincias/{id}/actividades/{idTipoActividad}/filtrar-actividad', [\App\Http\Controllers\FiltrosController::class, 'filtrarActividades'])
+->name('provincia.filtrarActividades');
+
+    // Filtrado especial de locales gastronomicos
+Route::get('/provincias/{id}/gastronomia/{idTipoGastronomia}/filtrar-gastronomia', [\App\Http\Controllers\FiltrosController::class, 'filtrarGastronomia'])
+    ->name('provincia.filtrarGastronomia');
+
+    // Agregar a favoritos
+Route::get('/favoritos', [\App\Http\Controllers\FavoritosController::class, 'mostrarFavoritos'])
+    ->name('favoritos.mostrar');
+
+Route::post('/favoritos/agregar/{id}/{tipo}', [\App\Http\Controllers\FavoritosController::class, 'agregarFavoritos'])
+    ->name('favoritos.agregar');
+
+    // Eliminar de favoritos
+Route::post('/favoritos/eliminar/{id}/{tipo}', [\App\Http\Controllers\FavoritosController::class, 'eliminarFavoritos'])
+    ->name('favoritos.eliminar');
 
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';

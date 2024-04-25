@@ -45,3 +45,30 @@ use App\Models\Provincia;
 <p><strong>Acepta crédito:</strong> {{ $actividad->acepta_credito ? 'Sí' : 'No' }}</p>
 
 <p><strong>Acepta medios digitales:</strong> {{ $actividad->acepta_medios_digitales ? 'Sí' : 'No' }}</p>
+
+@if ($favoritoExistente)
+    <!-- Botón para eliminar de favoritos -->
+    <form action="{{ route('favoritos.eliminar', ['id' => $actividad->id_actividad, 'tipo' => 'actividad']) }}" method="post">
+        @csrf
+        @method('post')
+        <button type="submit">Eliminar de favoritos</button>
+    </form>
+@else
+    <!-- Botón para agregar a favoritos -->
+    <form action="{{ route('favoritos.agregar', ['id' => $actividad->id_actividad, 'tipo' => 'actividad']) }}" method="post">
+        @csrf
+        <button type="submit">Agregar a favoritos</button>
+    </form>
+@endif
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif

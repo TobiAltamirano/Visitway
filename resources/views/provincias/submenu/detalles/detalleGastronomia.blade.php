@@ -49,3 +49,30 @@ use App\Models\Provincia;
 <p><strong>Apto sin TACC:</strong> {{ $gastronomia->apto_sin_tacc ? 'Sí' : 'No' }}</p>
 
 <p><strong>Apto intolerantes a la lactosa:</strong> {{ $gastronomia->apto_intolerantes_lactosa ? 'Sí' : 'No' }}</p>
+
+@if ($favoritoExistente)
+    <!-- Botón para eliminar de favoritos -->
+    <form action="{{ route('favoritos.eliminar', ['id' => $gastronomia->id_local_gastronomico, 'tipo' => 'gastronomia']) }}" method="post">
+        @csrf
+        @method('post')
+        <button type="submit">Eliminar de favoritos</button>
+    </form>
+@else
+    <!-- Botón para agregar a favoritos -->
+    <form action="{{ route('favoritos.agregar', ['id' => $gastronomia->id_local_gastronomico, 'tipo' => 'gastronomia']) }}" method="post">
+        @csrf
+        <button type="submit">Agregar a favoritos</button>
+    </form>
+@endif
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif

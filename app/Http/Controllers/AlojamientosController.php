@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Provincia;
 use App\Models\TipoAlojamiento;
 use App\Models\Alojamiento;
+use App\Models\Favorito;
 
 class AlojamientosController extends Controller
 {
@@ -31,17 +33,25 @@ class AlojamientosController extends Controller
     
         return view('provincias.submenu.alojamientos', [
             'provincia' => $provincia,
-            'alojamientos' => $alojamientos
+            'alojamientos' => $alojamientos,
+            'idTipoAlojamiento' => $idTipoAlojamiento // Pasamos el ID del tipo de alojamiento a la vista
         ]);
     }
 
     public function detalleAlojamiento($id, $idAlojamientos){
 
+        $idUsuario = Auth::id();
+
+        // Verificar si el alojamiento ya está en favoritos para este usuario
+        $favoritoExistente = Favorito::where('id_usuario', $idUsuario)
+                                       ->where('tipo_favorito', 'alojamiento')
+                                       ->exists();
+
         $provincia = Provincia::findOrFail($id);
 
         $alojamiento = Alojamiento::findOrFail($idAlojamientos);
 
-        return view('provincias.submenu..detalles.detalleAlojamiento', compact('provincia', 'alojamiento'));
+        return view('provincias.submenu..detalles.detalleAlojamiento', compact('provincia', 'alojamiento', 'favoritoExistente'));
     }
     
 }

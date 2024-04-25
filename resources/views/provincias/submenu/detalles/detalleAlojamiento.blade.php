@@ -26,3 +26,30 @@ use App\Models\Alojamiento;
     <p><strong>Acepta Medios Digitales:</strong> {{ $alojamiento->acepta_medios_digitales ? 'Sí' : 'No' }}</p>
     <p><strong>Sitio Web:</strong> <a href="{{ $alojamiento->url_sitio_web_alojamiento }}">{{ $alojamiento->url_sitio_web_alojamiento }}</a></p>
 </div>
+
+@if ($favoritoExistente)
+    <!-- Botón para eliminar de favoritos -->
+    <form action="{{ route('favoritos.eliminar', ['id' => $alojamiento->id_alojamiento, 'tipo' => 'alojamiento']) }}" method="post">
+        @csrf
+        @method('post')
+        <button type="submit">Eliminar de favoritos</button>
+    </form>
+@else
+    <!-- Botón para agregar a favoritos -->
+    <form action="{{ route('favoritos.agregar', ['id' => $alojamiento->id_alojamiento, 'tipo' => 'alojamiento']) }}" method="post">
+        @csrf
+        <button type="submit">Agregar a favoritos</button>
+    </form>
+@endif
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
