@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ActividadAlternativa;
 use App\Models\TipoActividad;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -24,6 +25,10 @@ class DatabaseSeeder extends Seeder
         $this->call(AlojamientoSeeder::class);
         $this->call(GastronomiaSeeder::class);
         $this->call(ActividadSeeder::class);
+
+        $this->call(PosteoSeeder::class);
+
+        $this->call(ActividadAlternativaSeeder::class);
 
         
 

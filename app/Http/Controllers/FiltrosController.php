@@ -8,6 +8,8 @@ use App\Models\Alojamiento;
 use App\Models\Actividad;
 use App\Models\Gastronomia;
 use App\Models\Provincia;
+use App\Models\Posteo;
+use App\Models\ActividadAlternativa;
 
 class FiltrosController extends Controller
 {
@@ -129,5 +131,21 @@ class FiltrosController extends Controller
             'provincia' => $provincia,
             'localesGastronomicos' => $localesGastronomicos
         ]);
+    }
+
+    public function filtrarPosteos(Request $request)
+    {
+        $provinciasSeleccionadas  = $request->input('provincias');
+        $posteos = Posteo::whereIn('provincia', $provinciasSeleccionadas )->get();
+
+        return view('blog.posteos.mostrarPosteosPorProvincia', compact('posteos', 'provinciasSeleccionadas'));
+    }
+
+    public function filtrarActividadesAlternativas(Request $request)
+    {
+        $provinciasSeleccionadas  = $request->input('provincias');
+        $actividadesAlternativas = ActividadAlternativa::whereIn('provincia', $provinciasSeleccionadas )->get();
+
+        return view('blog.actividadesAlternativas.mostrarAlternativasPorProvincia', compact('actividadesAlternativas', 'provinciasSeleccionadas'));
     }
 }

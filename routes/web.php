@@ -72,6 +72,102 @@ Route::post('/favoritos/eliminar/{id}/{tipo}', [\App\Http\Controllers\FavoritosC
     ->name('favoritos.eliminar');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Posteos
+
+    // Mostrar posteos
+Route::get('/blog/posteos', [\App\Http\Controllers\PosteosController::class, 'mostrarPosteos'])
+    ->name('posteos.mostrar');
+
+        // Formulario para crear posteo
+Route::get('/blog/posteos/crear', [\App\Http\Controllers\PosteosController::class, 'formularioCreacionPosteo'])
+    ->name('posteos.crear');
+
+    // Proceso creación de posteo
+Route::post('/blog/posteos/procesar', [\App\Http\Controllers\PosteosController::class, 'procesoCreacionPosteo'])
+    ->name('posteos.crear.proceso');
+
+    // Formulario edición posteo
+Route::get('/posteos/{id}/editar', [\App\Http\Controllers\PosteosController::class, 'formularioEdicionPosteo'])
+    ->name('posteos.editar');
+
+    // Actualización de posteo
+Route::post('/posteos/{id}/actualizar', [\App\Http\Controllers\PosteosController::class, 'actualizacionPosteo'])
+    ->name('posteos.actualizar');
+
+        // Confirmación eliminación de posteo
+Route::get('/posteos/{id}/eliminar', [\App\Http\Controllers\PosteosController::class, 'confirmacionEliminacionPosteo'])
+->name('posteos.eliminar');
+
+        // Proceso eliminación posteo
+Route::post('/posteos/{id}/eliminar/procesar', [\App\Http\Controllers\PosteosController::class, 'procesoEliminacionPosteo'])
+        ->name('posteos.eliminar.procesos');
+
+                // Filtrar posteos por provincia
+Route::get('/posteos/filtrar', [\App\Http\Controllers\FiltrosController::class, 'filtrarPosteos'])
+->name('posteos.filtrar');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Actividades Alternativas
+
+    // Mostrar posteos
+Route::get('/blog/actividades-alternativas', [\App\Http\Controllers\AlternativasController::class, 'mostrarActividadesAlternativas'])
+    ->name('alternativas.mostrar');
+
+        // Formulario para crear actividades alternativas
+Route::get('/blog/actividades-alternativas/crear', [\App\Http\Controllers\AlternativasController::class, 'formularioCreacionActividadAlternativa'])
+    ->name('alternativas.crear');
+
+    // Proceso creación de actividades alternativas
+Route::post('/blog/actividades-alternativas/procesar', [\App\Http\Controllers\AlternativasController::class, 'procesoCreacionActividadAlternativa'])
+    ->name('alternativas.crear.proceso');
+
+    // Formulario edición pact. alternativa
+Route::get('/actividades-alternativas/{id}/editar', [\App\Http\Controllers\AlternativasController::class, 'formularioEdicionActividadAlternativa'])
+    ->name('alternativas.editar');
+
+    // Actualización de alternativa
+Route::post('/actividades-alternativas/{id}/actualizar', [\App\Http\Controllers\AlternativasController::class, 'actualizacionActividadAlternativa'])
+    ->name('alternativas.actualizar');
+
+        // Confirmación eliminación alternativa
+Route::get('/actividades-alternativas/{id}/eliminar', [\App\Http\Controllers\AlternativasController::class, 'confirmacionEliminacionActividadAlternativa'])
+->name('alternativas.eliminar');
+
+        // Proceso eliminación alternativa
+Route::post('/actividades-alternativas/{id}/eliminar/procesar', [\App\Http\Controllers\AlternativasController::class, 'procesoEliminacionActividadAlternativa'])
+        ->name('alternativas.eliminar.proceso');
+
+                // Filtrar actividades alternativas por provincia
+Route::get('/actividades-alternativas/filtrar', [\App\Http\Controllers\FiltrosController::class, 'filtrarActividadesAlternativas'])
+->name('alternativas.filtrar');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
