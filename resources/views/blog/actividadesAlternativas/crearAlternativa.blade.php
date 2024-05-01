@@ -63,6 +63,45 @@
             @enderror
         </div>
 
+        <div class="mb-3" class="div-input-label">
+            <label for="localidad" class="form-label">Localidad:</label>
+            <input
+                type="text"
+                id="localidad"
+                name="localidad"
+                class="form-control"
+                maxlength="50"
+                value="{{ old('localidad') }}"
+                @error('localidad')
+                aria-describedby="error-localidad"
+                aria-invalid="true"
+                @enderror
+            >
+            @error('localidad')
+            <div class="text-danger" id="error-localidad">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-3" class="div-input-label">
+            <label for="direccion" class="form-label">Direccion:</label>
+            <input
+                type="text"
+                id="direccion"
+                name="direccion"
+                class="form-control"
+                maxlength="50"
+                value="{{ old('direccion') }}"
+                @error('direccion')
+                aria-describedby="error-direccion"
+                aria-invalid="true"
+                @enderror
+            >
+            @error('direccion')
+            <div class="text-danger" id="error-direccion">{{ $message }}</div>
+            @enderror
+        </div>
+        
+
         <div class="mb-3">
             <label for="archivo" class="form-label">Imagen</label>
             <p>No es obligatorio</p>

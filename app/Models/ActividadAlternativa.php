@@ -35,6 +35,9 @@ class ActividadAlternativa extends Model
     public const REGLAS_VALIDACION = [
         'titulo' => 'required|min:2',
         'descripcion' => 'required',
+        'provincia' => 'required',
+        'localidad' => 'required',
+        'direccion' => 'required',
         // 'fecha_publicacion' => 'required',
     ];
     
@@ -42,6 +45,9 @@ class ActividadAlternativa extends Model
         'titulo.required' => 'El título no puede quedar vacío.',
         'titulo.min' => 'El título debe tener al menos :min caracteres.',
         'descripcion.required' => 'El contenido no puede quedar vacío.',
+        'provincia.required' => 'Debes especificar la provincia.',
+        'localidad.required' => 'Debes especificar la la localidad.',
+        'direccion.required' => 'Debes especificar la direccion',
         // 'fecha_publicacion.required' => 'La fecha de publicación no puede quedar vacía.',
     ];    
 

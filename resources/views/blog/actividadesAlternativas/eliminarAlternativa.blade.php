@@ -4,6 +4,8 @@
 <p><strong>Título:</strong> {{ $actividadAlternativa->titulo }}</p>
 <p><strong>Descripcion:</strong> {{ $actividadAlternativa->contenido }}</p>
 <p><strong>Provincia:</strong> {{ $actividadAlternativa->provincia }}</p>
+<p><strong>localidad:</strong> {{ $actividadAlternativa->localidad }}</p>
+<p><strong>direccion:</strong>{{ $actividadAlternativa->direccion }}</p>
 
 @if($actividadAlternativa->imagen1 !== null)
         <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Imagen Noticia - {{$actividadAlternativa->titulo }}" class="card-img-top">

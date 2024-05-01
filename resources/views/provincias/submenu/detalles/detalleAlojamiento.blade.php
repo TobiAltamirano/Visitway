@@ -27,6 +27,12 @@ use App\Models\Alojamiento;
     <p><strong>Sitio Web:</strong> <a href="{{ $alojamiento->url_sitio_web_alojamiento }}">{{ $alojamiento->url_sitio_web_alojamiento }}</a></p>
 </div>
 
+@if ($alojamiento->acepta_medios_digitales)
+    <h1>GENIAL</h1> <!-- Icono de check -->
+@else
+    <h1>NOOO</h1> <!-- Icono de 'X' -->
+@endif
+
 @if ($favoritoExistente)
     <!-- Botón para eliminar de favoritos -->
     <form action="{{ route('favoritos.eliminar', ['id' => $alojamiento->id_alojamiento, 'tipo' => 'alojamiento']) }}" method="post">

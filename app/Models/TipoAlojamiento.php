@@ -18,7 +18,7 @@ class TipoAlojamiento extends Model
     protected $fillable = [
         'id_tipo_alojamiento',
         'nombre_tipo_alojamiento'
-    ]; 
+    ];
 
     /**
      * Define la relación con el modelo Alojamiento

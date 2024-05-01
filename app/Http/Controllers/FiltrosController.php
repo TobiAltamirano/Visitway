@@ -22,6 +22,10 @@ class FiltrosController extends Controller
         // Obtener los filtros enviados por el usuario
         $filtroAceptaMascotas = $request->input('acepta_mascotas', false);
         $filtroTieneDescuento = $request->input('tiene_descuento', false);
+        $filtroTieneEstacionamiento = $request->input('tiene_estacionamiento', false);
+        $filtroTieneWifi = $request->input('tiene_wifi', false);
+
+
         // Agrega más filtros según necesites
 
         // Consulta inicial para obtener todos los alojamientos de la provincia con el tipo de alojamiento especificado
@@ -35,6 +39,14 @@ class FiltrosController extends Controller
 
         if ($filtroTieneDescuento) {
             $query->where('tiene_descuentos_ofertas', true);
+        }
+
+        if ($filtroTieneEstacionamiento) {
+            $query->where('tiene_estacionamiento', true);
+        }
+
+        if ($filtroTieneWifi) {
+            $query->where('tiene_wifi', true);
         }
 
         // Agrega más condiciones según los otros filtros

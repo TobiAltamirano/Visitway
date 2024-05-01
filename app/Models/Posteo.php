@@ -29,6 +29,7 @@ class Posteo extends Model
     public const REGLAS_VALIDACION = [
         'titulo' => 'required|min:2',
         'contenido' => 'required',
+        'provincia' => 'required',
         // 'fecha_publicacion' => 'required',
     ];
     
@@ -36,6 +37,7 @@ class Posteo extends Model
         'titulo.required' => 'El título no puede quedar vacío.',
         'titulo.min' => 'El título debe tener al menos :min caracteres.',
         'contenido.required' => 'El contenido no puede quedar vacío.',
+        'provincia.required' => 'Debes especificar la provincia.',
         // 'fecha_publicacion.required' => 'La fecha de publicación no puede quedar vacía.',
     ];    
 

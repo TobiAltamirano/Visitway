@@ -18,6 +18,8 @@
         No se ha encontrado la imagen, puede que haya habido un error al cargarla. Porfavor, vuelve a intentarlo.
     @endif
     <h3>Provincia: {{ $actividadAlternativa->provincia }}</h3>
+    <p>localidad: {{ $actividadAlternativa->localidad }}</p>
+    <p>direccion: {{ $actividadAlternativa->direccion }}</p>
 
     @if($actividadAlternativa->id_usuario === auth()->id())
         <button><a href="{{ route('alternativas.editar', $actividadAlternativa->id) }}">Editar actividad Alternativa</a></button>

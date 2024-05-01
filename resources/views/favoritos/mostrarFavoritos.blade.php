@@ -7,6 +7,11 @@
         <ul>
             @foreach ($alojamientosFavoritos as $alojamiento)
                 <li>{{ $alojamiento->nombre_alojamiento }}</li>
+                <form action="{{ route('favoritos.eliminar', ['id' => $alojamiento->id_alojamiento, 'tipo' => 'alojamiento']) }}" method="post">
+                    @csrf
+                    @method('post')
+                    <button type="submit">Eliminar de favoritos</button>
+                </form>
             @endforeach
         </ul>
     @endif
@@ -18,6 +23,11 @@
         <ul>
             @foreach ($actividadesFavoritas as $actividad)
                 <li>{{ $actividad->nombre_actividad }}</li>
+                <form action="{{ route('favoritos.eliminar', ['id' => $actividad->id_actividad, 'tipo' => 'actividad']) }}" method="post">
+                    @csrf
+                    @method('post')
+                    <button type="submit">Eliminar de favoritos</button>
+                </form>
             @endforeach
         </ul>
     @endif
@@ -29,6 +39,11 @@
         <ul>
             @foreach ($localesGastronomicosFavoritos as $localGastronomico)
                 <li>{{ $localGastronomico->nombre_local_gastronomico }}</li>
+                <form action="{{ route('favoritos.eliminar', ['id' => $localGastronomico->id_local_gastronomico, 'tipo' => 'gastronomia']) }}" method="post">
+                    @csrf
+                    @method('post')
+                    <button type="submit">Eliminar de favoritos</button>
+                </form>
             @endforeach
         </ul>
     @endif

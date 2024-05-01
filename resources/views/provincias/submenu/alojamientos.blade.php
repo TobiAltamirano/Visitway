@@ -40,6 +40,14 @@ use App\Models\Provincia;
                 <input type="checkbox" name="tiene_descuento" {{ request('tiene_descuento') ? 'checked' : '' }}>
                 <span class='span-label'>Tiene Descuentos</span>
             </label>
+            <label>
+                <input type="checkbox" name="tiene_estacionamiento" {{ request('tiene_estacionamiento') ? 'checked' : '' }}>
+                <span class='span-label'>Tiene estacionamiento</span>
+            </label>
+            <label>
+                <input type="checkbox" name="tiene_wifi" {{ request('tiene_wifi') ? 'checked' : '' }}>
+                <span class='span-label'>Tiene WIFI</span>
+            </label>
         </div>
     </div>
     <!-- Campo oculto para el tipo de alojamiento -->

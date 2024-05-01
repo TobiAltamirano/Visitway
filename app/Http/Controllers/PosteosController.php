@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Storage;
 class PosteosController extends Controller
 {
     // Reglas de validación
-    protected array $createRules = [
-        'titulo' => 'required|min:2',
-        'contenido' => 'required',
-        'publication_date' => 'required',
-    ];
+    // protected array $createRules = [
+    //     'titulo' => 'required|min:2',
+    //     'contenido' => 'required',
+    //     'publication_date' => 'required',
+    // ];
 
     public function mostrarPosteos()
     {
