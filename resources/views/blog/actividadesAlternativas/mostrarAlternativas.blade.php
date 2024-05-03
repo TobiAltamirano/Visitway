@@ -32,6 +32,7 @@
 
 <div>
     @foreach($actividadesAlternativas as $actividadAlternativa)
+    <p><strong>Usuario:</strong> {{ $actividadAlternativa->usuario->name }}</p>
     <h2>Titulo: {{ $actividadAlternativa->titulo }}</h2>
     <p>descripcion: {{ $actividadAlternativa->descripcion }}</p>
     @if($actividadAlternativa->imagen1 !== null)

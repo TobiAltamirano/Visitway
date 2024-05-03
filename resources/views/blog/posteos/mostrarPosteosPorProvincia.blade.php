@@ -10,6 +10,7 @@
 
 <div>
     @foreach($posteos as $posteo)
+    <p><strong>Usuario:</strong> {{ $posteo->usuario->name }}</p>
     <h2>Titulo: {{ $posteo->titulo }}</h2>
     <p>Contenido: {{ $posteo->contenido }}</p>
     @if($posteo->imagen1 !== null)

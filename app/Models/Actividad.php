@@ -34,7 +34,18 @@ class Actividad extends Model
         "acepta_debito",
         "acepta_credito",
         "acepta_medios_digitales",
-        "id_provincia"
+        "provincia_id", 
+        "tipo_actividad_id"
+    ];
+
+    // Creamos reglas y mensajes de validación
+
+    public const REGLAS_VALIDACION = [
+        'nombre_actividad' => 'required|min:2',
+    ];
+    
+    public const MENSAJES_VALIDACION = [
+        'nombre_actividad.required' => 'El nombre no puede quedar vacío.',
     ];
 
     // Relación con la tabla Provincias

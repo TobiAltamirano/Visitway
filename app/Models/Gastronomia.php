@@ -35,13 +35,24 @@ class Gastronomia extends Model
         "apto_veganos",
         "apto_sin_tacc",
         "apto_intolerantes_lactosa",
-        "id_provincia"
+        "provincia_id",
+        "tipo_gastronomia_id"
+    ];
+
+    // Creamos reglas y mensajes de validación
+
+    public const REGLAS_VALIDACION = [
+        'nombre_local_gastronomico' => 'required|min:2',
+    ];
+    
+    public const MENSAJES_VALIDACION = [
+        'nombre_local_gastronomico.required' => 'El nombre no puede quedar vacío.',
     ];
 
     // Relación con la tabla Provincias
     public function provincia(){
         // Pasamos por parametro el FQN, nombre de foreing key y owner key
-        return $this->belongsTo(Provincia::class, 'provincia_id', 'idProvincias');
+        return $this->belongsTo(Provincia::class, 'provincia_id', 'id_provincia');
     }
 
     // Relación con la tabla tipo Gastronomía

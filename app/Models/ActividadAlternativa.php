@@ -56,6 +56,6 @@ class ActividadAlternativa extends Model
      */
     public function usuario()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id_usuario', 'id');
     }
 }

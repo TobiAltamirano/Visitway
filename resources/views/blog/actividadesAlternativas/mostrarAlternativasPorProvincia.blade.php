@@ -10,6 +10,7 @@
 
 <div>
     @foreach($actividadesAlternativas as $actividadAlternativa)
+    <p><strong>Usuario:</strong> {{ $actividadAlternativa->usuario->name }}</p>
     <h2>Titulo: {{ $actividadAlternativa->titulo }}</h2>
     <p>Contenido: {{ $actividadAlternativa->contenido }}</p>
     @if($actividadAlternativa->imagen1 !== null)
@@ -31,5 +32,5 @@
     
     @endforeach
 
-    <button><a href="{{route('alternativas.crear')}}">Crear posteo</a></button>
+    <button><a href="{{route('alternativas.crear')}}">Crear Act. Alternativa</a></button>
 </div>

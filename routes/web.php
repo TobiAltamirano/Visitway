@@ -168,6 +168,176 @@ Route::get('/actividades-alternativas/filtrar', [\App\Http\Controllers\FiltrosCo
 ->name('alternativas.filtrar');
 
 
+
+
+
+
+
+
+
+
+
+// Panel Administrador
+
+// Alojamientos
+
+// Mostrar alojamiento en panel
+Route::get('/panel-administrador/alojamientos', [\App\Http\Controllers\AdministradorController::class, 'mostrarAlojamientos'])
+->name('administrador.alojamientos');
+
+// Form edit
+Route::get('/panel-administrador/alojamiento/{id}/editar', [\App\Http\Controllers\AdministradorController::class, 'editarAlojamiento'])
+->name('administrador.alojamientos.editar');
+
+// proceso edicion
+Route::post('/panel-administrador/alojamiento/{id}/editar/procesar', [\App\Http\Controllers\AdministradorController::class, 'procesoEdicionAlojamiento'])
+->name('administrador.alojamientos.editar.proceso');
+
+
+
+// Formulario de creación de alojamiento
+Route::get('/panel-administrador/alojamientos/crear', [\App\Http\Controllers\AdministradorController::class, 'crearAlojamiento'])
+    ->name('administrador.alojamientos.crear');
+
+// Proceso de creación de alojamiento
+Route::post('/panel-administrador/alojamientos/crear/proceso', [\App\Http\Controllers\AdministradorController::class, 'procesoCreacionAlojamiento'])
+    ->name('administrador.alojamientos.crear.proceso');
+
+
+    // Confirmacion eliminar alojamiento
+Route::get('/panel-administrador/alojamiento/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarAlojamiento'])
+->name('administrador.alojamientos.eliminar');
+
+// Proceso eliminar alojamiento
+Route::post('/panel-administrador/alojamiento/{id}/eliminar/procesar', [\App\Http\Controllers\AdministradorController::class, 'procesoEliminacionAlojamiento'])
+    ->name('administrador.alojamientos.eliminar.procesar');
+
+
+
+
+// ADMINISTRAR ACTIVIDADES
+
+// Mostrar actividades en panel
+Route::get('/panel-administrador/actividades', [\App\Http\Controllers\AdministradorController::class, 'mostrarActividades'])
+    ->name('administrador.actividades');
+
+// Formulario de edición de actividad
+Route::get('/panel-administrador/actividad/{id}/editar', [\App\Http\Controllers\AdministradorController::class, 'editarActividad'])
+    ->name('administrador.actividades.editar');
+
+// Proceso de edición de actividad
+Route::post('/panel-administrador/actividad/{id}/editar/procesar', [\App\Http\Controllers\AdministradorController::class, 'procesoEdicionActividad'])
+    ->name('administrador.actividades.editar.proceso');
+
+// Formulario de creación de actividad
+Route::get('/panel-administrador/actividades/crear', [\App\Http\Controllers\AdministradorController::class, 'crearActividad'])
+    ->name('administrador.actividades.crear');
+
+// Proceso de creación de actividad
+Route::post('/panel-administrador/actividades/crear/proceso', [\App\Http\Controllers\AdministradorController::class, 'procesoCreacionActividad'])
+    ->name('administrador.actividades.crear.proceso');
+
+// Confirmación de eliminación de actividad
+Route::get('/panel-administrador/actividad/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarActividad'])
+    ->name('administrador.actividades.eliminar');
+
+// Proceso de eliminación de actividad
+Route::post('/panel-administrador/actividad/{id}/eliminar/procesar', [\App\Http\Controllers\AdministradorController::class, 'procesoEliminacionActividad'])
+    ->name('administrador.actividades.eliminar.procesar');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Gastronomia
+
+// ADMINISTRAR LOCALES GASTRONÓMICOS
+
+// Mostrar locales gastronómicos en panel
+Route::get('/panel-administrador/locales-gastronomicos', [\App\Http\Controllers\AdministradorController::class, 'mostrarLocalesGastronomicos'])
+    ->name('administrador.locales_gastronomicos');
+
+// Formulario de edición de local gastronómico
+Route::get('/panel-administrador/local-gastronomico/{id}/editar', [\App\Http\Controllers\AdministradorController::class, 'editarLocalGastronomico'])
+    ->name('administrador.locales_gastronomicos.editar');
+
+// Proceso de edición de local gastronómico
+Route::post('/panel-administrador/local-gastronomico/{id}/editar/procesar', [\App\Http\Controllers\AdministradorController::class, 'procesoEdicionLocalGastronomico'])
+    ->name('administrador.locales_gastronomicos.editar.proceso');
+
+// Formulario de creación de local gastronómico
+Route::get('/panel-administrador/locales-gastronomicos/crear', [\App\Http\Controllers\AdministradorController::class, 'crearLocalGastronomico'])
+    ->name('administrador.locales_gastronomicos.crear');
+
+// Proceso de creación de local gastronómico
+Route::post('/panel-administrador/locales-gastronomicos/crear/proceso', [\App\Http\Controllers\AdministradorController::class, 'procesoCreacionLocalGastronomico'])
+    ->name('administrador.locales_gastronomicos.crear.proceso');
+
+// Confirmación de eliminación de local gastronómico
+Route::get('/panel-administrador/local-gastronomico/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarLocalGastronomico'])
+    ->name('administrador.locales_gastronomicos.eliminar');
+
+// Proceso de eliminación de local gastronómico
+Route::post('/panel-administrador/local-gastronomico/{id}/eliminar/procesar', [\App\Http\Controllers\AdministradorController::class, 'procesoEliminacionLocalGastronomico'])
+    ->name('administrador.locales_gastronomicos.eliminar.procesar');
+
+
+
+    // PANEL :: POSTEOS
+
+    // Mostrar todos los posteos
+Route::get('/panel-administrador/posteos', [\App\Http\Controllers\AdministradorController::class, 'mostrarPosteos'])
+->name('administrador.posteos.mostrar');
+
+// Ver un posteo específico
+Route::get('/panel-administrador/posteo/{id}/ver', [\App\Http\Controllers\AdministradorController::class, 'verPosteo'])
+->name('administrador.posteos.ver');
+
+// Eliminar un posteo
+Route::post('/panel-administrador/posteo/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarPosteo'])
+->name('administrador.posteos.eliminar');
+
+
+
+
+
+    // PANEL :: ALTERNATIVAS
+
+    // Mostrar todas las alternativas
+    Route::get('/panel-administrador/actividades-alternativas', [\App\Http\Controllers\AdministradorController::class, 'mostrarActividadesAlternativas'])
+    ->name('administrador.actividades-alternativas.mostrar');
+    
+    // Ver una act. alternativa específica
+    Route::get('/panel-administrador/actividad-alternativa/{id}/ver', [\App\Http\Controllers\AdministradorController::class, 'verActividadAlternativa'])
+    ->name('administrador.actividades-alternativas.ver');
+    
+    // Eliminar una actividad alternativa
+    Route::post('/panel-administrador/actividad-alternativa/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarActividadAlternativa'])
+    ->name('administrador.actividades-alternativas.eliminar');
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
