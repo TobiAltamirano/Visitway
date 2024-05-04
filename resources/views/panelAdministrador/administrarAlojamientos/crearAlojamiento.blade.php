@@ -275,6 +275,9 @@
                 @endforeach
             </select>
         </div>
+        @error('provincia_id')
+            <div class="text-danger" id="error-provincia_id">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3">
             <label for="tipo_alojamiento_id" class="form-label">Tipo Alojamiento</label>
@@ -294,6 +297,9 @@
                 @endforeach
             </select>
         </div>
+        @error('tipo_alojamiento_id')
+            <div class="text-danger" id="error-tipo_alojamiento_id">{{ $message }}</div>
+            @enderror
 
     
 

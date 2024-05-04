@@ -40,14 +40,41 @@ class Gastronomia extends Model
     ];
 
     // Creamos reglas y mensajes de validación
-
     public const REGLAS_VALIDACION = [
-        'nombre_local_gastronomico' => 'required|min:2',
+        'nombre_local_gastronomico' => 'required|min:5',
+        'imagen_local_gastronomico' => 'required',
+        'horarios_local_gastronomico' => 'required',
+        'ubicacion_local_gastronomico' => 'required|min:3',
+        'contacto_local_gastronomico' => 'required|digits:11',
+        'tiene_descuentos_ofertas' => 'required',
+        'tiene_wifi' => 'required',
+        'tiene_estacionamiento' => 'required',
+        'acepta_mascotas' => 'required',
+        'acepta_debito' => 'required',
+        'acepta_credito' => 'required',
+        'acepta_medios_digitales' => 'required',
+        'apto_vegetarianos' => 'required',
+        'apto_veganos' => 'required',
+        'apto_sin_tacc' => 'required',
+        'apto_intolerantes_lactosa' => 'required',
+        'provincia_id' => 'required',
+        'tipo_gastronomia_id' => 'required',
     ];
-    
+
     public const MENSAJES_VALIDACION = [
-        'nombre_local_gastronomico.required' => 'El nombre no puede quedar vacío.',
+        'nombre_local_gastronomico.required' => 'El nombre es obligatorio.',
+        'nombre_local_gastronomico.min' => 'El nombre debe tener al menos :min caracteres.',
+        'imagen_local_gastronomico.required' => 'La imagen es obligatoria.',
+        'horarios_local_gastronomico.required' => 'Los horarios son obligatorios.',
+        'ubicacion_local_gastronomico.required' => 'La ubicación es obligatoria.',
+        'ubicacion_local_gastronomico.min' => 'La ubicación debe tener al menos :min caracteres.',
+        'contacto_local_gastronomico.required' => 'El contacto es obligatorio.',
+        'contacto_local_gastronomico.digits' => 'El contacto debe tener :digits dígitos.',
+        'provincia_id.required' => 'Debe ingresar un valor valido',
+        'tipo_gastronomia_id.required' => 'Debe ingresar un valor valido'
+        // No se agregan mensajes para los campos opcionales
     ];
+
 
     // Relación con la tabla Provincias
     public function provincia(){

@@ -10,6 +10,7 @@ use App\Models\Provincia;
 use App\Models\Gastronomia;
 use App\Models\Posteo;
 use App\Models\ActividadAlternativa;
+use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use App\Models\TipoAlojamiento;
@@ -380,6 +381,15 @@ class AdministradorController extends Controller
         // Retornar la vista de lista de posteos con un mensaje de éxito
         return redirect('/panel-administrador/actividades-alternativas')
             ->with('success', 'La act. alternativa ha sido eliminado con éxito.');
+    }
+
+    // USUARIOS
+
+    public function mostrarUsuarios(){
+
+        $usuarios = User::all();
+
+        return view('panelAdministrador.administrarUsuarios.mostrarUsuarios', compact('usuarios'));
     }
 
 }

@@ -329,6 +329,21 @@ Route::post('/panel-administrador/posteo/{id}/eliminar', [\App\Http\Controllers\
     ->name('administrador.actividades-alternativas.eliminar');
 
 
+    // PANEL :: USUARIOS
+
+    // Mostrar
+    Route::get('/panel-administrador/usuarios', [\App\Http\Controllers\AdministradorController::class, 'mostrarUsuarios'])
+    ->name('administrador.usuarios.mostrar');
+
+    // // Convertir en administrador
+    // Route::post('/panel-administrador/usuarios/convertir-administrador', [\App\Http\Controllers\AdministradorController::class, 'convertirUsuarioAdministrador'])
+    // ->name('administrador.usuarios.convertir-administrador');
+
+    // // Convertir en usuario comun
+    // Route::post('/panel-administrador/usuarios/convertir-predeterminado', [\App\Http\Controllers\AdministradorController::class, 'convertirUsuarioPredeterminado'])
+    // ->name('administrador.usuarios.convertir-predeterminado');
+
+
 
 
 

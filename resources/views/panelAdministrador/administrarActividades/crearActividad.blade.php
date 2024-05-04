@@ -28,6 +28,9 @@
                 value="{{ old('nombre_actividad') }}"
             >
         </div>
+        @error('nombre_actividad')
+            <div class="text-danger" id="error-nombre_actividad">{{ $message }}</div>
+        @enderror
 
         <div class="mb-3">
             <label for="imagen_actividad" class="form-label">Imagen de la actividad</label>
@@ -39,6 +42,9 @@
                 accept="image/*"
             >
         </div>
+        @error('imagen_actividad')
+            <div class="text-danger" id="error-imagen_actividad">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3">
             <label for="descripcion_actividad" class="form-label">Descripción de la actividad</label>
@@ -48,6 +54,9 @@
                 class="form-control"
             >{{ old('descripcion_actividad') }}</textarea>
         </div>
+        @error('descripcion_actividad')
+            <div class="text-danger" id="error-descripcion_actividad">{{ $message }}</div>
+        @enderror
 
         <div class="mb-3">
             <label for="precio_actividad" class="form-label">Precio de la actividad</label>
@@ -59,6 +68,9 @@
                 value="{{ old('precio_actividad') }}"
             >
         </div>
+        @error('precio_actividad')
+            <div class="text-danger" id="error-precio_actividad">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3">
             <label for="horarios_actividad" class="form-label">Horarios de la actividad</label>
@@ -68,6 +80,9 @@
                 class="form-control"
             >{{ old('horarios_actividad') }}</textarea>
         </div>
+        @error('horarios_actividad')
+            <div class="text-danger" id="error-horarios_actividad">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3">
             <label for="ubicacion_actividad" class="form-label">Ubicación de la actividad</label>
@@ -77,6 +92,9 @@
                 class="form-control"
             >{{ old('ubicacion_actividad') }}</textarea>
         </div>
+        @error('ubicacion_actividad')
+            <div class="text-danger" id="error-ubicacion_actividad">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3">
             <label for="contacto_actividad" class="form-label">Contacto de la actividad</label>
@@ -86,6 +104,9 @@
                 class="form-control"
             >{{ old('contacto_actividad') }}</textarea>
         </div>
+        @error('contacto_actividad')
+            <div class="text-danger" id="error-contacto_actividad">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3">
             <label for="url_sitio_web_actividad" class="form-label">URL del sitio web de la actividad</label>
@@ -97,6 +118,9 @@
                 value="{{ old('url_sitio_web_actividad') }}"
             >
         </div>
+        @error('url_sitio_web_actividad')
+            <div class="text-danger" id="error-url_sitio_web_actividad">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3">
             <label for="duracion_actividad" class="form-label">Duración de la actividad (en minutos)</label>
@@ -108,6 +132,9 @@
                 value="{{ old('duracion_actividad') }}"
             >
         </div>
+        @error('duracion_actividad')
+            <div class="text-danger" id="error-duracion_actividad">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3 form-check">
     <input
@@ -246,6 +273,9 @@
                 @endforeach
             </select>
         </div>
+        @error('provincia_id')
+            <div class="text-danger" id="provincia_id">{{ $message }}</div>
+            @enderror
 
         <div class="mb-3">
             <label for="tipo_actividad_id" class="form-label">Tipo de actividad</label>
@@ -265,6 +295,9 @@
                 @endforeach
             </select>
         </div>
+        @error('tipo_actividad_id')
+            <div class="text-danger" id="error-tipo_actividad_id">{{ $message }}</div>
+            @enderror
 
         <button type="submit" class="btn btn-primary">Crear</button>
     </form>
