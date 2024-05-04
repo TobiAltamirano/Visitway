@@ -27,7 +27,7 @@ class Posteo extends Model
     // Creamos reglas y mensajes de validación
 
     public const REGLAS_VALIDACION = [
-        'titulo' => 'required|min:2',
+        'titulo' => 'required|min:5',
         'contenido' => 'required',
         'provincia' => 'required',
         // 'fecha_publicacion' => 'required',

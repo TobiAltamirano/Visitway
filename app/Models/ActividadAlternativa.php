@@ -38,6 +38,7 @@ class ActividadAlternativa extends Model
         'provincia' => 'required',
         'localidad' => 'required',
         'direccion' => 'required',
+        'imagen1' => 'required',
         // 'fecha_publicacion' => 'required',
     ];
     
@@ -48,6 +49,7 @@ class ActividadAlternativa extends Model
         'provincia.required' => 'Debes especificar la provincia.',
         'localidad.required' => 'Debes especificar la la localidad.',
         'direccion.required' => 'Debes especificar la direccion',
+        'imagen1.required' => 'Debes adjuntar al menos 1 (una) imagen'
         // 'fecha_publicacion.required' => 'La fecha de publicación no puede quedar vacía.',
     ];    
 

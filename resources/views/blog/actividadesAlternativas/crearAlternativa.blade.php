@@ -103,20 +103,23 @@
         
 
         <div class="mb-3">
-            <label for="archivo" class="form-label">Imagen</label>
-            <p>No es obligatorio</p>
+            <label for="imagen1" class="form-label">Imagen</label>
+            <p>Obligatorio</p>
             <input
                 type="file"
-                id="archivo"
-                name="archivo"
+                id="imagen1"
+                name="imagen1"
                 class="form-control"
-                value="{{ old('archivo') }}"
-                @error('archivo')
-                aria-describedby="error-archivo"
+                value="{{ old('imagen1') }}"
+                @error('imagen1')
+                aria-describedby="error-imagen1"
                 aria-invalid="true"
                 @enderror
             >
         </div>
+        @error('imagen1')
+            <div class="text-danger" id="error-imagen1">{{ $message }}</div>
+            @enderror
 
         <div>
             <button type="submit">Crear</button>
