@@ -14,3 +14,6 @@ use App\Models\Provincia;
         <h3><a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia]) }}">{{ $provincia->nombre_provincia }}</li>
     </ul>
 @endforeach
+
+
+

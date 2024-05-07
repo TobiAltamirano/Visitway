@@ -383,6 +383,13 @@ class AdministradorController extends Controller
             ->with('success', 'La act. alternativa ha sido eliminado con éxito.');
     }
 
+
+
+
+
+
+
+
     // USUARIOS
 
     public function mostrarUsuarios(){
@@ -390,6 +397,36 @@ class AdministradorController extends Controller
         $usuarios = User::all();
 
         return view('panelAdministrador.administrarUsuarios.mostrarUsuarios', compact('usuarios'));
+    }
+
+    public function eliminarUsuario($id){
+
+        $usuario = User::findOrFail($id);
+
+        $usuario->delete();
+
+        return redirect()->back()->with('success', 'El usuario'. $usuario['name'] . 'Ha sido eliminado con exito');
+    }
+
+
+
+
+    public function otorgarPrivilegiosAdmin($id)
+    {
+        $usuario = User::findOrFail($id);
+        $usuario->usuario_administrador = true;
+        $usuario->save();
+
+        return redirect()->back()->with('success', 'Privilegios de administrador otorgados con éxito.');
+    }
+
+    public function quitarPrivilegiosAdmin($id)
+    {
+        $usuario = User::findOrFail($id);
+        $usuario->usuario_administrador = false;
+        $usuario->save();
+
+        return redirect()->back()->with('success', 'Privilegios de administrador eliminados con éxito.');
     }
 
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -314,40 +315,38 @@ Route::post('/panel-administrador/posteo/{id}/eliminar', [\App\Http\Controllers\
 
 
 
-    // PANEL :: ALTERNATIVAS
+// PANEL :: ALTERNATIVAS
 
-    // Mostrar todas las alternativas
-    Route::get('/panel-administrador/actividades-alternativas', [\App\Http\Controllers\AdministradorController::class, 'mostrarActividadesAlternativas'])
+// Mostrar todas las alternativas
+Route::get('/panel-administrador/actividades-alternativas', [\App\Http\Controllers\AdministradorController::class, 'mostrarActividadesAlternativas'])
     ->name('administrador.actividades-alternativas.mostrar');
     
-    // Ver una act. alternativa específica
-    Route::get('/panel-administrador/actividad-alternativa/{id}/ver', [\App\Http\Controllers\AdministradorController::class, 'verActividadAlternativa'])
+// Ver una act. alternativa específica
+Route::get('/panel-administrador/actividad-alternativa/{id}/ver', [\App\Http\Controllers\AdministradorController::class, 'verActividadAlternativa'])
     ->name('administrador.actividades-alternativas.ver');
     
-    // Eliminar una actividad alternativa
-    Route::post('/panel-administrador/actividad-alternativa/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarActividadAlternativa'])
+// Eliminar una actividad alternativa
+Route::post('/panel-administrador/actividad-alternativa/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarActividadAlternativa'])
     ->name('administrador.actividades-alternativas.eliminar');
 
 
-    // PANEL :: USUARIOS
+// PANEL :: USUARIOS
 
-    // Mostrar
-    Route::get('/panel-administrador/usuarios', [\App\Http\Controllers\AdministradorController::class, 'mostrarUsuarios'])
+// Mostrar
+Route::get('/panel-administrador/usuarios', [\App\Http\Controllers\AdministradorController::class, 'mostrarUsuarios'])
     ->name('administrador.usuarios.mostrar');
 
-    // // Convertir en administrador
-    // Route::post('/panel-administrador/usuarios/convertir-administrador', [\App\Http\Controllers\AdministradorController::class, 'convertirUsuarioAdministrador'])
-    // ->name('administrador.usuarios.convertir-administrador');
+// Convertir en administrador
+Route::post('/panel-administrador/usuarios/{id}/convertir-administrador', [\App\Http\Controllers\AdministradorController::class, 'otorgarPrivilegiosAdmin'])
+    ->name('administrador.usuarios.otorgar-privilegios');
 
-    // // Convertir en usuario comun
-    // Route::post('/panel-administrador/usuarios/convertir-predeterminado', [\App\Http\Controllers\AdministradorController::class, 'convertirUsuarioPredeterminado'])
-    // ->name('administrador.usuarios.convertir-predeterminado');
+// Convertir en usuario comun
+Route::post('/panel-administrador/usuarios/{id}/quitar-administrador', [\App\Http\Controllers\AdministradorController::class, 'quitarPrivilegiosAdmin'])
+    ->name('administrador.usuarios.quitar-privilegios');
 
-
-
-
-
-
+// Eliminar usuario
+Route::post('/panel-administrador/usuarios/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarUsuario'])
+    ->name('administrador.usuarios.eliminar');
 
 
 
@@ -361,6 +360,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/profile', [AvatarController::class, 'actualizarAvatar'])->name('avatar.actualizar');
 });
 
 require __DIR__.'/auth.php';

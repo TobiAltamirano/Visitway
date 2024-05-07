@@ -22,11 +22,26 @@
             <tr>
                 <td>{{ $usuario->id }}</td>
                 <td>{{ $usuario->email }}</td>
-                <td class="buttons-cta">
-                    <button>Eliminar</button>
-                
+                <td class="buttons-cta">               
                     <!-- @ Si es admin -> 'Otorgar privilegios' : 'Quitar privilegios' -->
-                    <button>Convertir en administrador</button>
+                    @if ($usuario->usuario_administrador)
+                        <!-- Si el usuario ya es administrador, mostrar botón para quitar privilegios -->
+                        <form action="{{ route('administrador.usuarios.quitar-privilegios', $usuario->id) }}" method="POST">
+                            @csrf
+                            <button type="submit">Quitar privilegios</button>
+                        </form>
+                    @else
+                        <!-- Si el usuario no es administrador, mostrar botón para otorgar privilegios -->
+                        <form action="{{ route('administrador.usuarios.otorgar-privilegios', $usuario->id) }}" method="POST">
+                            @csrf
+                            <button type="submit">Otorgar privilegios</button>
+                        </form>
+                    @endif
+
+                    <form action="{{ route('administrador.usuarios.eliminar', $usuario->id) }}" method="POST">
+                        @csrf
+                        <button type="submit">Eliminar Usuario</button>
+                    </form>
                 </td>
             </tr>
             @endforeach
