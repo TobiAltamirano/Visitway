@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AvatarController;
+use App\Http\Controllers\CronogramaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -349,7 +350,34 @@ Route::post('/panel-administrador/usuarios/{id}/eliminar', [\App\Http\Controller
     ->name('administrador.usuarios.eliminar');
 
 
+// CRONOGRAMA
 
+// MOSTRAR CRONOGRAMA ORDENADO POR DÍAS
+Route::get('/cronograma', [\App\Http\Controllers\CronogramaController::class, 'mostrarCronograma'])
+    ->name('cronograma.mostrar');
+
+// AGREGAR ACTIVIDAD AL CRONOGRAMA
+Route::post('/cronograma/{id}/agregar', [\App\Http\Controllers\CronogramaController::class, 'agregarAlCronograma'])
+    ->name('cronograma.agregar');
+
+// ELIMINAR ACTIVIDAD DEL CRONOGRAMA
+Route::post('/cronograma/{id}/eliminar', [\App\Http\Controllers\CronogramaController::class, 'eliminarDelCronograma'])
+    ->name('cronograma.eliminar');
+
+// EDITAR ACTIVIDAD DEL CRONOGRAMA
+Route::post('/cronograma/{id}/editar', [\App\Http\Controllers\CronogramaController::class, 'editarActividadDelCronograma'])
+->name('cronograma.editar');
+
+// DUPLICAR ACTIVIDAD DEL CRONOGRAMA
+Route::post('/cronograma/{id}/duplicar/{idActividad}', [\App\Http\Controllers\CronogramaController::class, 'duplicarActividadDelCronograma'])
+->name('cronograma.duplicar');
+
+// // EDITAR DIA/HORA CRONOGRAMA
+// Route::post('/cronograma/{id}/editar', [\App\Http\Controllers\CronogramaController::class, 'editarDelCronograma'])
+//     ->name('cronograma.eliminar');
+
+// Route::get('/cronograma/{id}/agregar', [\App\Http\Controllers\CronogramaController::class, 'agregarAlCronograma'])
+//     ->name('cronograma.mostrar');
 
 
 Route::get('/dashboard', function () {

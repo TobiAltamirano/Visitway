@@ -86,4 +86,9 @@ class Actividad extends Model
     {
         return $this->belongsTo(TipoActividad::class);
     }
+
+    public function cronograma()
+    {
+        return $this->belongsTo(Cronograma::class);
+    }
 }

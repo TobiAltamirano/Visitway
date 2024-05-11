@@ -28,7 +28,7 @@ class ActividadAlternativaSeeder extends Seeder
                 'imagen3' => 'feria_imagen3.jpg',
             ],
             [
-                'id_usuario' => 2,
+                'id_usuario' => 1,
                 'titulo' => 'Taller de Fotografía',
                 'descripcion' => 'Un taller donde aprenderás técnicas de fotografía.',
                 'provincia' => 'Buenos Aires',

@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $this->call(UsuariosSeeder::class);
+
         // Definimos los seeders a ejecutarse, y en que orden
         $this->call(ProvinciaSeeder::class);
 

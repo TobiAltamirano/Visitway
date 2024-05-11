@@ -72,3 +72,36 @@ use App\Models\Provincia;
         {{ session('error') }}
     </div>
 @endif
+
+<h2> Gestionar actividad en el cronograma </h2>
+
+<form action="{{ route('cronograma.agregar', ['id' => $actividad->id_actividad]) }}" method="post">
+    @csrf
+
+    <!-- Dropdown para seleccionar el día de la semana -->
+    <label for="dia_semana">Día de la semana:</label>
+    <select name="dia_semana" id="dia_semana">
+        <option value="1">Lunes</option>
+        <option value="2">Martes</option>
+        <option value="3">Miércoles</option>
+        <option value="4">Jueves</option>
+        <option value="5">Viernes</option>
+        <option value="6">Sábado</option>
+        <option value="7">Domingo</option>
+    </select>
+
+    <!-- Dropdown para seleccionar la hora de inicio -->
+    <label for="hora_inicio">Hora de inicio:</label>
+    <input type="time" name="hora_inicio" id="hora_inicio" required>
+
+    <!-- Dropdown para seleccionar la hora de fin -->
+    <label for="hora_fin">Hora de fin:</label>
+    <input type="time" name="hora_fin" id="hora_fin" required>
+
+    <!-- Condición para mostrar el botón dependiendo de si la actividad ya está en el cronograma -->
+
+        <button type="submit" formaction="{{ route('cronograma.eliminar', ['id' => $actividad->id_actividad]) }}">Eliminar del cronograma</button>
+    
+        <button type="submit">Agregar al cronograma</button>
+
+</form>
