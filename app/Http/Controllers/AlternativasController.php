@@ -140,4 +140,15 @@ class AlternativasController extends Controller
         return redirect('/blog/actividades-alternativas')
             ->with('success', 'El posteo ha sido eliminado con éxito.');
     }
+
+    public function mostrarActividadesAlternativasPropias()
+    {
+        // Obtener el ID del usuario autenticado
+        $idUsuario = auth()->id();
+
+        // Obtener solo las actividades alternativas del usuario autenticado
+        $actividadesAlternativas = ActividadAlternativa::where('id_usuario', $idUsuario)->get();
+
+        return view('blog.actividadesAlternativas.mostrarAlternativasPropias', compact('actividadesAlternativas'));
+    }
 }

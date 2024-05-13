@@ -140,4 +140,15 @@ class PosteosController extends Controller
         return redirect('/blog/posteos')
             ->with('success', 'El posteo ha sido eliminado con éxito.');
     }
+
+    public function mostrarPosteosPropios()
+    {
+        // Obtener el ID del usuario autenticado
+        $idUsuario = auth()->id();
+
+        // Obtener solo los posteos del usuario autenticado
+        $posteos = Posteo::where('id_usuario', $idUsuario)->get();
+
+        return view('blog.posteos.mostrarPosteosPropios', compact('posteos'));
+    }
 }

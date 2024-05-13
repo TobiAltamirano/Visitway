@@ -1,40 +1,7 @@
-<h1>Actividades Alternativas:</h1>
-
-@if (session('status.message'))
-    <div class="alert alert-success">
-        {{ session('status.message') }}
-    </div>
-@endif
-
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-
-@if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif
-
-<button><a href="{{ route('alternativas.propias') }}">Mostrar actividades alternativas propias</a></button>
-
-<form action="{{ route('alternativas.filtrar') }}" method="GET">
-    <label for="mendoza">Mendoza:</label>
-    <input type="checkbox" id="mendoza" name="provincias[]" value="Mendoza">
-
-    <label for="tucuman">Tucumán:</label>
-    <input type="checkbox" id="tucuman" name="provincias[]" value="Tucumán">
-
-    <button type="submit">Filtrar</button>
-</form>
-
-
+<h1> Mostrar alternativas propias </h1>
 
 <div>
     @foreach($actividadesAlternativas as $actividadAlternativa)
-    <p><strong>Usuario:</strong> {{ $actividadAlternativa->usuario->name }}</p>
     <h2>Titulo: {{ $actividadAlternativa->titulo }}</h2>
     <p>descripcion: {{ $actividadAlternativa->descripcion }}</p>
     @if($actividadAlternativa->imagen1 !== null)

@@ -122,6 +122,10 @@ Route::post('/posteos/{id}/eliminar/procesar', [\App\Http\Controllers\PosteosCon
 Route::get('/posteos/filtrar', [\App\Http\Controllers\FiltrosController::class, 'filtrarPosteos'])
 ->name('posteos.filtrar');
 
+// Mostrar posteos propios
+Route::get('/posteos/propios', [\App\Http\Controllers\PosteosController::class, 'mostrarPosteosPropios'])
+    ->name('posteos.propios');
+
 
 
 
@@ -137,7 +141,7 @@ Route::get('/posteos/filtrar', [\App\Http\Controllers\FiltrosController::class, 
 
 // Actividades Alternativas
 
-    // Mostrar posteos
+    // Mostrar actividades alternativas
 Route::get('/blog/actividades-alternativas', [\App\Http\Controllers\AlternativasController::class, 'mostrarActividadesAlternativas'])
     ->name('alternativas.mostrar');
 
@@ -168,6 +172,11 @@ Route::post('/actividades-alternativas/{id}/eliminar/procesar', [\App\Http\Contr
                 // Filtrar actividades alternativas por provincia
 Route::get('/actividades-alternativas/filtrar', [\App\Http\Controllers\FiltrosController::class, 'filtrarActividadesAlternativas'])
 ->name('alternativas.filtrar');
+
+// Mostrar actividades alternativas propias
+Route::get('/actividades-alternativas/propias', [\App\Http\Controllers\AlternativasController::class, 'mostrarActividadesAlternativasPropias'])
+    ->name('alternativas.propias');
+
 
 
 
@@ -371,6 +380,9 @@ Route::post('/cronograma/{id}/editar', [\App\Http\Controllers\CronogramaControll
 // DUPLICAR ACTIVIDAD DEL CRONOGRAMA
 Route::post('/cronograma/{id}/duplicar/{idActividad}', [\App\Http\Controllers\CronogramaController::class, 'duplicarActividadDelCronograma'])
 ->name('cronograma.duplicar');
+
+
+
 
 // // EDITAR DIA/HORA CRONOGRAMA
 // Route::post('/cronograma/{id}/editar', [\App\Http\Controllers\CronogramaController::class, 'editarDelCronograma'])
