@@ -1,16 +1,15 @@
-import colors from "@material-tailwind/html/theme/base/colors";
-import withMT from "@material-tailwind/html/utils/withMT";
-
-export default withMT({
-    content: ["./resources/**/*.blade.php", "./resources/**/*.js", "./resources/**/*.vue"],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+      "./resources/**/*.blade.php",
+      "./resources/**/**/*.blade.php",
+       "./resources/**/*.js",
+      "./resources/**/*.vue",
+      "./node_modules/tw-elements/js/**/*.js"
+    ],
     theme: {
-      colors: {
-
-      },
-      fontFamily: {
-        
-      },
       extend: {},
     },
-    plugins: [],
-  });
+    darkMode: "class",
+    plugins: [require("tw-elements/plugin.cjs")]
+  }

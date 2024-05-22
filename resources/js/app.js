@@ -1,7 +1,3 @@
-import './bootstrap';
+import { Tooltip, initTWE, Collapse, Dropdown } from "tw-elements";
+initTWE({ Tooltip, Collapse, Dropdown });
 
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
