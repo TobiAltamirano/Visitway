@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-      "./resources/**/*.blade.php",
-      "./resources/**/**/*.blade.php",
-       "./resources/**/*.js",
-      "./resources/**/*.vue",
-      "./node_modules/tw-elements/js/**/*.js"
+        "./resources/**/*.blade.php",
+        "./resources/**/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+        "./node_modules/tw-elements/js/**/*.js",
     ],
     theme: {
-      extend: {},
+        extend: {},
     },
     darkMode: "class",
-    plugins: [require("tw-elements/plugin.cjs")]
-  }
+    plugins: [require("tw-elements/plugin.cjs")],
+};
