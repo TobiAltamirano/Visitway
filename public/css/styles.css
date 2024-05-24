@@ -21,31 +21,58 @@
 }
 
 .fondo-blanco{
-    padding-top: 4rem;
     background-color: var(--blanco-institucional);
-    height: 400px;
+    height: auto;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     margin-top: -3rem !important;
+    padding-bottom: 5rem;
 }
 
 /* Main.blade */
 
     header{
         padding-bottom: 5rem;
+        display: flex;
+        justify-content: center;
     }
 
     /* Navbar */
 
     .navbar{
         margin-top: 1.5rem;
-        max-width: 100vw;
         border-radius: 20px;
-        background-color: var(--color-principal);
+        background-color: var(--fondo-institucional) !important;
         color: var(--azul-principal);
+        width: 95vw !important;
     }
     
+    .container-navbar{
+        padding: 0 1.5rem !important;
+    }
+
+    .navbar a{
+        color: var(--azul-principal);
+    }
+
+    .navbar a:hover{
+        color: var(--rojo-secundario) !important;
+    }
+
+    @media (max-width: 1023px) {
+        /* Aquí van los estilos específicos para pantallas menores a 1023px */
+        .navbar{
+            margin-top: 1rem;
+            border-radius: 10px;
+        }
+        
+    }
+
     /* Footer */
+
+    footer{
+        height: auto !important;
+    }
 
     .fondo-azul-footer{
         padding-top: 1rem;
@@ -126,10 +153,23 @@
             text-align: center;
         }
     }
-      
-      
 
-    
+/* Index.blade */
 
+.section-index{
+    margin-top: -4rem !important;
+}
 
+.div-img-principal{
+    max-width: 40rem !important;
+}
 
+.img-principal{
+    border-radius: 50px !important;
+}
+
+.span-h1{
+    color: var(--rojo-principal);
+    font-size: xx-large;
+    font-weight: bold;
+}
