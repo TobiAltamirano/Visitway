@@ -1,0 +1,125 @@
+/* Index.blade */
+
+    /* Primer Sección */
+
+    .p-superior-index{
+        padding-top: 3rem;
+        font-size: x-large;
+        font-weight: bold;
+        text-align: center;
+        color: var(--rojo-principal);
+    }
+
+    .h1-index{
+        text-align: center;
+        color: var(--azul-principal);
+        font-size: 90px;
+    }
+
+    .p-index{
+        padding-top: 1rem;
+        text-align: center;
+        color: var(--azul-principal);
+        font-size: 16px;
+    }
+
+    .contenedor-lineas{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .primer-linea-superior{
+        margin-top: 2rem;
+        border-radius: 20px;
+        background-color: var(--celeste-secundario);
+        width: 70vw;
+        height: 4px;
+    }
+
+    .segunda-linea-superior{
+        margin-top: 2rem;
+        border-radius: 20px;
+        background-color: var(--rojo-principal);
+        width: 90vw;
+        height: 4px;
+    }
+
+    .section-principal{
+        padding-top: 2rem;
+
+    }
+
+    .section-index{
+        margin-top: -4rem !important;
+    }
+
+    .div-img-principal{
+        max-width: 90vw !important;
+        border-radius: 20px !important;
+    }
+
+    .texto-introduccion{
+        font-size: x-large;
+        padding-bottom: 2rem;
+    }
+
+    .botones-index-contenedor{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    /* Segunda sección */
+
+    .span-segunda-seccion-index{
+        font-weight: bold !important;
+    }
+
+    .div-seccion-2-index{
+        background-color: var(--celeste-secundario);
+        border-color: var(--celeste-secundario);
+        color: var(--blanco-institucional);
+        border-radius: 20px;
+    }
+
+    .img-seccion-2-index{
+        border-radius: 20px;
+    }
+
+    .div-seccion-2-index img{
+        border-radius: 20px;
+    }
+
+    .div-seccion-2-index h1{
+        font-weight: bold;
+    }
+
+    /* Tercer sección */
+
+    .cta-seccion-3-index:hover{
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .icon-seccion-3-index{
+        height: 50px !important;
+        width: auto !important;
+    }
+
+    /* Cuarta sección */
+
+    .linea-seccion-4-index{
+        margin-top: 0.5rem;
+        background-color: var(--azul-principal);
+    }
+
+    .div-card-index{
+        background-color: var(--celeste-secundario);
+        border-radius: 20px !important;
+    }
+
+    .img-gastronomia-index{
+        border-radius: 10px !important;
+    }

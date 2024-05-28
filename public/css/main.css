@@ -1,20 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
 :root{
     --azul-principal: #003049;
-    --rojo-principal: #780000;
+    --rojo-principal: #C1121F;
+    --rojo-secundario: #780000;
     --celeste-secundario: #669BBC;
-    --rojo-secundario: #C1121F;
     --fondo-institucional: #FDF0D5;
     --blanco-institucional: #F8F8F8;
     background-color: var(--azul-principal);
+}
+
+/* Paleta cromática */
+
+.azul-principal{
+    color: var(--azul-principal) !important;
+}
+
+.rojo-principal{
+    color: var(--rojo-principal) !important;
+}
+
+.rojo-secundario{
+    color: var(--rojo-secundario) !important;
+}
+
+.celeste-secundario{
+    color: var(--celeste-secundario) !important;
+}
+
+.fondo-institucional{
+    color: var(--fondo-institucional) !important;
+}
+
+.blanco-institucional{
+    color: var(--blanco-institucional) !important;
+}
+
+/* Tipografías */
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+  
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+  
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-flex{
+    font-family: "Roboto Flex", sans-serif;
 }
 
 /* Default Background */
 
 .fondo-rojo{
     margin-top: -3rem !important;
-    background-color: var(--rojo-principal);
+    background-color: var(--rojo-secundario);
     height: 5rem;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -27,6 +83,26 @@
     border-top-right-radius: 50px;
     margin-top: -3rem !important;
     padding-bottom: 5rem;
+}
+
+/* Botones */
+
+.boton-azul{
+    border-radius: 15px !important;
+    background-color: var(--azul-principal);
+    font-size: medium !important;
+}
+
+.boton-celeste{
+    
+}
+
+.boton-rojo-principal{
+
+}
+
+.boton-rojo-secundario{
+
 }
 
 /* Main.blade */
@@ -56,7 +132,7 @@
     }
 
     .navbar a:hover{
-        color: var(--rojo-secundario) !important;
+        color: var(--rojo-principal) !important;
     }
 
     @media (max-width: 1023px) {
@@ -153,23 +229,3 @@
             text-align: center;
         }
     }
-
-/* Index.blade */
-
-.section-index{
-    margin-top: -4rem !important;
-}
-
-.div-img-principal{
-    max-width: 40rem !important;
-}
-
-.img-principal{
-    border-radius: 50px !important;
-}
-
-.span-h1{
-    color: var(--rojo-principal);
-    font-size: xx-large;
-    font-weight: bold;
-}

@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title') - Visitway</title>
-        <link rel="stylesheet" href="<?= url("css/styles.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/main.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/index.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/provincias.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/cronograma.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/blog.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/sobreVisitway.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/panelAdministrador.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/favoritos.css"); ?>">
+        <link rel="stylesheet" href="<?= url("css/auth.css"); ?>">
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
 </head>
@@ -32,27 +40,27 @@
                     <ul class="list-style-none me-auto flex flex-col ps-0 lg:flex-row" data-twe-navbar-nav-ref>
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                             <!-- Inicio link -->
-                            <a class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="#" data-twe-nav-link-ref>Inicio</a>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/");?>" data-twe-nav-link-ref>Inicio</a>
                         </li>
                         <!-- Provincias link -->
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-                            <a class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="#" data-twe-nav-link-ref>Provincias</a>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="{{ route('provincias.mostrar') }}" data-twe-nav-link-ref>Provincias</a>
                         </li>
                         <!-- Cronograma link -->
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-                            <a class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="#" data-twe-nav-link-ref>Cronograma</a>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="{{ route('cronograma.mostrar') }}" data-twe-nav-link-ref>Cronograma</a>
                         </li>
                         <!-- Blog link -->
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-                            <a class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="#" data-twe-nav-link-ref>Blog</a>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="{{ route('cronograma.mostrar') }}" data-twe-nav-link-ref>Blog</a>
                         </li>
                         <!-- Sobre Visitway link -->
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-                            <a class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="#" data-twe-nav-link-ref>Sobre Visitway</a>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/sobre-visitway");?>" data-twe-nav-link-ref>Sobre Visitway</a>
                         </li>
                         <!-- Panel Administrador link -->
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-                            <a class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="#" data-twe-nav-link-ref>Panel Administrador</a>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="{{ route('provincias.mostrar') }}" data-twe-nav-link-ref>Panel Administrador</a>
                         </li>
                     </ul>
                     <!-- Left links -->

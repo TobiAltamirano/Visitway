@@ -9,8 +9,14 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Institucional
+Route::get('/sobre-visitway', function () {
+    return view('institucional');
+});
+
 // Provincias
-Route::get('/provincias', [\App\Http\Controllers\ProvinciasController::class, 'mostrarProvincias']);
+Route::get('/provincias', [\App\Http\Controllers\ProvinciasController::class, 'mostrarProvincias'])
+    ->Name('provincias.mostrar');
 
     // Introducción
 Route::get('/provincias/{id}/introduccion', [\App\Http\Controllers\ProvinciasController::class, 'mostrarIntroduccion'])
