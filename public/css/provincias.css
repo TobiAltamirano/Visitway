@@ -1,0 +1,41 @@
+/* Provincias */
+
+    /* MostrarProvincias.blade */
+
+    .h1-provincias{
+        padding-top: 3rem;
+        text-align: center;
+    }
+
+    .texto-introduccion-provincias{
+        font-size: large;
+    }
+
+    .div-cards-provincias:hover{
+        border: 2px;
+        border-style: solid;
+        border-color: var(--rojo-principal);
+    }
+
+    /* Submenu */
+
+    .submenu-boton{
+        background-color: var(--azul-principal);
+        color: var(--blanco-institucional);
+    }
+
+    .submenu-boton:hover{
+        background-color: var(--celeste-secundario);
+        color: var(--azul-principal);
+    }
+
+    .submenu{
+        width: auto;
+        height: auto;
+    }
+
+    /* Introduccion */
+
+    .span-h1-provincias{
+        color: var(--azul-principal);
+    }

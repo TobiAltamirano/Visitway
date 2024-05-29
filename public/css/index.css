@@ -114,12 +114,3 @@
         margin-top: 0.5rem;
         background-color: var(--azul-principal);
     }
-
-    .div-card-index{
-        background-color: var(--celeste-secundario);
-        border-radius: 20px !important;
-    }
-
-    .img-gastronomia-index{
-        border-radius: 10px !important;
-    }

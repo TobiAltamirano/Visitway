@@ -13,16 +13,53 @@ use Illuminate\Support\Facades\Storage;
 class ProvinciasController extends Controller
 {
     // Mostrar todas las provincias
-    public function mostrarProvincias(){
+    public function mostrarProvincias()
+    {
+        // Obtener todas las provincias ordenadas por región
+        $provincias = Provincia::orderBy('region_provincia')->orderBy('nombre_provincia')->get();
 
-        // Obtener todas las provincias ordenadas por region
-        $provincias = Provincia::orderBy('region_provincia')->get();
+        // Inicializar variables para almacenar las provincias por región
+        $provinciasNordeste = [];
+        $provinciasNoroeste = [];
+        $provinciasCuyo = [];
+        $provinciasPampeanas = [];
+        $provinciasPatagonicas = [];
+        $provinciaBuenosAires = [];
 
-        return view('provincias.mostrarProvincias', ['provincias' => $provincias]);
+        // Separar las provincias por región
+        foreach ($provincias as $provincia) {
+            switch ($provincia->region_provincia) {
+                case 'Nordeste':
+                    $provinciasNordeste[] = $provincia;
+                    break;
+                case 'Noroeste':
+                    $provinciasNoroeste[] = $provincia;
+                    break;
+                case 'Cuyo':
+                    $provinciasCuyo[] = $provincia;
+                    break;
+                case 'Pampeanas':
+                    $provinciasPampeanas[] = $provincia;
+                    break;
+                case 'Patagonicas':
+                    $provinciasPatagonicas[] = $provincia;
+                    break;
+                case 'Buenos Aires':
+                    $provinciaBuenosAires[] = $provincia;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // Pasar las provincias a la vista
+        return view('provincias.mostrarProvincias', compact('provinciasNordeste', 'provinciasNoroeste', 'provinciasCuyo', 'provinciasPampeanas', 'provinciasPatagonicas', 'provinciaBuenosAires'));
     }
 
+
     // Mostrar introducción a provincia seleccionada
-    public function mostrarIntroduccion($id){
+    public function mostrarIntroduccion($id)
+    {
 
         $provincia = Provincia::find($id);
 
@@ -33,5 +70,4 @@ class ProvinciasController extends Controller
 
         return view('provincias.submenu.introduccion', ['provincia' => $provincia]);
     }
-
 }
