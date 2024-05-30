@@ -53,7 +53,7 @@ Route::get('/provincias/{id}/actividades/{actividadId}/detalle', [\App\Http\Cont
     ->name('provincia.detalleActividad');
 
 // Detalle del servicio - Gastronomía
-Route::get('/provincias/{id}/gastronomia/{actividadId}/detalle', [\App\Http\Controllers\GastronomiaController::class, 'detalleGastronomia'])
+Route::get('/provincias/{id}/gastronomia/{gastronomiaId}/detalle', [\App\Http\Controllers\GastronomiaController::class, 'detalleGastronomia'])
     ->name('provincia.detalleGastronomia');
 
     // Filtrado especial de alojamientos

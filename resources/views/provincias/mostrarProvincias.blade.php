@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Provincias')
 
 @section('content')
 
@@ -11,9 +11,9 @@
         <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base azul-principal roboto-flex">Explora las distintas regiones de Argentina y sus provincias correspondientes.</p>
 
         <div class="contenedor-lineas">
-                <div class="primer-linea-superior"></div>
-                <div class="segunda-linea-superior"></div>
-            </div>
+            <div class="primer-linea-superior"></div>
+            <div class="segunda-linea-superior"></div>
+        </div>
 
         <article>
             <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Buenos Aires</h2>

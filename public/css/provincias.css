@@ -11,12 +11,6 @@
         font-size: large;
     }
 
-    .div-cards-provincias:hover{
-        border: 2px;
-        border-style: solid;
-        border-color: var(--rojo-principal);
-    }
-
     /* Submenu */
 
     .submenu-boton{
@@ -38,4 +32,26 @@
 
     .span-h1-provincias{
         color: var(--azul-principal);
+    }
+
+    /* Filtrado */
+
+    .filtros-boton{
+        background-color: var(--celeste-secundario);
+        color: var(--azul-principal);
+    }
+
+    .filtros-boton:hover{
+        background-color: var(--azul-principal);
+        color: var(--blanco-institucional);
+    }
+
+    .filtrar-boton{
+        background-color: var(--celeste-secundario);
+        color: var(--azul-principal);
+    }
+
+    .filtrar-boton:hover{
+        background-color: var(--azul-principal);
+        color: var(--blanco-institucional);
     }

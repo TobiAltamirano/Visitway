@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
 </head>
+
 <body>
     <header>
         <nav class="navbar flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
@@ -40,7 +42,7 @@
                     <ul class="list-style-none me-auto flex flex-col ps-0 lg:flex-row" data-twe-navbar-nav-ref>
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                             <!-- Inicio link -->
-                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/");?>" data-twe-nav-link-ref>Inicio</a>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/"); ?>" data-twe-nav-link-ref>Inicio</a>
                         </li>
                         <!-- Provincias link -->
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
@@ -56,7 +58,7 @@
                         </li>
                         <!-- Sobre Visitway link -->
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/sobre-visitway");?>" data-twe-nav-link-ref>Sobre Visitway</a>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/sobre-visitway"); ?>" data-twe-nav-link-ref>Sobre Visitway</a>
                         </li>
                         <!-- Panel Administrador link -->
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
@@ -69,9 +71,9 @@
                 <!-- Right elements -->
                 <div class="relative flex items-center">
                     <!-- Icon -->
-                    <a class="me-4 text-neutral-600 dark:text-white" href="#">
+                    <a class="me-4 text-neutral-600 dark:text-white" href="{{ route('favoritos.mostrar') }}">
                         <span class="[&>svg]:w-7">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
                                 <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
                             </svg>
                         </span>
@@ -138,15 +140,20 @@
 
     </div>
 
+    <div>
+        @include('layouts.terminos-condiciones')
+    </div>
+
     <footer>
         <div class="fondo-rojo"></div>
         <div class="fondo-azul-footer">
             <div class="encabezado-footer">
                 <div>
                     <ul>
-                        <li class="li-footer"><a href="">Términos y condiciones</a></li>
-                        <li class="li-footer"><a href="">Nuestro equipo</a></li>
-                        <li class="li-footer"><a href="">Preguntas frecuentes</a></li>
+                        <li class="li-footer"><p data-twe-toggle="modal" data-twe-target="#exampleModalScrollable">Términos y condiciones</p>
+                        </li>
+                        <li class="li-footer"><a href="{{ url('/sobre-visitway') }}#nuestro-equipo">Nuestro equipo</a></li>
+                        <li class="li-footer"><a href="{{ url('/sobre-visitway') }}#preguntas-frecuentes">Preguntas frecuentes</a></li>
                     </ul>
                 </div>
                 <div>
@@ -157,9 +164,11 @@
                 <div>
                     <div class="redes-footer">
                         <div>
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="32" width="28" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="32" width="28" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                     <path fill="#fdf0d5" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-                                </svg></a>
+                                </svg>
+                            </a>
                         </div>
 
                         <div>
