@@ -29,7 +29,8 @@ class ActividadesController extends Controller
         // Obtener las actividades de este tipo en esta provincia
         $actividades = Actividad::where('provincia_id', $idProvincia)
                                     ->where('tipo_actividad_id', $idTipoActividad)
-                                    ->get();
+                                    ->paginate(8);
+                                    
     
         return view('provincias.submenu.actividades', [
             'provincia' => $provincia,

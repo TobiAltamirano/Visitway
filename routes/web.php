@@ -26,8 +26,9 @@ Route::get('/provincias/{id}/introduccion', [\App\Http\Controllers\ProvinciasCon
 Route::get('/provincias/{id}/tipos-actividades', [\App\Http\Controllers\ActividadesController::class, 'mostrarTiposActividades'])
     ->name('provincia.tipos-actividades');
 
-        // Actividades por "Tipo Gastronomia"
-        Route::get('/provincias/{id}/actividades/{idTipoActividad}', [\App\Http\Controllers\ActividadesController::class, 'mostrarActividadesPorTipo'])->name('provincia.actividades');
+        // Actividades por "Tipo Actividad"
+        Route::get('/provincias/{id}/actividades/{idTipoActividad}', [\App\Http\Controllers\ActividadesController::class, 'mostrarActividadesPorTipo'])
+            ->name('provincia.actividades');
 
     // Gastronomia
 Route::get('/provincias/{id}/tipos-gastronomia', [\App\Http\Controllers\GastronomiaController::class, 'mostrarTiposGastronomia'])

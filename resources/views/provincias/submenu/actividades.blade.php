@@ -102,6 +102,8 @@
             @endforeach
         </div>
     </div>
+    
+    {{ $actividades->links() }}
 
 </section>
 

@@ -1,92 +1,78 @@
+@extends('layouts.main')
+
+@section('title', 'Inicio')
+
+@section('content')
+
 <section>
-    <h1>Nuevo posteo</h1>
+
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Nuevo posteo<br></h1>
+
+    <div class="contenedor-lineas">
+        <div class="primer-linea-superior"></div>
+        <div class="segunda-linea-superior"></div>
+    </div>
 
     @if($errors->any())
     <div class="mb-3 text-danger">Ha ocurrido uno o más errores en la validación. Porfavor, revisa los campos nuevamente.</div>
     @endif
 
-    <form action="{{ route('posteos.crear.proceso') }}" class="form-panel" method="post" enctype="multipart/form-data">
-        @csrf
-        @method('POST')
-        <div class="mb-3" class="div-input-label">
-            <label for="titulo" class="form-label">Título</label>
-            <input
-                type="text"
-                id="titulo"
-                name="titulo"
-                class="form-control"
-                maxlength="50"
-                value="{{ old('titulo') }}"
+    <div class="mx-auto block max-w-md rounded-lg bg-white p-6 shadow-4 dark:bg-surface-dark">
+        <form action="{{ route('posteos.crear.proceso') }}" class="form-panel" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('POST')
+
+            <!-- Título input -->
+            <div class="mb-4">
+                <label for="titulo" class="leading-7 text-sm text-gray-600">Título</label>
+                <input type="text" id="titulo" name="titulo" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" maxlength="50" value="{{ old('titulo') }}" @error('titulo') aria-describedby="error-titulo" aria-invalid="true" @enderror>
                 @error('titulo')
-                aria-describedby="error-titulo"
-                aria-invalid="true"
+                <div class="text-danger" id="error-titulo">{{ $message }}</div>
                 @enderror
-            >
-            @error('titulo')
-            <div class="text-danger" id="error-titulo">{{ $message }}</div>
-            @enderror
-        </div>
+            </div>
 
-        <div class="mb-3">
-            <label for="contenido" class="form-label">Contenido del posteo</label>
-            <textarea
-                id="contenido"
-                name="contenido"
-                class="form-control"
-                rows="4"
+            <!-- Contenido del posteo -->
+            <div class="mb-4">
+                <label for="contenido" class="leading-7 text-sm text-gray-600">Contenido del posteo</label>
+                <textarea id="contenido" name="contenido" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" rows="4" @error('contenido') aria-describedby="error-contenido" aria-invalid="true" @enderror>{{ old('contenido') }}</textarea>
                 @error('contenido')
-                aria-describedby="error-contenido"
-                aria-invalid="true"
+                <div class="text-danger" id="error-contenido">{{ $message }}</div>
                 @enderror
-            >{{ old('contenido') }}</textarea>
+            </div>
 
-            @error('contenido')
-            <div class="text-danger" id="error-contenido">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div class="mb-3">
-            <label for="provincia" class="form-label">provincia:</label>
-            <textarea
-                id="provincia"
-                name="provincia"
-                class="form-control"
-                rows="4"
+            <!-- Provincia -->
+            <div class="mb-4">
+                <label for="provincia" class="leading-7 text-sm text-gray-600">Provincia</label>
+                <select id="provincia" name="provincia" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" @error('provincia') aria-describedby="error-provincia" aria-invalid="true" @enderror>
+                    <option value="" disabled selected>Seleccione una provincia</option>
+                    <option value="provincia1" {{ old('provincia') == 'provincia1' ? 'selected' : '' }}>Provincia 1</option>
+                    <option value="provincia2" {{ old('provincia') == 'provincia2' ? 'selected' : '' }}>Provincia 2</option>
+                    <option value="provincia3" {{ old('provincia') == 'provincia3' ? 'selected' : '' }}>Provincia 3</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
                 @error('provincia')
-                aria-describedby="error-provincia"
-                aria-invalid="true"
+                <div class="text-danger" id="error-provincia">{{ $message }}</div>
                 @enderror
-            >{{ old('provincia') }}</textarea>
+            </div>
 
-            @error('provincia')
-            <div class="text-danger" id="error-provincia">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div class="mb-3">
-            <label for="archivo" class="form-label">Imagen</label>
-            <p>No es obligatorio</p>
-            <input
-                type="file"
-                id="archivo"
-                name="archivo"
-                class="form-control"
-                value="{{ old('archivo') }}"
+            <!-- Imagen -->
+            <div class="mb-4">
+                <label for="archivo" class="leading-7 text-sm text-gray-600">Imagen (No es obligatorio)</label>
+                <input type="file" id="archivo" name="archivo" class="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-surface transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:me-3 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-e file:border-solid file:border-inherit file:bg-transparent file:px-3  file:py-[0.32rem] file:text-surface focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none dark:border-white/70 dark:text-white  file:dark:text-white" value="{{ old('archivo') }}" @error('archivo') aria-describedby="error-archivo" aria-invalid="true" @enderror>
                 @error('archivo')
-                aria-describedby="error-archivo"
-                aria-invalid="true"
+                <div class="text-danger" id="error-archivo">{{ $message }}</div>
                 @enderror
-            >
-        </div>
+            </div>
 
-        @error('archivo')
-            <div class="text-danger" id="error-archivo">{{ $message }}</div>
-        @enderror
-
-        <div>
-            <button type="submit">Crear</button>
-        </div>
-
-    </form>
+            <!-- Submit button -->
+            <div>
+                <button type="submit" class="filtrar-boton w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-indigo-200 transition duration-200 ease-in-out">
+                    Crear
+                </button>
+            </div>
+        </form>
+    </div>
 
 </section>
+
+@endsection
