@@ -23,7 +23,7 @@
     </div>
 
     <!-- Formulario oculto -->
-    <article id="formularioContainer" class="hidden p-6">
+    <article id="formularioContainer" class="hidden p-6 mb-8">
         <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
             <div class="text-center">
                 <p class="text-2xl font-semibold azul-principal poppins-semibold mb-6">Filtrar por:</p>

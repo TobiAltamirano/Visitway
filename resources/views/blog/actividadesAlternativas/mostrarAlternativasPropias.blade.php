@@ -60,11 +60,11 @@
                     </p>
                     <div class="mt-4 flex justify-center gap-4">
                         @if($actividadAlternativa->id_usuario === auth()->id())
-                        <button><a href="{{ route('alternativas.editar', $actividadAlternativa->id) }}">Editar posteo</a></button>
+                        <button><a href="{{ route('alternativas.editar', $actividadAlternativa->id) }}">Editar Actividad Alternativa</a></button>
                         @endif
 
                         @if($actividadAlternativa->id_usuario === auth()->id())
-                        <button><a href="{{ route('alternativas.eliminar', $actividadAlternativa->id) }}">Eliminar posteo</a></button>
+                        <button><a href="{{ route('alternativas.eliminar', $actividadAlternativa->id) }}">Eliminar Actividad Alternativa</a></button>
                         @endif
                     </div>
                 </div>

@@ -1,11 +1,19 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Eliminar Actividad Alternativa')
 
 @section('content')
 
 <section>
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Editar Actividad Alternativa<br><span class="azul-principal">"{{$actividadAlternativa->titulo}}"</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Eliminar Actividad Alternativa<br><span class="azul-principal">"{{$actividadAlternativa->titulo}}"</span></h1>
+
+    @include('components.lineas-secundarias')
+
+    <div class="mt-12">
+        <div>
+            <a href="{{ route('alternativas.mostrar') }}" class="roboto-flex rojo-principal flex justify-center hover:font-bold">Cancelar</a>
+        </div>
+    </div>
 
     <div class="container mx-auto px-4">
         <div class="grid gap-6 lg:grid-cols-3">
@@ -29,13 +37,13 @@
         </div>
     </div>
     
-    <form action="{{ route('alternativas.eliminar.proceso', ['id' => $actividadAlternativa->id]) }}" method="POST">
-        @csrf
-        @method('POST')
-        <button type="submit">Eliminar</button>
-    </form>
-    
-    <a href="{{ route('alternativas.mostrar') }}">Cancelar</a>
+    <div class="flex justify-center">
+        <form action="{{ route('alternativas.eliminar.proceso', ['id' => $actividadAlternativa->id]) }}" method="POST">
+            @csrf
+            @method('POST')
+            <button type="submit" class="roboto-flex rojo-principal flex justify-center hover:font-bold">Eliminar</button>
+        </form>
+    </div>
 </section>
 
 @endsection

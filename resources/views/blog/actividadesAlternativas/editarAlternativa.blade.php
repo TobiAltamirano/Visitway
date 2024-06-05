@@ -1,18 +1,26 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Editar Actividad Alternativa')
 
 @section('content')
 
 <section>
 
-    <h1 class="h1-provincias text-4xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Editar posteo<br><span class="azul-principal">"{{ $actividadAlternativa->titulo }}"</span></h1>
+    <h1 class="h1-provincias text-4xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Editar Actividad Alternativa<br><span class="azul-principal">"{{ $actividadAlternativa->titulo }}"</span></h1>
+
+    @include('components.lineas-secundarias')
 
     @if($errors->any())
     <div class="mb-3 text-danger">Ha ocurrido uno o más errores en la validación. Por favor, revisa los campos nuevamente.</div>
     @endif
 
-    <div class="mx-auto block max-w-md rounded-lg bg-white p-6 shadow-4 dark:bg-surface-dark">
+    <div class="mt-12">
+        <div>
+            <a href="{{ route('alternativas.mostrar') }}" class="roboto-flex rojo-principal flex justify-center hover:font-bold">Cancelar</a>
+        </div>
+    </div>
+
+    <div class="mx-auto block max-w-md rounded-lg bg-white p-6 shadow-4 dark:bg-surface-dark mt-14 mb-14">
         <form action="{{ route('alternativas.actualizar', $actividadAlternativa->id) }}" class="form-panel" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3 div-input-label">

@@ -1,23 +1,26 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Crear Posteo')
 
 @section('content')
 
 <section>
 
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Nuevo posteo<br></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Nuevo posteo</h1>
 
-    <div class="contenedor-lineas">
-        <div class="primer-linea-superior"></div>
-        <div class="segunda-linea-superior"></div>
+    @include('components.lineas-secundarias')
+
+    <div class="mt-12">
+        <div>
+            <a href="{{ route('posteos.mostrar') }}" class="roboto-flex rojo-principal flex justify-center hover:font-bold">Cancelar</a>
+        </div>
     </div>
 
     @if($errors->any())
     <div class="mb-3 text-danger">Ha ocurrido uno o más errores en la validación. Porfavor, revisa los campos nuevamente.</div>
     @endif
 
-    <div class="mx-auto block max-w-md rounded-lg bg-white p-6 shadow-4 dark:bg-surface-dark">
+    <div class="mx-auto block max-w-md rounded-lg bg-white p-6 shadow-4 dark:bg-surface-dark mt-14 mb-14">
         <form action="{{ route('posteos.crear.proceso') }}" class="form-panel" method="post" enctype="multipart/form-data">
             @csrf
             @method('POST')

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Actividades Alternativas Propias')
 
 @section('content')
 
@@ -8,9 +8,15 @@
 
     <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Actividades alternativas<br></h1>
 
-    <div class="contenedor-lineas">
-        <div class="primer-linea-superior"></div>
-        <div class="segunda-linea-superior"></div>
+    @include('components.lineas-secundarias')
+
+    <div class="flex justify-center mt-12 mb-12 gap-4">
+        <div>
+            <a href="{{ route('alternativas.propias') }}" class="roboto-flex azul-principal flex justify-center hover:font-bold">Ver mis actividades alternativas</a>
+        </div>
+        <div>
+            <a href="{{route('alternativas.crear')}}" class="roboto-flex azul-principal flex justify-center hover:font-bold">Crear actividad alternativa</a></button>
+        </div>
     </div>
 
     @if (session('status.message'))
@@ -32,26 +38,22 @@
     @endif
 
     <!-- Botón desplegar filtros -->
-    <div class="flex justify-center mt-14">
+    <div class="flex justify-center">
         <button id="mostrarFormulario" type="button" class="filtros-boton poppins-semibold inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:active:shadow-dark-strong">
             Desplegar filtros
         </button>
     </div>
 
-    <div class="flex justify-center gap-12">
-        <div>
-            <a href="{{ route('alternativas.propias') }}" class="roboto-flex azul-principal flex justify-center mt-12 mb-12 hover:font-bold">Ver mis actividades alternativas</a>
-        </div>
-        <div>
-            <a href="{{route('alternativas.crear')}}" class="roboto-flex azul-principal flex justify-center mt-12 mb-12 hover:font-bold">Crear posteo</a></button>
-        </div>
-    </div>
-
-    <ul>
+    <!-- Filtros activos -->
+    <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base azul-principal roboto-flex mt-12">Provincias seleccionadas: </p>
+    <ul class="mt-4 flex justify-center flex-col text-center gap-2 roboto-flex azul-principal">
         @foreach($provinciasSeleccionadas as $provincia)
-            <li>{{ $provincia }}</li>
+        <li>{{ $provincia }}</li>
         @endforeach
     </ul>
+    <!-- Eliminar filtros -->
+    <p class="text-center mt-4 roboto-flex rojo-principal hover:font-bold"><a href="{{ url()->previous() }}">Eliminar filtros</a></p>
+
 
     <!-- Formulario oculto -->
     @include('components.form-filtros-alternativas')
@@ -95,11 +97,11 @@
                     </p>
                     <div class="mt-4 flex justify-center gap-4">
                         @if($actividadAlternativa->id_usuario === auth()->id())
-                        <button><a href="{{ route('alternativas.editar', $actividadAlternativa->id) }}">Editar posteo</a></button>
+                        <button><a href="{{ route('alternativas.editar', $actividadAlternativa->id) }}">Editar Actividad Alternativa</a></button>
                         @endif
 
                         @if($actividadAlternativa->id_usuario === auth()->id())
-                        <button><a href="{{ route('alternativas.eliminar', $actividadAlternativa->id) }}">Eliminar posteo</a></button>
+                        <button><a href="{{ route('alternativas.eliminar', $actividadAlternativa->id) }}">Eliminar Actividad Alternativa</a></button>
                         @endif
                     </div>
                 </div>
