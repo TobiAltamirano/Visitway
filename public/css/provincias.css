@@ -55,3 +55,8 @@
         background-color: var(--azul-principal);
         color: var(--blanco-institucional);
     }
+
+    /* .div-contenedor-filtro{
+        display: flex !important;
+        justify-content: center !important;
+    } */

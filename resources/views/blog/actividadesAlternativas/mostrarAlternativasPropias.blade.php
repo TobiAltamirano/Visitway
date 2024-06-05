@@ -1,16 +1,13 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Actividades Alternativas Propias')
 
 @section('content')
 
 <section>
     <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Mis actividades alternativas<br></h1>
 
-    <div class="contenedor-lineas">
-        <div class="primer-linea-superior"></div>
-        <div class="segunda-linea-superior"></div>
-    </div>
+    @include('components.lineas-secundarias')
 
     @if (session('status.message'))
     <div class="alert alert-success">
@@ -30,12 +27,19 @@
     </div>
     @endif
 
-    <div class="flex justify-center gap-12">
+    <div class="flex justify-center flex-col mt-12 mb-12 gap-4">
         <div>
-            <a href="{{route('alternativas.crear')}}" class="roboto-flex azul-principal flex justify-center mt-12 mb-12 hover:font-bold">Crear alt</a></button>
+            <a href="{{route('alternativas.mostrar')}}" class="roboto-flex rojo-principal flex justify-center hover:font-bold">Volver</a></button>
+        </div>
+        <div>
+            <a href="{{route('alternativas.crear')}}" class="roboto-flex azul-principal flex justify-center hover:font-bold">Crear actividad alternativa</a></button>
         </div>
     </div>
 
+    @if($actividadesAlternativas->isEmpty())
+    <!-- Ilustración -->
+    <p class="text-center">No hay actividades disponibles.</p>
+    @else
     <div class="container mx-auto px-4">
         <div class="grid gap-6 lg:grid-cols-3">
             @foreach($actividadesAlternativas as $actividadAlternativa)
@@ -68,6 +72,7 @@
             @endforeach
         </div>
     </div>
+    @endif
 </section>
 
 @endsection

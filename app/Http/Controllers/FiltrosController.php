@@ -20,44 +20,32 @@ class FiltrosController extends Controller
         $provincia = Provincia::findOrFail($idProvincia);
 
         // Obtener los filtros enviados por el usuario
-        $filtroAceptaMascotas = $request->input('acepta_mascotas', false);
-        $filtroTieneDescuento = $request->input('tiene_descuento', false);
-        $filtroTieneEstacionamiento = $request->input('tiene_estacionamiento', false);
-        $filtroTieneWifi = $request->input('tiene_wifi', false);
-
-
-        // Agrega más filtros según necesites
+        $filtros = [
+            'acepta_mascotas' => $request->input('acepta_mascotas', false),
+            'tiene_descuentos_ofertas' => $request->input('tiene_descuentos_ofertas', false),
+            'tiene_estacionamiento' => $request->input('tiene_estacionamiento', false),
+            'tiene_wifi' => $request->input('tiene_wifi', false),
+        ];
 
         // Consulta inicial para obtener todos los alojamientos de la provincia con el tipo de alojamiento especificado
         $query = Alojamiento::where('provincia_id', $idProvincia)
-                            ->where('tipo_alojamiento_id', $idTipoAlojamiento);
+            ->where('tipo_alojamiento_id', $idTipoAlojamiento);
 
         // Aplicar los filtros según lo seleccionado por el usuario
-        if ($filtroAceptaMascotas) {
-            $query->where('acepta_mascotas', true);
+        foreach ($filtros as $filtro => $valor) {
+            if ($valor) {
+                $query->where($filtro, true);
+            }
         }
-
-        if ($filtroTieneDescuento) {
-            $query->where('tiene_descuentos_ofertas', true);
-        }
-
-        if ($filtroTieneEstacionamiento) {
-            $query->where('tiene_estacionamiento', true);
-        }
-
-        if ($filtroTieneWifi) {
-            $query->where('tiene_wifi', true);
-        }
-
-        // Agrega más condiciones según los otros filtros
 
         // Obtener los alojamientos filtrados
         $alojamientos = $query->get();
 
-        // Devolver la vista con los alojamientos filtrados
+        // Devolver la vista con los alojamientos filtrados y los filtros activos
         return view('provincias.submenu.filtros.filtrosAlojamientos', [
             'provincia' => $provincia,
-            'alojamientos' => $alojamientos
+            'alojamientos' => $alojamientos,
+            'filtros' => $filtros,
         ]);
     }
 
@@ -67,39 +55,32 @@ class FiltrosController extends Controller
         $provincia = Provincia::findOrFail($idProvincia);
 
         // Obtener los filtros enviados por el usuario
-        $filtroAptoDiscapacitados = $request->input('es_accesible', false);
-        $filtroTieneDescuento = $request->input('tiene_descuento', false);
-        $filtroEsGratis = $request->input('es_gratis', false);
-        $filtroAceptaMascotas = $request->input('acepta_mascotas', false);
+        $filtros = [
+            'es_accesible' => $request->input('es_accesible', false),
+            'tiene_descuentos_ofertas' => $request->input('tiene_descuentos_ofertas', false),
+            'es_gratis' => $request->input('es_gratis', false),
+            'acepta_mascotas' => $request->input('acepta_mascotas', false),
+        ];
 
         // Consulta inicial para obtener todas las actividades de la provincia
         $query = Actividad::where('provincia_id', $idProvincia)
-                        ->where('tipo_actividad_id', $idTipoActividad);
+            ->where('tipo_actividad_id', $idTipoActividad);
 
         // Aplicar los filtros según lo seleccionado por el usuario
-        if ($filtroAptoDiscapacitados) {
-            $query->where('es_accesible', true);
-        }
-
-        if ($filtroTieneDescuento) {
-            $query->where('tiene_descuentos_ofertas', true);
-        }
-
-        if ($filtroEsGratis) {
-            $query->where('es_gratis', true);
-        }
-
-        if ($filtroAceptaMascotas) {
-            $query->where('acepta_mascotas', true);
+        foreach ($filtros as $filtro => $valor) {
+            if ($valor) {
+                $query->where($filtro, true);
+            }
         }
 
         // Obtener las actividades filtradas
         $actividades = $query->get();
 
-        // Devolver la vista con las actividades filtradas
+        // Devolver la vista con las actividades filtradas y los filtros activos
         return view('provincias.submenu.filtros.filtrosActividades', [
             'provincia' => $provincia,
-            'actividades' => $actividades
+            'actividades' => $actividades,
+            'filtros' => $filtros,
         ]);
     }
 
@@ -109,46 +90,39 @@ class FiltrosController extends Controller
         $provincia = Provincia::findOrFail($idProvincia);
 
         // Obtener los filtros enviados por el usuario
-        $filtroOpcionesVeganas = $request->input('apto_veganos', false);
-        $filtroOpcionesVegetarianas = $request->input('apto_vegetarianos', false);
-        $filtroOpcionesSinTacc = $request->input('apto_sin_tacc', false);
-        $filtroOpcionesIntolerantesLactosa = $request->input('apto_intolerantes_lactosa', false);
+        $filtros = [
+            'apto_veganos' => $request->input('apto_veganos', false),
+            'apto_vegetarianos' => $request->input('apto_vegetarianos', false),
+            'apto_sin_tacc' => $request->input('apto_sin_tacc', false),
+            'apto_intolerantes_lactosa' => $request->input('apto_intolerantes_lactosa', false),
+        ];
 
         // Consulta inicial para obtener todas las actividades de la provincia
         $query = Gastronomia::where('provincia_id', $idProvincia)
-                        ->where('tipo_gastronomia_id', $idTipoGastronomia);
+            ->where('tipo_gastronomia_id', $idTipoGastronomia);
 
         // Aplicar los filtros según lo seleccionado por el usuario
-        if ($filtroOpcionesVeganas) {
-            $query->where('apto_veganos', true);
+        foreach ($filtros as $filtro => $valor) {
+            if ($valor) {
+                $query->where($filtro, true);
+            }
         }
 
-        if ($filtroOpcionesVegetarianas) {
-            $query->where('apto_vegetarianos', true);
-        }
-
-        if ($filtroOpcionesSinTacc) {
-            $query->where('apto_sin_tacc', true);
-        }
-
-        if ($filtroOpcionesIntolerantesLactosa) {
-            $query->where('apto_intolerantes_lactosa', true);
-        }
-
-        // Obtener las actividades filtradas
+        // Obtener los locales gastronómicos filtrados
         $localesGastronomicos = $query->get();
 
-        // Devolver la vista con las actividades filtradas
+        // Devolver la vista con los locales gastronómicos filtrados y los filtros activos
         return view('provincias.submenu.filtros.filtrosGastronomia', [
             'provincia' => $provincia,
-            'localesGastronomicos' => $localesGastronomicos
+            'localesGastronomicos' => $localesGastronomicos,
+            'filtros' => $filtros,
         ]);
     }
 
     public function filtrarPosteos(Request $request)
     {
         $provinciasSeleccionadas  = $request->input('provincias');
-        $posteos = Posteo::whereIn('provincia', $provinciasSeleccionadas )->get();
+        $posteos = Posteo::whereIn('provincia', $provinciasSeleccionadas)->get();
 
         return view('blog.posteos.mostrarPosteosPorProvincia', compact('posteos', 'provinciasSeleccionadas'));
     }
@@ -156,7 +130,7 @@ class FiltrosController extends Controller
     public function filtrarActividadesAlternativas(Request $request)
     {
         $provinciasSeleccionadas  = $request->input('provincias');
-        $actividadesAlternativas = ActividadAlternativa::whereIn('provincia', $provinciasSeleccionadas )->get();
+        $actividadesAlternativas = ActividadAlternativa::whereIn('provincia', $provinciasSeleccionadas)->get();
 
         return view('blog.actividadesAlternativas.mostrarAlternativasPorProvincia', compact('actividadesAlternativas', 'provinciasSeleccionadas'));
     }

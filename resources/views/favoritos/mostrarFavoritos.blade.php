@@ -7,16 +7,18 @@
 <section>
     <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Sitios turísticos favoritos</h1>
 
-    <div class="contenedor-lineas">
-        <div class="primer-linea-superior"></div>
-        <div class="segunda-linea-superior"></div>
-    </div>
+    @include('components.lineas-secundarias')
 
-    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Alojamientos favoritos:</h2>
+    @if ($alojamientosFavoritos->isEmpty() && $actividadesFavoritas->isEmpty() && $localesGastronomicosFavoritos->isEmpty())
+    <!-- Ilustración -->
+    <p class="text-center text-lg mt-10">"Ilustración"</p>
+    @else
 
     @if ($alojamientosFavoritos->isEmpty())
-    <p class="text-center rojo-principal mb-12">No tienes ningún alojamiento guardado como favorito.</p>
+    <!-- No se visualizan datos -->
     @else
+    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Alojamientos favoritos:</h2>
+
     <div class="mx-6 mt-10">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
             @foreach($alojamientosFavoritos as $alojamiento)
@@ -39,11 +41,10 @@
     </div>
     @endif
 
-    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Actividades favoritas:</h2>
-
     @if ($actividadesFavoritas->isEmpty())
-    <p class="text-center rojo-principal mb-12">No tienes ningún alojamiento guardado como favorito.</p>
+    <!-- No se visualizan datos -->
     @else
+    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Actividades favoritas:</h2>
     <div class="mx-6 mt-10">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
             @foreach($actividadesFavoritas as $actividad)
@@ -68,11 +69,10 @@
     </div>
     @endif
 
-    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Locales gastronómicos favoritos:</h2>
-
     @if ($localesGastronomicosFavoritos->isEmpty())
-    <p class="text-center rojo-principal mb-12">No tienes ningún alojamiento guardado como favorito.</p>
+    <!-- No se visualizan datos -->
     @else
+    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Locales gastronómicos favoritos:</h2>
     <div class="mx-6 mt-10">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
             @foreach($localesGastronomicosFavoritos as $localGastronomico)
@@ -93,6 +93,7 @@
             @endforeach
         </div>
     </div>
+    @endif
     @endif
 
 </section>

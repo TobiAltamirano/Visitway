@@ -71,9 +71,31 @@
                         <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                             <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/sobre-visitway"); ?>" data-twe-nav-link-ref>Sobre Visitway</a>
                         </li>
-                        <!-- Panel Administrador link -->
-                        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="{{ route('provincias.mostrar') }}" data-twe-nav-link-ref>Panel Administrador</a>
+                        <li class="relative mb-4 lg:mb-0 lg:pe-2" data-twe-dropdown-ref data-twe-dropdown-alignment="start">
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2 cursor-pointer" href="#" id="dropdownPanelAdministradorLink" data-twe-dropdown-toggle-ref aria-expanded="false">
+                                Panel Administrador
+                            </a>
+                            <!-- PanelAdministrador dropdown menu -->
+                            <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark" aria-labelledby="dropdownPanelAdministradorLink" data-twe-dropdown-menu-ref>
+                                <li>
+                                    <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.usuarios.mostrar') }}" data-twe-dropdown-item-ref>Usuarios</a>
+                                </li>
+                                <li>
+                                    <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.actividades') }}" data-twe-dropdown-item-ref>Actividades</a>
+                                </li>
+                                <li>
+                                    <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.alojamientos') }}" data-twe-dropdown-item-ref>Alojamientos</a>
+                                </li>
+                                <li>
+                                    <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.locales_gastronomicos') }}" data-twe-dropdown-item-ref>Locales Gastronomicos</a>
+                                </li>
+                                <li>
+                                    <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.posteos.mostrar') }}" data-twe-dropdown-item-ref>Posteos</a>
+                                </li>
+                                <li>
+                                    <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.actividades-alternativas.mostrar') }}" data-twe-dropdown-item-ref>Actividades Alternativas</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <!-- Left links -->

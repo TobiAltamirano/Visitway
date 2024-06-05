@@ -70,7 +70,7 @@
 
 .fondo-rojo{
     margin-top: -3rem !important;
-    background-color: var(--rojo-secundario);
+    background-color: var(--rojo-principal);
     height: 5rem;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;

@@ -1,4 +1,4 @@
-import { Tooltip, initTWE, Collapse, Dropdown, Ripple, Modal, } from "tw-elements";
+import { Tooltip, initTWE, Collapse, Dropdown, Ripple, Modal, Tab } from "tw-elements";
 
-initTWE({ Tooltip, Collapse, Dropdown, Ripple, Modal });
+initTWE({ Tooltip, Collapse, Dropdown, Ripple, Modal, Tab });
 

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Posteos')
 
 @section('content')
 
@@ -8,10 +8,9 @@
 
     <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Posteos<br></h1>
 
-    <div class="contenedor-lineas">
-        <div class="primer-linea-superior"></div>
-        <div class="segunda-linea-superior"></div>
-    </div>
+    <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base azul-principal roboto-flex">¡Enterate de todas las aventuras que nuestros viajeros tienen para contar!</p>
+
+    @include('components.lineas-secundarias')
 
     @if (session('status.message'))
     <div class="alert alert-success">
@@ -31,8 +30,17 @@
     </div>
     @endif
 
+    <div class="flex justify-center mt-12 mb-12 gap-4">
+        <div>
+            <a href="{{ route('posteos.propios') }}" class="roboto-flex azul-principal flex justify-center  hover:font-bold">Ver mis posteos</a>
+        </div>
+        <div>
+            <a href="{{route('posteos.crear')}}" class="roboto-flex azul-principal flex justify-center  hover:font-bold">Crear posteo</a></button>
+        </div>
+    </div>
+
     <!-- Botón desplegar filtros -->
-    <div class="flex justify-center mt-14">
+    <div class="flex justify-center mt-8 mb-8">
         <button id="mostrarFormulario" type="button" class="filtros-boton poppins-semibold inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:active:shadow-dark-strong">
             Desplegar filtros
         </button>
@@ -59,15 +67,6 @@
             }
         });
     </script>
-
-    <div class="flex justify-center gap-12">
-        <div>
-            <a href="{{ route('posteos.propios') }}" class="roboto-flex azul-principal flex justify-center mt-12 mb-12 hover:font-bold">Ver mis posteos</a>
-        </div>
-        <div>
-            <a href="{{route('posteos.crear')}}" class="roboto-flex azul-principal flex justify-center mt-12 mb-12 hover:font-bold">Crear posteo</a></button>
-        </div>
-    </div>
 
     <div class="container mx-auto px-4">
         <div class="grid gap-6 lg:grid-cols-3">

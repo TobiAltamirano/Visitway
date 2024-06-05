@@ -38,7 +38,7 @@
             <div class="primer-linea-superior"></div>
         </div>
 
-        <article class=" text-gray-600 body-font">
+        <article class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
                     <h2 class="text-3xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">De norte a sur y de este a oeste</h2>
