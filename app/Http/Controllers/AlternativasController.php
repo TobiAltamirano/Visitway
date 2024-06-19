@@ -43,9 +43,9 @@ class AlternativasController extends Controller
         $data['id_usuario'] = $idUsuario;
 
         //Upload de la imagen de las noticias
-        if($request->hasFile('archivo')){
+        if($request->hasFile('imagen1')){
             // Guardamos el archivo en la carpeta "img"
-            $data['imagen1'] = $request->file('archivo')->store('imagenes');
+            $data['imagen1'] = $request->file('imagen1')->store('imagenes');
         }
 
         ActividadAlternativa::create($data);
@@ -85,9 +85,9 @@ class AlternativasController extends Controller
         $data = $request->except(['_token', '_method']);
 
         //Upload de la imagen de las noticias
-        if($request->hasFile('archivo')){
+        if($request->hasFile('imagen1')){
             // Guardamos el archivo en la carpeta "img"
-            $data['imagen1'] = $request->file('archivo')->store('imagenes');
+            $data['imagen1'] = $request->file('imagen1')->store('imagenes');
         }
     
         // Actualizar los datos de la noticia con los datos del formulario

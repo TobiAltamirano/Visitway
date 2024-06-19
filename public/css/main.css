@@ -44,7 +44,7 @@
     font-style: normal;
 }
   
-  .poppins-medium {
+.poppins-medium {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -71,7 +71,7 @@
 .fondo-rojo{
     margin-top: -3rem !important;
     background-color: var(--rojo-principal);
-    height: 5rem;
+    height: 4rem;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
@@ -199,10 +199,6 @@
       
     .li-footer{
         cursor: pointer;
-    }
-      
-    .li-footer:hover{
-        font-weight: bold;
     }
 
     @media (max-width: 767px) {

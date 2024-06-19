@@ -1,0 +1,22 @@
+/* Perfil */
+
+ /* Selección de avatars */
+
+    /* Estilos generales para la opción de avatar */
+    .avatar-option {
+        width: 80px; /* Ancho del avatar */
+        height: 80px; /* Altura del avatar */
+        border-radius: 50%; /* Bordes redondeados para hacer un círculo */
+        margin-right: 10px; /* Margen derecho para separación entre avatares */
+        border: 2px solid transparent; /* Borde inicial transparente */
+        transition: border-color 0.3s ease; /* Transición suave para el cambio de color del borde */
+    }
+    
+    /* Estilos cuando el radio está seleccionado */
+    input[type="radio"]:checked + label .avatar-option {
+        border-color: var(--azul-principal); /* Color del borde cuando el radio está seleccionado */
+    }
+        
+    .avatar-option:hover {
+        border-color: var(--celeste-secundario); /* Color del borde al pasar el mouse */
+    }

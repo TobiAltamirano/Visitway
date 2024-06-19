@@ -13,7 +13,7 @@
         <div class="submenu">
             @include('layouts.submenu')
         </div>
-    </div>    
+    </div>
 
     <!-- Botón para desplegar el formulario -->
     <div class="flex justify-center mt-14 mb-6">
@@ -92,7 +92,7 @@
                 <a href="{{ route('provincia.detalleAlojamiento', ['id' => $provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento]) }}">
                     <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                     <div class="p-4">
-                        <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $alojamiento->nombre_alojamiento }}</h5>
+                        <h2 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $alojamiento->nombre_alojamiento }}</h2>
                     </div>
                 </a>
             </div>

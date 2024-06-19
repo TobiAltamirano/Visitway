@@ -13,7 +13,7 @@
     .h1-index{
         text-align: center;
         color: var(--azul-principal);
-        font-size: 90px;
+        font-size: 70px;
     }
 
     .p-index{
@@ -45,30 +45,18 @@
         height: 4px;
     }
 
-    .section-principal{
-        padding-top: 2rem;
-
-    }
-
     .section-index{
         margin-top: -4rem !important;
     }
 
-    .div-img-principal{
-        max-width: 90vw !important;
-        border-radius: 20px !important;
+    .buton-1-cta{
+        background-color: var(--azul-principal) !important;
+        color: var(--blanco-institucional);
     }
 
-    .texto-introduccion{
-        font-size: x-large;
-        padding-bottom: 2rem;
-    }
-
-    .botones-index-contenedor{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
+    .buton-1-cta:hover{
+        background-color: var(--celeste-secundario) !important;
+        color: var(--blanco-institucional);
     }
 
     /* Segunda sección */
@@ -78,8 +66,8 @@
     }
 
     .div-seccion-2-index{
-        background-color: var(--celeste-secundario);
-        border-color: var(--celeste-secundario);
+        background-color: var(--azul-principal);
+        border-color: var(--azul-principal);
         color: var(--blanco-institucional);
         border-radius: 20px;
     }

@@ -34,6 +34,11 @@
         color: var(--azul-principal);
     }
 
+    .linea-introduccion{
+        margin-bottom: 0.4rem;
+        background-color: var(--azul-principal);
+    }
+
     /* Filtrado */
 
     .filtros-boton{
@@ -56,7 +61,7 @@
         color: var(--blanco-institucional);
     }
 
-    /* .div-contenedor-filtro{
-        display: flex !important;
-        justify-content: center !important;
-    } */
+    .span-filtros{
+        background-color: var(--blanco-institucional);
+        color: var(--rojo-secundario);
+    }

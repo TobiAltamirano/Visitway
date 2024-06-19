@@ -1,0 +1,34 @@
+/* Blog */
+
+    /* Posteos */
+
+    .links-blog:hover{
+        color: var(--rojo-principal) !important;
+    }
+
+    .buton-eliminar{
+        background-color: var(--rojo-principal) !important;
+    }
+
+    .buton-eliminar:hover{
+        background-color: var(--rojo-secundario) !important;
+    }
+
+    .imagen-eliminar{
+        width: auto !important;
+        height: 200px !important;
+    }
+
+    /* Actividades Alternativas */
+
+    /* Boton cerrar modal */
+
+    .boton-cerrar-modal{
+        background-color: var(--azul-principal) !important;
+        color: var(--blanco-institucional);
+    }
+
+    .boton-cerrar-modal:hover{
+        background-color: var(--celeste-secundario) !important;
+        color: var(--blanco-institucional);
+    }

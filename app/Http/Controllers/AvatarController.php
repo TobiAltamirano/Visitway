@@ -35,4 +35,5 @@ class AvatarController extends Controller
         // Retornar la vista del perfil con un mensaje de éxito
         return redirect('/profile')->with('success', 'Avatar actualizado con éxito.');
     }
+
 }

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Cronograma')
 
 @section('content')
 
@@ -24,8 +24,7 @@
   </div>
   @endif
 
-  <div class="w-full max-w-8xl mx-auto p-6 sm:p-8">
-    <h1 class="text-2xl font-bold mb-6">Cronograma diario</h1>
+  <div class="w-full max-w-8xl mx-auto p-6 sm:p-8 mt-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       @include('cronograma.partials.actividades-lunes')

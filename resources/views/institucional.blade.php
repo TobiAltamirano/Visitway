@@ -3,7 +3,6 @@
 @section('title', 'Inicio')
 
 @section('content')
-
 <section>
     <div>
         <section class="text-gray-600 body-font" id="nuestro-equipo">

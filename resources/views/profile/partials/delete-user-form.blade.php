@@ -9,7 +9,7 @@
         </p>
     </div>
 
-    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-toggle="modal" data-twe-target="#exampleModal" data-twe-ripple-init data-twe-ripple-color="light">
+    <button type="button" class="inline-flex h-10 w-full sm:w-auto items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 buton-eliminar roboto-flex" data-twe-toggle="modal" data-twe-target="#exampleModal" data-twe-ripple-init data-twe-ripple-color="light">
         Eliminar Cuenta
     </button>
 
@@ -46,7 +46,7 @@
                     <div class="mt-6">
                         <x-input-label for="password" value="{{ __('Contraseña') }}" class="sr-only" />
 
-                        <x-text-input id="password" name="password" type="password" class="mt-1 azul-principal block w-3/4" placeholder="{{ __('Password') }}" />
+                        <x-text-input id="password" name="password" type="password" class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="{{ __('Contraseña') }}" />
 
                         <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
                     </div>
@@ -55,11 +55,11 @@
                     <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 p-4 dark:border-white/10">
                         <div class="mt-6 flex justify-end">
                             <x-secondary-button data-twe-modal-dismiss data-twe-ripple-init>
-                                Cancel
+                                Cancelar
                             </x-secondary-button>
 
                             <x-danger-button class="ms-3">
-                                Delete Account
+                                Eliminar cuenta
                             </x-danger-button>
                         </div>
                     </div>

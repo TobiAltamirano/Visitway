@@ -1,0 +1,8 @@
+/* Cronograma */
+
+    /* Botones */
+
+    .boton-guardar-cambios:hover{
+        background-color: var(--azul-principal) !important;
+        color: var(--blanco-institucional) !important;
+    }    

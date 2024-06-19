@@ -15,11 +15,56 @@
         </div>
     </div>
 
-    <h2>Descripción</h2>
-    <p>{{ $provincia->descripcion_provincia }}</p>
-
-    <h2>Flora y Fauna</h2>
-    <p>{{ $provincia->flora_fauna_provincia }}</p>
+    <div class="w-full max-w-6xl mx-auto py-12 px-4 md:px-6">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="grid gap-6">
+                <div>
+                    <img src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Province Image" width="600" height="400" class="rounded-lg object-cover w-full aspect-[3/2]" />
+                </div>
+                <div class="grid gap-2">
+                    <h2 class="text-3xl font-bold poppins-bold azul-principal">{{$provincia->nombre_provincia}}</h2>
+                    <p class="roboto-flex azul-principal">
+                        {{$provincia->descripcion_provincia}}
+                    </p>
+                </div>
+            </div>
+            <div class="grid gap-6">
+                <div class="grid gap-2">
+                    <h3 class="text-2xl poppins-medium rojo-principal">Ubicacion</h3>
+                    <div class="linea-introduccion h-1 w-20 rounded"></div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <img src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Map of Mendoza" width="300" height="200" class="rounded-lg object-cover w-full aspect-[3/2]" />
+                        </div>
+                        <div>
+                            <p class="roboto-flex azul-principal">
+                                {{$provincia->ubicacion_provincia}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-2">
+                    <h3 class="text-2xl poppins-medium rojo-principal">Cultura y características</h3>
+                    <div class="linea-introduccion h-1 w-20 rounded"></div>
+                    <p class="roboto-flex azul-principal">
+                        {{$provincia->cultura_caracteristicas_provincia}}
+                    </p>
+                </div>
+                <div class="grid gap-2">
+                    <h3 class="text-2xl poppins-medium rojo-principal">Flora y Fauna</h3>
+                    <div class="linea-introduccion h-1 w-20 rounded"></div>
+                    <p class="roboto-flex azul-principal">
+                        {{$provincia->flora_fauna_provincia}}
+                    </p>
+                </div>
+                <div class="grid gap-2">
+                    <h3 class="text-2xl poppins-medium rojo-principal">Historia</h3>
+                    <div class="linea-introduccion h-1 w-20 rounded"></div>
+                    <p class="roboto-flex azul-principal">{{$provincia->historia_provincia}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 @endsection

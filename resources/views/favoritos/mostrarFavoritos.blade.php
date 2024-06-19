@@ -10,88 +10,83 @@
     @include('components.lineas-secundarias')
 
     @if ($alojamientosFavoritos->isEmpty() && $actividadesFavoritas->isEmpty() && $localesGastronomicosFavoritos->isEmpty())
-    <!-- Ilustración -->
-    <p class="text-center text-lg mt-10">"Ilustración"</p>
+    <p class="text-center text-lg mt-10 rojo-principal poppins-bold">No tienes sitios turísticos favoritos</p>
+    <div class="flex flex-col items-center justify-center mt-6">
+        <a class="inline-flex h-10 w-full sm:w-auto items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 buton-1-cta roboto-flex" href="{{ route('provincias.mostrar') }}">
+            Explorar
+        </a>
+    </div>
     @else
 
-    @if ($alojamientosFavoritos->isEmpty())
-    <!-- No se visualizan datos -->
-    @else
+    @if ($alojamientosFavoritos->isNotEmpty())
     <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Alojamientos favoritos:</h2>
-
-    <div class="mx-6 mt-10">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
-            @foreach($alojamientosFavoritos as $alojamiento)
-            <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
-                <a href="{{ route('provincia.detalleAlojamiento', ['id' => $alojamiento->provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento]) }}">
-                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
-                    <div class="p-4">
-                        <h6 class="text-center mb-2">{{ $alojamiento->provincia->nombre_provincia }}</h6>
-                        <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $alojamiento->nombre_alojamiento }}</h5>
-                    </div>
-                </a>
-                <form action="{{ route('favoritos.eliminar', ['id' => $alojamiento->id_alojamiento, 'tipo' => 'alojamiento']) }}" method="post">
-                    @csrf
-                    @method('post')
-                    <button type="submit">Eliminar de favoritos</button>
-                </form>
-            </div>
-            @endforeach
-        </div>
-    </div>
-    @endif
-
-    @if ($actividadesFavoritas->isEmpty())
-    <!-- No se visualizan datos -->
-    @else
-    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Actividades favoritas:</h2>
-    <div class="mx-6 mt-10">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
-            @foreach($actividadesFavoritas as $actividad)
-            <div class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+    <div class="mx-6 mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+        @foreach($alojamientosFavoritos as $alojamiento)
+        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+            <a href="{{ route('provincia.detalleAlojamiento', ['id' => $alojamiento->provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento]) }}" class="block">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
-                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-white/10">
-                    <div class="p-4">
-                        <a href="{{ route('provincia.detalleActividad', ['id' => $actividad->provincia->id_provincia, 'actividadId' => $actividad->id_actividad]) }}">
-                            <h6 class="text-center mb-2 rojo-secundario">{{ $actividad->provincia->nombre_provincia }}</h6>
-                            <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $actividad->nombre_actividad }}</h5>
-                        </a>
-                    </div>
+                <div class="p-4">
+                    <h4 class="rojo-principal poppins-medium text-center text-base">{{ $alojamiento->provincia->nombre_provincia }}</h4>
+                    <h3 class="text-2xl font-medium leading-tight text-center azul-principal poppins-medium">
+                        {{ $alojamiento->nombre_alojamiento }}
+                    </h3>
                 </div>
-                <form action="{{ route('favoritos.eliminar', ['id' => $actividad->id_actividad, 'tipo' => 'actividad']) }}" method="post">
-                    @csrf
-                    @method('post')
-                    <button type="submit" class="flex justify-center items-center w-full pt-2 pb-2 rojo-principal">Eliminar de favoritos</button>
-                </form>
-            </div>
-            @endforeach
+            </a>
+            <form action="{{ route('favoritos.eliminar', ['id' => $alojamiento->id_alojamiento, 'tipo' => 'alojamiento']) }}" method="post" class="text-center mb-4">
+                @csrf
+                @method('post')
+                <button type="submit" class="text-sm roboto-flex rojo-principal hover:font-bold">Eliminar de favoritos</button>
+            </form>
         </div>
+        @endforeach
     </div>
     @endif
 
-    @if ($localesGastronomicosFavoritos->isEmpty())
-    <!-- No se visualizan datos -->
-    @else
-    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Locales gastronómicos favoritos:</h2>
-    <div class="mx-6 mt-10">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
-            @foreach($localesGastronomicosFavoritos as $localGastronomico)
-            <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
-                <a href="{{ route('provincia.detalleGastronomia', ['id' => $localGastronomico->provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico]) }}">
-                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
-                    <div class="p-4">
-                        <h6 class="text-center mb-2">{{ $localGastronomico->provincia->nombre_provincia }}</h6>
-                        <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $localGastronomico->nombre_local_gastronomico }}</h5>
-                    </div>
-                </a>
-                <form action="{{ route('favoritos.eliminar', ['id' => $localGastronomico->id_local_gastronomico, 'tipo' => 'gastronomia']) }}" method="post">
-                    @csrf
-                    @method('post')
-                    <button type="submit">Eliminar de favoritos</button>
-                </form>
-            </div>
-            @endforeach
+    @if ($actividadesFavoritas->isNotEmpty())
+    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Actividades favoritas:</h2>
+    <div class="mx-6 mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+        @foreach($actividadesFavoritas as $actividad)
+        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+            <a href="{{ route('provincia.detalleActividad', ['id' => $actividad->provincia->id_provincia, 'actividadId' => $actividad->id_actividad]) }}" class="block">
+                <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                <div class="p-4">
+                    <h4 class="rojo-principal poppins-medium text-center text-base">{{ $actividad->provincia->nombre_provincia }}</h4>
+                    <h3 class="text-2xl font-medium leading-tight text-center azul-principal poppins-medium">
+                        {{ $actividad->nombre_actividad }}
+                    </h3>
+                </div>
+            </a>
+            <form action="{{ route('favoritos.eliminar', ['id' => $actividad->id_actividad, 'tipo' => 'actividad']) }}" method="post" class="text-center mb-4">
+                @csrf
+                @method('post')
+                <button type="submit" class="text-sm roboto-flex rojo-principal hover:font-bold">Eliminar de favoritos</button>
+            </form>
         </div>
+        @endforeach
+    </div>
+    @endif
+
+    @if ($localesGastronomicosFavoritos->isNotEmpty())
+    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Locales gastronómicos favoritos:</h2>
+    <div class="mx-6 mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+        @foreach($localesGastronomicosFavoritos as $localGastronomico)
+        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+            <a href="{{ route('provincia.detalleGastronomia', ['id' => $localGastronomico->provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico]) }}" class="block">
+                <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                <div class="p-4">
+                    <h4 class="rojo-principal poppins-medium text-center text-base">{{ $localGastronomico->provincia->nombre_provincia }}</h4>
+                    <h3 class="text-2xl font-medium leading-tight text-center azul-principal poppins-medium">
+                        {{ $localGastronomico->nombre_local_gastronomico }}
+                    </h3>
+                </div>
+            </a>
+            <form action="{{ route('favoritos.eliminar', ['id' => $localGastronomico->id_local_gastronomico, 'tipo' => 'gastronomia']) }}" method="post" class="text-center mb-4">
+                @csrf
+                @method('post')
+                <button type="submit" class="text-sm roboto-flex rojo-principal hover:font-bold">Eliminar de favoritos</button>
+            </form>
+        </div>
+        @endforeach
     </div>
     @endif
     @endif

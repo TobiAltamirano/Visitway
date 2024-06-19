@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?= url("css/provincias.css"); ?>">
 <article>
     <!-- Modal -->
-    <div data-twe-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="exampleModalScrollable" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
+    <div data-twe-modal-init class="azul-principal roboto-flex fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="exampleModalScrollable" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
         <div data-twe-modal-dialog-ref class="pointer-events-none relative h-[calc(100%-1rem)] w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
             <div class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-4 outline-none dark:bg-surface-dark">
                 <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 p-4 dark:border-white/10">
@@ -25,7 +25,7 @@
                         Estos términos y condiciones (en adelante, "Términos") rigen el uso del sitio web Visitway (en adelante, el "Sitio") y los servicios proporcionados a través del mismo (en adelante, los "Servicios"). Al acceder o utilizar nuestro Sitio, usted acepta cumplir y estar sujeto a estos Términos. Si no está de acuerdo con estos Términos, no utilice nuestro Sitio ni los Servicios.
                     </p>
                     <p class="mb-2">
-                        <span class="azul-principal">1. Aceptación de los Términos</span>
+                        1. Aceptación de los Términos
                         Al acceder y utilizar el Sitio, usted acepta estos Términos y cualquier cambio que podamos realizar a los mismos. Es su responsabilidad revisar estos Términos periódicamente para estar al tanto de cualquier modificación.
                     </p>
                     <p class="mb-2">

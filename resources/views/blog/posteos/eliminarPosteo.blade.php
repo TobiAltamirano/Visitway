@@ -5,49 +5,61 @@
 @section('content')
 
 <section>
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Editar posteo<br><span class="azul-principal">"{{$posteo->titulo}}"</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Eliminar posteo<br><span class="azul-principal">"{{$posteo->titulo}}"</span></h1>
 
     @include('components.lineas-secundarias')
 
-    <div class="mt-12">
-        <div>
-            <a href="{{ route('posteos.mostrar') }}" class="roboto-flex rojo-principal flex justify-center hover:font-bold">Cancelar</a>
-        </div>
-    </div>
-
     @if($errors->any())
-    <div class="mb-3 text-danger">Ha ocurrido uno o más errores en la validación. Porfavor, revisa los campos nuevamente.</div>
+    <div class="mb-3 text-danger">Ha ocurrido un error al tratar de eliminar este posteo. Porfavor, intenta de nuevo mas tarde</div>
     @endif
 
-    <div class="container mx-auto px-4 mt-14 mb-14">
-        <div class="grid gap-6 lg:grid-cols-3">
-            <div class="flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white md:max-w-xl md:flex-row">
-                @if($posteo->imagen1 !== null)
-                <img src="{{ asset('storage/' . $posteo->imagen1) }}" alt="Imagen Noticia - {{$posteo->titulo }}" class="card-img-top">
-                @else
-                No se ha encontrado la imagen, puede que haya habido un error al cargarla. Porfavor, vuelve a intentarlo.
-                @endif
-                <div class="flex flex-col justify-start p-6">
-                    <p><strong>Usuario:</strong> {{ $posteo->usuario->name }}</p>
-                    <h5 class="mb-2 text-xl font-medium">{{ $posteo->titulo }}</h5>
-                    <p class="mb-4 text-base">
-                        {{ $posteo->contenido }}
-                    </p>
-                    <p class="text-xs text-surface/75 dark:text-neutral-300">
+    <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base rojo-principal roboto-flex mt-12">Estas a punto de eliminar este posteo. Esta acción no tiene vuelta atrás. <br> Por favor, asegúrate de que deseas continuar antes de proceder. </p>
+
+    <section class="w-full py-12 md:py-20 lg:py-12">
+        <div class="container mx-auto px-4 md:px-6 flex justify-center">
+            <div class="group overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:shadow-md dark:bg-gray-950 md:max-w-md lg:max-w-xs">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    @if($posteo->imagen1 !== null)
+                    <img src="{{ asset('storage/' . $posteo->imagen1) }}" alt="Imagen Noticia - {{$posteo->titulo }}" class="imagen-eliminar">
+                    @else
+                    No se ha encontrado la imagen, puede que haya habido un error al cargarla. Porfavor, vuelve a intentarlo.
+                    @endif
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center gap-3">
+                        <!-- Avatar del usuario correspondiente -->
+                        <span class="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
+                                <img class="aspect-square h-full w-full" alt="@shadcn" src="{{ asset('storage/avatars/' . $posteo->usuario->avatar ) }}" />
+                            </span>
+                        <div>
+                            <div class="font-medium roboto-flex rojo-principal">{{ $posteo->usuario->name }}</div>
+                            <div class="text-xs azul-principal roboto-flex">{{ $posteo->created_at }}</div>
+                        </div>
+                    </div>
+                    <p class="roboto-flex rojo-secundario mt-4 line-clamp-3 font-bold">
                         {{ $posteo->provincia }}
+                    </p>
+                    <h3 class="text-xl font-semibold roboto-flex azul-principal">{{ $posteo->titulo }}</h3>
+                    <p class="mt-2 line-clamp-3 roboto-flex azul-principal">
+                        {{ $posteo->contenido }}
                     </p>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="flex justify-center mt-4 gap-4">
+            <div>
+                <form action="{{ route('posteos.eliminar.procesos', ['id' => $posteo->id]) }}" method="POST">
+                    @csrf
+                    @method('POST')
+                    <button class="inline-flex h-10 sm:w-auto items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 buton-eliminar roboto-flex" type="submit" data-id="27">Eliminar posteo</button>
+                </form>
+            </div>
+            <a href="{{ route('posteos.mostrar') }}" class="inline-flex h-10 sm:w-auto items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300 roboto-flex azul-principal">
+                Cancelar
+            </a>
+        </div>
+    </section>
 
-    <div class="flex justify-center">
-        <form action="{{ route('posteos.eliminar.procesos', ['id' => $posteo->id]) }}" method="POST">
-            @csrf
-            @method('POST')
-            <button type="submit" class="roboto-flex rojo-principal flex justify-center hover:font-bold">Eliminar</button>
-        </form>
-    </div>
 </section>
 
 @endsection

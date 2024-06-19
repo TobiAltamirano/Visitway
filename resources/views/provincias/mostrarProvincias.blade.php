@@ -21,7 +21,7 @@
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
-                                <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h5>
+                                <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
                         </a>
                     </div>
@@ -37,7 +37,7 @@
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
-                                <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h5>
+                                <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
                         </a>
                     </div>
@@ -53,7 +53,7 @@
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
-                                <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h5>
+                                <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
                         </a>
                     </div>
@@ -69,7 +69,7 @@
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
-                                <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h5>
+                                <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
                         </a>
                     </div>
@@ -85,7 +85,7 @@
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
-                                <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h5>
+                                <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
                         </a>
                     </div>
@@ -101,7 +101,7 @@
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
-                                <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h5>
+                                <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
                         </a>
                     </div>

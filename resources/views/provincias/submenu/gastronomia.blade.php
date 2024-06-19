@@ -21,7 +21,7 @@
             Desplegar filtros
         </button>
     </div>
-    
+
     <!-- Formulario oculto -->
     <article id="formularioContainer" class="hidden p-6">
         <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
@@ -87,12 +87,12 @@
 
     <div class="mx-6 mt-14 mb-8">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
-        @foreach ($localesGastronomicos as $localGastronomico)
+            @foreach ($localesGastronomicos as $localGastronomico)
             <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                 <a href="{{ route('provincia.detalleGastronomia', ['id' => $provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico]) }}">
                     <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                     <div class="p-4">
-                        <h5 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $localGastronomico->nombre_local_gastronomico }}</h5>
+                        <h2 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $localGastronomico->nombre_local_gastronomico }}</h2>
                     </div>
                 </a>
             </div>
