@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->Name('index');
 
 // Institucional
 Route::get('/sobre-visitway', function () {
     return view('institucional');
-});
+})->Name('institucional');
 
 // Provincias
 Route::get('/provincias', [\App\Http\Controllers\ProvinciasController::class, 'mostrarProvincias'])
