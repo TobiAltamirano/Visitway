@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Panel Administrador - Cargar Actividad')
 
 @section('content')
 
 <section>
 
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Panel admnistrador<span class="span-h1-provincias"><br>Crear actividad</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Panel admnistrador<span class="span-h1-provincias"><br>Cargar actividad</span></h1>
 
     @include('components.lineas-secundarias')
 
@@ -173,7 +173,6 @@
                         <label class="form-check-label" for="acepta_medios_digitales">Acepta medios digitales</label>
                     </div>
 
-                    <!-- Provincia -->
                     <!-- Provincia -->
                     <div class="space-y-2">
                         <label for="provincia_id" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Provincia</label>

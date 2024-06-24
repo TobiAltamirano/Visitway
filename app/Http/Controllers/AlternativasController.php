@@ -26,12 +26,12 @@ class AlternativasController extends Controller
     }
 
     public function formularioCreacionActividadAlternativa()
-    {   
+    {
         return view('blog.actividadesAlternativas.crearAlternativa');
     }
 
     public function procesoCreacionActividadAlternativa(Request $request)
-    {   
+    {
         $request->validate(ActividadAlternativa::REGLAS_VALIDACION, ActividadAlternativa::MENSAJES_VALIDACION);
 
         $data = $request->except(['_token']);
@@ -42,16 +42,38 @@ class AlternativasController extends Controller
         // Asignamos el ID del usuario al campo correspondiente del posteo
         $data['id_usuario'] = $idUsuario;
 
-        //Upload de la imagen de las noticias
-        if($request->hasFile('imagen1')){
-            // Guardamos el archivo en la carpeta "img"
-            $data['imagen1'] = $request->file('imagen1')->store('imagenes');
+        // Array de nombres de los campos de imagen
+        $imagenes = ['imagen1', 'imagen2', 'imagen3'];
+
+        // Subimos las imágenes si existen
+        foreach ($imagenes as $imagen) {
+            if ($request->hasFile($imagen)) {
+                $data[$imagen] = $request->file($imagen)->store('imagenes');
+            }
         }
+
+        // //Upload de la imagen de las noticias
+        // if($request->hasFile('imagen1')){
+        //     // Guardamos el archivo en la carpeta "img"
+        //     $data['imagen1'] = $request->file('imagen1')->store('imagenes');
+        // }
+
+        // //Upload de la imagen de las noticias
+        // if($request->hasFile('imagen2')){
+        //     // Guardamos el archivo en la carpeta "img"
+        //     $data['imagen2'] = $request->file('imagen2')->store('imagenes');
+        // }
+
+        // //Upload de la imagen de las noticias
+        // if($request->hasFile('imagen3')){
+        //     // Guardamos el archivo en la carpeta "img"
+        //     $data['imagen3'] = $request->file('imagen3')->store('imagenes');
+        // }
 
         ActividadAlternativa::create($data);
 
         return redirect('/blog/actividades-alternativas')
-        -> with('status.message', 'la noticia ' . $data['titulo'] . ' se publicó con exito');
+            ->with('status.message', 'la noticia ' . $data['titulo'] . ' se publicó con exito');
     }
 
     public function formularioEdicionActividadAlternativa($id)
@@ -72,32 +94,42 @@ class AlternativasController extends Controller
     {
         // Buscamos el posteo por su ID
         $actividadAlternativa = ActividadAlternativa::findOrFail($id);
-    
+
         // Verificamos si el usuario autenticado es el propietario del posteo
         if (Auth::id() !== $actividadAlternativa->id_usuario) {
             abort(403, 'Acceso no autorizado'); // Mostrar error 403 si no es el propietario
         }
-    
+
         // Validación de los datos, igual que la función createProcess
         $request->validate(ActividadAlternativa::REGLAS_VALIDACION, ActividadAlternativa::MENSAJES_VALIDACION);
-    
+
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
 
-        //Upload de la imagen de las noticias
-        if($request->hasFile('imagen1')){
-            // Guardamos el archivo en la carpeta "img"
-            $data['imagen1'] = $request->file('imagen1')->store('imagenes');
+        // Array de nombres de los campos de imagen
+        $imagenes = ['imagen1', 'imagen2', 'imagen3'];
+
+        // Subimos las imágenes si existen
+        foreach ($imagenes as $imagen) {
+            if ($request->hasFile($imagen)) {
+                $data[$imagen] = $request->file($imagen)->store('imagenes');
+            }
         }
-    
+
+        // //Upload de la imagen de las noticias
+        // if ($request->hasFile('imagen1')) {
+        //     // Guardamos el archivo en la carpeta "img"
+        //     $data['imagen1'] = $request->file('imagen1')->store('imagenes');
+        // }
+
         // Actualizar los datos de la noticia con los datos del formulario
         $actividadAlternativa->update($data);
 
         // Borramos la imagen anterior si es necesario
-        if(isset($oldCover) && Storage::has($oldCover)) {
+        if (isset($oldCover) && Storage::has($oldCover)) {
             Storage::delete($oldCover);
         }
-    
+
         // Retornar la vista de formulario de edición con el posteo
         return redirect('/blog/actividades-alternativas')
             ->with('success', 'El posteo ' . $actividadAlternativa->titulo . ' ha sido actualizado con éxito.');
@@ -129,8 +161,18 @@ class AlternativasController extends Controller
         }
 
         // Si tiene una imagen, la borramos.
-        if($actividadAlternativa->imagen1 !== null) {
+        if ($actividadAlternativa->imagen1 !== null) {
             Storage::delete($actividadAlternativa->imagen1);
+        }
+
+        // Si tiene una imagen, la borramos.
+        if ($actividadAlternativa->imagen2 !== null) {
+            Storage::delete($actividadAlternativa->imagen2);
+        }
+
+        // Si tiene una imagen, la borramos.
+        if ($actividadAlternativa->imagen3 !== null) {
+            Storage::delete($actividadAlternativa->imagen3);
         }
 
         // Eliminamos el posteo

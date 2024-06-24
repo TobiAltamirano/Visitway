@@ -36,10 +36,12 @@ class AdministradorController extends Controller
         $alojamiento = Alojamiento::findOrFail($id);
 
         $provincias = Provincia::all();
+        $tipoAlojamientos = TipoAlojamiento::all();
 
         return view('panelAdministrador.administrarAlojamientos.editarAlojamiento', [
             'alojamiento' => $alojamiento,
-            'provincias' => $provincias        
+            'provincias' => $provincias,
+            'tipoAlojamientos' => $tipoAlojamientos        
         ]);
     }
 
@@ -73,8 +75,6 @@ class AdministradorController extends Controller
         ->with('success', 'La noticia ' . $data['nombre_alojamiento'] . ' ha sido actualizada con éxito.');
     }
 
-
-
     // Eliminar alojamiento
     public function eliminarAlojamiento($id)
     {
@@ -98,8 +98,8 @@ class AdministradorController extends Controller
     public function crearAlojamiento()
     {
         $provincias = Provincia::all();
-        $tiposAlojamiento = TipoAlojamiento::all(); // Agrega esta línea si también necesitas los tipos de alojamiento
-        return view('panelAdministrador.administrarAlojamientos.crearAlojamiento', compact('provincias', 'tiposAlojamiento'));
+        $tipoAlojamientos = TipoAlojamiento::all(); // Agrega esta línea si también necesitas los tipos de alojamiento
+        return view('panelAdministrador.administrarAlojamientos.crearAlojamiento', compact('provincias', 'tipoAlojamientos'));
     }
 
     // Proceso de creación de alojamiento
@@ -146,10 +146,12 @@ class AdministradorController extends Controller
         $actividad = Actividad::findOrFail($id);
 
         $provincias = Provincia::all();
+        $tipoActividades = TipoActividad::all();
 
         return view('panelAdministrador.administrarActividades.editarActividad', [
             'actividad' => $actividad,
-            'provincias' => $provincias        
+            'provincias' => $provincias,
+            'tipoActividades' => $tipoActividades        
         ]);
     }
 
@@ -253,7 +255,9 @@ class AdministradorController extends Controller
     {
         $localGastronomico = Gastronomia::findOrFail($id);
         $provincias = Provincia::all();
-        return view('panelAdministrador.administrarGastronomia.editarLocalGastronomico', ['localGastronomico' => $localGastronomico, 'provincias' => $provincias]);
+        $tiposGastronomia = TipoGastronomia::all();
+
+        return view('panelAdministrador.administrarGastronomia.editarLocalGastronomico', ['localGastronomico' => $localGastronomico, 'provincias' => $provincias, 'tiposGastronomia' => $tiposGastronomia]);
     }
 
     public function procesoEdicionLocalGastronomico(int $id, Request $request)

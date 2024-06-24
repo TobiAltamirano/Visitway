@@ -388,17 +388,6 @@ Route::post('/cronograma/{id}/editar', [\App\Http\Controllers\CronogramaControll
 Route::post('/cronograma/{id}/duplicar/{idActividad}', [\App\Http\Controllers\CronogramaController::class, 'duplicarActividadDelCronograma'])
 ->name('cronograma.duplicar');
 
-
-
-
-// // EDITAR DIA/HORA CRONOGRAMA
-// Route::post('/cronograma/{id}/editar', [\App\Http\Controllers\CronogramaController::class, 'editarDelCronograma'])
-//     ->name('cronograma.eliminar');
-
-// Route::get('/cronograma/{id}/agregar', [\App\Http\Controllers\CronogramaController::class, 'agregarAlCronograma'])
-//     ->name('cronograma.mostrar');
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

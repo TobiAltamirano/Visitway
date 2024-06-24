@@ -115,8 +115,8 @@
                     <!-- Imagen 2 -->
                     <div class="space-y-2">
                         <label for="imagen2" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen</label>
-                        @if($actividadAlternativa->imagen1 !== null)
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Imagen Noticia - {{ $actividadAlternativa->titulo }}" class="mb-4">
+                        @if($actividadAlternativa->imagen2 !== null)
+                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Imagen Noticia - {{ $actividadAlternativa->titulo }}" class="mb-4">
                         @else
                         <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif
@@ -129,8 +129,8 @@
                     <!-- Imagen 3 -->
                     <div class="space-y-2">
                         <label for="imagen3" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen</label>
-                        @if($actividadAlternativa->imagen1 !== null)
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Imagen Noticia - {{ $actividadAlternativa->titulo }}" class="mb-4">
+                        @if($actividadAlternativa->imagen3 !== null)
+                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Imagen Noticia - {{ $actividadAlternativa->titulo }}" class="mb-4">
                         @else
                         <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif

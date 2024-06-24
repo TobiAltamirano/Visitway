@@ -65,3 +65,10 @@
         background-color: var(--blanco-institucional);
         color: var(--rojo-secundario);
     }
+
+    /* Detalles */
+
+    .bg-card-detalles{
+        background-color: var(--azul-principal) !important;
+        color: var(--blanco-institucional) !important;
+    }

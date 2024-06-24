@@ -74,46 +74,41 @@
 
     <section class="w-full py-12 md:py-20 lg:py-12">
         <div class="container mx-auto px-4 md:px-6">
-            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 flex justify-center">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 @foreach($actividadesAlternativas as $actividadAlternativa)
-                <div class="grid gap-4 rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:bg-gray-950">
-                    <div class="flex items-center gap-4">
+                <div class="rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:bg-gray-950">
+                    <div class="flex items-start gap-4 mb-4">
                         <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
-                            <!-- Avatar del usuario correspondiente -->
                             <span class="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
                                 <img class="aspect-square h-full w-full" alt="@shadcn" src="{{ asset('storage/avatars/' . $actividadAlternativa->usuario->avatar ) }}" />
                             </span>
                         </div>
-                        <div class="grid gap-0.5">
+                        <div class="flex-1">
                             <h3 class="text-lg font-semibold roboto-flex azul-principal">{{ $actividadAlternativa->titulo}}</h3>
                             <p class="text-sm roboto-flex azul-principal">{{ $actividadAlternativa->descripcion }}</p>
                         </div>
-                        <div class="ml-auto flex gap-2">
+                        <div class="flex flex-shrink-0 gap-2">
                             @if($actividadAlternativa->id_usuario === auth()->id())
-                            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent h-10 w-10 hover:text-accent-foreground hover:bg-gray-100 dark:hover:bg-gray-800">
-                                <a href="{{ route('alternativas.editar', $actividadAlternativa->id) }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-gray-500 dark:text-gray-400 azul-principal">
-                                        <path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v10"></path>
-                                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                                        <path d="M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z"></path>
-                                    </svg>
-                                </a>
-                            </button>
+                            <a href="{{ route('alternativas.editar', $actividadAlternativa->id) }}" class="inline-flex items-center justify-center rounded-md text-sm font-medium h-10 w-10 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-gray-500 dark:text-gray-400 azul-principal">
+                                    <path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v10"></path>
+                                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                                    <path d="M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z"></path>
+                                </svg>
+                            </a>
                             @endif
                             @if($actividadAlternativa->id_usuario === auth()->id())
-                            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent h-10 w-10 hover:text-accent-foreground hover:bg-gray-100 dark:hover:bg-gray-800">
-                                <a href="{{ route('alternativas.eliminar', $actividadAlternativa->id) }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 rojo-principal">
-                                        <path d="M3 6h18"></path>
-                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                    </svg>
-                                </a>
-                            </button>
+                            <a href="{{ route('alternativas.eliminar', $actividadAlternativa->id) }}" class="inline-flex items-center justify-center rounded-md text-sm font-medium h-10 w-10 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 rojo-principal">
+                                    <path d="M3 6h18"></path>
+                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                </svg>
+                            </a>
                             @endif
                         </div>
                     </div>
-                    <div class="grid gap-2">
+                    <div class="grid gap-2 mb-4">
                         <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 rojo-secundario">
                                 <circle cx="12" cy="7" r="4"></circle>
@@ -163,15 +158,16 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-3 gap-2">
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Activity Image 1" width="300" height="200" class="rounded-lg object-cover modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Activity Image 2" width="300" height="200" class="rounded-lg object-cover modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Activity Image 3" width="300" height="200" class="rounded-lg object-cover modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Activity Image 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Activity Image 2" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Activity Image 3" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
                     </div>
                 </div>
                 @endforeach
             </div>
         </div>
     </section>
+
 
 </section>
 @endsection

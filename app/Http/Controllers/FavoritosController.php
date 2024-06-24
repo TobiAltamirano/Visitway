@@ -47,9 +47,6 @@ class FavoritosController extends Controller
             'alojamientosFavoritos', 'actividadesFavoritas', 'localesGastronomicosFavoritos'));
     }
 
-
-
-
     public function agregarFavoritos(Request $request, $id, $tipo)
     {
 
