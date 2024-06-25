@@ -30,21 +30,21 @@
                             Nombre
                         </label>
                         <input class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Ingresa tu nombre" id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('name')" class="mt-2 rojo-principal roboto-flex" />
                     </div>
                     <div class="space-y-2">
                         <label class="text-sm font-bold azul-principal roboto-flex" for="email">
                             Email
                         </label>
                         <input class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Ingresa tu email" id="email" type="email" name="email" :value="old('email')" required autocomplete="username" />
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2 rojo-principal roboto-flex" />
                     </div>
                     <div class="space-y-2">
                         <label class="text-sm font-bold azul-principal roboto-flex" for="password">
                             Contraseña
                         </label>
                         <input class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Ingresa una contraseña" id="password" type="password" name="password" required autocomplete="new-password" />
-                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('password')" class="mt-2 rojo-principal roboto-flex" />
                     </div>
                     <div class="space-y-2">
                         <!-- Confirm Password -->
@@ -52,7 +52,7 @@
                             Confirmar contraseña
                         </label>
                         <input class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Reingresar tu contraseña" id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" />
-                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 rojo-principal roboto-flex" />
                     </div>
                 </div>
                 <div class="space-y-2 flex items-center flex-col pl-6 pr-6 pt-2 mb-8">
