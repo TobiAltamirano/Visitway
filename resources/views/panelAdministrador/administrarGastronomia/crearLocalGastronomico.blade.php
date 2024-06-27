@@ -10,30 +10,15 @@
 
     @include('components.lineas-secundarias')
 
-    <div class="container mx-auto">
-        @if (session('status.message'))
-        <div class="alert alert-success">
-            {{ session('status.message') }}
-        </div>
-        @endif
-
-        @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
-
-        @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-        @endif
-    </div>
-
     <section class="w-full py-12 md:py-24 lg:py-32 roboto-flex">
         <div class="container mx-auto max-w-4xl px-4 md:px-6">
             <div class="space-y-6">
                 <h2 class="text-3xl font-bold md:text-4xl roboto-flex azul-principal">Formulario de creación</h2>
+                
+                @if($errors->any())
+                <div class="mb-3 roboto-flex rojo-principal">Ha ocurrido uno o más errores en la validación. Porfavor, revisa los campos nuevamente.</div>
+                @endif
+
                 <form action="{{ route('administrador.locales_gastronomicos.crear.proceso') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                     @csrf
 

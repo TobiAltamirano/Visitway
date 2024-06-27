@@ -14,17 +14,7 @@
         </div>
     </div>
 
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
-
-    @if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-    @endif
+    @include('components.toast-notification')
 
     <!-- Título e imagen -->
     <section class="w-full py-12 flex justify-center">

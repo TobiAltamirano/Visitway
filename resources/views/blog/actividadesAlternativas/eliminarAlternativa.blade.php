@@ -11,6 +11,10 @@
 
     <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base rojo-principal roboto-flex mt-12">Estas a punto de eliminar esta actividad. Esta acción no tiene vuelta atrás. <br> Por favor, asegúrate de que deseas continuar antes de proceder. </p>
 
+    @if($errors->any())
+    <div class="mb-3 text-center roboto-flex rojo-principal">Ha ocurrido un error al eliminar la actividad. Porfavor, intentalo de nuevo.</div>
+    @endif
+
     <!-- Modal -->
     @include('components.modal-imagen-alternativas')
 

@@ -1,74 +1,89 @@
 /* Provincias */
 
-    /* MostrarProvincias.blade */
+/* MostrarProvincias.blade */
 
-    .h1-provincias{
-        padding-top: 3rem;
-        text-align: center;
-    }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+    justify-items: center;
+    /* Centra los elementos horizontalmente */
+}
 
-    .texto-introduccion-provincias{
-        font-size: large;
-    }
+.card {
+    width: 100%;
+    /* Asegura que la tarjeta no se agrande más de su contenedor */
+    max-width: 250px;
+    /* Ajusta según el tamaño deseado */
+}
 
-    /* Submenu */
+.h1-provincias {
+    padding-top: 3rem;
+    text-align: center;
+}
 
-    .submenu-boton{
-        background-color: var(--azul-principal);
-        color: var(--blanco-institucional);
-    }
+.texto-introduccion-provincias {
+    font-size: large;
+}
 
-    .submenu-boton:hover{
-        background-color: var(--celeste-secundario);
-        color: var(--azul-principal);
-    }
+/* Submenu */
 
-    .submenu{
-        width: auto;
-        height: auto;
-    }
+.submenu-boton {
+    background-color: var(--azul-principal);
+    color: var(--blanco-institucional);
+}
 
-    /* Introduccion */
+.submenu-boton:hover {
+    background-color: var(--celeste-secundario);
+    color: var(--azul-principal);
+}
 
-    .span-h1-provincias{
-        color: var(--azul-principal);
-    }
+.submenu {
+    width: auto;
+    height: auto;
+}
 
-    .linea-introduccion{
-        margin-bottom: 0.4rem;
-        background-color: var(--azul-principal);
-    }
+/* Introduccion */
 
-    /* Filtrado */
+.span-h1-provincias {
+    color: var(--azul-principal);
+}
 
-    .filtros-boton{
-        background-color: var(--celeste-secundario);
-        color: var(--azul-principal);
-    }
+.linea-introduccion {
+    margin-bottom: 0.4rem;
+    background-color: var(--azul-principal);
+}
 
-    .filtros-boton:hover{
-        background-color: var(--azul-principal);
-        color: var(--blanco-institucional);
-    }
+/* Filtrado */
 
-    .filtrar-boton{
-        background-color: var(--celeste-secundario);
-        color: var(--azul-principal);
-    }
+.filtros-boton {
+    background-color: var(--celeste-secundario);
+    color: var(--azul-principal);
+}
 
-    .filtrar-boton:hover{
-        background-color: var(--azul-principal);
-        color: var(--blanco-institucional);
-    }
+.filtros-boton:hover {
+    background-color: var(--azul-principal);
+    color: var(--blanco-institucional);
+}
 
-    .span-filtros{
-        background-color: var(--blanco-institucional);
-        color: var(--rojo-secundario);
-    }
+.filtrar-boton {
+    background-color: var(--celeste-secundario);
+    color: var(--azul-principal);
+}
 
-    /* Detalles */
+.filtrar-boton:hover {
+    background-color: var(--azul-principal);
+    color: var(--blanco-institucional);
+}
 
-    .bg-card-detalles{
-        background-color: var(--azul-principal) !important;
-        color: var(--blanco-institucional) !important;
-    }
+.span-filtros {
+    background-color: var(--blanco-institucional);
+    color: var(--rojo-secundario);
+}
+
+/* Detalles */
+
+.bg-card-detalles {
+    background-color: var(--azul-principal) !important;
+    color: var(--blanco-institucional) !important;
+}

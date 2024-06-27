@@ -11,6 +11,10 @@
 
     <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base rojo-principal roboto-flex mt-12">Ten cuidado, si eliminas la actividad, esta no se podrá recuperar.</p>
 
+    @if($errors->any())
+    <div class="mb-3 text-center roboto-flex rojo-principal">Ha ocurrido un error al tratar de eliminar este posteo. Porfavor, intenta de nuevo mas tarde</div>
+    @endif
+
     <!-- Modal -->
     @include('components.modal-imagen-alternativas')
 

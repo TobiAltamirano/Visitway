@@ -10,23 +10,7 @@
 
     @include('components.lineas-secundarias')
 
-    @if (session('status.message'))
-    <div class="alert alert-success">
-        {{ session('status.message') }}
-    </div>
-    @endif
-
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
-
-    @if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-    @endif
+    @include('components.toast-notification')
 
     <div class="bg-white rounded-md shadow-sm p-4 max-w-sm mx-auto mt-12 mb-12">
         <div class="flex justify-center items-center gap-4">

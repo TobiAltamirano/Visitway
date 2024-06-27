@@ -12,17 +12,7 @@
 
   @include('components.lineas-secundarias')
 
-  @if (session('success'))
-  <div class="alert alert-success">
-    {{ session('success') }}
-  </div>
-  @endif
-
-  @if (session('error'))
-  <div class="alert alert-danger">
-    {{ session('error') }}
-  </div>
-  @endif
+  @include('components.toast-notification')
 
   <div class="w-full max-w-8xl mx-auto p-6 sm:p-8 mt-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

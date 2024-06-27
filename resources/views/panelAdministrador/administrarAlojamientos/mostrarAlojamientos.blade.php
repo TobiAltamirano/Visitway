@@ -10,27 +10,9 @@
 
     @include('components.lineas-secundarias')
 
-    <div class="container mx-auto px-4 py-8">
-        @if (session('status.message'))
-        <div class="alert alert-success">
-            {{ session('status.message') }}
-        </div>
-        @endif
+    @include('components.toast-notification')
 
-        @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
-
-        @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-        @endif
-    </div>
-
-        <div class="flex items-center flex-col justify-center gap-8 mb-6">
+        <div class="flex items-center flex-col justify-center gap-8 mt-12 mb-6">
             <h2 class="text-2xl font-bold azul-principal roboto-flex flex justify-center">Listado de alojamientos</h2>
             <button class="filtros-boton inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
                 <a href="{{ route('administrador.alojamientos.crear') }}">Cargar alojamiento</a>

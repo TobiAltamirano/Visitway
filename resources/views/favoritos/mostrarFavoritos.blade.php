@@ -9,6 +9,8 @@
 
     @include('components.lineas-secundarias')
 
+    @include('components.toast-notification')
+
     @if ($alojamientosFavoritos->isEmpty() && $actividadesFavoritas->isEmpty() && $localesGastronomicosFavoritos->isEmpty())
     <p class="text-center text-lg mt-10 rojo-principal poppins-bold">No tienes sitios turísticos favoritos</p>
     <div class="flex flex-col items-center justify-center mt-6">
@@ -20,9 +22,9 @@
 
     @if ($alojamientosFavoritos->isNotEmpty())
     <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Alojamientos favoritos:</h2>
-    <div class="mx-6 mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+    <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($alojamientosFavoritos as $alojamiento)
-        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleAlojamiento', ['id' => $alojamiento->provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento]) }}" class="block">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                 <div class="p-4">
@@ -44,9 +46,9 @@
 
     @if ($actividadesFavoritas->isNotEmpty())
     <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Actividades favoritas:</h2>
-    <div class="mx-6 mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+    <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($actividadesFavoritas as $actividad)
-        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleActividad', ['id' => $actividad->provincia->id_provincia, 'actividadId' => $actividad->id_actividad]) }}" class="block">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                 <div class="p-4">
@@ -68,9 +70,9 @@
 
     @if ($localesGastronomicosFavoritos->isNotEmpty())
     <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Locales gastronómicos favoritos:</h2>
-    <div class="mx-6 mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+    <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($localesGastronomicosFavoritos as $localGastronomico)
-        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+        <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleGastronomia', ['id' => $localGastronomico->provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico]) }}" class="block">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                 <div class="p-4">

@@ -9,11 +9,7 @@
 
     @include('components.lineas-secundarias')
 
-    @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
+    @include('components.toast-notification')
 
     <h2 class="text-2xl font-bold azul-principal roboto-flex mt-12 mb-6 flex justify-center">Control de actividades alternativas</h2>
 

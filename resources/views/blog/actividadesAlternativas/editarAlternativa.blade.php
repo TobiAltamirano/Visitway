@@ -10,14 +10,15 @@
 
     @include('components.lineas-secundarias')
 
-    @if($errors->any())
-    <div class="mb-3 text-danger">Ha ocurrido uno o más errores en la validación. Por favor, revisa los campos nuevamente.</div>
-    @endif
-
     <section class="w-full py-12 md:py-24 lg:py-32">
         <div class="container mx-auto max-w-4xl px-4 md:px-6">
             <div class="space-y-6">
                 <h2 class="text-3xl font-bold md:text-4xl roboto-flex azul-principal">Formulario de edición</h2>
+
+                @if($errors->any())
+                <div class="mb-3 roboto-flex rojo-principal">Ha ocurrido uno o más errores en la validación. Por favor, revisa los campos nuevamente.</div>
+                @endif
+
                 <form action="{{ route('alternativas.actualizar', $actividadAlternativa->id) }}" method="post" enctype="multipart/form-data" class="space-y-4">
                     @csrf
                     @method('POST')

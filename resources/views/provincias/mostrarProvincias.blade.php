@@ -15,9 +15,9 @@
         <article>
             <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Buenos Aires</h2>
             <div class="mx-6 mt-10">
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8 flex justify-center">
+                <div class="grid-container">
                     @foreach($provinciaBuenosAires as $provincia)
-                    <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+                    <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
@@ -31,9 +31,9 @@
 
             <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Nordeste</h2>
             <div class="mx-6 mt-10">
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+                <div class="grid-container">
                     @foreach($provinciasNordeste as $provincia)
-                    <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+                    <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
@@ -47,9 +47,9 @@
 
             <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Noroeste</h2>
             <div class="mx-6 mt-10">
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+                <div class="grid-container">
                     @foreach($provinciasNoroeste as $provincia)
-                    <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+                    <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
@@ -63,9 +63,9 @@
 
             <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Cuyo</h2>
             <div class="mx-6 mt-10">
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+                <div class="grid-container">
                     @foreach($provinciasCuyo as $provincia)
-                    <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+                    <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
@@ -79,9 +79,9 @@
 
             <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Pampeanas</h2>
             <div class="mx-6 mt-10">
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+                <div class="grid-container">
                     @foreach($provinciasPampeanas as $provincia)
-                    <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+                    <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
@@ -95,9 +95,9 @@
 
             <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Patagónicas</h2>
             <div class="mx-6 mt-10">
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
+                <div class="grid-container">
                     @foreach($provinciasPatagonicas as $provincia)
-                    <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
+                    <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
                             <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                             <div class="p-4">
@@ -110,6 +110,7 @@
             </div>
         </article>
     </section>
+
 </section>
 
 @endsection

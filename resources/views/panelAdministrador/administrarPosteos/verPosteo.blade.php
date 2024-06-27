@@ -9,12 +9,13 @@
 
     @include('components.lineas-secundarias')
 
-    @if($errors->any())
-    <div class="mb-3 text-danger">Ha ocurrido un error al tratar de eliminar este posteo. Porfavor, intenta de nuevo mas tarde</div>
-    @endif
-
+    
     <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base rojo-principal roboto-flex mt-12">Ten cuidado, si eliminas el posteo, este no se podrá recuperar.
-
+        
+    @if($errors->any())
+    <div class="mb-3 text-center roboto-flex rojo-principal">Ha ocurrido un error al tratar de eliminar este posteo. Porfavor, intenta de nuevo mas tarde</div>
+    @endif
+        
     <section class="w-full py-12 md:py-20 lg:py-12">
         <div class="container mx-auto px-4 md:px-6 flex justify-center">
             <div class="group overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:shadow-md dark:bg-gray-950 md:max-w-md lg:max-w-xs">

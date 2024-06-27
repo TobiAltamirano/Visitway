@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title') - Visitway</title>
+        <link id="favicon-light" rel="icon" type="image/png" href="{{ asset('Fav-icon-positivo.png') }}">
         <link rel="stylesheet" href="<?= url("css/main.css"); ?>">
         <link rel="stylesheet" href="<?= url("css/index.css"); ?>">
         <link rel="stylesheet" href="<?= url("css/provincias.css"); ?>">
