@@ -79,7 +79,7 @@
                 <label for="nueva_hora_fin" class="roboto-flex azul-principal block mb-2 font-bold text-base">Nueva hora de fin:</label>
                 <input type="time" name="nueva_hora_fin" id="nueva_hora_fin" required class="roboto-flex azul-principal w-full px-3 py-2 rounded border-gray-300 focus:border-primary-500 focus:ring-primary-500">
               </div>
-              <button type="submit" class="roboto-flex azul-principal filtrar-boton boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
+              <button type="submit" class="roboto-flex boton-eliminar boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
                 Guardar cambios
               </button>
             </form>
@@ -128,7 +128,7 @@
                 <label for="hora_fin" class="roboto-flex azul-principal block mb-2 font-bold text-base">Hora de fin:</label>
                 <input type="time" name="hora_fin" id="hora_fin" required class="roboto-flex azul-principal w-full px-3 py-2 rounded border-gray-300 focus:border-primary-500 focus:ring-primary-500">
               </div>
-              <button type="submit" class="roboto-flex azul-principal filtrar-boton boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
+              <button type="submit" class="roboto-flex azul-principal boton-aplicar-cambios boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
                 Guardar cambios
               </button>
             </form>
@@ -158,7 +158,7 @@
               @csrf
               @method('post')
               <p class="text-center mb-6 roboto-flex rojo-principal">¿Estás seguro de que quieres quitar esta actividad de tu cronograma?</p>
-              <button type="submit" class="roboto-flex azul-principal filtrar-boton boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
+              <button type="submit" class="roboto-flex azul-principal boton-aplicar-cambios boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
                 Quitar actividad
               </button>
             </form>

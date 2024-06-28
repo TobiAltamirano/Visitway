@@ -1,34 +1,26 @@
 /* Blog */
 
-    /* Posteos */
+/* Posteos */
 
-    .links-blog:hover{
-        color: var(--rojo-principal) !important;
-    }
+.links-blog:hover {
+    color: var(--rojo-principal) !important;
+}
 
-    .buton-eliminar{
-        background-color: var(--rojo-principal) !important;
-    }
+.imagen-eliminar {
+    width: auto !important;
+    height: 200px !important;
+}
 
-    .buton-eliminar:hover{
-        background-color: var(--rojo-secundario) !important;
-    }
+/* Actividades Alternativas */
 
-    .imagen-eliminar{
-        width: auto !important;
-        height: 200px !important;
-    }
+/* Boton cerrar modal */
 
-    /* Actividades Alternativas */
+.boton-cerrar-modal {
+    background-color: var(--azul-principal) !important;
+    color: var(--blanco-institucional);
+}
 
-    /* Boton cerrar modal */
-
-    .boton-cerrar-modal{
-        background-color: var(--azul-principal) !important;
-        color: var(--blanco-institucional);
-    }
-
-    .boton-cerrar-modal:hover{
-        background-color: var(--celeste-secundario) !important;
-        color: var(--blanco-institucional);
-    }
+.boton-cerrar-modal:hover {
+    background-color: var(--celeste-secundario) !important;
+    color: var(--blanco-institucional);
+}

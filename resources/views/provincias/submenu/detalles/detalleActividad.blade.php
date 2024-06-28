@@ -8,7 +8,11 @@
 
     @include('components.lineas-secundarias')
 
-    <div class="flex justify-center mt-12 mb-12">
+    <div class="flex justify-center mt-6 mb-6">
+        <x-boton-volver url="{{ url()->previous() }}">Volver</x-boton-volver>
+    </div>
+
+    <div class="flex justify-center mt-6 mb-6">
         <div class="submenu">
             @include('layouts.submenu')
         </div>
@@ -200,7 +204,7 @@
                             <label for="hora_fin" class="roboto-flex azul-principal block mb-2 font-bold text-base">Hora de fin:</label>
                             <input type="time" name="hora_fin" id="hora_fin" required class="roboto-flex azul-principal w-full px-3 py-2 rounded border-gray-300 focus:border-primary-500 focus:ring-primary-500">
                         </div>
-                        <button type="submit" class="roboto-flex azul-principal filtrar-boton boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
+                        <button type="submit" class="roboto-flex azul-principal boton-aplicar-cambios boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
                             Agregar al cronograma
                         </button>
                     </form>

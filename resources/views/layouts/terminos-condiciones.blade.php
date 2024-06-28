@@ -6,12 +6,12 @@
             <div class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-4 outline-none dark:bg-surface-dark">
                 <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 p-4 dark:border-white/10">
                     <!-- Modal title -->
-                    <h5 class="text-xl font-medium leading-normal text-surface dark:text-white" id="exampleModalScrollableLabel">
+                    <h5 class="text-xl azul-principal font-medium leading-normal text-surface dark:text-white" id="exampleModalScrollableLabel">
                         Términos y Condiciones de Uso
                     </h5>
                     <!-- Close button -->
                     <button type="button" class="box-content rounded-none border-none text-neutral-500 hover:text-neutral-800 hover:no-underline focus:text-neutral-800 focus:opacity-100 focus:shadow-none focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-300 dark:focus:text-neutral-300" data-twe-modal-dismiss aria-label="Close">
-                        <span class="[&>svg]:h-6 [&>svg]:w-6">
+                        <span class="[&>svg]:h-6 [&>svg]:w-6 azul-principal">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
@@ -96,7 +96,7 @@
 
                 <!-- Modal footer -->
                 <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 p-4 dark:border-white/10">
-                    <button type="button" class="filtrar-boton inline-block rounded bg-primary-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-200 focus:bg-primary-accent-200 focus:outline-none focus:ring-0 active:bg-primary-accent-200 dark:bg-primary-300 dark:hover:bg-primary-400 dark:focus:bg-primary-400 dark:active:bg-primary-400" data-twe-modal-dismiss data-twe-ripple-init data-twe-ripple-color="light">
+                    <button type="button" class="boton-aplicar-cambios inline-block rounded bg-primary-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-200 focus:bg-primary-accent-200 focus:outline-none focus:ring-0 active:bg-primary-accent-200 dark:bg-primary-300 dark:hover:bg-primary-400 dark:focus:bg-primary-400 dark:active:bg-primary-400" data-twe-modal-dismiss data-twe-ripple-init data-twe-ripple-color="light">
                         Aceptar
                     </button>
                 </div>

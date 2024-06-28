@@ -83,7 +83,7 @@
                             @else
                             <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                             @endif
-                            <input type="file" id="archivo" name="archivo" class="roboto-flex azul-principal relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" value="{{ old('archivo') }}" @error('archivo') aria-describedby="error-archivo" aria-invalid="true" @enderror>
+                            <input type="file" id="archivo" name="archivo" class="roboto-flex azul-principal relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" value="{{ old('archivo', $posteo->archivo) }}" @error('archivo') aria-describedby="error-archivo" aria-invalid="true" @enderror>
                             @error('archivo')
                             <div class="roboto-flex rojo-principal text-sm mt-1" id="error-archivo">{{ $message }}</div>
                             @enderror

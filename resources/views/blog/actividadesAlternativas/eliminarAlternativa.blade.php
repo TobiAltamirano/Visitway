@@ -84,9 +84,23 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-3 gap-2">
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Activity Image 1" width="300" height="200" class="rounded-lg object-cover modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Activity Image 2" width="300" height="200" class="rounded-lg object-cover modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Activity Image 3" width="300" height="200" class="rounded-lg object-cover modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        @if($actividadAlternativa->imagen1)
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Activity Image 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        @else
+                            <img src="{{ asset('default-image-path.jpg') }}" alt="Default Image" class="rounded-lg object-cover w-full h-full" style="aspect-ratio: 300 / 200; object-fit: cover;" />
+                        @endif
+
+                        @if($actividadAlternativa->imagen2)
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Activity Image 2" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        @else
+                            <!-- No se carga ninguna imagen -->
+                        @endif
+
+                        @if($actividadAlternativa->imagen3)
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Activity Image 3" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        @else
+                            <!-- No se carga ninguna imagen -->
+                        @endif
                     </div>
                 </div>
             </div>
@@ -96,7 +110,7 @@
                 <form action="{{ route('alternativas.eliminar.proceso', ['id' => $actividadAlternativa->id]) }}" method="POST">
                     @csrf
                     @method('POST')
-                    <button class="inline-flex h-10 sm:w-auto items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 buton-eliminar roboto-flex" type="submit" data-id="27">Eliminar actividad</button>
+                    <button class="inline-flex h-10 sm:w-auto items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 boton-eliminar roboto-flex" type="submit" data-id="27">Eliminar actividad</button>
                 </form>
             </div>
             <a href="{{ route('alternativas.mostrar') }}" class="inline-flex h-10 sm:w-auto items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300 roboto-flex azul-principal">

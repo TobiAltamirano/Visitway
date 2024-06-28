@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
-:root{
+:root {
     --azul-principal: #003049;
     --rojo-principal: #C1121F;
     --rojo-secundario: #780000;
@@ -12,27 +12,27 @@
 
 /* Paleta cromática */
 
-.azul-principal{
+.azul-principal {
     color: var(--azul-principal) !important;
 }
 
-.rojo-principal{
+.rojo-principal {
     color: var(--rojo-principal) !important;
 }
 
-.rojo-secundario{
+.rojo-secundario {
     color: var(--rojo-secundario) !important;
 }
 
-.celeste-secundario{
+.celeste-secundario {
     color: var(--celeste-secundario) !important;
 }
 
-.fondo-institucional{
+.fondo-institucional {
     color: var(--fondo-institucional) !important;
 }
 
-.blanco-institucional{
+.blanco-institucional {
     color: var(--blanco-institucional) !important;
 }
 
@@ -43,32 +43,32 @@
     font-weight: 400;
     font-style: normal;
 }
-  
+
 .poppins-medium {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
-  
+
 .poppins-semibold {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
 }
-  
+
 .poppins-bold {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
 
-.roboto-flex{
+.roboto-flex {
     font-family: "Roboto Flex", sans-serif;
 }
 
 /* Default Background */
 
-.fondo-rojo{
+.fondo-rojo {
     margin-top: -3rem !important;
     background-color: var(--rojo-principal);
     height: 4rem;
@@ -76,7 +76,7 @@
     border-top-right-radius: 50px;
 }
 
-.fondo-blanco{
+.fondo-blanco {
     background-color: var(--blanco-institucional);
     height: auto;
     border-top-left-radius: 50px;
@@ -87,129 +87,149 @@
 
 /* Botones */
 
-.boton-azul{
+.boton-azul {
     border-radius: 15px !important;
     background-color: var(--azul-principal);
     font-size: medium !important;
 }
 
+.boton-aplicar-cambios {
+    background-color: var(--azul-principal) !important;
+    color: var(--blanco-institucional) !important;
+}
+
+.boton-aplicar-cambios:hover {
+    background-color: var(--celeste-secundario) !important;
+    color: var(--blanco-institucional) !important;
+}
+
+.boton-eliminar {
+    background-color: var(--rojo-principal) !important;
+}
+
+.boton-eliminar:hover {
+    background-color: var(--rojo-secundario) !important;
+}
+
 /* Main.blade */
 
-    header{
-        padding-bottom: 5rem;
-        display: flex;
-        justify-content: center;
+header {
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Navbar */
+
+.navbar {
+    margin-top: 1.5rem;
+    border-radius: 20px;
+    background-color: var(--fondo-institucional) !important;
+    color: var(--azul-principal);
+    width: 95vw !important;
+}
+
+.container-navbar {
+    padding: 0 1.5rem !important;
+}
+
+.navbar a {
+    color: var(--azul-principal);
+}
+
+.navbar a:hover {
+    color: var(--rojo-principal) !important;
+}
+
+@media (max-width: 1023px) {
+
+    /* Aquí van los estilos específicos para pantallas menores a 1023px */
+    .navbar {
+        margin-top: 1rem;
+        border-radius: 10px;
     }
 
-    /* Navbar */
+}
 
-    .navbar{
-        margin-top: 1.5rem;
-        border-radius: 20px;
-        background-color: var(--fondo-institucional) !important;
-        color: var(--azul-principal);
-        width: 95vw !important;
-    }
-    
-    .container-navbar{
-        padding: 0 1.5rem !important;
-    }
+/* Footer */
 
-    .navbar a{
-        color: var(--azul-principal);
-    }
+footer {
+    height: auto !important;
+}
 
-    .navbar a:hover{
-        color: var(--rojo-principal) !important;
-    }
+.fondo-azul-footer {
+    padding-top: 1rem;
+    background-color: var(--azul-principal);
+    height: auto;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: -3rem !important;
+}
 
-    @media (max-width: 1023px) {
-        /* Aquí van los estilos específicos para pantallas menores a 1023px */
-        .navbar{
-            margin-top: 1rem;
-            border-radius: 10px;
-        }
-        
-    }
+.encabezado-footer {
+    color: var(--fondo-institucional);
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
 
-    /* Footer */
+.logo-negativo-footer {
+    width: 80px;
+    height: auto;
+}
 
-    footer{
-        height: auto !important;
-    }
+.contenedor-redes-footer {
+    margin-top: 1rem;
+    text-align: center;
+}
 
-    .fondo-azul-footer{
-        padding-top: 1rem;
-        background-color: var(--azul-principal);
-        height: auto;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        margin-top: -3rem !important;
-    }
+.redes-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
 
-    .encabezado-footer{
-        color: var(--fondo-institucional);
-        font-size: medium;
-        display: flex;
+.facebook-svg {
+    padding-top: 3px;
+}
+
+.pie-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.linea-footer {
+    margin-top: 2rem;
+    border-radius: 20px;
+    background-color: var(--fondo-institucional);
+    width: 90vw;
+    height: 2px;
+}
+
+.p-footer {
+    color: var(--fondo-institucional);
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.li-footer {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+
+    /* Aquí van los estilos específicos para pantallas menores a 768px */
+    .encabezado-footer {
+        flex-direction: column;
+        gap: 3rem;
         align-items: center;
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin-top: 1rem;
     }
 
-    .logo-negativo-footer{
-        width: 80px;
-        height: auto;
-    }
-
-    .contenedor-redes-footer{
-        margin-top: 1rem;
+    .li-footer {
         text-align: center;
     }
-
-    .redes-footer{
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-    }
-
-    .facebook-svg{
-        padding-top: 3px;
-    }
-
-    .pie-footer{
-        display: flex;
-        justify-content: center;
-    }
-
-    .linea-footer{
-        margin-top: 2rem;
-        border-radius: 20px;
-        background-color: var(--fondo-institucional);
-        width: 90vw;
-        height: 2px;
-    }
-      
-    .p-footer{
-        color: var(--fondo-institucional);
-        margin-top: 2rem;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-      
-    .li-footer{
-        cursor: pointer;
-    }
-
-    @media (max-width: 767px) {
-        /* Aquí van los estilos específicos para pantallas menores a 768px */
-        .encabezado-footer{
-            flex-direction: column;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .li-footer{
-            text-align: center;
-        }
-    }
+}

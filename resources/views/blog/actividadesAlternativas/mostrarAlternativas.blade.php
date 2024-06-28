@@ -13,13 +13,13 @@
 
     @include('components.toast-notification')
 
-    <div class="w-full bg-white rounded-md shadow-sm p-4 max-w-md mx-auto mt-12 mb-12">
-        <div class="w-full flex justify-center items-center gap-4">
-            <a class="w-full roboto-flex azul-principal font-bold links-blog" href="{{ route('alternativas.propias') }}">
+    <div class="bg-white rounded-md shadow-sm p-4 max-w-sm mx-auto mt-12 mb-12">
+        <div class="flex justify-center items-center gap-4">
+            <a class="roboto-flex azul-principal font-bold links-blog" href="{{ route('alternativas.propias') }}">
                 Ver mis actividades
             </a>
-            <a class="w-full roboto-flex azul-principal font-bold links-blog" href="{{route('alternativas.crear')}}">
-                Crear actividad alternativa
+            <a class="roboto-flex azul-principal font-bold links-blog" href="{{route('alternativas.crear')}}">
+                Crear actividad
             </a>
         </div>
     </div>
@@ -142,9 +142,23 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-3 gap-2">
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Activity Image 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Activity Image 2" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Activity Image 3" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        @if($actividadAlternativa->imagen1)
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Activity Image 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        @else
+                            <img src="{{ asset('default-image-path.jpg') }}" alt="Default Image" class="rounded-lg object-cover w-full h-full" style="aspect-ratio: 300 / 200; object-fit: cover;" />
+                        @endif
+
+                        @if($actividadAlternativa->imagen2)
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Activity Image 2" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        @else
+                            <!-- No se carga ninguna imagen -->
+                        @endif
+
+                        @if($actividadAlternativa->imagen3)
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Activity Image 3" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        @else
+                            <!-- No se carga ninguna imagen -->
+                        @endif
                     </div>
                 </div>
                 @endforeach

@@ -161,7 +161,7 @@
                         <select id="provincia_id" name="provincia_id" class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" @error('provincia_id') aria-describedby="error-provincia_id" aria-invalid="true" @enderror>
                             <option value="">Selecciona una provincia</option>
                             @foreach($provincias as $provincia)
-                            <option value="{{ $provincia->id_provincia }}" @selected($provincia->id_provincia == old('provincia_id'))>
+                            <option value="{{ $provincia->id_provincia }}" @selected($provincia->id_provincia == old('provincia_id', $localGastronomico->provincia_id))>
                                 {{ $provincia->nombre_provincia }}
                             </option>
                             @endforeach
@@ -178,7 +178,7 @@
                         <select id="tipo_gastronomia_id" name="tipo_gastronomia_id" class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" @error('tipo_gastronomia_id') aria-describedby="error-tipo_gastronomia_id" aria-invalid="true" @enderror>
                             <option value="">Selecciona un tipo de gastronomia</option>
                             @foreach($tiposGastronomia as $tipoGastronomia)
-                            <option value="{{ $tipoGastronomia->id_tipo_gastronomia }}" {{ old('tipo_gastronomia_id') == $tipoGastronomia->id_tipo_gastronomia ? 'selected' : '' }}>
+                            <option value="{{ $tipoGastronomia->id_tipo_gastronomia }}" {{ old('tipo_gastronomia_id', $localGastronomico->tipo_gastronomia_id) == $tipoGastronomia->id_tipo_gastronomia ? 'selected' : '' }}>
                                 {{ $tipoGastronomia->nombre_tipo_gastronomia }}
                             </option>
                             @endforeach

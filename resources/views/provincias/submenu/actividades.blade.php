@@ -9,7 +9,11 @@
 
     @include('components.lineas-secundarias')
 
-    <div class="flex justify-center mt-12 mb-12">
+    <div class="flex justify-center mt-6 mb-6">
+        <x-boton-volver url="{{ route('provincia.tipos-actividades', ['id' => $provincia->id_provincia]) }}">Volver</x-boton-volver>
+    </div>
+
+    <div class="flex justify-center mt-6 mb-6">
         <div class="submenu">
             @include('layouts.submenu')
         </div>

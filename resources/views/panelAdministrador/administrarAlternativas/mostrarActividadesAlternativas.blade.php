@@ -72,7 +72,7 @@
                                                     @csrf
                                                     @method('POST')
                                                     <p class="text-center mb-6 roboto-flex rojo-principal">¿Estás seguro de que quieres eliminar esta actividad?</p>
-                                                    <button type="submit" class="roboto-flex azul-principal filtrar-boton boton-guardar-cambios poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
+                                                    <button type="submit" class="roboto-flex boton-eliminar mb-2 poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">
                                                         Eliminar actividad
                                                     </button>
                                                 </form>
