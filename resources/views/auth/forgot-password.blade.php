@@ -10,7 +10,7 @@
     <div class="flex items-center justify-center p-4 md:p-8 background-contenedor">
         <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full max-w-md background-form" data-v0-t="card">
             <div class="flex flex-col pt-6 pl-6 pr-6 space-y-1 items-center">
-                <h3 class="poppins-bold azul-principal whitespace-nowrap font-semibold tracking-tight text-2xl">Recuperar contraseña</h3>
+                <h1 class="poppins-bold azul-principal whitespace-nowrap font-semibold tracking-tight text-2xl">Recuperar contraseña</h1>
                 <p class="text-base roboto-flex azul-principal">¿Olvidaste tu contraseña? No hay problema. Ingresa tu correo electronico y recibirás un link para restablecerla</p>
                 <div class="pr-4">
                     <x-boton-volver url="{{ route('login') }}">Volver</x-boton-volver>

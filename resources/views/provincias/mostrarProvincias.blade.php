@@ -19,7 +19,7 @@
                     @foreach($provinciaBuenosAires as $provincia)
                     <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
-                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $provincia->nombre_provincia }}" />
                             <div class="p-4">
                                 <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
@@ -35,7 +35,7 @@
                     @foreach($provinciasNordeste as $provincia)
                     <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
-                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $provincia->nombre_provincia }}" />
                             <div class="p-4">
                                 <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
@@ -51,7 +51,7 @@
                     @foreach($provinciasNoroeste as $provincia)
                     <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
-                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $provincia->nombre_provincia }}" />
                             <div class="p-4">
                                 <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
@@ -67,7 +67,7 @@
                     @foreach($provinciasCuyo as $provincia)
                     <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
-                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $provincia->nombre_provincia }}" />
                             <div class="p-4">
                                 <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
@@ -83,7 +83,7 @@
                     @foreach($provinciasPampeanas as $provincia)
                     <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
-                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $provincia->nombre_provincia }}" />
                             <div class="p-4">
                                 <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>
@@ -99,7 +99,7 @@
                     @foreach($provinciasPatagonicas as $provincia)
                     <div class="card hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                         <a href="{{ route('provincia.introduccion', ['id' => $provincia->id_provincia ]) }}">
-                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                            <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $provincia->nombre_provincia }}" />
                             <div class="p-4">
                                 <h3 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $provincia->nombre_provincia }}</h3>
                             </div>

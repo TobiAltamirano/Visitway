@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Panel Administrador - Eliminar Actividad Alternativa')
+@section('title', 'Panel Administrador - Detalle Actividad Alternativa')
 
 @section('content')
 
@@ -26,7 +26,7 @@
                         <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                             <!-- Avatar del usuario correspondiente -->
                             <span class="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
-                                <img class="aspect-square h-full w-full" alt="@shadcn" src="{{ asset('storage/avatars/' . $actividadAlternativa->usuario->avatar ) }}" />
+                                <img class="aspect-square h-full w-full" alt="Avatar - Usuario" src="{{ asset('storage/avatars/' . $actividadAlternativa->usuario->avatar ) }}" />
                             </span>
                         </div>
                         <div class="grid gap-0.5">

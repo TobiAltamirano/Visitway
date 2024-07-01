@@ -94,7 +94,7 @@
             @foreach ($alojamientos as $alojamiento)
             <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                 <a href="{{ route('provincia.detalleAlojamiento', ['id' => $provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento, 'idTipoAlojamiento' => $alojamiento->tipo_alojamiento_id]) }}">
-                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $alojamiento->nombre_alojamiento }}" />
                     <div class="p-4">
                         <h2 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $alojamiento->nombre_alojamiento }}</h2>
                     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Actividades Alternativas Propias')
+@section('title', 'Actividades Alternativas')
 
 @section('content')
 
@@ -84,7 +84,7 @@
                         <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                             <!-- Avatar del usuario correspondiente -->
                             <span class="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
-                                <img class="aspect-square h-full w-full" alt="@shadcn" src="{{ asset('storage/avatars/' . $actividadAlternativa->usuario->avatar ) }}" />
+                                <img class="aspect-square h-full w-full" alt="Avatar - Usuario" src="{{ asset('storage/avatars/' . $actividadAlternativa->usuario->avatar ) }}" />
                             </span>
                         </div>
                         <div class="grid gap-0.5">
@@ -167,19 +167,19 @@
                     </div>
                     <div class="grid grid-cols-3 gap-2">
                         @if($actividadAlternativa->imagen1)
-                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Activity Image 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Actividad Imagen 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
                         @else
                             <img src="{{ asset('default-image-path.jpg') }}" alt="Default Image" class="rounded-lg object-cover w-full h-full" style="aspect-ratio: 300 / 200; object-fit: cover;" />
                         @endif
 
                         @if($actividadAlternativa->imagen2)
-                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Activity Image 2" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Actividad Imagen 2" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
                         @else
                             <!-- No se carga ninguna imagen -->
                         @endif
 
                         @if($actividadAlternativa->imagen3)
-                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Activity Image 3" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Actividad Imagen 3" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
                         @else
                             <!-- No se carga ninguna imagen -->
                         @endif

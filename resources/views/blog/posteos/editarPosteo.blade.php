@@ -79,7 +79,7 @@
                         <div class="space-y-2">
                             <label for="archivo" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen</label>
                             @if($posteo->imagen1 !== null)
-                            <img src="{{ asset('storage/' . $posteo->imagen1) }}" alt="Imagen Noticia - {{$posteo->titulo }}" class="mb-4">
+                            <img src="{{ asset('storage/' . $posteo->imagen1) }}" alt="Imagen Posteo - {{$posteo->titulo }}" class="mb-4">
                             @else
                             <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                             @endif

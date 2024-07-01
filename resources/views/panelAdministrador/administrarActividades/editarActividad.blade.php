@@ -37,7 +37,7 @@
                         <label for="imagen_actividad" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen de la actividad</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>
                         @if($actividad->imagen_actividad !== null)
-                        <img src="{{ asset('storage/' . $actividad->imagen_actividad) }}" alt="Imagen Noticia - {{ $actividad->titulo }}" class="mb-4">
+                        <img src="{{ asset('storage/' . $actividad->imagen_actividad) }}" alt="Imagen Actividad - {{ $actividad->titulo }}" class="mb-4">
                         @else
                         <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif

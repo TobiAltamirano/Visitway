@@ -23,7 +23,7 @@
         <div class="grid md:grid-cols-2 gap-8 items-start">
             <div class="grid gap-6">
                 <div>
-                    <img src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Province Image" width="600" height="400" class="rounded-lg object-cover w-full aspect-[3/2]" />
+                    <img src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $provincia->nombre_provincia }}" width="600" height="400" class="rounded-lg object-cover w-full aspect-[3/2]" />
                 </div>
                 <div class="grid gap-2">
                     <h2 class="text-3xl font-bold poppins-bold azul-principal">{{$provincia->nombre_provincia}}</h2>
@@ -38,7 +38,7 @@
                     <div class="linea-introduccion h-1 w-20 rounded"></div>
                     <div class="grid md:grid-cols-2 gap-4">
                         <div>
-                            <img src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Map of Mendoza" width="300" height="200" class="rounded-lg object-cover w-full aspect-[3/2]" />
+                            <img src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{$provincia->nombre_provincia}}" width="300" height="200" class="rounded-lg object-cover w-full aspect-[3/2]" />
                         </div>
                         <div>
                             <p class="roboto-flex azul-principal">

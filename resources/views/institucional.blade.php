@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Sobre Visitway')
 
 @section('content')
 <section>
@@ -14,15 +14,15 @@
         <section class="text-gray-600 body-font w-full" id="nuestro-equipo">
             <div class="container px-5 py-24 mx-auto">
                 <div class="flex flex-col text-center w-full mb-12">
-                    <h1 class="text-3xl title-font azul-principal poppins-semibold">Nuestro equipo</h1>
+                    <h2 class="text-3xl title-font azul-principal poppins-semibold">Nuestro equipo</h2>
                 </div>
                 <div class="flex flex-wrap justify-center -m-4">
                     <div class="p-4 lg:w-1/4 md:w-1/2">
                         <div class="h-full flex flex-col items-center text-center">
-                            <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/201x201">
+                            <img alt="Imagen - Lucia Riggio" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/201x201">
                             <div class="w-full">
-                                <h2 class="text-lg poppins-bold azul-principal">Lucía Riggio</h2>
-                                <h3 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñadora y desarroladora web</h3>
+                                <h3 class="text-lg poppins-bold azul-principal">Lucía Riggio</h3>
+                                <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñadora y desarroladora web</h4>
                                 <p class="mb-4">"El código que es más fácil de entender es más fácil de mantener"</p>
                                 <span class="inline-flex">
                                     <a class="text-gray-500">
@@ -46,10 +46,10 @@
                     </div>
                     <div class="p-4 lg:w-1/4 md:w-1/2">
                         <div class="h-full flex flex-col items-center text-center">
-                            <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/202x202">
+                            <img alt="Imagen - Tobias Altamirano" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/202x202">
                             <div class="w-full">
-                                <h2 class="text-lg poppins-bold azul-principal">Tobías Altamirano</h2>
-                                <h3 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñador y desarrolador web</h3>
+                                <h3 class="text-lg poppins-bold azul-principal">Tobías Altamirano</h3>
+                                <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñador y desarrolador web</h4>
                                 <p class="mb-4">"La mejor forma de predecir el futuro es implementarlo"</p>
                                 <span class="inline-flex">
                                     <a class="text-gray-500">
@@ -77,7 +77,7 @@
         <section class="text-gray-600 body-font" id="cooperaciones">
             <div class="container flex flex-wrap px-5 mx-auto items-center">
                 <div class="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
-                <h1 class="sm:text-3xl text-2xl poppins-bold mb-2 rojo-principal">Marcas que cooperan con Visitway</h1>
+                <h2 class="sm:text-3xl text-2xl poppins-bold mb-2 rojo-principal">Marcas que cooperan con Visitway</h2>
                 <div class="linea-seccion-4-index h-1 w-20 rounded mb-4"></div>
                 <p class="roboto-flex azul-principal text-base">Vistway se enorgullece de <span class="font-bold">colaborar con marcas reconocidas</span> a nivel nacional que comparten nuestra pasión por ofrecer experiencias turísticas excepcionales. Juntos, <span class="font-bold">trabajamos para crear viajes memorables</span> y promover destinos únicos en Argentina.</p>
                 </div>

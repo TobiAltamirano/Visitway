@@ -16,7 +16,7 @@
 
         <section class="flex flex-col items-center justify-center w-full py-8 md:py-16 lg:py-24">
             <div class="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-                <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="600" height="500" alt="Product Image" class="mx-auto w-full aspect-[3/2] overflow-hidden rounded-xl object-cover object-center" />
+                <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="600" height="500" alt="Patagonia Argentina Imagen" class="mx-auto w-full aspect-[3/2] overflow-hidden rounded-xl object-cover object-center" />
                 <div class="space-y-4 text-center lg:text-left">
                     <div class="space-y-2">
                         <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight poppins-medium azul-principal">

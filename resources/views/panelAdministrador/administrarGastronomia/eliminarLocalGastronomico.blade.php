@@ -33,7 +33,7 @@
     <section class="w-full py-12 flex justify-center">
         <div class="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             @if($localGastronomico->imagen_local_gastronomico !== null)
-            <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="550" height="400" alt="Activiti" class="mx-auto aspect-[9/6] overflow-hidden rounded-xl object-cover object-center sm:w-full" />
+            <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="550" height="400" alt="{{ $localGastronomico->nombre_local_gastronomico }}" class="mx-auto aspect-[9/6] overflow-hidden rounded-xl object-cover object-center sm:w-full" />
             <!-- <img src="{{ asset('storage/' . $localGastronomico->imagen_local_gastronomico) }}" alt="Imagen Noticia - {{$localGastronomico->nombre_actividad }}" class="card-img-top"> -->
             @else
             No se ha encontrado la imagen, puede que haya habido un error al cargarla. Porfavor, vuelve a intentarlo.

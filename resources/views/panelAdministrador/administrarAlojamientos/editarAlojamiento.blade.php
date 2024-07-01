@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Panel Administrador - Cargar Alojamiento')
+@section('title', 'Panel Administrador - Editar Alojamiento')
 
 @section('content')
 

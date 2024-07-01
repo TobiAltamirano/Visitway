@@ -79,7 +79,7 @@
                 <div class="group overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:shadow-md dark:bg-gray-950">
                     <div class="relative aspect-[4/3] overflow-hidden">
                         @if($posteo->imagen1 !== null)
-                        <img src="{{ asset('storage/' . $posteo->imagen1) }}" alt="Imagen Noticia - {{$posteo->titulo }}" width="320" height="240" class="h-full w-full object-cover transition-all" style="aspect-ratio: 320 / 240; object-fit: cover;">
+                        <img src="{{ asset('storage/' . $posteo->imagen1) }}" alt="Imagen Posteo - {{$posteo->titulo }}" width="320" height="240" class="h-full w-full object-cover transition-all" style="aspect-ratio: 320 / 240; object-fit: cover;">
                         @else
                         No se ha encontrado la imagen, puede que haya habido un error al cargarla. Porfavor, vuelve a intentarlo.
                         @endif
@@ -88,7 +88,7 @@
                         <div class="flex items-center gap-3">
                             <!-- Avatar del usuario correspondiente -->
                             <span class="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
-                                <img class="aspect-square h-full w-full" alt="@shadcn" src="{{ asset('storage/avatars/' . $posteo->usuario->avatar ) }}" />
+                                <img class="aspect-square h-full w-full" alt="Avatar - Usuario" src="{{ asset('storage/avatars/' . $posteo->usuario->avatar ) }}" />
                             </span>
                             <div>
                                 <div class="font-medium roboto-flex rojo-principal">{{ $posteo->usuario->name }}</div>

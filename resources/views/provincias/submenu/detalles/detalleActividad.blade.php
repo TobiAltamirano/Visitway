@@ -23,7 +23,7 @@
     <!-- Título e imagen -->
     <section class="w-full py-12 flex justify-center">
         <div class="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="550" height="400" alt="Activiti" class="mx-auto aspect-[9/6] overflow-hidden rounded-xl object-cover object-center sm:w-full" />
+            <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="550" height="400" alt="{{ $actividad->nombre_actividad }}" class="mx-auto aspect-[9/6] overflow-hidden rounded-xl object-cover object-center sm:w-full" />
             <div class="space-y-4 text-center lg:text-left">
                 <div class="space-y-2">
                     <h2 class="text-3xl poppins-bold rojo-principal md:text-4xl/tight">{{ $actividad->nombre_actividad }}</h2>

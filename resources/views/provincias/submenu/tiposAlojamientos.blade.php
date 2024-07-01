@@ -24,7 +24,7 @@
             @foreach ($tiposAlojamientos as $tipoAlojamiento)
             <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                 <a href="{{ route('provincia.alojamientos', ['id' => $provincia->id_provincia, 'idTipoAlojamiento' => $tipoAlojamiento->id_tipo_alojamiento]) }}">
-                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
+                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $tipoAlojamiento->nombre_tipo_alojamiento }}" />
                     <div class="p-4">
                         <h2 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $tipoAlojamiento->nombre_tipo_alojamiento }}</h2>
                     </div>
