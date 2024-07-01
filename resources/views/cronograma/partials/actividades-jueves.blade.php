@@ -1,5 +1,5 @@
 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
-  <h2 class="text-lg font-semibold mb-4 azul-principal poppins-regular">Jueves</h2>
+  <h2 class="text-lg font-semibold mb-4 azul-principal poppins-semibold">Jueves</h2>
   <ul class="space-y-4">
     @if (empty($actividadesJueves))
     <p class="roboto-flex rojo-principal">No hay actividades registradas</p>

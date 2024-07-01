@@ -51,7 +51,7 @@ class PosteosController extends Controller
         Posteo::create($data);
 
         return redirect('/blog/posteos')
-        -> with('status.message', 'la noticia ' . $data['titulo'] . ' se publicó con exito');
+        -> with('status.message', 'El posteo ' . $data['titulo'] . ' se publicó con exito');
     }
 
     public function formularioEdicionPosteo($id)

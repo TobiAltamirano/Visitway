@@ -72,7 +72,7 @@ class AdministradorController extends Controller
         }
 
         return redirect('/panel-administrador/alojamientos')
-        ->with('success', 'La noticia ' . $data['nombre_alojamiento'] . ' ha sido actualizada con éxito.');
+        ->with('success', 'El alojamiento ' . $data['nombre_alojamiento'] . ' ha sido actualizado con éxito.');
     }
 
     // Eliminar alojamiento
@@ -384,7 +384,7 @@ class AdministradorController extends Controller
 
         // Retornar la vista de lista de posteos con un mensaje de éxito
         return redirect('/panel-administrador/actividades-alternativas')
-            ->with('success', 'La act. alternativa ha sido eliminado con éxito.');
+            ->with('success', 'La actividad alternativa ha sido eliminada con éxito.');
     }
 
 

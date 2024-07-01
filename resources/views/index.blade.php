@@ -23,7 +23,7 @@
                             Deja de ser turista, <span class="rojo-principal">empieza a ser viajero</span>
                         </h2>
                         <p class="max-w-[600px] mx-auto lg:mx-0 text-base md:text-lg lg:text-sm xl:text-base dark:text-gray-400 azul-principal roboto-flex">
-                            En un mundo en constante movimiento, haz que las aventuras cobren vida y convierte la planificación de tus escapadas en una experiencia única. Estamos aquí para que cada viaje sea inolvidable.
+                            En un mundo en constante movimiento, <span class="font-bold">haz que las aventuras cobren vida</span> y convierte la planificación de tus escapadas en una experiencia única. Estamos aquí <span class="font-bold">para que cada viaje sea inolvidable</span>.
                         </p>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-2 min-[400px]:flex-row lg:items-start lg:justify-start">

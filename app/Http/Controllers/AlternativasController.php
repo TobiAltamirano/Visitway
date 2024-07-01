@@ -73,7 +73,7 @@ class AlternativasController extends Controller
         ActividadAlternativa::create($data);
 
         return redirect('/blog/actividades-alternativas')
-            ->with('status.message', 'la noticia ' . $data['titulo'] . ' se publicó con exito');
+            ->with('status.message', 'La actividad alternativa ' . $data['titulo'] . ' se publicó con exito');
     }
 
     public function formularioEdicionActividadAlternativa($id)
@@ -132,7 +132,7 @@ class AlternativasController extends Controller
 
         // Retornar la vista de formulario de edición con el posteo
         return redirect('/blog/actividades-alternativas')
-            ->with('success', 'El posteo ' . $actividadAlternativa->titulo . ' ha sido actualizado con éxito.');
+            ->with('success', 'La actividad alternativa ' . $actividadAlternativa->titulo . ' ha sido actualizada con éxito.');
     }
 
     public function confirmacionEliminacionActividadAlternativa(int $id)
@@ -180,7 +180,7 @@ class AlternativasController extends Controller
 
         // Retornar la vista de lista de posteos con un mensaje de éxito
         return redirect('/blog/actividades-alternativas')
-            ->with('success', 'El posteo ha sido eliminado con éxito.');
+            ->with('success', 'La actividad alternativa ha sido eliminada con éxito.');
     }
 
     public function mostrarActividadesAlternativasPropias()

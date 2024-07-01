@@ -359,7 +359,7 @@
                                 <p data-twe-toggle="modal" data-twe-target="#exampleModalScrollable">Términos y condiciones</p>
                             </li>
                             <li class="li-footer transform hover:scale-110 transition-transform duration-200"><a href="{{ url('/sobre-visitway') }}#nuestro-equipo">Nuestro equipo</a></li>
-                            <li class="li-footer transform hover:scale-110 transition-transform duration-200"><a href="{{ url('/sobre-visitway') }}#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                            <li class="li-footer transform hover:scale-110 transition-transform duration-200"><a href="{{ url('/sobre-visitway') }}#cooperaciones">Cooperaciones</a></li>
                         </div>
                     </ul>
                 </div>
