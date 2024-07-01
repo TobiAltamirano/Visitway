@@ -22,6 +22,165 @@
 
 <body>
     <header>
+        <nav class="navbar flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4" data-twe-navbar-ref>
+            <div class="flex w-full flex-wrap items-center justify-between px-3">
+                <!-- Hamburger button for mobile view -->
+                <button type="button" class="bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden azul-principal" data-twe-collapse-init data-twe-target="#navbarSupportedContent4" aria-controls="navbarSupportedContent4" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Hamburger icon -->
+                    <span class="logo [&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="#003049" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                        </svg>
+                    </span>
+                </button>
+                
+                <!-- Logo container -->
+                <div>
+                    <a href="#" class="mb-4 me-5 ms-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0">
+                        <img src="<?= url("storage/logotipos/isotipo_visitway.png"); ?>" style="height: 50px" alt="Logo Visitway" loading="lazy" />
+                    </a>
+                </div>
+
+                <!-- Collapsible navbar container -->
+                <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto" id="navbarSupportedContent4" data-twe-collapse-item>
+                    <!-- Left navigation links -->
+                    <ul class="list-style-none me-auto flex flex-col ps-0 lg:flex-row" data-twe-navbar-nav-ref>
+                        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                            <!-- Inicio link -->
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/"); ?>" data-twe-nav-link-ref>Inicio</a>
+                        </li>
+                        <!-- Provincias link -->
+                        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="{{ route('provincias.mostrar') }}" data-twe-nav-link-ref>Provincias</a>
+                        </li>
+                        <!-- Cronograma link -->
+                        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="{{ route('cronograma.mostrar') }}" data-twe-nav-link-ref>Cronograma</a>
+                        </li>
+                        <!-- Blog link -->
+                        <li class="relative mb-4 lg:mb-0 lg:pe-2" data-twe-dropdown-ref data-twe-dropdown-alignment="start">
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2 cursor-pointer" href="#" id="dropdownBlogLink" role="button" data-twe-dropdown-toggle-ref aria-expanded="false">
+                                Blog
+                            </a>
+                            <!-- Blog dropdown menu -->
+                            <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark" aria-labelledby="dropdownBlogLink" data-twe-dropdown-menu-ref>
+                                <li>
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('posteos.mostrar') }}" data-twe-dropdown-item-ref>Posteos</a>
+                                </li>
+                                <li>
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('alternativas.mostrar') }}" data-twe-dropdown-item-ref>Actividades Alternativas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Sobre Visitway link -->
+                        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="<?= url("/sobre-visitway"); ?>" data-twe-nav-link-ref>Sobre Visitway</a>
+                        </li>
+                        <li class="relative mb-4 lg:mb-0 lg:pe-2" data-twe-dropdown-ref data-twe-dropdown-alignment="start">
+                            <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2 cursor-pointer" href="#" id="dropdownPanelAdministradorLink" data-twe-dropdown-toggle-ref aria-expanded="false">
+                                Panel Administrador
+                            </a>
+                            <!-- PanelAdministrador dropdown menu -->
+                            <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark" aria-labelledby="dropdownPanelAdministradorLink" data-twe-dropdown-menu-ref>
+                                <li>
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.usuarios.mostrar') }}" data-twe-dropdown-item-ref>Usuarios</a>
+                                </li>
+                                <li>
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.actividades') }}" data-twe-dropdown-item-ref>Actividades</a>
+                                </li>
+                                <li>
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.alojamientos') }}" data-twe-dropdown-item-ref>Alojamientos</a>
+                                </li>
+                                <li>
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.locales_gastronomicos') }}" data-twe-dropdown-item-ref>Locales Gastronomicos</a>
+                                </li>
+                                <li>
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.posteos.mostrar') }}" data-twe-dropdown-item-ref>Posteos</a>
+                                </li>
+                                <li>
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('administrador.actividades-alternativas.mostrar') }}" data-twe-dropdown-item-ref>Actividades Alternativas</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right elements -->
+                <div class="relative flex items-center">
+                    <!-- Icon -->
+                    <a class="me-4 text-neutral-600 dark:text-white" href="{{ route('favoritos.mostrar') }}">
+                        <span class="[&>svg]:w-7">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                                <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                            </svg>
+                        </span>
+                    </a>
+
+                    <!-- First dropdown container -->
+                    <div class="relative" data-twe-dropdown-ref data-twe-dropdown-alignment="end">
+                        <!-- First dropdown trigger -->
+                        <a class="me-4 flex items-center text-neutral-600 dark:text-white" href="#" id="dropdownMenuButton1" role="button" data-twe-dropdown-toggle-ref aria-expanded="false">
+                            <!-- Dropdown trigger icon -->
+                            <span class="[&>svg]:w-7">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <!-- Notification counter -->
+                            <!-- <span class="absolute -mt-4 ms-2.5 rounded-full bg-danger px-[0.35em] py-[0.15em] text-[0.6rem] font-bold leading-none text-white">1</span> -->
+                        </a>
+                        <!-- First dropdown menu -->
+                        <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark" aria-labelledby="dropdownMenuButton1" data-twe-dropdown-menu-ref>
+                            <!-- First dropdown menu items -->
+                            <li>
+                                <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="#" data-twe-dropdown-item-ref>Action</a>
+                            </li>
+                            <li>
+                                <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="#" data-twe-dropdown-item-ref>Another action</a>
+                            </li>
+                            <li>
+                                <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="#" data-twe-dropdown-item-ref>Something else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                    @auth
+                    <!-- Second dropdown container -->
+                    <div class="relative" data-twe-dropdown-ref data-twe-dropdown-alignment="end">
+                        <!-- Second dropdown trigger -->
+                        <a class="flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none" href="#" id="dropdownMenuButton2" role="button" data-twe-dropdown-toggle-ref aria-expanded="false">
+                            <!-- User avatar -->
+                            <img src="{{ asset('storage/avatars/' . $user->avatar ) }}" class="rounded-full" style="height: 35px; width: 35px" alt="" loading="lazy" />
+                        </a>
+                        <!-- Second dropdown menu -->
+                        <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark" aria-labelledby="dropdownMenuButton2" data-twe-dropdown-menu-ref>
+                            <!-- Second dropdown menu items -->
+                            <li>
+                                <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('profile.edit') }}" data-twe-dropdown-item-ref>
+                                    {{ __('Perfil') }}
+                                </a>
+                            </li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a class="poppins-regular block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-zinc-200/60 focus:bg-zinc-200/60 focus:outline-none active:bg-zinc-200/60 active:no-underline dark:bg-surface-dark dark:text-white dark:hover:bg-neutral-800/25 dark:focus:bg-neutral-800/25 dark:active:bg-neutral-800/25" href="{{ route('logout') }}" data-twe-dropdown-item-ref onclick="event.preventDefault();
+                            this.closest('form').submit();">
+                                        {{ __('Cerrar sesión') }}
+                                    </a>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    @else
+                    <a class="poppins-medium text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2" href="{{ url('/login') }}">
+                        Iniciar sesión
+                    </a>
+                    @endauth
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <header>
         <nav class="navbar flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
             <div class="container-navbar flex w-full flex-wrap items-center justify-between px-3">
                 <!-- Hamburger button for mobile view -->
@@ -176,8 +335,8 @@
                 </div>
             </div>
         </nav>
-
     </header>
+
     <div class="fondo-rojo"></div>
     <div class="fondo-blanco">
 

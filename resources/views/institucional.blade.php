@@ -4,14 +4,14 @@
 
 @section('content')
 <section>
-    <div>
-        <section class="text-gray-600 body-font" id="nuestro-equipo">
+    <div class="flex flex-col items-center">
+        <section class="text-gray-600 body-font w-full" id="nuestro-equipo">
             <div class="container px-5 py-24 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
                     <h1 class="text-2xl font-medium title-font mb-4 text-gray-900">OUR TEAM</h1>
                     <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
                 </div>
-                <div class="flex flex-wrap -m-4">
+                <div class="flex flex-wrap justify-center -m-4">
                     <div class="p-4 lg:w-1/4 md:w-1/2">
                         <div class="h-full flex flex-col items-center text-center">
                             <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/201x201">
@@ -69,11 +69,11 @@
                 </div>
             </div>
         </section>
-        <section id="preguntas-frecuentes">
-            <div id="accordionExample">
+        <section id="preguntas-frecuentes" class="w-full">
+            <div id="accordionExample" class="w-full max-w-4xl mx-auto">
                 <div class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark">
                     <h2 class="mb-0" id="headingOne">
-                        <button class="group relative flex w-full items-center rounded-t-lg border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 " type="button" data-twe-collapse-init data-twe-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="group relative flex w-full items-center rounded-t-lg border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10" type="button" data-twe-collapse-init data-twe-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Accordion Item #1
                             <span class="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -82,46 +82,32 @@
                             </span>
                         </button>
                     </h2>
-                    <div id="collapseOne" class="!visible" data-twe-collapse-item data-twe-collapse-show aria-labelledby="headingOne" data-twe-parent="#accordionExample">
+                    <div id="collapseOne" class="!visible" data-twe-collapse-item data-twe-collapse-show>
                         <div class="px-5 py-4">
-                            <strong>This is the first item's accordion body.</strong> It is
-                            shown by default, until the collapse plugin adds the appropriate
-                            classes that we use to style each element. These classes control
-                            the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or
-                            overriding our default variables. It's also worth noting that just
-                            about any HTML can go within the <code>.accordion-body</code>,
-                            though the transition does limit overflow.
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                         </div>
                     </div>
                 </div>
-                <div class="border border-t-0 border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark">
+                <div class="border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark">
                     <h2 class="mb-0" id="headingTwo">
-                        <button class="group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 " type="button" data-twe-collapse-init data-twe-collapse-collapsed data-twe-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10" type="button" data-twe-collapse-init data-twe-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                             Accordion Item #2
-                            <span class="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6 ">
+                            <span class="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </span>
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="!visible hidden" data-twe-collapse-item aria-labelledby="headingTwo" data-twe-parent="#accordionExample">
+                    <div id="collapseTwo" class="!visible hidden" data-twe-collapse-item>
                         <div class="px-5 py-4">
-                            <strong>This is the second item's accordion body.</strong> It is
-                            hidden by default, until the collapse plugin adds the appropriate
-                            classes that we use to style each element. These classes control
-                            the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or
-                            overriding our default variables. It's also worth noting that just
-                            about any HTML can go within the <code>.accordion-body</code>,
-                            though the transition does limit overflow.
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                         </div>
                     </div>
                 </div>
-                <div class="rounded-b-lg border border-t-0 border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark">
-                    <h2 class="accordion-header mb-0" id="headingThree">
-                        <button class="data-[twe-collapse-collapsed] group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none data-[twe-collapse-collapsed]:rounded-b-lg dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary  dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10" type="button" data-twe-collapse-init data-twe-collapse-collapsed data-twe-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="rounded-b-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark">
+                    <h2 class="mb-0" id="headingThree">
+                        <button class="group relative flex w-full items-center rounded-b-lg border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10" type="button" data-twe-collapse-init data-twe-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                             Accordion Item #3
                             <span class="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -130,16 +116,9 @@
                             </span>
                         </button>
                     </h2>
-                    <div id="collapseThree" class="!visible hidden" data-twe-collapse-item aria-labelledby="headingThree" data-twe-parent="#accordionExample">
+                    <div id="collapseThree" class="!visible hidden" data-twe-collapse-item>
                         <div class="px-5 py-4">
-                            <strong>This is the third item's accordion body.</strong> It is
-                            hidden by default, until the collapse plugin adds the appropriate
-                            classes that we use to style each element. These classes control
-                            the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or
-                            overriding our default variables. It's also worth noting that just
-                            about any HTML can go within the <code>.accordion-body</code>,
-                            though the transition does limit overflow.
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                         </div>
                     </div>
                 </div>

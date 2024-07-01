@@ -9,6 +9,8 @@
 <link id="favicon-light" rel="icon" type="image/png" href="{{ asset('Fav-icon-positivo.png') }}">
 <title>Iniciar sesión - Visitway</title>
 
+@include('components.toast-notification')
+
 <div class="grid lg:grid-cols-2 h-screen">
     <div class="bg-[url('https://media.traveler.es/photos/6137759ed7c7024f9175f2c1/master/w_1600,c_limit/112125.jpg')] bg-cover bg-center hidden lg:block bg-opacity-70"></div>
     <div class="flex items-center justify-center p-4 md:p-8 background-contenedor">
