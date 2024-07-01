@@ -25,7 +25,7 @@
     <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($alojamientosFavoritos as $alojamiento)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <a href="{{ route('provincia.detalleAlojamiento', ['id' => $alojamiento->provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento]) }}" class="block">
+            <a href="{{ route('provincia.detalleAlojamiento', ['id' => $alojamiento->provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento, 'idTipoAlojamiento' => $alojamiento->tipo_alojamiento_id]) }}" class="block">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                 <div class="p-4">
                     <h4 class="rojo-principal poppins-medium text-center text-base">{{ $alojamiento->provincia->nombre_provincia }}</h4>
@@ -49,7 +49,7 @@
     <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($actividadesFavoritas as $actividad)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <a href="{{ route('provincia.detalleActividad', ['id' => $actividad->provincia->id_provincia, 'actividadId' => $actividad->id_actividad]) }}" class="block">
+            <a href="{{ route('provincia.detalleActividad', ['id' => $actividad->provincia->id_provincia, 'actividadId' => $actividad->id_actividad, 'idTipoActividad' => $actividad->tipo_actividad_id]) }}" class="block">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                 <div class="p-4">
                     <h4 class="rojo-principal poppins-medium text-center text-base">{{ $actividad->provincia->nombre_provincia }}</h4>
@@ -73,7 +73,7 @@
     <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($localesGastronomicosFavoritos as $localGastronomico)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <a href="{{ route('provincia.detalleGastronomia', ['id' => $localGastronomico->provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico]) }}" class="block">
+            <a href="{{ route('provincia.detalleGastronomia', ['id' => $localGastronomico->provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico, 'idTipoGastronomia' => $localGastronomico->tipo_gastronomia_id]) }}" class="block">
                 <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="Hollywood Sign on The Hill" />
                 <div class="p-4">
                     <h4 class="rojo-principal poppins-medium text-center text-base">{{ $localGastronomico->provincia->nombre_provincia }}</h4>

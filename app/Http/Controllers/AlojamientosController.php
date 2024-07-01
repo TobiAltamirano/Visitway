@@ -38,12 +38,13 @@ class AlojamientosController extends Controller
         ]);
     }
 
-    public function detalleAlojamiento($id, $idAlojamientos){
+    public function detalleAlojamiento($id, $idTipoAlojamiento, $idAlojamientos){
 
         $idUsuario = Auth::id();
 
         // Verificar si el alojamiento ya está en favoritos para este usuario
         $favoritoExistente = Favorito::where('id_usuario', $idUsuario)
+                                        ->where('id_favorito', $idAlojamientos)
                                        ->where('tipo_favorito', 'alojamiento')
                                        ->exists();
 
@@ -51,7 +52,10 @@ class AlojamientosController extends Controller
 
         $alojamiento = Alojamiento::findOrFail($idAlojamientos);
 
-        return view('provincias.submenu..detalles.detalleAlojamiento', compact('provincia', 'alojamiento', 'favoritoExistente'));
+        // Obtenemos el tipo de alojamiento para retornar al usuario atrás, de ser necesario
+        $tipoAlojamiento = TipoAlojamiento::findOrFail($idTipoAlojamiento);
+
+        return view('provincias.submenu.detalles.detalleAlojamiento', compact('provincia', 'alojamiento', 'favoritoExistente', 'tipoAlojamiento'));
     }
     
 }

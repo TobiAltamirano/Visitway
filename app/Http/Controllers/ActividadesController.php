@@ -39,12 +39,13 @@ class ActividadesController extends Controller
         ]);
     }
 
-    public function detalleActividad($id, $idActividades){
+    public function detalleActividad($id, $idTipoActividad, $idActividades){
 
         $idUsuario = Auth::id();
 
         // Verificar si el alojamiento ya está en favoritos para este usuario
         $favoritoExistente = Favorito::where('id_usuario', $idUsuario)
+                                        ->where('id_favorito', $idActividades)
                                         ->where('tipo_favorito', 'actividad')
                                         ->exists();
 
@@ -54,6 +55,9 @@ class ActividadesController extends Controller
         // Obtenemos la actividad específica
         $actividad = Actividad::findOrFail($idActividades);
 
-        return view('provincias.submenu.detalles.detalleActividad', compact('provincia', 'actividad', 'favoritoExistente'));
+        // Obtenemos el tipo de actividad para retornar al usuario atrás, de ser necesario
+        $tipoActividad = TipoActividad::findOrFail($idTipoActividad);
+
+        return view('provincias.submenu.detalles.detalleActividad', compact('provincia', 'actividad', 'favoritoExistente', 'tipoActividad'));
     }
 }

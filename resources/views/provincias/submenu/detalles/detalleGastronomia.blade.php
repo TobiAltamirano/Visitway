@@ -9,7 +9,7 @@
     @include('components.lineas-secundarias')
 
     <div class="flex justify-center mt-6 mb-6">
-        <x-boton-volver url="{{ url()->previous() }}">Volver</x-boton-volver>
+        <x-boton-volver url="{{ route('provincia.gastronomia', ['id' => $provincia->id_provincia, 'idTipoGastronomia' => $tipoGastronomia->id_tipo_gastronomia]) }}">Listado de locales gastronomicos</x-boton-volver>
     </div>
 
     <div class="flex justify-center mt-6 mb-6">

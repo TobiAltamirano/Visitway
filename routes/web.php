@@ -46,15 +46,15 @@ Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}', [\App\Http\Contr
     ->name('provincia.alojamientos');
 
 // Detalle del servicio - Alojamiento
-Route::get('/provincias/{id}/alojamientos/{alojamientoId}/detalle', [\App\Http\Controllers\AlojamientosController::class, 'detalleAlojamiento'])
+Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}/detalle/{alojamientoId}', [\App\Http\Controllers\AlojamientosController::class, 'detalleAlojamiento'])
     ->name('provincia.detalleAlojamiento');
 
 // Detalle del servicio - Actividad
-Route::get('/provincias/{id}/actividades/{actividadId}/detalle', [\App\Http\Controllers\ActividadesController::class, 'detalleActividad'])
+Route::get('/provincias/{id}/actividades/{idTipoActividad}/detalle/{actividadId}', [\App\Http\Controllers\ActividadesController::class, 'detalleActividad'])
     ->name('provincia.detalleActividad');
 
 // Detalle del servicio - Gastronomía
-Route::get('/provincias/{id}/gastronomia/{gastronomiaId}/detalle', [\App\Http\Controllers\GastronomiaController::class, 'detalleGastronomia'])
+Route::get('/provincias/{id}/gastronomia/{idTipoGastronomia}/detalle/{gastronomiaId}', [\App\Http\Controllers\GastronomiaController::class, 'detalleGastronomia'])
     ->name('provincia.detalleGastronomia');
 
     // Filtrado especial de alojamientos

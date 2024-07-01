@@ -38,12 +38,13 @@ class GastronomiaController extends Controller
         ]);
     }
     
-    public function detalleGastronomia($id, $idLocales_gastronomicos){
+    public function detalleGastronomia($id, $idTipoGastronomia, $idLocales_gastronomicos){
 
         $idUsuario = Auth::id();
 
         // Verificar si el alojamiento ya está en favoritos para este usuario
         $favoritoExistente = Favorito::where('id_usuario', $idUsuario)
+                                    ->where('id_favorito', $idLocales_gastronomicos)
                                     ->where('tipo_favorito', 'gastronomia')
                                     ->exists();
 
@@ -51,6 +52,9 @@ class GastronomiaController extends Controller
 
         $gastronomia = Gastronomia::findOrFail($idLocales_gastronomicos);
 
-        return view('provincias.submenu.detalles.detalleGastronomia', compact('provincia', 'gastronomia', 'favoritoExistente'));
+        // Obtenemos el tipo de gastronomia para retornar al usuario atrás, de ser necesario
+        $tipoGastronomia = TipoGastronomia::findOrFail($idTipoGastronomia);
+
+        return view('provincias.submenu.detalles.detalleGastronomia', compact('provincia', 'gastronomia', 'favoritoExistente', 'tipoGastronomia'));
     }
 }
