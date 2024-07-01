@@ -16,7 +16,7 @@
     <div class="flex items-center justify-center p-4 md:p-8 background-contenedor">
         <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full max-w-md background-form" data-v0-t="card">
             <div class="flex flex-col pt-6 pl-6 pr-6 space-y-1 items-center">
-                <h3 class="poppins-bold azul-principal whitespace-nowrap font-semibold tracking-tight text-2xl">Crear una cuenta</h3>
+                <h3 class="poppins-bold azul-principal whitespace-nowrap font-semibold tracking-tight text-2xl">Iniciar sesión</h3>
                 <p class="text-base roboto-flex azul-principal">Ingresa tus datos a continuación para comenzar</p>
                 <div class="pr-4">
                     <x-boton-volver url="{{ route('index') }}">Volver al inicio</x-boton-volver>
