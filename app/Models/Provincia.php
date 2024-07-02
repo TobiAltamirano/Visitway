@@ -28,7 +28,6 @@ class Provincia extends Model
         "flora_fauna",
         "historia",
         "id_caracteristicas_principales",
-        "id_datos_interesantes" 
+        "id_datos_interesantes"
     ];
-    
 }

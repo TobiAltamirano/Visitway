@@ -29,8 +29,8 @@
                     <div class="flex items-center gap-3">
                         <!-- Avatar del usuario correspondiente -->
                         <span class="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
-                                <img class="aspect-square h-full w-full" alt="Avatar - Usuario" src="{{ asset('storage/avatars/' . $posteo->usuario->avatar ) }}" />
-                            </span>
+                            <img class="aspect-square h-full w-full" alt="Avatar - Usuario" src="{{ asset('storage/avatars/' . $posteo->usuario->avatar ) }}" />
+                        </span>
                         <div>
                             <div class="font-medium roboto-flex rojo-principal">{{ $posteo->usuario->name }}</div>
                             <div class="text-xs azul-principal roboto-flex">{{ $posteo->created_at }}</div>

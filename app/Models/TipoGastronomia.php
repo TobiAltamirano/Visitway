@@ -9,10 +9,10 @@ class TipoGastronomia extends Model
 {
 
     // Nombre de la tabla en la base de datos
-    protected $table = 'tipos_gastronomia'; 
+    protected $table = 'tipos_gastronomia';
 
     // Nombre de la clave primaria
-    protected $primaryKey = 'id_tipo_gastronomia'; 
+    protected $primaryKey = 'id_tipo_gastronomia';
 
     // Campos que se pueden asignar de forma masiva
     protected $fillable = [
@@ -23,8 +23,9 @@ class TipoGastronomia extends Model
     /**
      * Define la relación con el modelo Gastronomia
      */
-    public function gastronomia(){
-        
+    public function gastronomia()
+    {
+
         return $this->hasMany(Gastronomia::class);
     }
 }

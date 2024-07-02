@@ -9,13 +9,13 @@
 
     @include('components.lineas-secundarias')
 
-    
+
     <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base rojo-principal roboto-flex mt-12">Ten cuidado, si eliminas el posteo, este no se podrá recuperar.
-        
-    @if($errors->any())
+
+        @if($errors->any())
     <div class="mb-3 text-center roboto-flex rojo-principal">Ha ocurrido un error al tratar de eliminar este posteo. Porfavor, intenta de nuevo mas tarde</div>
     @endif
-        
+
     <section class="w-full py-12 md:py-20 lg:py-12">
         <div class="container mx-auto px-4 md:px-6 flex justify-center">
             <div class="group overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:shadow-md dark:bg-gray-950 md:max-w-md lg:max-w-xs">
@@ -30,8 +30,8 @@
                     <div class="flex items-center gap-3">
                         <!-- Avatar del usuario correspondiente -->
                         <span class="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
-                                <img class="aspect-square h-full w-full" alt="Avatar - Usuario" src="{{ asset('storage/avatars/' . $posteo->usuario->avatar ) }}" />
-                            </span>
+                            <img class="aspect-square h-full w-full" alt="Avatar - Usuario" src="{{ asset('storage/avatars/' . $posteo->usuario->avatar ) }}" />
+                        </span>
                         <div>
                             <div class="font-medium roboto-flex rojo-principal">{{ $posteo->usuario->name }}</div>
                             <div class="text-xs azul-principal roboto-flex">{{ $posteo->created_at }}</div>

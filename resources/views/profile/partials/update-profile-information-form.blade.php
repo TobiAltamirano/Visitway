@@ -29,21 +29,21 @@
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
-                <div>
-                    <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
-                        Su dirección de correo electrónico no está verificada
+            <div>
+                <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
+                    Su dirección de correo electrónico no está verificada
 
-                        <button form="send-verification" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                            Haga clic aquí para volver a enviar el correo electrónico de verificación
-                        </button>
-                    </p>
+                    <button form="send-verification" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                        Haga clic aquí para volver a enviar el correo electrónico de verificación
+                    </button>
+                </p>
 
-                    @if (session('status') === 'verification-link-sent')
-                        <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
-                            Se ha enviado un nuevo enlace de verificación a su dirección de correo electrónico
-                        </p>
-                    @endif
-                </div>
+                @if (session('status') === 'verification-link-sent')
+                <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
+                    Se ha enviado un nuevo enlace de verificación a su dirección de correo electrónico
+                </p>
+                @endif
+            </div>
             @endif
         </div>
 
@@ -51,13 +51,7 @@
             <x-primary-button class="inline-flex h-10 w-full sm:w-auto items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 buton-1-cta roboto-flex">Guardar</x-primary-button>
 
             @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm celeste-secundario"
-                >Guardado</p>
+            <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)" class="text-sm celeste-secundario">Guardado</p>
             @endif
         </div>
     </form>

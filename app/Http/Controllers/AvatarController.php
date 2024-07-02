@@ -25,7 +25,7 @@ class AvatarController extends Controller
     {
         // Obtener el usuario actualmente autenticado
         $user = Auth::user();
-        
+
         // Obtener el nombre del nuevo avatar seleccionado
         $nuevoAvatar = $request->avatar;
 
@@ -35,5 +35,4 @@ class AvatarController extends Controller
         // Retornar la vista del perfil con un mensaje de éxito
         return redirect('/profile')->with('success', 'Avatar actualizado con éxito.');
     }
-
 }

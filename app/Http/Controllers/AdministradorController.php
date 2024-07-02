@@ -23,7 +23,8 @@ class AdministradorController extends Controller
     // Alojamientos
 
     // Mostrar
-    public function mostrarAlojamientos(){
+    public function mostrarAlojamientos()
+    {
 
         $alojamientos = Alojamiento::all();
 
@@ -31,7 +32,8 @@ class AdministradorController extends Controller
     }
 
     // Editar
-    public function editarAlojamiento(int $id){
+    public function editarAlojamiento(int $id)
+    {
 
         $alojamiento = Alojamiento::findOrFail($id);
 
@@ -41,7 +43,7 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarAlojamientos.editarAlojamiento', [
             'alojamiento' => $alojamiento,
             'provincias' => $provincias,
-            'tipoAlojamientos' => $tipoAlojamientos        
+            'tipoAlojamientos' => $tipoAlojamientos
         ]);
     }
 
@@ -52,12 +54,12 @@ class AdministradorController extends Controller
 
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
-        
+
         // Buscar la noticia por su ID
         $alojamiento = Alojamiento::findOrFail($id);
 
         //Upload de la imagen de las noticias
-        if($request->hasFile('file')){
+        if ($request->hasFile('file')) {
             // Guardamos el archivo en la carpeta "img"
             $data['imagen_alojamiento'] = $request->file('file')->store('imagenes');
             $oldCover = $alojamiento->imagen_alojamiento;
@@ -67,19 +69,19 @@ class AdministradorController extends Controller
         $alojamiento->update($data);
 
         // Borramos la imagen anterior si es necesario
-        if(isset($oldCover) && Storage::has($oldCover)) {
+        if (isset($oldCover) && Storage::has($oldCover)) {
             Storage::delete($oldCover);
         }
 
         return redirect('/panel-administrador/alojamientos')
-        ->with('success', 'El alojamiento ' . $data['nombre_alojamiento'] . ' ha sido actualizado con éxito.');
+            ->with('success', 'El alojamiento ' . $data['nombre_alojamiento'] . ' ha sido actualizado con éxito.');
     }
 
     // Eliminar alojamiento
     public function eliminarAlojamiento($id)
     {
         $alojamiento = Alojamiento::findOrFail($id);
-        
+
         return view('panelAdministrador.administrarAlojamientos.eliminarAlojamiento', [
             'alojamiento' => $alojamiento,
         ]);
@@ -116,7 +118,7 @@ class AdministradorController extends Controller
         // dd($request->all());
 
         Alojamiento::create($data);
-        
+
         return redirect('/panel-administrador/alojamientos')
             ->with('success', 'El alojamiento se ha creado correctamente.');
     }
@@ -133,7 +135,8 @@ class AdministradorController extends Controller
     // Actividades
 
     // Mostrar
-    public function mostrarActividades(){
+    public function mostrarActividades()
+    {
 
         $actividades = Actividad::all();
 
@@ -141,7 +144,8 @@ class AdministradorController extends Controller
     }
 
     // Editar
-    public function editarActividad(int $id){
+    public function editarActividad(int $id)
+    {
 
         $actividad = Actividad::findOrFail($id);
 
@@ -151,7 +155,7 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarActividades.editarActividad', [
             'actividad' => $actividad,
             'provincias' => $provincias,
-            'tipoActividades' => $tipoActividades        
+            'tipoActividades' => $tipoActividades
         ]);
     }
 
@@ -162,12 +166,12 @@ class AdministradorController extends Controller
 
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
-        
+
         // Buscar la actividad por su ID
         $actividad = Actividad::findOrFail($id);
 
         // Upload de la imagen de la actividad
-        if($request->hasFile('file')){
+        if ($request->hasFile('file')) {
             // Guardamos el archivo en la carpeta "img"
             $data['imagen_actividad'] = $request->file('file')->store('imagenes');
             $oldImage = $actividad->imagen_actividad;
@@ -177,19 +181,19 @@ class AdministradorController extends Controller
         $actividad->update($data);
 
         // Borramos la imagen anterior si es necesario
-        if(isset($oldImage) && Storage::has($oldImage)) {
+        if (isset($oldImage) && Storage::has($oldImage)) {
             Storage::delete($oldImage);
         }
 
         return redirect('/panel-administrador/actividades')
-        ->with('success', 'La actividad ' . $data['nombre_actividad'] . ' ha sido actualizada con éxito.');
+            ->with('success', 'La actividad ' . $data['nombre_actividad'] . ' ha sido actualizada con éxito.');
     }
 
     // Eliminar actividad
     public function eliminarActividad($id)
     {
         $actividad = Actividad::findOrFail($id);
-        
+
         return view('panelAdministrador.administrarActividades.eliminarActividad', [
             'actividad' => $actividad,
         ]);
@@ -224,7 +228,7 @@ class AdministradorController extends Controller
         }
 
         Actividad::create($data);
-        
+
         return redirect('/panel-administrador/actividades')
             ->with('success', 'La actividad se ha creado correctamente.');
     }
@@ -315,7 +319,7 @@ class AdministradorController extends Controller
         }
 
         Gastronomia::create($data);
-        
+
         return redirect('/panel-administrador/locales-gastronomicos')->with('success', 'El local gastronómico se ha creado correctamente.');
     }
 
@@ -328,20 +332,22 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarPosteos.mostrarPosteos', compact('posteos'));
     }
 
-    public function verPosteo(int $id){
+    public function verPosteo(int $id)
+    {
 
         $posteo = Posteo::findOrFail($id);
 
         return view('panelAdministrador.administrarPosteos.verPosteo', compact('posteo'));
     }
 
-    public function eliminarPosteo(int $id){
+    public function eliminarPosteo(int $id)
+    {
 
         // Buscamos el posteo por su ID
         $posteo = Posteo::findOrFail($id);
 
         // Si tiene una imagen, la borramos.
-        if($posteo->imagen1 !== null) {
+        if ($posteo->imagen1 !== null) {
             Storage::delete($posteo->imagen1);
         }
 
@@ -362,20 +368,22 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarAlternativas.mostrarActividadesAlternativas', compact('actividadesAlternativas'));
     }
 
-    public function verActividadAlternativa(int $id){
+    public function verActividadAlternativa(int $id)
+    {
 
         $actividadAlternativa = ActividadAlternativa::findOrFail($id);
 
         return view('panelAdministrador.administrarAlternativas.verActividadAlternativa', compact('actividadAlternativa'));
     }
 
-    public function eliminarActividadAlternativa(int $id){
+    public function eliminarActividadAlternativa(int $id)
+    {
 
         // Buscamos el posteo por su ID
         $actividadAlternativa = ActividadAlternativa::findOrFail($id);
 
         // Si tiene una imagen, la borramos.
-        if($actividadAlternativa->imagen1 !== null) {
+        if ($actividadAlternativa->imagen1 !== null) {
             Storage::delete($actividadAlternativa->imagen1);
         }
 
@@ -396,20 +404,22 @@ class AdministradorController extends Controller
 
     // USUARIOS
 
-    public function mostrarUsuarios(){
+    public function mostrarUsuarios()
+    {
 
         $usuarios = User::all();
 
         return view('panelAdministrador.administrarUsuarios.mostrarUsuarios', compact('usuarios'));
     }
 
-    public function eliminarUsuario($id){
+    public function eliminarUsuario($id)
+    {
 
         $usuario = User::findOrFail($id);
 
         $usuario->delete();
 
-        return redirect()->back()->with('success', 'El usuario'. $usuario['name'] . 'Ha sido eliminado con exito');
+        return redirect()->back()->with('success', 'El usuario' . $usuario['name'] . 'Ha sido eliminado con exito');
     }
 
 
@@ -432,5 +442,4 @@ class AdministradorController extends Controller
 
         return redirect()->back()->with('success', 'Privilegios de administrador eliminados con éxito.');
     }
-
 }

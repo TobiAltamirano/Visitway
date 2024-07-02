@@ -87,10 +87,10 @@
                         11. Ley Aplicable <br>
                         Estos Términos se regirán e interpretarán de acuerdo con las leyes de Argentina, sin dar efecto a sus principios de conflictos de leyes. Usted acepta someterse a la jurisdicción personal y exclusiva de los tribunales ubicados en Buenos Aires - CABA para resolver cualquier disputa que surja de estos Términos o del uso del Sitio o los Servicios.
                     </p>
-                        12. Disposiciones Generales <br>
-                        12.1. Acuerdo Completo: Estos Términos constituyen el acuerdo completo entre usted y Visitway con respecto al uso del Sitio y los Servicios, y reemplazan cualquier acuerdo anterior entre usted y Visitway. <br>
+                    12. Disposiciones Generales <br>
+                    12.1. Acuerdo Completo: Estos Términos constituyen el acuerdo completo entre usted y Visitway con respecto al uso del Sitio y los Servicios, y reemplazan cualquier acuerdo anterior entre usted y Visitway. <br>
 
-                        12.2. Renuncia e Independencia de las Cláusulas: La falta de Visitway para ejercer o hacer cumplir cualquier derecho o disposición de estos Términos no constituirá una renuncia a tal derecho o disposición. Si alguna disposición de estos Términos se considera inválida o inaplicable, las disposiciones restantes de estos Términos permanecerán en pleno vigor y efecto. <br>
+                    12.2. Renuncia e Independencia de las Cláusulas: La falta de Visitway para ejercer o hacer cumplir cualquier derecho o disposición de estos Términos no constituirá una renuncia a tal derecho o disposición. Si alguna disposición de estos Términos se considera inválida o inaplicable, las disposiciones restantes de estos Términos permanecerán en pleno vigor y efecto. <br>
                     <p class="mb-2">
                 </div>
 

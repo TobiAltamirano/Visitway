@@ -16,12 +16,12 @@ class FavoritosController extends Controller
     public function mostrarFavoritos()
     {
         $idUsuario = auth()->id();
-        
+
         // Obtener los IDs de los alojamientos favoritos del usuario
         $idsAlojamientosFavoritos = Favorito::where('id_usuario', $idUsuario)
             ->where('tipo_favorito', 'alojamiento')
             ->pluck('id_favorito');
-        
+
         // Obtener los alojamientos correspondientes a los IDs obtenidos
         $alojamientosFavoritos = Alojamiento::whereIn('id_alojamiento', $idsAlojamientosFavoritos)->get();
 
@@ -42,9 +42,12 @@ class FavoritosController extends Controller
 
         // Obtener las actividades correspondientes a los IDs obtenidos
         $localesGastronomicosFavoritos = Gastronomia::whereIn('id_local_gastronomico', $idsLocalesGastronomicosFavoritos)->get();
-        
+
         return view('favoritos.mostrarFavoritos', compact(
-            'alojamientosFavoritos', 'actividadesFavoritas', 'localesGastronomicosFavoritos'));
+            'alojamientosFavoritos',
+            'actividadesFavoritas',
+            'localesGastronomicosFavoritos'
+        ));
     }
 
     public function agregarFavoritos(Request $request, $id, $tipo)
@@ -54,9 +57,9 @@ class FavoritosController extends Controller
 
         // Verificar si el alojamiento ya está en favoritos
         $favoritoExistente = Favorito::where('id_usuario', $idUsuario)
-                                      ->where('id_favorito', $id)
-                                      ->where('tipo_favorito', $tipo)
-                                      ->exists();
+            ->where('id_favorito', $id)
+            ->where('tipo_favorito', $tipo)
+            ->exists();
 
         // Si el alojamiento no está en favoritos, agregarlo
         if (!$favoritoExistente) {
@@ -76,11 +79,10 @@ class FavoritosController extends Controller
 
         // Buscar y eliminar el favorito
         Favorito::where('id_usuario', $idUsuario)
-                ->where('id_favorito', $id)
-                ->where('tipo_favorito', $tipo)
-                ->delete();
+            ->where('id_favorito', $id)
+            ->where('tipo_favorito', $tipo)
+            ->delete();
 
         return back()->with('success', 'Eliminado de favoritos.');
     }
-
 }

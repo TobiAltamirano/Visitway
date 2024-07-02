@@ -19,13 +19,13 @@ class Gastronomia extends Model
     protected $fillable = [
         "nombre_local_gastronomico",
         "tipo_local_gastronomico",
-        "imagen_local_gastronomico", 
-        "horarios_local_gastronomico", 
-        "ubicacion_local_gastronomico", 
-        "contacto_local_gastronomico", 
-        "url_sitio_web_local_gastronomico", 
-        "tiene_descuentos_ofertas", 
-        "tiene_wifi", 
+        "imagen_local_gastronomico",
+        "horarios_local_gastronomico",
+        "ubicacion_local_gastronomico",
+        "contacto_local_gastronomico",
+        "url_sitio_web_local_gastronomico",
+        "tiene_descuentos_ofertas",
+        "tiene_wifi",
         "tiene_estacionamiento",
         "acepta_mascotas",
         "acepta_debito",
@@ -77,7 +77,8 @@ class Gastronomia extends Model
 
 
     // Relación con la tabla Provincias
-    public function provincia(){
+    public function provincia()
+    {
         // Pasamos por parametro el FQN, nombre de foreing key y owner key
         return $this->belongsTo(Provincia::class, 'provincia_id', 'id_provincia');
     }

@@ -14,11 +14,11 @@ class Favorito extends Model
      *
      * @var array
      */
-    
+
     // Nombre de la tabla
     protected $table = "favoritos";
 
-    
+
     // Asignamos nombre de la PK.
     protected $primaryKey = "id";
 
@@ -27,7 +27,7 @@ class Favorito extends Model
         'id_favorito',
         'tipo_favorito',
     ];
-    
+
     public function usuario()
     {
         return $this->belongsTo(User::class, 'id_usuario');

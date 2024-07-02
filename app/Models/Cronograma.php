@@ -11,7 +11,7 @@ class Cronograma extends Model
 
     // Nombre de la tabla
     protected $table = "cronograma";
-    
+
     // Asignamos nombre de la PK.
     protected $primaryKey = "id";
 

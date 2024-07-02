@@ -14,7 +14,7 @@
         <div class="container mx-auto max-w-4xl px-4 md:px-6">
             <div class="space-y-6">
                 <h2 class="text-3xl font-bold md:text-4xl roboto-flex azul-principal">Formulario de creación</h2>
-                
+
                 @if($errors->any())
                 <div class="mb-3 roboto-flex rojo-principal">Ha ocurrido uno o más errores en la validación. Porfavor, revisa los campos nuevamente.</div>
                 @endif

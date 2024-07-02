@@ -76,7 +76,8 @@ class Actividad extends Model
     ];
 
     // Relación con la tabla Provincias
-    public function provincia(){
+    public function provincia()
+    {
         // Pasamos por parametro el FQN, nombre de foreing key y owner key
         return $this->belongsTo(Provincia::class, 'provincia_id', 'id_provincia');
     }

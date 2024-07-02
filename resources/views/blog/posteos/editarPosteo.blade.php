@@ -18,7 +18,7 @@
                 @if($errors->any())
                 <div class="mb-3 roboto-flex rojo-principal">Ha ocurrido uno o más errores en la validación. Por favor, revisa los campos nuevamente.</div>
                 @endif
-                
+
                 <form action="{{ route('posteos.actualizar', $posteo->id) }}" method="post" enctype="multipart/form-data" class="space-y-4">
                     @csrf
                     <!-- Título input -->

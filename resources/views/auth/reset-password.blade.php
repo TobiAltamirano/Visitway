@@ -28,7 +28,7 @@
 
                 <div class="pl-6 pr-6 pb-6 space-y-4">
                     <div class="space-y-2">
-                
+
                         <label class="text-sm font-bold azul-principal roboto-flex" for="email" :value="__('Email')">
                             Email
                         </label>
@@ -40,7 +40,7 @@
                 <!-- Nueva contraseña -->
                 <div class="pl-6 pr-6 pb-6 space-y-4">
                     <div class="space-y-2">
-                
+
                         <label class="text-sm font-bold azul-principal roboto-flex" for="password" :value="__('Password')">
                             Nueva contraseña
                         </label>
@@ -52,11 +52,11 @@
                 <!-- Confirmar nueva contraseña -->
                 <div class="pl-6 pr-6 pb-6 space-y-4">
                     <div class="space-y-2">
-                
+
                         <label class="text-sm font-bold azul-principal roboto-flex" for="password_confirmation" :value="__('Confirm Password')">
                             Confirmar contraseña
                         </label>
-                        <input class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password"  />
+                        <input class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" />
                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 rojo-principal roboto-flex" />
                     </div>
                 </div>

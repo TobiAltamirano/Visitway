@@ -98,8 +98,8 @@ class CronogramaController extends Controller
 
         // Buscar la actividad por el ID y el ID del usuario autenticado
         $actividad = Cronograma::where('id', $id)
-                                ->where('id_usuario', $userId)
-                                ->first();
+            ->where('id_usuario', $userId)
+            ->first();
 
         // Verificar si la actividad existe y pertenece al usuario actual
         if ($actividad) {
@@ -118,8 +118,8 @@ class CronogramaController extends Controller
 
         // Buscar la actividad por el ID y el ID del usuario autenticado
         $actividad = Cronograma::where('id', $id)
-                                ->where('id_usuario', $userId)
-                                ->first();
+            ->where('id_usuario', $userId)
+            ->first();
 
         // Verificar si la actividad existe y pertenece al usuario actual
         if ($actividad) {
@@ -149,8 +149,8 @@ class CronogramaController extends Controller
 
         // Verificar si el usuario es el mismo que creó la actividad
         $actividadExistente = Cronograma::where('id', $id)
-                                        ->where('id_usuario', $userId)
-                                        ->first();
+            ->where('id_usuario', $userId)
+            ->first();
 
         if ($actividadExistente) {
             // Crear una nueva entrada en el cronograma con los detalles actualizados

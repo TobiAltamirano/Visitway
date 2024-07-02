@@ -9,10 +9,10 @@ class TipoAlojamiento extends Model
 {
 
     // Nombre de la tabla en la base de datos
-    protected $table = 'tipos_alojamientos'; 
+    protected $table = 'tipos_alojamientos';
 
     // Nombre de la clave primaria
-    protected $primaryKey = 'id_tipo_alojamiento'; 
+    protected $primaryKey = 'id_tipo_alojamiento';
 
     // Campos que se pueden asignar de forma masiva
     protected $fillable = [

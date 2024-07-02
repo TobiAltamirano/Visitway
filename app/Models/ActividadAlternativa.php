@@ -41,7 +41,7 @@ class ActividadAlternativa extends Model
         'imagen1' => 'required',
         // 'fecha_publicacion' => 'required',
     ];
-    
+
     public const MENSAJES_VALIDACION = [
         'titulo.required' => 'El título no puede quedar vacío.',
         'titulo.min' => 'El título debe tener al menos :min caracteres.',
@@ -51,7 +51,7 @@ class ActividadAlternativa extends Model
         'direccion.required' => 'Debes especificar la direccion',
         'imagen1.required' => 'Debes adjuntar al menos 1 (una) imagen'
         // 'fecha_publicacion.required' => 'La fecha de publicación no puede quedar vacía.',
-    ];    
+    ];
 
     /**
      * Obtiene el usuario que creó el post.

@@ -24,5 +24,4 @@ class AppServiceProvider extends ServiceProvider
             $view->with('user', auth()->user());
         });
     }
-
 }

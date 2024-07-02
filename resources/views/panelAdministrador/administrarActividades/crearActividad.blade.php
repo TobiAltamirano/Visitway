@@ -18,7 +18,7 @@
                 @if($errors->any())
                 <div class="mb-3 roboto-flex rojo-principal">Ha ocurrido uno o más errores en la validación. Porfavor, revisa los campos nuevamente.</div>
                 @endif
-                
+
                 <form action="{{ route('administrador.actividades.crear.proceso') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                     @csrf
 

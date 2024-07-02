@@ -18,7 +18,7 @@
                 @if($errors->any())
                 <div class="mb-3 roboto-flex rojo-principal">Ha ocurrido uno o más errores en la validación. Porfavor, revisa los campos nuevamente.</div>
                 @endif
-                
+
                 <form action="{{ route('administrador.locales_gastronomicos.editar.proceso', $localGastronomico->id_local_gastronomico) }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                     @csrf
 
@@ -46,8 +46,7 @@
                     <div class="space-y-2">
                         <label for="horarios_local_gastronomico" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Horarios de la local gastronómico</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>
-                        <input id="horarios_local_gastronomico" name="horarios_local_gastronomico" class="roboto-flex azul-principal relative m-0 block w-full min-w-0 flex-auto rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        value="{{ old('horarios_local_gastronomico', $localGastronomico->horarios_local_gastronomico) }}" @error('horarios_local_gastronomico') aria-describedby="error-horarios_local_gastronomico" aria-invalid="true" @enderror></input>
+                        <input id="horarios_local_gastronomico" name="horarios_local_gastronomico" class="roboto-flex azul-principal relative m-0 block w-full min-w-0 flex-auto rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" value="{{ old('horarios_local_gastronomico', $localGastronomico->horarios_local_gastronomico) }}" @error('horarios_local_gastronomico') aria-describedby="error-horarios_local_gastronomico" aria-invalid="true" @enderror></input>
                         @error('horarios_local_gastronomico')
                         <div class="roboto-flex rojo-principal text-sm mt-1" id="error-horarios_local_gastronomico">{{ $message }}</div>
                         @enderror

@@ -31,7 +31,7 @@ class Alojamiento extends Model
         "acepta_debito",
         "acepta_credito",
         "acepta_medios_digitales",
-        "provincia_id", 
+        "provincia_id",
         "tipo_alojamiento_id"
     ];
 
@@ -68,7 +68,8 @@ class Alojamiento extends Model
     ];
 
     // Relación con la tabla Provincias
-    public function provincia(){
+    public function provincia()
+    {
         // Pasamos por parametro el FQN, nombre de foreing key y owner key
         return $this->belongsTo(Provincia::class, 'provincia_id', 'id_provincia');
     }

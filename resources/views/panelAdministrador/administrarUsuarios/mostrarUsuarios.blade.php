@@ -39,19 +39,19 @@
                                 <!-- Si el usuario ya es administrador, mostrar botón para quitar privilegios -->
                                 <button type="submit" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10" data-twe-toggle="modal" data-twe-target="#quitarPrivilegiosModal{{ $usuario->id }}" data-twe-ripple-init data-twe-ripple-color="light">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 azul-principal roboto-flex" data-twe-toggle="tooltip" title="Quitar privilegios administrador">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="15" y1="9" x2="9" y2="15"></line>
-                                            <line x1="9" y1="9" x2="15" y2="15"></line>
-                                        </svg>
-                                        <span class="sr-only">Quitar privilegios</span>
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    </svg>
+                                    <span class="sr-only">Quitar privilegios</span>
                                 </button>
                                 @else
                                 <!-- Si el usuario no es administrador, mostrar botón para otorgar privilegios -->
                                 <button type="submit" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10" data-twe-toggle="modal" data-twe-target="#otorgarPrivilegiosModal{{ $usuario->id }}" data-twe-ripple-init data-twe-ripple-color="light">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" data-twe-toggle="tooltip" title="Otorgar privilegios administrador">
-                                            <path d="M3 11L6 6l3 5 3-6 3 6 3-5 3 5v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4z"></path>
-                                            <path d="M3 16h18"></path>
-                                            <path d="M6 21h12"></path>
+                                        <path d="M3 11L6 6l3 5 3-6 3 6 3-5 3 5v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4z"></path>
+                                        <path d="M3 16h18"></path>
+                                        <path d="M6 21h12"></path>
                                     </svg>
                                     <span class="sr-only">Otorgar privilegios</span>
                                 </button>
