@@ -65,6 +65,8 @@
         </div>
     </div>
 
+    {{ $localesGastronomicos->links('components.pagination') }}
+
 </section>
 
 @endsection

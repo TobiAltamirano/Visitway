@@ -20,7 +20,7 @@ class AlternativasController extends Controller
 
     public function mostrarActividadesAlternativas()
     {
-        $actividadesAlternativas = ActividadAlternativa::all();
+        $actividadesAlternativas = ActividadAlternativa::paginate(8);
 
         return view('blog.actividadesAlternativas.mostrarAlternativas', compact('actividadesAlternativas'));
     }
@@ -101,7 +101,7 @@ class AlternativasController extends Controller
         }
 
         // Validación de los datos, igual que la función createProcess
-        $request->validate(ActividadAlternativa::REGLAS_VALIDACION, ActividadAlternativa::MENSAJES_VALIDACION);
+        $request->validate(ActividadAlternativa::REGLAS_VALIDACION,             ActividadAlternativa::MENSAJES_VALIDACION);
 
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
@@ -189,7 +189,7 @@ class AlternativasController extends Controller
         $idUsuario = auth()->id();
 
         // Obtener solo las actividades alternativas del usuario autenticado
-        $actividadesAlternativas = ActividadAlternativa::where('id_usuario', $idUsuario)->get();
+        $actividadesAlternativas = ActividadAlternativa::where('id_usuario', $idUsuario)->paginate(8);
 
         return view('blog.actividadesAlternativas.mostrarAlternativasPropias', compact('actividadesAlternativas'));
     }

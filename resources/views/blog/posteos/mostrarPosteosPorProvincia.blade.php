@@ -103,7 +103,7 @@
                             {{ $posteo->contenido }}
                         </p>
                         <div class="flex items-center gap-2 mt-4">
-                        @if($posteo->id_usuario === auth()->id())
+                            @if($posteo->id_usuario === auth()->id())
                             <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent h-10 w-10 hover:text-accent-foreground hover:bg-gray-100 dark:hover:bg-gray-800">
                                 <a href="{{ route('posteos.editar', $posteo->id) }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-gray-500 dark:text-gray-400 azul-principal">
@@ -133,6 +133,8 @@
             </div>
         </div>
     </section>
+
+    {{ $posteos->links('components.pagination') }}
 
 </section>
 

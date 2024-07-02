@@ -65,6 +65,8 @@
         </div>
     </div>
 
+    {{ $actividades->links('components.pagination') }}
+
 </section>
 
 @endsection

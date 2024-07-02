@@ -13,25 +13,27 @@ use App\Models\Favorito;
 class ActividadesController extends Controller
 {
     // Mostrar todos los tipos de alojamiento
-    public function mostrarTiposActividades($id){
+    public function mostrarTiposActividades($id)
+    {
 
         $provincia = Provincia::findOrFail($id);
-        
+
         $tiposActividades = TipoActividad::all();
 
         return view('provincias.submenu.tiposActividades', ['tiposActividades' => $tiposActividades, 'provincia' => $provincia]);
     }
 
-    public function mostrarActividadesPorTipo($idProvincia, $idTipoActividad) {
+    public function mostrarActividadesPorTipo($idProvincia, $idTipoActividad)
+    {
         // Obtener la provincia
         $provincia = Provincia::findOrFail($idProvincia);
-    
+
         // Obtener las actividades de este tipo en esta provincia
         $actividades = Actividad::where('provincia_id', $idProvincia)
-                                    ->where('tipo_actividad_id', $idTipoActividad)
-                                    ->paginate(8);
-                                    
-    
+            ->where('tipo_actividad_id', $idTipoActividad)
+            ->paginate(8);
+
+
         return view('provincias.submenu.actividades', [
             'provincia' => $provincia,
             'actividades' => $actividades,
@@ -39,15 +41,16 @@ class ActividadesController extends Controller
         ]);
     }
 
-    public function detalleActividad($id, $idTipoActividad, $idActividades){
+    public function detalleActividad($id, $idTipoActividad, $idActividades)
+    {
 
         $idUsuario = Auth::id();
 
         // Verificar si el alojamiento ya está en favoritos para este usuario
         $favoritoExistente = Favorito::where('id_usuario', $idUsuario)
-                                        ->where('id_favorito', $idActividades)
-                                        ->where('tipo_favorito', 'actividad')
-                                        ->exists();
+            ->where('id_favorito', $idActividades)
+            ->where('tipo_favorito', 'actividad')
+            ->exists();
 
         // Obtenemos la provincia específica
         $provincia = Provincia::findOrFail($id);

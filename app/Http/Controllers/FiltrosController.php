@@ -39,7 +39,7 @@ class FiltrosController extends Controller
         }
 
         // Obtener los alojamientos filtrados
-        $alojamientos = $query->get();
+        $alojamientos = $query->paginate(8);
 
         // Devolver la vista con los alojamientos filtrados y los filtros activos
         return view('provincias.submenu.filtros.filtrosAlojamientos', [
@@ -74,7 +74,7 @@ class FiltrosController extends Controller
         }
 
         // Obtener las actividades filtradas
-        $actividades = $query->get();
+        $actividades = $query->paginate(8);
 
         // Devolver la vista con las actividades filtradas y los filtros activos
         return view('provincias.submenu.filtros.filtrosActividades', [
@@ -109,7 +109,7 @@ class FiltrosController extends Controller
         }
 
         // Obtener los locales gastronómicos filtrados
-        $localesGastronomicos = $query->get();
+        $localesGastronomicos = $query->paginate(8);
 
         // Devolver la vista con los locales gastronómicos filtrados y los filtros activos
         return view('provincias.submenu.filtros.filtrosGastronomia', [
@@ -122,7 +122,7 @@ class FiltrosController extends Controller
     public function filtrarPosteos(Request $request)
     {
         $provinciasSeleccionadas  = $request->input('provincias');
-        $posteos = Posteo::whereIn('provincia', $provinciasSeleccionadas)->get();
+        $posteos = Posteo::whereIn('provincia', $provinciasSeleccionadas)->paginate(8);
 
         return view('blog.posteos.mostrarPosteosPorProvincia', compact('posteos', 'provinciasSeleccionadas'));
     }
@@ -130,7 +130,7 @@ class FiltrosController extends Controller
     public function filtrarActividadesAlternativas(Request $request)
     {
         $provinciasSeleccionadas  = $request->input('provincias');
-        $actividadesAlternativas = ActividadAlternativa::whereIn('provincia', $provinciasSeleccionadas)->get();
+        $actividadesAlternativas = ActividadAlternativa::whereIn('provincia', $provinciasSeleccionadas)->paginate(8);
 
         return view('blog.actividadesAlternativas.mostrarAlternativasPorProvincia', compact('actividadesAlternativas', 'provinciasSeleccionadas'));
     }

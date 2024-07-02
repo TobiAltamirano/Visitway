@@ -104,6 +104,8 @@
         </div>
     </div>
 
+    {{ $alojamientos->links('components.pagination') }}
+
 </section>
 
 @endsection

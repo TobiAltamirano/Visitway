@@ -104,7 +104,7 @@
         </div>
     </div>
 
-    {{ $actividades->links() }}
+    {{ $actividades->links('components.pagination') }}
 
 </section>
 

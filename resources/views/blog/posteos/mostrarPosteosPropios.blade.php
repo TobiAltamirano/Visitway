@@ -88,6 +88,9 @@
             </div>
         </div>
     </section>
+
+    {{ $posteos->links('components.pagination') }}
+
     @endif
 
 </section>

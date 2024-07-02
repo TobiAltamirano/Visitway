@@ -1,22 +1,22 @@
 /* Autenticación */
 
-    /* Registro */ /* Logueo */
+/* Registro */ /* Logueo */
 
-    .background-contenedor{
-        background-color: var(--azul-principal) !important;
-    }
+.background-contenedor {
+    background-color: var(--azul-principal) !important;
+}
 
-    .background-form{
-        background-color: var(--fondo-institucional) !important;
-        border: none !important;
-    }
+.background-form {
+    background-color: var(--fondo-institucional) !important;
+    border: none !important;
+}
 
-    .boton-registro{
-        background-color: var(--azul-principal) !important;
-        color: var(--blanco-institucional);
-    }
+.boton-registro {
+    background-color: var(--azul-principal) !important;
+    color: var(--blanco-institucional);
+}
 
-    .boton-registro:hover{
-        background-color: var(--celeste-secundario) !important;
-        color: var(--azul-principal);
-    }
+.boton-registro:hover {
+    background-color: var(--celeste-secundario) !important;
+    color: var(--azul-principal);
+}

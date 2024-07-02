@@ -28,7 +28,7 @@
     @else
     <!-- Modal Imagen Actividad Alternativa -->
     @include('components.modal-imagen-alternativas')
-    
+
     <section class="w-full py-12 md:py-20 lg:py-12">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 flex justify-center">
@@ -121,21 +121,21 @@
                     </div>
                     <div class="grid grid-cols-3 gap-2">
                         @if($actividadAlternativa->imagen1)
-                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Actividad Imagen 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Actividad Imagen 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
                         @else
-                            <img src="{{ asset('default-image-path.jpg') }}" alt="Default Image" class="rounded-lg object-cover w-full h-full" style="aspect-ratio: 300 / 200; object-fit: cover;" />
+                        <img src="{{ asset('default-image-path.jpg') }}" alt="Default Image" class="rounded-lg object-cover w-full h-full" style="aspect-ratio: 300 / 200; object-fit: cover;" />
                         @endif
 
                         @if($actividadAlternativa->imagen2)
-                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Actividad Imagen 2" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Actividad Imagen 2" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
                         @else
-                            <!-- No se carga ninguna imagen -->
+                        <!-- No se carga ninguna imagen -->
                         @endif
 
                         @if($actividadAlternativa->imagen3)
-                            <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Actividad Imagen 3" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
+                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Actividad Imagen 3" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
                         @else
-                            <!-- No se carga ninguna imagen -->
+                        <!-- No se carga ninguna imagen -->
                         @endif
                     </div>
                 </div>
@@ -143,6 +143,11 @@
             </div>
         </div>
     </section>
+
+    {{ $actividadesAlternativas->links('components.pagination') }}
+
     @endif
+
+
 
     @endsection

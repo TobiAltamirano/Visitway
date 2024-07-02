@@ -77,40 +77,40 @@
         <section class="text-gray-600 body-font" id="cooperaciones">
             <div class="container flex flex-wrap px-5 mx-auto items-center">
                 <div class="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
-                <h2 class="sm:text-3xl text-2xl poppins-bold mb-2 rojo-principal">Marcas que cooperan con Visitway</h2>
-                <div class="linea-seccion-4-index h-1 w-20 rounded mb-4"></div>
-                <p class="roboto-flex azul-principal text-base">Vistway se enorgullece de <span class="font-bold">colaborar con marcas reconocidas</span> a nivel nacional que comparten nuestra pasión por ofrecer experiencias turísticas excepcionales. Juntos, <span class="font-bold">trabajamos para crear viajes memorables</span> y promover destinos únicos en Argentina.</p>
+                    <h2 class="sm:text-3xl text-2xl poppins-bold mb-2 rojo-principal">Marcas que cooperan con Visitway</h2>
+                    <div class="linea-seccion-4-index h-1 w-20 rounded mb-4"></div>
+                    <p class="roboto-flex azul-principal text-base">Vistway se enorgullece de <span class="font-bold">colaborar con marcas reconocidas</span> a nivel nacional que comparten nuestra pasión por ofrecer experiencias turísticas excepcionales. Juntos, <span class="font-bold">trabajamos para crear viajes memorables</span> y promover destinos únicos en Argentina.</p>
                 </div>
                 <div class="flex flex-col md:w-1/2 md:pl-12">
                     <nav class="flex flex-wrap list-none -mb-1 roboto-flex azul-principal font-medium">
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="azul-principal">Aerolíneas Argentinas</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="azul-principal">YPF</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="azul-principal">Quilmes</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="azul-principal">Glovo Argentina</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="azul-principal">Despegar.com</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="azul-principal">Mercado Libre</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="azul-principal">LATAM Airlines Argentina</a>
-                    </li>
-                    <li class="lg:w-1/3 mb-1 w-1/2">
-                        <a class="azul-principal">Claro Argentina</a>
-                    </li>
+                        <li class="lg:w-1/3 mb-1 w-1/2">
+                            <a class="azul-principal">Aerolíneas Argentinas</a>
+                        </li>
+                        <li class="lg:w-1/3 mb-1 w-1/2">
+                            <a class="azul-principal">YPF</a>
+                        </li>
+                        <li class="lg:w-1/3 mb-1 w-1/2">
+                            <a class="azul-principal">Quilmes</a>
+                        </li>
+                        <li class="lg:w-1/3 mb-1 w-1/2">
+                            <a class="azul-principal">Glovo Argentina</a>
+                        </li>
+                        <li class="lg:w-1/3 mb-1 w-1/2">
+                            <a class="azul-principal">Despegar.com</a>
+                        </li>
+                        <li class="lg:w-1/3 mb-1 w-1/2">
+                            <a class="azul-principal">Mercado Libre</a>
+                        </li>
+                        <li class="lg:w-1/3 mb-1 w-1/2">
+                            <a class="azul-principal">LATAM Airlines Argentina</a>
+                        </li>
+                        <li class="lg:w-1/3 mb-1 w-1/2">
+                            <a class="azul-principal">Claro Argentina</a>
+                        </li>
                     </nav>
                 </div>
             </div>
-            </section>
+        </section>
     </div>
 </section>
 
