@@ -87,3 +87,24 @@
     background-color: var(--azul-principal) !important;
     color: var(--blanco-institucional) !important;
 }
+
+/* Modal compartir */
+
+.share-btn {
+    border-radius: 50%;
+    appearance: none;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 6px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background: var(--celeste-secundario);
+}
+
+.share-btn:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 12px 24px;
+}

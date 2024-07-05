@@ -20,6 +20,8 @@
 
     @include('components.toast-notification')
 
+    <x-modal-compartir></x-modal-compartir>
+
     <!-- Título e imagen -->
     <section class="w-full py-12 flex justify-center">
         <div class="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
