@@ -3,7 +3,6 @@
 /* Primer Sección */
 
 .p-superior-index {
-    padding-top: 3rem;
     font-size: x-large;
     font-weight: bold;
     text-align: center;
@@ -13,7 +12,7 @@
 .h1-index {
     text-align: center;
     color: var(--azul-principal);
-    font-size: 70px;
+    font-size: 2.25rem;
 }
 
 .p-index {

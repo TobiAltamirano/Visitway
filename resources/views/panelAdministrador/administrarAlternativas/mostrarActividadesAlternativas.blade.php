@@ -11,7 +11,7 @@
 
     @include('components.toast-notification')
 
-    <h2 class="text-2xl font-bold azul-principal roboto-flex mt-12 mb-6 flex justify-center">Control de actividades alternativas</h2>
+    <h2 class="text-2xl text-center font-bold azul-principal roboto-flex mt-12 mb-6 flex justify-center">Control de actividades alternativas</h2>
 
     <div class="overflow-x-auto roboto-flex azul-principal">
         <div class="relative w-full overflow-auto">

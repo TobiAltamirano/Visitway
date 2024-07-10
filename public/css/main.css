@@ -141,7 +141,7 @@ header {
     color: var(--rojo-principal) !important;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     /* Aquí van los estilos específicos para pantallas menores a 1023px */
     .navbar {
         margin-top: 1rem;

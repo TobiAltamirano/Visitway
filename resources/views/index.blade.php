@@ -7,8 +7,11 @@
 <section>
     <div>
         <div>
-            <p class="p-superior-index poppins-medium">Te damos la bienvenida a:</p>
-            <h1 class="h1-index poppins-medium">Visitway</h1>
+            <div class="flex flex-col md:flex-row pt-14 gap-2 justify-center">
+                <p class="text-center text-3xl font-bold md:text-4xl/tight poppins-medium rojo-principal">Te damos la bienvenida a</p>
+                <h1 class="text-center text-3xl font-bold md:text-4xl/tight poppins-medium azul-principal">Visitway</h1>
+            </div>
+            <p class="text-center text-lg font-medium roboto-flex azul-principal pt-2 mx-4 md:mx-0">Tu guía definitiva para explorar y disfrutar de las maravillas turísticas del país</p>
 
             @include('components.lineas-secundarias')
 

@@ -54,6 +54,11 @@
     background-color: var(--azul-principal);
 }
 
+.linea-introduccion-2 {
+    margin-bottom: 0.4rem;
+    background-color: var(--rojo-principal);
+}
+
 /* Filtrado */
 
 .filtros-boton {
