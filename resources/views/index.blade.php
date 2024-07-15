@@ -58,7 +58,7 @@
                         <div class="flex relative">
                             <img alt="Río cristalino Córdoba" class="img-seccion-2-index absolute inset-0 w-full h-full object-cover object-center" src="<?= url("storage/fotografias/img-1-index.JPG"); ?>">
                             <div class="px-8 py-10 relative z-10 w-full border-4 div-seccion-2-index opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                                <p class="rojo-principal tracking-widest text-sm title-font mb-1 poppins-medium">Córdoba</p>
+                                <p class="blanco-institucional tracking-widest text-sm title-font mb-1 poppins-regular">Córdoba</p>
                                 <h4 class="poppins-medium title-font text-lg font-semibold mb-3">Ríos Cristalinos</h4>
                                 <p class="leading-relaxed roboto-flex">Los ríos y espejos de agua más cristalinos de la Provincia, nos acostumbran a estas bellas postales.</p>
                             </div>
@@ -68,7 +68,7 @@
                         <div class="flex relative">
                             <img alt="Perito moreno Santa Cruz" class="img-seccion-2-index absolute inset-0 w-full h-full object-cover object-center" src="<?= url("storage/fotografias/img-2-index.jpg"); ?>">
                             <div class="px-8 py-10 relative z-10 w-full border-4 div-seccion-2-index opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                                <p class="rojo-principal tracking-widest text-sm title-font mb-1 poppins-medium">Santa Cruz</p>
+                                <p class="blanco-institucional tracking-widest text-sm title-font mb-1 poppins-regular">Santa Cruz</p>
                                 <h4 class="poppins-medium title-font text-lg font-semibold mb-3">Glaciar Perito Moreno</h4>
                                 <p class="leading-relaxed">Uno de los campos de hielo más bellos y accesibles de todo el planeta, una experiencia innolvidable.</p>
                             </div>
@@ -78,7 +78,7 @@
                         <div class="flex relative">
                             <img alt="Cerro siete colores Jujuy" class="img-seccion-2-index absolute inset-0 w-full h-full object-cover object-center" src="<?= url("storage/fotografias/img-3-index.jpg"); ?>">
                             <div class="px-8 py-10 relative z-10 w-full border-4 div-seccion-2-index opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                                <p class="rojo-principal tracking-widest text-sm title-font mb-1 poppins-medium">Jujuy</p>
+                                <p class="blanco-institucional tracking-widest text-sm title-font mb-1 poppins-regular">Jujuy</p>
                                 <h4 class="poppins-medium title-font text-lg font-semibold mb-3">Cerro de Siete Colores</h4>
                                 <p class="leading-relaxed">Paisaje jujeño y protector del único lugar que sigue siendo un pueblo en la Quebrada Patrimonial.</p>
                             </div>
@@ -88,7 +88,7 @@
                         <div class="flex relative">
                             <img alt="Ruta de los siete lagos Río Negro" class="img-seccion-2-index absolute inset-0 w-full h-full object-cover object-center" src="<?= url("storage/fotografias/img-4-index.jpg"); ?>">
                             <div class="px-8 py-10 relative z-10 w-full border-4 div-seccion-2-index opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                                <p class="rojo-principal tracking-widest text-sm title-font mb-1 poppins-medium">Río Negro</p>
+                                <p class="blanco-institucional tracking-widest text-sm title-font mb-1 poppins-regular">Río Negro</p>
                                 <h4 class="poppins-medium title-font text-lg font-semibold mb-3">Ruta de los Siete Lagos</h4>
                                 <p class="leading-relaxed">Uno de los recorridos más hermosos y emocionantes para realizar en la Patagonia Argentina.</p>
                             </div>
@@ -98,7 +98,7 @@
                         <div class="flex relative">
                             <img alt="Garganta del diablo Misiones" class="img-seccion-2-index absolute inset-0 w-full h-full object-cover object-center" src="<?= url("storage/fotografias/img-5-index.png"); ?>">
                             <div class="px-8 py-10 relative z-10 w-full border-4 div-seccion-2-index opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                                <p class="rojo-principal tracking-widest text-sm title-font mb-1 poppins-medium">Misiones</p>
+                                <p class="blanco-institucional tracking-widest text-sm title-font mb-1 poppins-regular">Misiones</p>
                                 <h4 class="poppins-medium title-font text-lg font-semibold mb-3">La Garganta del Diablo</h4>
                                 <p class="leading-relaxed">El salto de mayor altura de las cascadas del río Iguazú, las cataratas de mayor caudal del mundo.</p>
                             </div>
@@ -108,7 +108,7 @@
                         <div class="flex relative">
                             <img alt="Nahuel Huapi Río Negro" class="img-seccion-2-index absolute inset-0 w-full h-full object-cover object-center" src="<?= url("storage/fotografias/img-6-index.jpg"); ?>">
                             <div class="px-8 py-10 relative z-10 w-full border-4 div-seccion-2-index opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                                <p class="rojo-principal tracking-widest text-sm title-font mb-1 poppins-medium">Río Negro</p>
+                                <p class="blanco-institucional tracking-widest text-sm title-font mb-1 poppins-regular">Río Negro</p>
                                 <h4 class="poppins-medium title-font text-lg font-semibold mb-3">Lago Nahuel Huapí</h4>
                                 <p class="leading-relaxed">Este hermoso atardecer natural en el río, brinda amplias oportunidades de aventuras al aire libre.</p>
                             </div>
@@ -122,13 +122,17 @@
             <div class="container px-5 py-24 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
                     <p class="text-xs text-indigo-500 tracking-widest font-bold title-font mb-1 roboto-flex rojo-secundario">TU EXPERIENCIA COMPLETA</p>
-                    <h2 class="sm:text-3xl text-2xl title-font text-gray-900 poppins-semibold">Descubre lo que tenemos reservado</h2>
+                    <h2 class="sm:text-3xl text-2xl title-font text-gray-900 poppins-semibold">Descubre lo que tenemos preparado</h2>
                 </div>
                 <div class="flex flex-wrap -m-4">
                     <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
                         <div class="w-20 h-20 inline-flex items-center justify-center rounded-full div-icono-seccion-3-index text-indigo-500 mb-5 flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon-seccion-3-index">
-                                <path fill="#780000" d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z" />
+                            <svg width="215px" height="215px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-cronograma-seccion-3-index">
+                                <g id=" SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M3 10H21M7 3V5M17 3V5M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="#780000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
                             </svg>
                         </div>
                         <div class="flex-grow">
@@ -149,7 +153,7 @@
                         </div>
                         <div class="flex-grow">
                             <h3 class="poppins-semibold text-gray-900 text-lg title-font mb-3">Posteos de usuarios</h3>
-                            <p class="leading-relaxed text-base roboto-flex azul-principal">Enterate de las experiencias y recuerdos de otros viajeros, publica tus aventuras en nuestro blog.</p>
+                            <p class="leading-relaxed text-base roboto-flex azul-principal">Entérate de las experiencias y recuerdos de otros viajeros, publica tus aventuras en nuestro blog.</p>
                             <a href="{{ route('posteos.mostrar') }}" class="mt-3 text-indigo-500 inline-flex items-center hover:font-bold rojo-principal">Conocer más
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>

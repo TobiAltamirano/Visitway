@@ -8,7 +8,7 @@
 
   <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Cronograma</h1>
 
-  <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base azul-principal roboto-flex">Personaliza tus rutina de viaje y anota todas tus aventuras</p>
+  <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base azul-principal roboto-flex">Personaliza tu rutina de viaje y anota todas tus aventuras</p>
 
   @include('components.lineas-secundarias')
 

@@ -58,7 +58,7 @@
                             <label class="text-sm font-bold azul-principal roboto-flex" for="password_confirmation">
                                 Confirmar contraseña
                             </label>
-                            <input class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Reingresar tu contraseña" id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" />
+                            <input class="roboto-flex azul-principal flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Reingresa tu contraseña" id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" />
                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 rojo-principal roboto-flex" />
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         </x-primary-button>
 
                         <a class="text-sm pt-3 font-medium azul-principal roboto-flex text-gray-600 dark:text-gray-400 hover:underline dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                            {{ __('Ya estás registrado? Iniciar sesión') }}
+                            ¿Ya estás registrado? Iniciar sesión
                         </a>
                     </div>
                 </form>

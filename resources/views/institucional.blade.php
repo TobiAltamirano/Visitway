@@ -6,7 +6,7 @@
 <section>
     <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Acerca de Visitway</h1>
 
-    <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base azul-principal roboto-flex">Descubre a nuestro equipo y conoce más acerca de nuestra marca.</p>
+    <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base azul-principal roboto-flex">Conoce nuestro equipo y descubre más acerca de nuestra marca</p>
 
     @include('components.lineas-secundarias')
 
@@ -23,24 +23,7 @@
                             <div class="w-full">
                                 <h3 class="text-lg poppins-bold azul-principal">Lucía Riggio</h3>
                                 <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñadora y desarroladora web</h4>
-                                <p class="mb-4">"El código que es más fácil de entender es más fácil de mantener"</p>
-                                <span class="inline-flex">
-                                    <a class="text-gray-500">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                                        </svg>
-                                    </a>
-                                    <a class="ml-2 text-gray-500">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                                        </svg>
-                                    </a>
-                                    <a class="ml-2 text-gray-500">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                                        </svg>
-                                    </a>
-                                </span>
+                                <p class="mb-4 azul-principal">"El código que es más fácil de entender es más fácil de mantener"</p>
                             </div>
                         </div>
                     </div>
@@ -51,23 +34,6 @@
                                 <h3 class="text-lg poppins-bold azul-principal">Tobías Altamirano</h3>
                                 <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñador y desarrolador web</h4>
                                 <p class="mb-4">"La mejor forma de predecir el futuro es implementarlo"</p>
-                                <span class="inline-flex">
-                                    <a class="text-gray-500">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                                        </svg>
-                                    </a>
-                                    <a class="ml-2 text-gray-500">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                                        </svg>
-                                    </a>
-                                    <a class="ml-2 text-gray-500">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                                        </svg>
-                                    </a>
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -79,7 +45,7 @@
                 <div class="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 border-b border-gray-200">
                     <h2 class="sm:text-3xl text-2xl poppins-bold mb-2 rojo-principal">Marcas que cooperan con Visitway</h2>
                     <div class="linea-seccion-4-index h-1 w-20 rounded mb-4"></div>
-                    <p class="roboto-flex azul-principal text-base">Vistway se enorgullece de <span class="font-bold">colaborar con marcas reconocidas</span> a nivel nacional que comparten nuestra pasión por ofrecer experiencias turísticas excepcionales. Juntos, <span class="font-bold">trabajamos para crear viajes memorables</span> y promover destinos únicos en Argentina.</p>
+                    <p class="roboto-flex azul-principal text-base">Visitway se enorgullece de <span class="font-bold">colaborar con marcas reconocidas</span> a nivel nacional que comparten nuestra pasión por ofrecer experiencias turísticas excepcionales. Juntos, <span class="font-bold">trabajamos para crear viajes memorables</span> y promover destinos únicos en Argentina.</p>
                 </div>
                 <div class="flex flex-col md:w-1/2 md:pl-12">
                     <nav class="flex flex-wrap list-none -mb-1 roboto-flex azul-principal font-medium">

@@ -5,7 +5,7 @@
 @section('content')
 
 <section>
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Panel admnistrador<span class="span-h1-provincias"><br>Posteos de usuario</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Panel administrador<span class="span-h1-provincias"><br>Posteos de usuario</span></h1>
 
     @include('components.lineas-secundarias')
 

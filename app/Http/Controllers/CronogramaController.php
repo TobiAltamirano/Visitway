@@ -75,7 +75,7 @@ class CronogramaController extends Controller
             ->exists();
 
         if ($actividadExistente) {
-            return redirect()->back()->with('error', 'La actividad ya fue agregada previamente en un mismo día y horario.');
+            return redirect()->back()->with('error', 'La actividad ya fue agregada previamente en ese mismo día y horario.');
         }
 
         // Si la actividad no está en el cronograma, agregarla
@@ -121,22 +121,38 @@ class CronogramaController extends Controller
             ->where('id_usuario', $userId)
             ->first();
 
-        // Verificar si la actividad existe y pertenece al usuario actual
         if ($actividad) {
-            // Validar los datos del formulario
-            $request->validate([
-                'nuevo_dia' => 'required|integer|min:1|max:7',
-                'nueva_hora_inicio' => 'required|date_format:H:i',
-                'nueva_hora_fin' => 'required|date_format:H:i|after:nueva_hora_inicio',
-            ]);
+            try {
+                // Validar los datos del formulario
+                $request->validate([
+                    'nuevo_dia' => 'required|integer|min:1|max:7',
+                    'nueva_hora_inicio' => 'required|date_format:H:i',
+                    'nueva_hora_fin' => 'required|date_format:H:i|after:nueva_hora_inicio',
+                ], [
+                    'nuevo_dia.required' => 'El día de la semana es obligatorio.',
+                    'nuevo_dia.integer' => 'El día de la semana debe ser un número entero.',
+                    'nuevo_dia.min' => 'El día de la semana debe ser entre 1 y 7.',
+                    'nuevo_dia.max' => 'El día de la semana debe ser entre 1 y 7.',
+                    'nueva_hora_inicio.required' => 'La hora de inicio es obligatoria.',
+                    'nueva_hora_inicio.date_format' => 'La hora de inicio debe tener el formato HH:mm.',
+                    'nueva_hora_fin.required' => 'La hora de fin es obligatoria.',
+                    'nueva_hora_fin.date_format' => 'La hora de fin debe tener el formato HH:mm.',
+                    'nueva_hora_fin.after' => 'La hora de fin debe ser después de la hora de inicio.',
+                ]);
 
-            // Actualizar la actividad con los nuevos datos
-            $actividad->dia_semana = $request->nuevo_dia;
-            $actividad->hora_inicio = $request->nueva_hora_inicio;
-            $actividad->hora_fin = $request->nueva_hora_fin;
-            $actividad->save();
+                // Actualizar la actividad con los nuevos datos
+                $actividad->dia_semana = $request->nuevo_dia;
+                $actividad->hora_inicio = $request->nueva_hora_inicio;
+                $actividad->hora_fin = $request->nueva_hora_fin;
+                $actividad->save();
 
-            return redirect()->back()->with('success', 'La actividad ha sido editada correctamente.');
+                return redirect()->back()->with('success', 'La actividad ha sido editada correctamente.');
+            } catch (\Illuminate\Validation\ValidationException $e) {
+                // Manejar errores de validación y enviar mensajes personalizados
+                $errors = $e->validator->errors()->all();
+                $errorMessage = implode(' ', $errors);
+                return redirect()->back()->with('error', $errorMessage);
+            }
         } else {
             return redirect()->back()->with('error', 'No se pudo encontrar la actividad para editar.');
         }
@@ -153,16 +169,40 @@ class CronogramaController extends Controller
             ->first();
 
         if ($actividadExistente) {
-            // Crear una nueva entrada en el cronograma con los detalles actualizados
-            $nuevaActividad = new Cronograma();
-            $nuevaActividad->id_usuario = $userId;
-            $nuevaActividad->id_actividad = $idActividad;
-            $nuevaActividad->dia_semana = $request->dia_semana;
-            $nuevaActividad->hora_inicio = $request->hora_inicio;
-            $nuevaActividad->hora_fin = $request->hora_fin;
-            $nuevaActividad->save();
+            try {
+                // Validar los datos del formulario
+                $validatedData = $request->validate([
+                    'dia_semana' => 'required|integer|min:1|max:7',
+                    'hora_inicio' => 'required|date_format:H:i',
+                    'hora_fin' => 'required|date_format:H:i|after:hora_inicio',
+                ], [
+                    'dia_semana.required' => 'El día de la semana es obligatorio.',
+                    'dia_semana.integer' => 'El día de la semana debe ser un número entero.',
+                    'dia_semana.min' => 'El día de la semana debe ser entre 1 y 7.',
+                    'dia_semana.max' => 'El día de la semana debe ser entre 1 y 7.',
+                    'hora_inicio.required' => 'La hora de inicio es obligatoria.',
+                    'hora_inicio.date_format' => 'La hora de inicio debe tener el formato HH:mm.',
+                    'hora_fin.required' => 'La hora de fin es obligatoria.',
+                    'hora_fin.date_format' => 'La hora de fin debe tener el formato HH:mm.',
+                    'hora_fin.after' => 'La hora de fin debe ser después de la hora de inicio.',
+                ]);
 
-            return redirect()->back()->with('success', 'La actividad ha sido duplicada correctamente.');
+                // Crear una nueva entrada en el cronograma con los detalles actualizados
+                $nuevaActividad = new Cronograma();
+                $nuevaActividad->id_usuario = $userId;
+                $nuevaActividad->id_actividad = $idActividad;
+                $nuevaActividad->dia_semana = $request->dia_semana;
+                $nuevaActividad->hora_inicio = $request->hora_inicio;
+                $nuevaActividad->hora_fin = $request->hora_fin;
+                $nuevaActividad->save();
+
+                return redirect()->back()->with('success', 'La actividad ha sido duplicada correctamente.');
+            } catch (\Illuminate\Validation\ValidationException $e) {
+                // Manejar errores de validación y enviar mensajes personalizados
+                $errors = $e->validator->errors()->all();
+                $errorMessage = implode(' ', $errors);
+                return redirect()->back()->with('error', $errorMessage);
+            }
         } else {
             return redirect()->back()->with('error', 'No se pudo duplicar la actividad.');
         }

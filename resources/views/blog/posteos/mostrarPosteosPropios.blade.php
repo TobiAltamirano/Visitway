@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', 'Posteos Propios')
+@section('title', 'Mis Posteos')
 
 @section('content')
 
 <section>
 
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Posteos propios<br></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Mis posteos<br></h1>
 
     @include('components.lineas-secundarias')
 
@@ -24,8 +24,7 @@
     </div>
 
     @if($posteos->isEmpty())
-    <!-- Ilustración -->
-    <p class="text-center">No hay posteos disponibles.</p>
+    <p class="text-center text-lg mt-10 pl-4 pr-4 rojo-principal poppins-bold">No tienes posteos disponibles.</p>
     @else
     <section class="w-full py-12 md:py-20 lg:py-12">
         <div class="container mx-auto px-4 md:px-6">

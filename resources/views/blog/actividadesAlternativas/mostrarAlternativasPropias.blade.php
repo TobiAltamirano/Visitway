@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Actividades Alternativas Propias')
+@section('title', 'Mis Actividades Alternativas')
 
 @section('content')
 
@@ -23,8 +23,7 @@
     </div>
 
     @if($actividadesAlternativas->isEmpty())
-    <!-- Ilustración -->
-    <p class="text-center">No hay actividades disponibles.</p>
+    <p class="text-center text-lg mt-10 pl-4 pr-4 rojo-principal poppins-bold">No tienes actividades disponibles.</p>
     @else
     <!-- Modal Imagen Actividad Alternativa -->
     @include('components.modal-imagen-alternativas')

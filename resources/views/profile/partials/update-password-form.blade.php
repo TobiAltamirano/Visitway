@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-md azul-principal roboto-flex">
-            Asegurate de que tu cuenta utilice una contraseña larga y compleja para mantenerse segura
+            Asegurate de que tu cuenta utilice al menos 8 caracteres para mantenerse segura
         </p>
     </div>
 

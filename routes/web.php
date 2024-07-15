@@ -401,7 +401,7 @@ Route::post('/panel-administrador/usuarios/{id}/convertir-administrador', [\App\
     ->name('administrador.usuarios.otorgar-privilegios')
     ->middleware('auth', 'checkAdmin');
 
-// Convertir en usuario comun
+// Convertir en usuario estandar
 Route::post('/panel-administrador/usuarios/{id}/quitar-administrador', [\App\Http\Controllers\AdministradorController::class, 'quitarPrivilegiosAdmin'])
     ->name('administrador.usuarios.quitar-privilegios')
     ->middleware('auth', 'checkAdmin');

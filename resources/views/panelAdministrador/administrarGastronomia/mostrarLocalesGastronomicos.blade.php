@@ -6,16 +6,16 @@
 
 <section>
 
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Panel admnistrador<span class="span-h1-provincias"><br>Locales gastronómicos</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Panel administrador<span class="span-h1-provincias"><br>Locales gastronómicos</span></h1>
 
     @include('components.lineas-secundarias')
 
     @include('components.toast-notification')
 
     <div class="flex items-center flex-col justify-center gap-8 mt-12 mb-6">
-        <h2 class="text-2xl text-center font-bold azul-principal roboto-flex flex justify-center">Listado de locales gastronomicos</h2>
+        <h2 class="text-2xl text-center font-bold azul-principal roboto-flex flex justify-center">Listado de locales gastronómicos</h2>
         <button class="filtros-boton inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
-            <a href="{{ route('administrador.locales_gastronomicos.crear') }}">Cargar local gastronomico</a>
+            <a href="{{ route('administrador.locales_gastronomicos.crear') }}">Cargar local gastronómico</a>
         </button>
     </div>
 
@@ -26,7 +26,6 @@
                     <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
                         <th class="h-12 px-4 text-left align-middle font-bold azul-principal roboto-flex">ID</th>
                         <th class="h-12 px-4 text-left align-middle font-bold azul-principal roboto-flex">Nombre</th>
-                        <th class="h-12 px-4 text-left align-middle font-bold azul-principal roboto-flex">Tipo Local</th>
                         <th class="h-12 px-4 text-left align-middle font-bold azul-principal roboto-flex">Provincia</th>
                         <th class="h-12 px-4 text-left align-middle font-bold azul-principal roboto-flex">Acciones</th>
                     </tr>
@@ -36,7 +35,6 @@
                     <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
                         <td class="p-4 align-middle roboto-flex azul-principal">{{ $localGastronomico->id_local_gastronomico }}</td>
                         <td class="p-4 align-middle roboto-flex azul-principal">{{ $localGastronomico->nombre_local_gastronomico }}</td>
-                        <td class="p-4 align-middle roboto-flex azul-principal">{{ $localGastronomico->tipo_gastronomia_id }}</td>
                         <td class="p-4 align-middle roboto-flex azul-principal">{{ $localGastronomico->provincia->nombre_provincia }}</td>
                         <td class="p-4 align-middle roboto-flex azul-principal">
                             <div class="flex items-center gap-2">

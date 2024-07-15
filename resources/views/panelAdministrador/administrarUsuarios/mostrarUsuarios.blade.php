@@ -5,7 +5,7 @@
 @section('content')
 
 <section>
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Panel admnistrador<span class="span-h1-provincias"><br>Usuarios</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Panel administrador<span class="span-h1-provincias"><br>Usuarios</span></h1>
 
     @include('components.lineas-secundarias')
 
@@ -31,7 +31,15 @@
                         <td class="p-4 align-middle">{{ $usuario->id }}</td>
                         <td class="p-4 align-middle">{{ $usuario->email }}</td>
                         <td class="p-4 align-middle">{{ $usuario->name }}</td>
-                        <td class="p-4 align-middle">{{ $usuario->usuario_administrador }}</td>
+                        <td class="p-4 align-middle">
+                            @if($usuario->usuario_administrador == 0)
+                            Estandar
+                            @elseif($usuario->usuario_administrador == 1)
+                            Administrador
+                            @else
+                            Desconocido
+                            @endif
+                        </td>
                         <td class="p-4 align-middle">
                             <div class="flex items-center gap-2">
                                 <!-- @ Si es admin -> 'Otorgar privilegios' : 'Quitar privilegios' -->

@@ -17,6 +17,7 @@ use App\Models\TipoAlojamiento;
 use App\Models\TipoActividad;
 use App\Models\TipoGastronomia;
 use Symfony\Component\Mime\Part\Multipart\AlternativePart;
+use Illuminate\Support\Facades\Auth;
 
 class AdministradorController extends Controller
 {
@@ -414,16 +415,18 @@ class AdministradorController extends Controller
 
     public function eliminarUsuario($id)
     {
-
+        // Obtener el usuario al que se le quieren quitar los privilegios
         $usuario = User::findOrFail($id);
+
+        // Verificar si el usuario actual es uno de los root protegidos
+        if ($usuario->email === 'lucia@davinci' || $usuario->email === 'tobias@davinci') {
+            return redirect()->back()->with('error', 'No puedes eliminar a este usuario.');
+        }
 
         $usuario->delete();
 
-        return redirect()->back()->with('success', 'El usuario' . $usuario['name'] . 'Ha sido eliminado con exito');
+        return redirect()->back()->with('success', 'El usuario ' . $usuario['name'] . ' Ha sido eliminado con éxito');
     }
-
-
-
 
     public function otorgarPrivilegiosAdmin($id)
     {
@@ -436,7 +439,23 @@ class AdministradorController extends Controller
 
     public function quitarPrivilegiosAdmin($id)
     {
+        // Obtener el usuario autenticado actual
+        $usuarioActual = Auth::user();
+
+        // Obtener el usuario al que se le quieren quitar los privilegios
         $usuario = User::findOrFail($id);
+
+        // Verificar si el usuario actual es uno de los root protegidos
+        if ($usuario->email === 'lucia@davinci' || $usuario->email === 'tobias@davinci') {
+            return redirect()->back()->with('error', 'No puedes quitarle los privilegios de administrador a este usuario.');
+        }
+
+        // Verificar si el usuario actual está intentando quitarse sus propios privilegios
+        if ($usuarioActual->id == $id) {
+            return redirect()->back()->with('error', 'No puedes quitarte tus propios privilegios de administrador.');
+        }
+
+        // Quitar los privilegios de administrador
         $usuario->usuario_administrador = false;
         $usuario->save();
 
