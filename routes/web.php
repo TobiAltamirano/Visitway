@@ -6,16 +6,18 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdministradorMiddleware;
 
+// Página de inicio
 Route::get('/', function () {
     return view('index');
 })->Name('index');
 
-// Institucional
+// Página institucional
 Route::get('/sobre-visitway', function () {
     return view('institucional');
 })->Name('institucional');
 
-// Provincias
+// Provincias e introducción
+// --------------------------------------------------------------
 Route::get('/provincias', [\App\Http\Controllers\ProvinciasController::class, 'mostrarProvincias'])
     ->Name('provincias.mostrar');
 
@@ -24,6 +26,7 @@ Route::get('/provincias/{id}/introduccion', [\App\Http\Controllers\ProvinciasCon
     ->Name('provincia.introduccion');
 
 // Actividades
+// --------------------------------------------------------------
 Route::get('/provincias/{id}/tipos-actividades', [\App\Http\Controllers\ActividadesController::class, 'mostrarTiposActividades'])
     ->name('provincia.tipos-actividades');
 
@@ -32,6 +35,7 @@ Route::get('/provincias/{id}/actividades/{idTipoActividad}', [\App\Http\Controll
     ->name('provincia.actividades');
 
 // Gastronomia
+// --------------------------------------------------------------
 Route::get('/provincias/{id}/tipos-gastronomia', [\App\Http\Controllers\GastronomiaController::class, 'mostrarTiposGastronomia'])
     ->name('provincia.tipos-gastronomia');
 
@@ -39,6 +43,7 @@ Route::get('/provincias/{id}/tipos-gastronomia', [\App\Http\Controllers\Gastrono
 Route::get('/provincias/{id}/gastronomia/{idTipoGastronomia}', [\App\Http\Controllers\GastronomiaController::class, 'mostrarGastronomiaPorTipo'])->name('provincia.gastronomia');
 
 // Alojamientos
+// --------------------------------------------------------------
 Route::get('/provincias/{id}/tipos-alojamientos', [\App\Http\Controllers\AlojamientosController::class, 'mostrarTiposAlojamientos'])
     ->name('provincia.tipos-alojamientos');
 
@@ -46,6 +51,8 @@ Route::get('/provincias/{id}/tipos-alojamientos', [\App\Http\Controllers\Alojami
 Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}', [\App\Http\Controllers\AlojamientosController::class, 'mostrarAlojamientosPorTipo'])
     ->name('provincia.alojamientos');
 
+// Detalles del servicio
+// --------------------------------------------------------------
 // Detalle del servicio - Alojamiento
 Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}/detalle/{alojamientoId}', [\App\Http\Controllers\AlojamientosController::class, 'detalleAlojamiento'])
     ->name('provincia.detalleAlojamiento');
@@ -58,22 +65,26 @@ Route::get('/provincias/{id}/actividades/{idTipoActividad}/detalle/{actividadId}
 Route::get('/provincias/{id}/gastronomia/{idTipoGastronomia}/detalle/{gastronomiaId}', [\App\Http\Controllers\GastronomiaController::class, 'detalleGastronomia'])
     ->name('provincia.detalleGastronomia');
 
-// Filtrado especial de alojamientos
+// Filtrado 
+// --------------------------------------------------------------
+// Filtrado de alojamientos
 Route::get('/provincias/{id}/alojamientos/{idTipoAlojamiento}/filtrar-alojamientos', [\App\Http\Controllers\FiltrosController::class, 'filtrarAlojamientos'])
     ->name('provincia.filtrarAlojamientos');
 
-// Filtrado especial de actividades
+// Filtrado de actividades
 Route::get('/provincias/{id}/actividades/{idTipoActividad}/filtrar-actividad', [\App\Http\Controllers\FiltrosController::class, 'filtrarActividades'])
     ->name('provincia.filtrarActividades');
 
-// Filtrado especial de locales gastronomicos
+// Filtrado de locales gastronomicos
 Route::get('/provincias/{id}/gastronomia/{idTipoGastronomia}/filtrar-gastronomia', [\App\Http\Controllers\FiltrosController::class, 'filtrarGastronomia'])
     ->name('provincia.filtrarGastronomia');
 
-// Agregar a favoritos
+// Favoritos
+// --------------------------------------------------------------
 Route::get('/favoritos', [\App\Http\Controllers\FavoritosController::class, 'mostrarFavoritos'])
     ->name('favoritos.mostrar');
 
+// Agregar a favoritos
 Route::post('/favoritos/agregar/{id}/{tipo}', [\App\Http\Controllers\FavoritosController::class, 'agregarFavoritos'])
     ->name('favoritos.agregar')
     ->middleware('auth');
@@ -83,23 +94,8 @@ Route::post('/favoritos/eliminar/{id}/{tipo}', [\App\Http\Controllers\FavoritosC
     ->name('favoritos.eliminar')
     ->middleware('auth');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Posteos
-
+// --------------------------------------------------------------
 // Mostrar posteos
 Route::get('/blog/posteos', [\App\Http\Controllers\PosteosController::class, 'mostrarPosteos'])
     ->name('posteos.mostrar');
@@ -142,21 +138,8 @@ Route::get('/posteos/filtrar', [\App\Http\Controllers\FiltrosController::class, 
 Route::get('/posteos/propios', [\App\Http\Controllers\PosteosController::class, 'mostrarPosteosPropios'])
     ->name('posteos.propios');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Actividades Alternativas
-
+// --------------------------------------------------------------
 // Mostrar actividades alternativas
 Route::get('/blog/actividades-alternativas', [\App\Http\Controllers\AlternativasController::class, 'mostrarActividadesAlternativas'])
     ->name('alternativas.mostrar');
@@ -171,22 +154,22 @@ Route::post('/blog/actividades-alternativas/procesar', [\App\Http\Controllers\Al
     ->name('alternativas.crear.proceso')
     ->middleware('auth');
 
-// Formulario edición pact. alternativa
+// Formulario edición actividad alternativa
 Route::get('/actividades-alternativas/{id}/editar', [\App\Http\Controllers\AlternativasController::class, 'formularioEdicionActividadAlternativa'])
     ->name('alternativas.editar')
     ->middleware('auth');
 
-// Actualización de alternativa
+// Actualización de actividad alternativa
 Route::post('/actividades-alternativas/{id}/actualizar', [\App\Http\Controllers\AlternativasController::class, 'actualizacionActividadAlternativa'])
     ->name('alternativas.actualizar')
     ->middleware('auth');
 
-// Confirmación eliminación alternativa
+// Confirmación eliminación actividad alternativa
 Route::get('/actividades-alternativas/{id}/eliminar', [\App\Http\Controllers\AlternativasController::class, 'confirmacionEliminacionActividadAlternativa'])
     ->name('alternativas.eliminar')
     ->middleware('auth');
 
-// Proceso eliminación alternativa
+// Proceso eliminación actividad alternativa
 Route::post('/actividades-alternativas/{id}/eliminar/procesar', [\App\Http\Controllers\AlternativasController::class, 'procesoEliminacionActividadAlternativa'])
     ->name('alternativas.eliminar.proceso')
     ->middleware('auth');
@@ -199,37 +182,23 @@ Route::get('/actividades-alternativas/filtrar', [\App\Http\Controllers\FiltrosCo
 Route::get('/actividades-alternativas/propias', [\App\Http\Controllers\AlternativasController::class, 'mostrarActividadesAlternativasPropias'])
     ->name('alternativas.propias');
 
-
-
-
-
-
-
-
-
-
-
-
 // Panel Administrador
-
 // Alojamientos
-
+// --------------------------------------------------------------
 // Mostrar alojamiento en panel
 Route::get('/panel-administrador/alojamientos', [\App\Http\Controllers\AdministradorController::class, 'mostrarAlojamientos'])
     ->name('administrador.alojamientos')
     ->middleware('auth', 'checkAdmin');
 
-// Form edit
+// Formulario edición
 Route::get('/panel-administrador/alojamiento/{id}/editar', [\App\Http\Controllers\AdministradorController::class, 'editarAlojamiento'])
     ->name('administrador.alojamientos.editar')
     ->middleware('auth', 'checkAdmin');
 
-// proceso edicion
+// Proceso edicion
 Route::post('/panel-administrador/alojamiento/{id}/editar/procesar', [\App\Http\Controllers\AdministradorController::class, 'procesoEdicionAlojamiento'])
     ->name('administrador.alojamientos.editar.proceso')
     ->middleware('auth', 'checkAdmin');
-
-
 
 // Formulario de creación de alojamiento
 Route::get('/panel-administrador/alojamientos/crear', [\App\Http\Controllers\AdministradorController::class, 'crearAlojamiento'])
@@ -241,7 +210,6 @@ Route::post('/panel-administrador/alojamientos/crear/proceso', [\App\Http\Contro
     ->name('administrador.alojamientos.crear.proceso')
     ->middleware('auth', 'checkAdmin');
 
-
 // Confirmacion eliminar alojamiento
 Route::get('/panel-administrador/alojamiento/{id}/eliminar', [\App\Http\Controllers\AdministradorController::class, 'eliminarAlojamiento'])
     ->name('administrador.alojamientos.eliminar')
@@ -252,11 +220,8 @@ Route::post('/panel-administrador/alojamiento/{id}/eliminar/procesar', [\App\Htt
     ->name('administrador.alojamientos.eliminar.procesar')
     ->middleware('auth', 'checkAdmin');
 
-
-
-
-// ADMINISTRAR ACTIVIDADES
-
+// Actividades
+// --------------------------------------------------------------
 // Mostrar actividades en panel
 Route::get('/panel-administrador/actividades', [\App\Http\Controllers\AdministradorController::class, 'mostrarActividades'])
     ->name('administrador.actividades')
@@ -292,27 +257,8 @@ Route::post('/panel-administrador/actividad/{id}/eliminar/procesar', [\App\Http\
     ->name('administrador.actividades.eliminar.procesar')
     ->middleware('auth', 'checkAdmin');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Gastronomia
-
-// ADMINISTRAR LOCALES GASTRONÓMICOS
-
+// --------------------------------------------------------------
 // Mostrar locales gastronómicos en panel
 Route::get('/panel-administrador/locales-gastronomicos', [\App\Http\Controllers\AdministradorController::class, 'mostrarLocalesGastronomicos'])
     ->name('administrador.locales_gastronomicos')
@@ -348,10 +294,8 @@ Route::post('/panel-administrador/local-gastronomico/{id}/eliminar/procesar', [\
     ->name('administrador.locales_gastronomicos.eliminar.procesar')
     ->middleware('auth', 'checkAdmin');
 
-
-
-// PANEL :: POSTEOS
-
+// Posteos
+// --------------------------------------------------------------
 // Mostrar todos los posteos
 Route::get('/panel-administrador/posteos', [\App\Http\Controllers\AdministradorController::class, 'mostrarPosteos'])
     ->name('administrador.posteos.mostrar')
@@ -367,12 +311,8 @@ Route::post('/panel-administrador/posteo/{id}/eliminar', [\App\Http\Controllers\
     ->name('administrador.posteos.eliminar')
     ->middleware('auth', 'checkAdmin');
 
-
-
-
-
-// PANEL :: ALTERNATIVAS
-
+// Actividades Alternativas
+// --------------------------------------------------------------
 // Mostrar todas las alternativas
 Route::get('/panel-administrador/actividades-alternativas', [\App\Http\Controllers\AdministradorController::class, 'mostrarActividadesAlternativas'])
     ->name('administrador.actividades-alternativas.mostrar')
@@ -388,9 +328,8 @@ Route::post('/panel-administrador/actividad-alternativa/{id}/eliminar', [\App\Ht
     ->name('administrador.actividades-alternativas.eliminar')
     ->middleware('auth', 'checkAdmin');
 
-
-// PANEL :: USUARIOS
-
+// Usuarios
+// --------------------------------------------------------------
 // Mostrar
 Route::get('/panel-administrador/usuarios', [\App\Http\Controllers\AdministradorController::class, 'mostrarUsuarios'])
     ->name('administrador.usuarios.mostrar')
@@ -411,9 +350,8 @@ Route::post('/panel-administrador/usuarios/{id}/eliminar', [\App\Http\Controller
     ->name('administrador.usuarios.eliminar')
     ->middleware('auth', 'checkAdmin');
 
-
 // CRONOGRAMA
-
+// --------------------------------------------------------------
 // MOSTRAR CRONOGRAMA ORDENADO POR DÍAS
 Route::get('/cronograma', [\App\Http\Controllers\CronogramaController::class, 'mostrarCronograma'])
     ->name('cronograma.mostrar');
@@ -438,10 +376,8 @@ Route::post('/cronograma/{id}/duplicar/{idActividad}', [\App\Http\Controllers\Cr
     ->name('cronograma.duplicar')
     ->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+// Perfil de usuario
+// --------------------------------------------------------------
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

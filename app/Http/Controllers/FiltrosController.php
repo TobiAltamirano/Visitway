@@ -97,7 +97,7 @@ class FiltrosController extends Controller
             'apto_intolerantes_lactosa' => $request->input('apto_intolerantes_lactosa', false),
         ];
 
-        // Consulta inicial para obtener todas las actividades de la provincia
+        // Consulta inicial para obtener todos los locales de la provincia
         $query = Gastronomia::where('provincia_id', $idProvincia)
             ->where('tipo_gastronomia_id', $idTipoGastronomia);
 

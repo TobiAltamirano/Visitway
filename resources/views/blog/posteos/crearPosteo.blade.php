@@ -21,7 +21,7 @@
                 <form action="{{ route('posteos.crear.proceso') }}" method="post" enctype="multipart/form-data" class="space-y-4">
                     @csrf
 
-                    <!-- Título input -->
+                    <!-- Título -->
                     <div class="space-y-2">
                         <label for="titulo" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Título</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>
@@ -31,7 +31,7 @@
                         @enderror
                     </div>
 
-                    <!-- Contenido input -->
+                    <!-- Contenido -->
                     <div class="space-y-2">
                         <label for="contenido" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Contenido del posteo</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>

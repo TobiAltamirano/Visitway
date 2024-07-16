@@ -12,10 +12,10 @@ use App\Models\Favorito;
 
 class GastronomiaController extends Controller
 {
-    // Mostrar todos los tipos de alojamiento
+    // Mostrar todos los tipos de locales gastronómicos
     public function mostrarTiposGastronomia($id)
     {
-
+        // Obtener la provincia
         $provincia = Provincia::findOrFail($id);
 
         $tiposGastronomia = TipoGastronomia::all();
@@ -42,10 +42,10 @@ class GastronomiaController extends Controller
 
     public function detalleGastronomia($id, $idTipoGastronomia, $idLocales_gastronomicos)
     {
-
+        // Obtenemos el id del usuario
         $idUsuario = Auth::id();
 
-        // Verificar si el alojamiento ya está en favoritos para este usuario
+        // Verificar si el local ya está en favoritos para este usuario
         $favoritoExistente = Favorito::where('id_usuario', $idUsuario)
             ->where('id_favorito', $idLocales_gastronomicos)
             ->where('tipo_favorito', 'gastronomia')

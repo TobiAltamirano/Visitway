@@ -15,7 +15,6 @@ class AlojamientosController extends Controller
     // Mostrar todos los tipos de alojamiento
     public function mostrarTiposAlojamientos($id)
     {
-
         $provincia = Provincia::findOrFail($id);
 
         $tiposAlojamientos = TipoAlojamiento::all();
@@ -42,7 +41,6 @@ class AlojamientosController extends Controller
 
     public function detalleAlojamiento($id, $idTipoAlojamiento, $idAlojamientos)
     {
-
         $idUsuario = Auth::id();
 
         // Verificar si el alojamiento ya está en favoritos para este usuario

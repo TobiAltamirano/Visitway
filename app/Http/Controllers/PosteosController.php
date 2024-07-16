@@ -11,12 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class PosteosController extends Controller
 {
-    // Reglas de validación
-    // protected array $createRules = [
-    //     'titulo' => 'required|min:2',
-    //     'contenido' => 'required',
-    //     'publication_date' => 'required',
-    // ];
 
     public function mostrarPosteos()
     {
@@ -42,7 +36,7 @@ class PosteosController extends Controller
         // Asignamos el ID del usuario al campo correspondiente del posteo
         $data['id_usuario'] = $idUsuario;
 
-        //Upload de la imagen de las noticias
+        //Upload de la imagen del posteo
         if ($request->hasFile('archivo')) {
             // Guardamos el archivo en la carpeta "img"
             $data['imagen1'] = $request->file('archivo')->store('imagenes');
@@ -78,19 +72,19 @@ class PosteosController extends Controller
             abort(403, 'Acceso no autorizado'); // Mostrar error 403 si no es el propietario
         }
 
-        // Validación de los datos, igual que la función createProcess
+        // Validación de los datos
         $request->validate(Posteo::REGLAS_VALIDACION, Posteo::MENSAJES_VALIDACION);
 
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
 
-        //Upload de la imagen de las noticias
+        // Upload de la imagen del posteo
         if ($request->hasFile('archivo')) {
             // Guardamos el archivo en la carpeta "img"
             $data['imagen1'] = $request->file('archivo')->store('imagenes');
         }
 
-        // Actualizar los datos de la noticia con los datos del formulario
+        // Actualizar los datos del posteo con los datos del formulario
         $posteo->update($data);
 
         // Borramos la imagen anterior si es necesario

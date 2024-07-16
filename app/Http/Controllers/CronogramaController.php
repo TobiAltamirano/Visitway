@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class CronogramaController extends Controller
 {
     // Mostrar cronograma ordenado por días de la semana
-
     public function mostrarCronograma()
     {
         // Obtener el ID del usuario autenticado

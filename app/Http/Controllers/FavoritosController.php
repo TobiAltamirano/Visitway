@@ -15,6 +15,7 @@ class FavoritosController extends Controller
 
     public function mostrarFavoritos()
     {
+        // Tomamos el id del usuario
         $idUsuario = auth()->id();
 
         // Obtener los IDs de los alojamientos favoritos del usuario
@@ -52,7 +53,7 @@ class FavoritosController extends Controller
 
     public function agregarFavoritos(Request $request, $id, $tipo)
     {
-
+        // Tomamos el id del usuario
         $idUsuario = Auth::id();
 
         // Verificar si el alojamiento ya está en favoritos
@@ -75,6 +76,7 @@ class FavoritosController extends Controller
 
     public function eliminarFavoritos($id, $tipo)
     {
+        // Tomamos el id del usuario
         $idUsuario = Auth::id();
 
         // Buscar y eliminar el favorito

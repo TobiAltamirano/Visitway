@@ -52,24 +52,6 @@ class AlternativasController extends Controller
             }
         }
 
-        // //Upload de la imagen de las noticias
-        // if($request->hasFile('imagen1')){
-        //     // Guardamos el archivo en la carpeta "img"
-        //     $data['imagen1'] = $request->file('imagen1')->store('imagenes');
-        // }
-
-        // //Upload de la imagen de las noticias
-        // if($request->hasFile('imagen2')){
-        //     // Guardamos el archivo en la carpeta "img"
-        //     $data['imagen2'] = $request->file('imagen2')->store('imagenes');
-        // }
-
-        // //Upload de la imagen de las noticias
-        // if($request->hasFile('imagen3')){
-        //     // Guardamos el archivo en la carpeta "img"
-        //     $data['imagen3'] = $request->file('imagen3')->store('imagenes');
-        // }
-
         ActividadAlternativa::create($data);
 
         return redirect('/blog/actividades-alternativas')
@@ -116,13 +98,7 @@ class AlternativasController extends Controller
             }
         }
 
-        // //Upload de la imagen de las noticias
-        // if ($request->hasFile('imagen1')) {
-        //     // Guardamos el archivo en la carpeta "img"
-        //     $data['imagen1'] = $request->file('imagen1')->store('imagenes');
-        // }
-
-        // Actualizar los datos de la noticia con los datos del formulario
+        // Actualizar los datos de la actividad con los datos del formulario
         $actividadAlternativa->update($data);
 
         // Borramos la imagen anterior si es necesario

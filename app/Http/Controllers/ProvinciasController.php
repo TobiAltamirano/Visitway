@@ -56,7 +56,6 @@ class ProvinciasController extends Controller
         return view('provincias.mostrarProvincias', compact('provinciasNordeste', 'provinciasNoroeste', 'provinciasCuyo', 'provinciasPampeanas', 'provinciasPatagonicas', 'provinciaBuenosAires'));
     }
 
-
     // Mostrar introducción a provincia seleccionada
     public function mostrarIntroduccion($id)
     {

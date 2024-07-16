@@ -15,7 +15,6 @@ class ActividadesController extends Controller
     // Mostrar todos los tipos de alojamiento
     public function mostrarTiposActividades($id)
     {
-
         $provincia = Provincia::findOrFail($id);
 
         $tiposActividades = TipoActividad::all();
@@ -43,7 +42,7 @@ class ActividadesController extends Controller
 
     public function detalleActividad($id, $idTipoActividad, $idActividades)
     {
-
+        // Tomamos el id del usuario actual
         $idUsuario = Auth::id();
 
         // Verificar si el alojamiento ya está en favoritos para este usuario

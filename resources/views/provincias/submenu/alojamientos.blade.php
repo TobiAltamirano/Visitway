@@ -15,7 +15,7 @@
 
     <div class="flex justify-center mt-6 mb-6">
         <div class="submenu">
-            @include('layouts.submenu')
+            @include('components.submenu')
         </div>
     </div>
 
@@ -61,7 +61,7 @@
                         </label>
                     </div>
                 </div>
-                <!-- Campo oculto para el tipo de actividad -->
+                <!-- Campo oculto para el tipo de alojamiento -->
                 <input type="hidden" name="idTipoAlojamiento" value="{{ $idTipoAlojamiento }}">
                 <div class="flex justify-center mt-6 w-full">
                     <button type="submit" class="filtrar-boton poppins-semibold w-full text-white py-2 px-4 rounded-lg transition duration-300">Filtrar</button>

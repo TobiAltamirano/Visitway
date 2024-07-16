@@ -10,7 +10,7 @@
 
     <div class="flex justify-center mt-12 mb-12">
         <div class="submenu">
-            @include('layouts.submenu')
+            @include('components.submenu')
         </div>
     </div>
 

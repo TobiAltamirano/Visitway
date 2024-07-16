@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="<?= url("css/main.css"); ?>">
     <link rel="stylesheet" href="<?= url("css/index.css"); ?>">
     <link rel="stylesheet" href="<?= url("css/provincias.css"); ?>">
-    <link rel="stylesheet" href="<?= url("css/cronograma.css"); ?>">
     <link rel="stylesheet" href="<?= url("css/blog.css"); ?>">
-    <link rel="stylesheet" href="<?= url("css/sobreVisitway.css"); ?>">
-    <link rel="stylesheet" href="<?= url("css/panelAdministrador.css"); ?>">
-    <link rel="stylesheet" href="<?= url("css/favoritos.css"); ?>">
     <link rel="stylesheet" href="<?= url("css/auth.css"); ?>">
     <link rel="stylesheet" href="<?= url("css/perfil.css"); ?>">
     @vite('resources/css/app.css')
