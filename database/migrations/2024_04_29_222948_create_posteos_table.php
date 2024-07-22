@@ -17,9 +17,7 @@ return new class extends Migration
             $table->string('titulo');
             $table->text('contenido');
             $table->string('provincia')->nullable();
-            $table->string('imagen1')->nullable();
-            $table->string('imagen2')->nullable();
-            $table->string('imagen3')->nullable();
+            $table->string('imagen')->nullable();
             $table->timestamps();
 
             // Definir la clave foránea para id_usuario

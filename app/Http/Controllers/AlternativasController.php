@@ -48,7 +48,7 @@ class AlternativasController extends Controller
         // Subimos las imágenes si existen
         foreach ($imagenes as $imagen) {
             if ($request->hasFile($imagen)) {
-                $data[$imagen] = $request->file($imagen)->store('imagenes');
+                $data[$imagen] = $request->file($imagen)->store('imagenes/actividades-alternativas');
             }
         }
 
@@ -94,7 +94,7 @@ class AlternativasController extends Controller
         // Subimos las imágenes si existen
         foreach ($imagenes as $imagen) {
             if ($request->hasFile($imagen)) {
-                $data[$imagen] = $request->file($imagen)->store('imagenes');
+                $data[$imagen] = $request->file($imagen)->store('imagenes/actividades-alternativas');
             }
         }
 

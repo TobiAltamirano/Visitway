@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tipos_actividades', function (Blueprint $table) {
             $table->id('id_tipo_actividad');
             $table->string('nombre_tipo_actividad');
+            $table->string('imagen_tipo_actividad');
             $table->timestamps();
         });
     }

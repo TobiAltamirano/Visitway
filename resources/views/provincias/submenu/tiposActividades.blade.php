@@ -24,7 +24,7 @@
             @foreach ($tiposActividades as $tipoActividad)
             <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                 <a href="{{ route('provincia.actividades', ['id' => $provincia->id_provincia, 'idTipoActividad' => $tipoActividad->id_tipo_actividad]) }}">
-                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $tipoActividad->nombre_tipo_actividad }}" />
+                    <img class="rounded-t-lg" src="<?= url('storage/imagenes/tipos-actividades/' . $tipoActividad->imagen_tipo_actividad); ?>" alt="{{ $tipoActividad->nombre_tipo_actividad }}" />
                     <div class="p-4">
                         <h2 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $tipoActividad->nombre_tipo_actividad }}</h2>
                     </div>

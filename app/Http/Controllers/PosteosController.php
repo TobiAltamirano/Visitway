@@ -39,7 +39,7 @@ class PosteosController extends Controller
         //Upload de la imagen del posteo
         if ($request->hasFile('archivo')) {
             // Guardamos el archivo en la carpeta "img"
-            $data['imagen1'] = $request->file('archivo')->store('imagenes');
+            $data['imagen1'] = $request->file('archivo')->store('imagenes/posteos');
         }
 
         Posteo::create($data);
@@ -81,7 +81,7 @@ class PosteosController extends Controller
         // Upload de la imagen del posteo
         if ($request->hasFile('archivo')) {
             // Guardamos el archivo en la carpeta "img"
-            $data['imagen1'] = $request->file('archivo')->store('imagenes');
+            $data['imagen1'] = $request->file('archivo')->store('imagenes/posteos');
         }
 
         // Actualizar los datos del posteo con los datos del formulario

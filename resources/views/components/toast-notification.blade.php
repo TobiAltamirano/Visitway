@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= url("css/main.css"); ?>">
+<link rel="stylesheet" href="<?= url('css/main.css'); ?>">
 <div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-full max-w-sm" style="z-index: 9999;">
     @if (session('status.message'))
     <div class="bg-white border border-input rounded-lg shadow-2xl px-4 py-3 flex items-center justify-between" id="statusMessage">
@@ -57,3 +57,28 @@
     </div>
     @endif
 </div>
+
+<script>
+    // Función para eliminar el toast después de 20 segundos
+    function autoRemoveToast(toastId) {
+        setTimeout(() => {
+            const toast = document.getElementById(toastId);
+            if (toast) {
+                toast.remove();
+            }
+        }, 10000); // 20000 milisegundos = 20 segundos
+    }
+
+    // Llama a la función para cada tipo de mensaje
+    if (document.getElementById('statusMessage')) {
+        autoRemoveToast('statusMessage');
+    }
+
+    if (document.getElementById('successMessage')) {
+        autoRemoveToast('successMessage');
+    }
+
+    if (document.getElementById('errorMessage')) {
+        autoRemoveToast('errorMessage');
+    }
+</script>

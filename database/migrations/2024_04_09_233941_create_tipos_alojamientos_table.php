@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tipos_alojamientos', function (Blueprint $table) {
             $table->id('id_tipo_alojamiento');
             $table->string('nombre_tipo_alojamiento');
+            $table->string('imagen_tipo_alojamiento');
             $table->timestamps();
         });
     }

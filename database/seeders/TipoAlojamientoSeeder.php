@@ -16,13 +16,28 @@ class TipoAlojamientoSeeder extends Seeder
         DB::table('tipos_alojamientos')->insert([
             [
                 'id_tipo_alojamiento' => 1,
-                'nombre_tipo_alojamiento' => 'Hotel',
+                'nombre_tipo_alojamiento' => 'Hoteles',
+                'imagen_tipo_alojamiento' => 'alojamiento_hoteles',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'id_tipo_alojamiento' => 2,
-                'nombre_tipo_alojamiento' => 'Camping',
+                'nombre_tipo_alojamiento' => 'Campings',
+                'imagen_tipo_alojamiento' => 'alojamiento_campings',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'id_tipo_alojamiento' => 3,
+                'nombre_tipo_alojamiento' => 'Cabañas',
+                'imagen_tipo_alojamiento' => 'alojamiento_cabañas',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ], [
+                'id_tipo_alojamiento' => 4,
+                'nombre_tipo_alojamiento' => 'Hostels',
+                'imagen_tipo_alojamiento' => 'alojamiento_hostels',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

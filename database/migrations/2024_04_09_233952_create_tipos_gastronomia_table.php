@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tipos_gastronomia', function (Blueprint $table) {
             $table->id('id_tipo_gastronomia');
             $table->string('nombre_tipo_gastronomia');
+            $table->string('imagen_tipo_gastronomia');
             $table->timestamps();
         });
     }

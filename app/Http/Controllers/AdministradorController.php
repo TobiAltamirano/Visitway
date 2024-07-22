@@ -116,22 +116,11 @@ class AdministradorController extends Controller
             $data['imagen_alojamiento'] = $request->file('archivo')->store('imagenes');
         }
 
-        // dd($request->all());
-
         Alojamiento::create($data);
 
         return redirect('/panel-administrador/alojamientos')
             ->with('success', 'El alojamiento se ha creado correctamente.');
     }
-
-
-
-
-
-
-
-
-
 
     // Actividades
 
@@ -233,15 +222,6 @@ class AdministradorController extends Controller
         return redirect('/panel-administrador/actividades')
             ->with('success', 'La actividad se ha creado correctamente.');
     }
-
-
-
-
-
-
-
-
-
 
     // Gastronomia
 
@@ -396,13 +376,6 @@ class AdministradorController extends Controller
             ->with('success', 'La actividad alternativa ha sido eliminada con éxito.');
     }
 
-
-
-
-
-
-
-
     // USUARIOS
 
     public function mostrarUsuarios()
@@ -419,7 +392,7 @@ class AdministradorController extends Controller
         $usuario = User::findOrFail($id);
 
         // Verificar si el usuario actual es uno de los root protegidos
-        if ($usuario->email === 'lucia@davinci' || $usuario->email === 'tobias@davinci') {
+        if ($usuario->email === 'lucia@visitway.com' || $usuario->email === 'tobias@visitway.com') {
             return redirect()->back()->with('error', 'No puedes eliminar a este usuario.');
         }
 
@@ -446,7 +419,7 @@ class AdministradorController extends Controller
         $usuario = User::findOrFail($id);
 
         // Verificar si el usuario actual es uno de los root protegidos
-        if ($usuario->email === 'lucia@davinci' || $usuario->email === 'tobias@davinci') {
+        if ($usuario->email === 'lucia@visitway.com' || $usuario->email === 'tobias@visitway.com') {
             return redirect()->back()->with('error', 'No puedes quitarle los privilegios de administrador a este usuario.');
         }
 
