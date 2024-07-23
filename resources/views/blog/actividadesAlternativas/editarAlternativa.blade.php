@@ -103,7 +103,7 @@
                         <label for="imagen1" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen principal</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>
                         @if($actividadAlternativa->imagen1 !== null)
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen1) }}" alt="Imagen Actividad - {{ $actividadAlternativa->titulo }}" class="mb-4">
+                        <img src="<?= url('storage/' . $actividadAlternativa->imagen1); ?>" alt="Imagen Actividad - {{ $actividadAlternativa->titulo }}" class="mb-4">
                         @else
                         <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif
@@ -117,11 +117,11 @@
                     <div class="space-y-2">
                         <label for="imagen2" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Segunda imagen</label>
                         @if($actividadAlternativa->imagen2 !== null)
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen2) }}" alt="Imagen Actividad - {{ $actividadAlternativa->titulo }}" class="mb-4">
+                        <img src="<?= url('storage/' . $actividadAlternativa->imagen2); ?>" alt="Imagen Actividad - {{ $actividadAlternativa->titulo }}" class="mb-4">
                         @else
                         <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif
-                        <input type="file" id="imagen2" name="imagen2" class="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-surface transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:me-3 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-e file:border-solid file:border-inherit file:bg-transparent file:px-3  file:py-[0.32rem] file:text-surface focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none dark:border-white/70 dark:text-white  file:dark:text-white" @error('imagen2') aria-describedby="error-imagen2" aria-invalid="true" @enderror>
+                        <input type="file" id="imagen2" name="imagen2" class="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-surface transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:me-3 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-e file:border-solid file:border-inherit file:bg-transparent file:px-3  file:py-[0.32rem] file:text-surface focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none dark:border-white/70 dark:text-white  file:dark:text-white" value="{{ old('imagen2', $actividadAlternativa->imagen2) }}" @error('imagen2') aria-describedby="error-imagen2" aria-invalid="true" @enderror>
                         @error('imagen2')
                         <div class="text-danger" id="error-imagen2">{{ $message }}</div>
                         @enderror
@@ -131,11 +131,11 @@
                     <div class="space-y-2">
                         <label for="imagen3" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Tercera imagen</label>
                         @if($actividadAlternativa->imagen3 !== null)
-                        <img src="{{ asset('storage/' . $actividadAlternativa->imagen3) }}" alt="Imagen Actividad - {{ $actividadAlternativa->titulo }}" class="mb-4">
+                        <img src="<?= url('storage/' . $actividadAlternativa->imagen3); ?>" alt="Imagen Actividad - {{ $actividadAlternativa->titulo }}" class="mb-4">
                         @else
                         <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif
-                        <input type="file" id="imagen3" name="imagen3" class="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-surface transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:me-3 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-e file:border-solid file:border-inherit file:bg-transparent file:px-3  file:py-[0.32rem] file:text-surface focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none dark:border-white/70 dark:text-white  file:dark:text-white" @error('imagen3') aria-describedby="error-imagen3" aria-invalid="true" @enderror>
+                        <input type="file" id="imagen3" name="imagen3" class="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-surface transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:me-3 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-e file:border-solid file:border-inherit file:bg-transparent file:px-3  file:py-[0.32rem] file:text-surface focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none dark:border-white/70 dark:text-white  file:dark:text-white" value="{{ old('imagen3', $actividadAlternativa->imagen3) }}" @error('imagen3') aria-describedby="error-imagen3" aria-invalid="true" @enderror>
                         @error('imagen3')
                         <div class="text-danger" id="error-imagen3">{{ $message }}</div>
                         @enderror

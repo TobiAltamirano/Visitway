@@ -36,6 +36,11 @@
                     <div class="space-y-2">
                         <label for="imagen_alojamiento" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen del alojamiento</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>
+                        @if($alojamiento->imagen_alojamiento !== null)
+                        <img src="<?= url('storage/imagenes/alojamientos/' . $alojamiento->imagen_alojamiento); ?>" alt="Imagen Alojamiento - {{ $alojamiento->nombre_alojamiento }}" class="mb-4">
+                        @else
+                        <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
+                        @endif
                         <input type="file" id="imagen_alojamiento" name="imagen_alojamiento" class="roboto-flex azul-principal relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" accept="image/*" @error('imagen_alojamiento') aria-describedby="error-imagen_alojamiento" aria-invalid="true" @enderror>
                         @error('imagen_alojamiento')
                         <div class="roboto-flex rojo-principal text-sm mt-1" id="error-imagen_alojamiento">{{ $message }}</div>

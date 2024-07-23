@@ -27,7 +27,6 @@ class ProvinciaSeeder extends Seeder
                 'region_provincia' => 'Cuyo',
                 'created_at' => now(),
                 'updated_at' => now(),
-
             ],
             [
                 'id_provincia' => 2,
@@ -42,7 +41,6 @@ class ProvinciaSeeder extends Seeder
                 'region_provincia' => 'Buenos Aires',
                 'created_at' => now(),
                 'updated_at' => now(),
-
             ],
             [
                 'id_provincia' => 3,
@@ -57,7 +55,6 @@ class ProvinciaSeeder extends Seeder
                 'region_provincia' => 'Patagonicas',
                 'created_at' => now(),
                 'updated_at' => now(),
-
             ],
             [
                 'id_provincia' => 4,
@@ -72,7 +69,6 @@ class ProvinciaSeeder extends Seeder
                 'region_provincia' => 'Noroeste',
                 'created_at' => now(),
                 'updated_at' => now(),
-
             ],
             [
                 'id_provincia' => 5,
@@ -87,7 +83,6 @@ class ProvinciaSeeder extends Seeder
                 'region_provincia' => 'Nordeste',
                 'created_at' => now(),
                 'updated_at' => now(),
-
             ],
             [
                 'id_provincia' => 6,
@@ -171,6 +166,7 @@ class ProvinciaSeeder extends Seeder
                 'historia_provincia' => 'La historia de La Rioja se remonta a la época precolombina, con la presencia de los pueblos diaguitas. La ciudad de La Rioja fue fundada en 1591 por Juan Ramírez de Velasco. Durante la época colonial, la provincia fue un importante centro agrícola y minero. En el siglo XIX, La Rioja jugó un papel crucial en las guerras de independencia y en la organización nacional. Hoy en día, es una provincia próspera con una economía basada en la agricultura, la minería y el turismo.',
                 'region_provincia' => 'Noroeste',
                 'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id_provincia' => 12,
@@ -339,7 +335,7 @@ class ProvinciaSeeder extends Seeder
                 'region_provincia' => 'Noroeste',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
         ]);
     }
 }

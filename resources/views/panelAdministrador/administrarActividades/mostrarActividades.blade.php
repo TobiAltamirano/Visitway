@@ -72,6 +72,9 @@
             </table>
         </div>
     </div>
+    <div class="mt-4">
+        {{ $actividades->links('components.pagination') }}
+    </div>
 </section>
 
 @endsection

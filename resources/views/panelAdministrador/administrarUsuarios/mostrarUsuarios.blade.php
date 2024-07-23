@@ -172,6 +172,9 @@
             </table>
         </div>
     </div>
+    <div class="mt-4">
+        {{ $usuarios->links('components.pagination') }}
+    </div>
 </section>
 
 @endsection

@@ -19,21 +19,26 @@
         </div>
     </div>
 
+    @if (session('error'))
+    <div class="alert alert-warning">
+        {{ session('error') }}
+    </div>
+    @endif
+
     <!-- Título, descripción e imagen -->
     <section class="flex flex-col items-center justify-center w-full py-6 md:py-6 lg:py-6">
         <div class="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div class="space-y-4 text-center lg:text-left">
                 <div class="space-y-2 flex flex-col">
                     <h2 class="text-3xl font-bold sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[2.5rem] poppins-bold azul-principal">
-                        Mendoza,<span class="rojo-principal"> Argentina</span>
+                        {{$provincia->nombre_provincia}},<span class="rojo-principal"> Argentina</span>
                     </h2>
                     <p class="max-w-[600px] mx-auto lg:mx-0 md:text-xl azul-principal roboto-flex">
                         En un mundo en constante movimiento, <span class=" font-bold">haz que las aventuras cobren vida</span> y convierte la planificación de tus escapadas en una experiencia única. Estamos aquí <span class="font-bold">para que cada viaje sea inolvidable</span>.
                     </p>
                 </div>
             </div>
-            <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="600" height="500" alt="Imagen {{$provincia->nombre_provincia}}" class="mx-auto w-full aspect-[3/2] overflow-hidden rounded-xl object-cover object-center" />
-
+            <img src="<?= url('storage/imagenes/provincias/' . $provincia->imagen_provincia); ?>" width="600" height="500" alt="Imagen {{$provincia->nombre_provincia}}" class="mx-auto w-full aspect-[3/2] overflow-hidden rounded-xl object-cover object-center" />
         </div>
     </section>
 
@@ -68,7 +73,7 @@
                                             {{$provincia->ubicacion_provincia}}
                                         </p>
                                     </div>
-                                    <img src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $provincia->nombre_provincia }}" width="400" height="200" class="mt-4 rounded-lg object-cover w-full aspect-[3/2]" />
+                                    <img src="<?= url('storage/imagenes/provincias/' . $provincia->imagen_ubicacion_provincia); ?>" alt="{{ $provincia->nombre_provincia }}" width="400" height="200" class="mt-4 rounded-lg object-cover w-full aspect-[3/2]" />
                                 </div>
                             </div>
                         </div>

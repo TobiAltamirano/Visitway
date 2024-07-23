@@ -88,6 +88,11 @@
             </table>
         </div>
     </div>
+
+    <div class="mt-4">
+        {{ $posteos->links('components.pagination') }}
+    </div>
+
 </section>
 
 @endsection

@@ -9,7 +9,7 @@
     @include('components.lineas-secundarias')
 
     <div class="flex justify-center mt-6 mb-6">
-        <x-boton-volver url="{{ route('provincia.gastronomia', ['id' => $provincia->id_provincia, 'idTipoGastronomia' => $tipoGastronomia->id_tipo_gastronomia]) }}">Listado de locales gastronomicos</x-boton-volver>
+        <x-boton-volver url="{{ route('provincia.gastronomia', ['id' => $provincia->id_provincia, 'idTipoGastronomia' => $tipoGastronomia->id_tipo_gastronomia]) }}">Listado de locales gastronómicos</x-boton-volver>
     </div>
 
     <div class="flex justify-center mt-6 mb-6">
@@ -23,7 +23,11 @@
     <!-- Título e imagen -->
     <section class="w-full py-12 flex justify-center">
         <div class="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="550" height="400" alt="{{ $gastronomia->nombre_local_gastronomico }}" class="mx-auto aspect-[9/6] overflow-hidden rounded-xl object-cover object-center sm:w-full" />
+            @if($gastronomia->imagen_local_gastronomico)
+            <img src="<?= url('storage/imagenes/gastronomia/' . $gastronomia->imagen_local_gastronomico); ?>" width="550" height="400" alt="{{ $gastronomia->nombre_local_gastronomico }}" class="mx-auto aspect-[9/6] overflow-hidden rounded-xl object-cover object-center sm:w-full" />
+            @else
+            <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
+            @endif
             <div class="space-y-4 text-center lg:text-left">
                 <div class="space-y-2 pb-2">
                     <h2 class="text-3xl poppins-bold rojo-principal md:text-4xl/tight">{{ $gastronomia->nombre_local_gastronomico }}</h2>

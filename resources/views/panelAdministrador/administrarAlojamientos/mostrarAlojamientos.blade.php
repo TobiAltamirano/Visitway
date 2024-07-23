@@ -72,6 +72,11 @@
             </table>
         </div>
     </div>
+
+    <div class="mt-4">
+        {{ $alojamientos->links('components.pagination') }}
+    </div>
+
 </section>
 
 @endsection

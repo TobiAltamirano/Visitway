@@ -32,11 +32,10 @@
     <!-- Título e imagen -->
     <section class="w-full py-12 flex justify-center">
         <div class="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            @if($alojamiento->imagen_alojamiento !== null)
-            <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="550" height="400" alt="{{ $alojamiento->nombre_alojamiento }}" class="mx-auto aspect-[9/6] overflow-hidden rounded-xl object-cover object-center sm:w-full" />
-            <!-- <img src="{{ asset('storage/' . $alojamiento->imagen_alojamiento) }}" alt="Imagen Noticia - {{$alojamiento->nombre_actividad }}" class="card-img-top"> -->
+            @if($alojamiento->imagen_alojamiento)
+            <img src="<?= url('storage/imagenes/alojamientos/' . $alojamiento->imagen_alojamiento); ?>" width="550" height="400" alt="{{ $alojamiento->nombre_alojamiento}}" class="mx-auto aspect-[9/6] overflow-hidden rounded-xl object-cover object-center sm:w-full" />
             @else
-            No se ha encontrado la imagen, puede que haya habido un error al cargarla. Porfavor, vuelve a intentarlo.
+            <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
             @endif
             <div class="space-y-4 text-center lg:text-left">
                 <div class="space-y-2">

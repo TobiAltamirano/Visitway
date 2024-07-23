@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('alojamientos', function (Blueprint $table) {
             $table->id('id_alojamiento');
             $table->string('nombre_alojamiento');
-            $table->string('imagen_alojamiento');
+            $table->string('imagen_alojamiento')->nullable();;
             $table->unsignedInteger('precio_alojamiento');
             $table->text('horarios_alojamiento');
             $table->text('ubicacion_alojamiento');

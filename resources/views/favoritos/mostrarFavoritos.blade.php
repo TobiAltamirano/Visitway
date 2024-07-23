@@ -26,7 +26,11 @@
         @foreach($alojamientosFavoritos as $alojamiento)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleAlojamiento', ['id' => $alojamiento->provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento, 'idTipoAlojamiento' => $alojamiento->tipo_alojamiento_id]) }}" class="block">
-                <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $alojamiento->nombre_alojamiento }}" />
+                @if($alojamiento->imagen_alojamiento)
+                <img class="rounded-t-lg" src="<?= url('storage/imagenes/alojamientos/' . $alojamiento->imagen_alojamiento); ?>" alt="{{ $alojamiento->nombre_alojamiento }}" />
+                @else
+                <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
+                @endif
                 <div class="p-4">
                     <h4 class="rojo-principal poppins-medium text-center text-base">{{ $alojamiento->provincia->nombre_provincia }}</h4>
                     <h3 class="text-2xl font-medium leading-tight text-center azul-principal poppins-medium">
@@ -50,7 +54,11 @@
         @foreach($actividadesFavoritas as $actividad)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleActividad', ['id' => $actividad->provincia->id_provincia, 'actividadId' => $actividad->id_actividad, 'idTipoActividad' => $actividad->tipo_actividad_id]) }}" class="block">
-                <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $actividad->nombre_actividad }}" />
+                @if($actividad->imagen_actividad)
+                <img class="rounded-t-lg" src="<?= url('storage/imagenes/actividades/' . $actividad->imagen_actividad); ?>" alt="{{ $actividad->nombre_actividad }}" />
+                @else
+                <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
+                @endif
                 <div class="p-4">
                     <h4 class="rojo-principal poppins-medium text-center text-base">{{ $actividad->provincia->nombre_provincia }}</h4>
                     <h3 class="text-2xl font-medium leading-tight text-center azul-principal poppins-medium">
@@ -74,7 +82,11 @@
         @foreach($localesGastronomicosFavoritos as $localGastronomico)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleGastronomia', ['id' => $localGastronomico->provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico, 'idTipoGastronomia' => $localGastronomico->tipo_gastronomia_id]) }}" class="block">
-                <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $localGastronomico->nombre_local_gastronomico }}" />
+                @if($localGastronomico->imagen_local_gastronomico)
+                <img class="rounded-t-lg" src="<?= url('storage/imagenes/gastronomia/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="{{ $localGastronomico->nombre_local_gastronomico }}" />
+                @else
+                <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
+                @endif
                 <div class="p-4">
                     <h4 class="rojo-principal poppins-medium text-center text-base">{{ $localGastronomico->provincia->nombre_provincia }}</h4>
                     <h3 class="text-2xl font-medium leading-tight text-center azul-principal poppins-medium">

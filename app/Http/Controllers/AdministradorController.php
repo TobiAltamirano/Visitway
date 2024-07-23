@@ -26,16 +26,14 @@ class AdministradorController extends Controller
     // Mostrar
     public function mostrarAlojamientos()
     {
-
-        $alojamientos = Alojamiento::all();
+        $alojamientos = Alojamiento::paginate(15);
 
         return view('panelAdministrador.administrarAlojamientos.mostrarAlojamientos', ['alojamientos' => $alojamientos]);
     }
 
-    // Editar
+    // Editar alojamiento
     public function editarAlojamiento(int $id)
     {
-
         $alojamiento = Alojamiento::findOrFail($id);
 
         $provincias = Provincia::all();
@@ -88,7 +86,6 @@ class AdministradorController extends Controller
         ]);
     }
 
-    // Eliminar alojamiento
     public function procesoEliminacionAlojamiento($id)
     {
         $alojamiento = Alojamiento::findOrFail($id);
@@ -128,7 +125,7 @@ class AdministradorController extends Controller
     public function mostrarActividades()
     {
 
-        $actividades = Actividad::all();
+        $actividades = Actividad::paginate(15);
 
         return view('panelAdministrador.administrarActividades.mostrarActividades', ['actividades' => $actividades]);
     }
@@ -136,7 +133,6 @@ class AdministradorController extends Controller
     // Editar
     public function editarActividad(int $id)
     {
-
         $actividad = Actividad::findOrFail($id);
 
         $provincias = Provincia::all();
@@ -230,7 +226,7 @@ class AdministradorController extends Controller
     // Mostrar
     public function mostrarLocalesGastronomicos()
     {
-        $localesGastronomicos = Gastronomia::all();
+        $localesGastronomicos = Gastronomia::paginate(15);
 
         return view('panelAdministrador.administrarGastronomia.mostrarLocalesGastronomicos', ['localesGastronomicos' => $localesGastronomicos]);
     }
@@ -308,7 +304,7 @@ class AdministradorController extends Controller
 
     public function mostrarPosteos()
     {
-        $posteos = Posteo::all();
+        $posteos = Posteo::paginate(15);
 
         return view('panelAdministrador.administrarPosteos.mostrarPosteos', compact('posteos'));
     }
@@ -344,7 +340,7 @@ class AdministradorController extends Controller
 
     public function mostrarActividadesAlternativas()
     {
-        $actividadesAlternativas = ActividadAlternativa::all();
+        $actividadesAlternativas = ActividadAlternativa::paginate(15);
 
         return view('panelAdministrador.administrarAlternativas.mostrarActividadesAlternativas', compact('actividadesAlternativas'));
     }
@@ -380,8 +376,7 @@ class AdministradorController extends Controller
 
     public function mostrarUsuarios()
     {
-
-        $usuarios = User::all();
+        $usuarios = User::paginate(15);
 
         return view('panelAdministrador.administrarUsuarios.mostrarUsuarios', compact('usuarios'));
     }

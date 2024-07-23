@@ -20,8 +20,8 @@
         <div class="container mx-auto px-4 md:px-6 flex justify-center">
             <div class="group overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:shadow-md dark:bg-gray-950 md:max-w-md lg:max-w-xs">
                 <div class="relative aspect-[4/3] overflow-hidden">
-                    @if($posteo->imagen1 !== null)
-                    <img src="{{ asset('storage/' . $posteo->imagen1) }}" alt="Imagen Posteo - {{$posteo->titulo }}" class="imagen-eliminar">
+                    @if($posteo->imagen !== null)
+                    <img src="<?= url('storage/' . $posteo->imagen); ?>" alt="Imagen Posteo - {{$posteo->titulo }}">
                     @else
                     No se ha encontrado la imagen, puede que haya habido un error al cargarla. Porfavor, vuelve a intentarlo.
                     @endif

@@ -19,9 +19,7 @@ class Posteo extends Model
         'titulo',
         'contenido',
         'provincia',
-        'imagen1',
-        'imagen2',
-        'imagen3',
+        'imagen',
     ];
 
     // Creamos reglas y mensajes de validación

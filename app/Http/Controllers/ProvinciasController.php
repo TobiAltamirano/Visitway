@@ -59,7 +59,6 @@ class ProvinciasController extends Controller
     // Mostrar introducción a provincia seleccionada
     public function mostrarIntroduccion($id)
     {
-
         $provincia = Provincia::find($id);
 
         if (!$provincia) {

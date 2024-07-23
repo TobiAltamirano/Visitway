@@ -4,7 +4,7 @@
 
 @section('content')
 <section>
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Gastronomia en<br> <span class="span-h1-provincias">{{ $provincia->nombre_provincia }}</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Gastronomía en<br> <span class="span-h1-provincias">{{ $provincia->nombre_provincia }}</span></h1>
 
     @include('components.lineas-secundarias')
 
@@ -55,7 +55,11 @@
             @foreach ($localesGastronomicos as $localGastronomico)
             <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                 <a href="{{ route('provincia.detalleGastronomia', ['id' => $provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico, 'idTipoGastronomia' => $localGastronomico->tipo_gastronomia_id]) }}">
-                    <img class="rounded-t-lg" src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp" alt="{{ $localGastronomico->nombre_local_gastronomico }}" />
+                    @if($localGastronomico->imagen_local_gastronomico)
+                    <img class="rounded-t-lg" src="<?= url('storage/imagenes/gastronomia/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="{{ $localGastronomico->nombre_local_gastronomico }}" />
+                    @else
+                    <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
+                    @endif
                     <div class="p-4">
                         <h2 class="text-xl font-medium leading-tight text-center azul-principal poppins-medium">{{ $localGastronomico->nombre_local_gastronomico }}</h2>
                     </div>

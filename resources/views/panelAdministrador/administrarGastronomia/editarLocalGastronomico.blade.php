@@ -6,7 +6,7 @@
 
 <section>
 
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Editar local gastronómico:<span class="span-h1-provincias"><br>{{ $local_gastronomico->nombre_local_gastronomico }}</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Editar local gastronómico:<span class="span-h1-provincias"><br>{{ $localGastronomico->nombre_local_gastronomico }}</span></h1>
 
     @include('components.lineas-secundarias')
 
@@ -36,6 +36,11 @@
                     <div class="space-y-2">
                         <label for="imagen_local_gastronomico" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen de la local gastronómico</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>
+                        @if($localGastronomico->imagen_local_gastronomico !== null)
+                        <img src="<?= url('storage/imagenes/gastronomia/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="Imagen Local Gastronómico - {{ $localGastronomico->nombre_local_gastronomico }}" class="mb-4">
+                        @else
+                        <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
+                        @endif
                         <input type="file" id="imagen_local_gastronomico" name="imagen_local_gastronomico" class="roboto-flex azul-principal relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" accept="image/*" @error('imagen_local_gastronomico') aria-describedby="error-imagen_local_gastronomico" aria-invalid="true" @enderror>
                         @error('imagen_local_gastronomico')
                         <div class="roboto-flex rojo-principal text-sm mt-1" id="error-imagen_local_gastronomico">{{ $message }}</div>

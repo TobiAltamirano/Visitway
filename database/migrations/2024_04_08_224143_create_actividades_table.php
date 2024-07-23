@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('actividades', function (Blueprint $table) {
             $table->id('id_actividad');
             $table->string('nombre_actividad');
-            $table->string('imagen_actividad');
+            $table->string('imagen_actividad')->nullable();
             $table->text('descripcion_actividad');
             $table->unsignedInteger('precio_actividad');
             $table->text('horarios_actividad');

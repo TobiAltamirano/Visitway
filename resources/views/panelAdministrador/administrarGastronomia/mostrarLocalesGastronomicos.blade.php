@@ -70,6 +70,9 @@
             </table>
         </div>
     </div>
+    <div class="mt-4">
+        {{ $localesGastronomicos->links('components.pagination') }}
+    </div>
 </section>
 
 @endsection

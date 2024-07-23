@@ -20,7 +20,7 @@ return new class extends Migration
             $table->time('hora_fin');
             $table->timestamps();
 
-            $table->foreign('id_actividad')->references('id')->on('actividades');
+            $table->foreign('id_actividad')->references('id_actividad')->on('actividades');
             $table->foreign('id_usuario')->references('id')->on('users');
         });
     }

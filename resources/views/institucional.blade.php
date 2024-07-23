@@ -33,7 +33,7 @@
                             <div class="w-full">
                                 <h3 class="text-lg poppins-bold azul-principal">Tobías Altamirano</h3>
                                 <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñador y desarrolador web</h4>
-                                <p class="mb-4">"La mejor forma de predecir el futuro es implementarlo"</p>
+                                <p class="mb-4 azul-principal">"La mejor forma de predecir el futuro es implementarlo"</p>
                             </div>
                         </div>
                     </div>

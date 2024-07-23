@@ -61,7 +61,7 @@
                     <div class="w-1/2 md:w-auto flex justify-center items-center mb-4">
                         <input type="radio" id="avatar6" name="avatar" value="avatar6.png" class="hidden">
                         <label for="avatar6" class="cursor-pointer avatar-label">
-                            <img src="{{ asset('storage/avatars/avatar6.png') }}" alt="Avatar 5 - " class="w-20 h-20 rounded-full mr-2 avatar-option">
+                            <img src="{{ asset('storage/avatars/avatar6.png') }}" alt="Avatar 6 - Emilia Mernes y Duki" class="w-20 h-20 rounded-full mr-2 avatar-option">
                         </label>
                     </div>
                 </div>
