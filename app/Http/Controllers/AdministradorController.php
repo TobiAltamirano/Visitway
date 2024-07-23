@@ -22,8 +22,6 @@ use Illuminate\Support\Facades\Auth;
 class AdministradorController extends Controller
 {
     // Alojamientos
-
-    // Mostrar
     public function mostrarAlojamientos()
     {
         $alojamientos = Alojamiento::paginate(15);
@@ -31,7 +29,6 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarAlojamientos.mostrarAlojamientos', ['alojamientos' => $alojamientos]);
     }
 
-    // Editar alojamiento
     public function editarAlojamiento(int $id)
     {
         $alojamiento = Alojamiento::findOrFail($id);
@@ -48,35 +45,36 @@ class AdministradorController extends Controller
 
     public function procesoEdicionAlojamiento(int $id, Request $request)
     {
+        // Buscar la noticia por su ID
+        $alojamiento = Alojamiento::findOrFail($id);
+
         // Validación de los datos, igual que la función createProcess
         $request->validate(Alojamiento::REGLAS_VALIDACION, Alojamiento::MENSAJES_VALIDACION);
 
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
 
-        // Buscar la noticia por su ID
-        $alojamiento = Alojamiento::findOrFail($id);
+        // Guardamos la imagen anterior para poder eliminarla si se sube una nueva
+        $oldImage = $alojamiento->imagen_alojamiento;
 
         //Upload de la imagen de las noticias
-        if ($request->hasFile('file')) {
+        if ($request->hasFile('imagen_alojamiento')) {
             // Guardamos el archivo en la carpeta "img"
-            $data['imagen_alojamiento'] = $request->file('file')->store('imagenes');
-            $oldCover = $alojamiento->imagen_alojamiento;
+            $data['imagen_alojamiento'] = $request->file('imagen_alojamiento')->store('imagenes/alojamientos');
+
+            // Borramos la imagen anterior si es necesario
+            if (isset($oldImage) && Storage::has($oldImage)) {
+                Storage::delete($oldImage);
+            }
         }
 
         // Actualizar los datos de la noticia con los datos del formulario
         $alojamiento->update($data);
 
-        // Borramos la imagen anterior si es necesario
-        if (isset($oldCover) && Storage::has($oldCover)) {
-            Storage::delete($oldCover);
-        }
-
         return redirect('/panel-administrador/alojamientos')
             ->with('success', 'El alojamiento ' . $data['nombre_alojamiento'] . ' ha sido actualizado con éxito.');
     }
 
-    // Eliminar alojamiento
     public function eliminarAlojamiento($id)
     {
         $alojamiento = Alojamiento::findOrFail($id);
@@ -89,28 +87,34 @@ class AdministradorController extends Controller
     public function procesoEliminacionAlojamiento($id)
     {
         $alojamiento = Alojamiento::findOrFail($id);
+
+        // Si tiene una imagen, la borramos.
+        if ($alojamiento->imagen_alojamiento !== null) {
+            Storage::delete($alojamiento->imagen_alojamiento);
+        }
+
         $alojamiento->delete();
+
         return redirect('/panel-administrador/alojamientos')
             ->with('success', 'El alojamiento ha sido eliminado correctamente.');
     }
 
-    // Crear alojamiento
     public function crearAlojamiento()
     {
         $provincias = Provincia::all();
-        $tipoAlojamientos = TipoAlojamiento::all(); // Agrega esta línea si también necesitas los tipos de alojamiento
+        $tipoAlojamientos = TipoAlojamiento::all();
+
         return view('panelAdministrador.administrarAlojamientos.crearAlojamiento', compact('provincias', 'tipoAlojamientos'));
     }
 
-    // Proceso de creación de alojamiento
     public function procesoCreacionAlojamiento(Request $request)
     {
         $request->validate(Alojamiento::REGLAS_VALIDACION, Alojamiento::MENSAJES_VALIDACION);
 
         $data = $request->except(['_token']);
 
-        if ($request->hasFile('archivo')) {
-            $data['imagen_alojamiento'] = $request->file('archivo')->store('imagenes');
+        if ($request->hasFile('imagen_alojamiento')) {
+            $data['imagen_alojamiento'] = $request->file('imagen_alojamiento')->store('imagenes/alojamientos');
         }
 
         Alojamiento::create($data);
@@ -120,8 +124,6 @@ class AdministradorController extends Controller
     }
 
     // Actividades
-
-    // Mostrar
     public function mostrarActividades()
     {
 
@@ -130,7 +132,6 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarActividades.mostrarActividades', ['actividades' => $actividades]);
     }
 
-    // Editar
     public function editarActividad(int $id)
     {
         $actividad = Actividad::findOrFail($id);
@@ -147,35 +148,36 @@ class AdministradorController extends Controller
 
     public function procesoEdicionActividad(int $id, Request $request)
     {
+        // Buscar la actividad por su ID
+        $actividad = Actividad::findOrFail($id);
+
         // Validación de los datos
         $request->validate(Actividad::REGLAS_VALIDACION, Actividad::MENSAJES_VALIDACION);
 
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
 
-        // Buscar la actividad por su ID
-        $actividad = Actividad::findOrFail($id);
+        // Guardamos la imagen anterior para poder eliminarla si se sube una nueva
+        $oldImage = $actividad->imagen_actividad;
 
         // Upload de la imagen de la actividad
-        if ($request->hasFile('file')) {
+        if ($request->hasFile('imagen_actividad')) {
             // Guardamos el archivo en la carpeta "img"
-            $data['imagen_actividad'] = $request->file('file')->store('imagenes');
-            $oldImage = $actividad->imagen_actividad;
+            $data['imagen_actividad'] = $request->file('imagen_actividad')->store('imagenes/actividades');
+
+            // Borramos la imagen anterior si es necesario
+            if (isset($oldImage) && Storage::has($oldImage)) {
+                Storage::delete($oldImage);
+            }
         }
 
         // Actualizar los datos de la actividad con los datos del formulario
         $actividad->update($data);
 
-        // Borramos la imagen anterior si es necesario
-        if (isset($oldImage) && Storage::has($oldImage)) {
-            Storage::delete($oldImage);
-        }
-
         return redirect('/panel-administrador/actividades')
             ->with('success', 'La actividad ' . $data['nombre_actividad'] . ' ha sido actualizada con éxito.');
     }
 
-    // Eliminar actividad
     public function eliminarActividad($id)
     {
         $actividad = Actividad::findOrFail($id);
@@ -185,32 +187,36 @@ class AdministradorController extends Controller
         ]);
     }
 
-    // Proceso de eliminación de actividad
     public function procesoEliminacionActividad($id)
     {
         $actividad = Actividad::findOrFail($id);
+
+        // Si tiene una imagen, la borramos.
+        if ($actividad->imagen_actividad !== null) {
+            Storage::delete($actividad->imagen_actividad);
+        }
+
         $actividad->delete();
         return redirect('/panel-administrador/actividades')
             ->with('success', 'La actividad ha sido eliminada correctamente.');
     }
 
-    // Crear actividad
     public function crearActividad()
     {
         $provincias = Provincia::all();
-        $tiposActividad = TipoActividad::all(); // Si también necesitas los tipos de actividad
+        $tiposActividad = TipoActividad::all();
+
         return view('panelAdministrador.administrarActividades.crearActividad', compact('provincias', 'tiposActividad'));
     }
 
-    // Proceso de creación de actividad
     public function procesoCreacionActividad(Request $request)
     {
         $request->validate(Actividad::REGLAS_VALIDACION, Actividad::MENSAJES_VALIDACION);
 
         $data = $request->except(['_token']);
 
-        if ($request->hasFile('archivo')) {
-            $data['imagen_actividad'] = $request->file('archivo')->store('imagenes');
+        if ($request->hasFile('imagen_actividad')) {
+            $data['imagen_actividad'] = $request->file('imagen_actividad')->store('imagenes/actividades/');
         }
 
         Actividad::create($data);
@@ -220,10 +226,6 @@ class AdministradorController extends Controller
     }
 
     // Gastronomia
-
-    // Locales Gastronómicos
-
-    // Mostrar
     public function mostrarLocalesGastronomicos()
     {
         $localesGastronomicos = Gastronomia::paginate(15);
@@ -231,7 +233,6 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarGastronomia.mostrarLocalesGastronomicos', ['localesGastronomicos' => $localesGastronomicos]);
     }
 
-    // Editar
     public function editarLocalGastronomico(int $id)
     {
         $localGastronomico = Gastronomia::findOrFail($id);
@@ -243,25 +244,29 @@ class AdministradorController extends Controller
 
     public function procesoEdicionLocalGastronomico(int $id, Request $request)
     {
-        $request->validate(Gastronomia::REGLAS_VALIDACION, Gastronomia::MENSAJES_VALIDACION);
-        $data = $request->except(['_token', '_method']);
         $localGastronomico = Gastronomia::findOrFail($id);
 
-        if ($request->hasFile('file')) {
-            $data['imagen_local_gastronomico'] = $request->file('file')->store('imagenes');
-            $oldCover = $localGastronomico->imagen_local_gastronomico;
+        $request->validate(Gastronomia::REGLAS_VALIDACION, Gastronomia::MENSAJES_VALIDACION);
+
+        $data = $request->except(['_token', '_method']);
+
+        // Guardamos la imagen anterior para poder eliminarla si se sube una nueva
+        $oldImage = $localGastronomico->imagen_local_gastronomico;
+
+        if ($request->hasFile('imagen_local_gastronomico')) {
+            $data['imagen_local_gastronomico'] = $request->file('imagen_local_gastronomico')->store('imagenes/gastronomia');
+
+            // Borramos la imagen anterior si es necesario
+            if (isset($oldImage) && Storage::has($oldImage)) {
+                Storage::delete($oldImage);
+            }
         }
 
         $localGastronomico->update($data);
 
-        if (isset($oldCover) && Storage::has($oldCover)) {
-            Storage::delete($oldCover);
-        }
-
         return redirect('/panel-administrador/locales-gastronomicos')->with('success', 'El local gastronómico ' . $data['nombre_local_gastronomico'] . ' ha sido actualizado con éxito.');
     }
 
-    // Eliminar local gastronómico
     public function eliminarLocalGastronomico($id)
     {
         $localGastronomico = Gastronomia::findOrFail($id);
@@ -269,15 +274,20 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarGastronomia.eliminarLocalGastronomico', ['localGastronomico' => $localGastronomico]);
     }
 
-    // Proceso eliminar local gastronómico
     public function procesoEliminacionLocalGastronomico($id)
     {
         $localGastronomico = Gastronomia::findOrFail($id);
+
+        // Si tiene una imagen, la borramos.
+        if ($localGastronomico->imagen_alojamiento !== null) {
+            Storage::delete($localGastronomico->imagen_alojamiento);
+        }
+
         $localGastronomico->delete();
+
         return redirect('/panel-administrador/locales-gastronomicos')->with('success', 'El local gastronómico ha sido eliminado correctamente.');
     }
 
-    // Crear local gastronómico
     public function crearLocalGastronomico()
     {
         $provincias = Provincia::all();
@@ -285,14 +295,13 @@ class AdministradorController extends Controller
         return view('panelAdministrador.administrarGastronomia.crearLocalGastronomico', compact('provincias', 'tiposGastronomia'));
     }
 
-    // Proceso de creación de local gastronómico
     public function procesoCreacionLocalGastronomico(Request $request)
     {
         $request->validate(Gastronomia::REGLAS_VALIDACION, Gastronomia::MENSAJES_VALIDACION);
         $data = $request->except(['_token']);
 
-        if ($request->hasFile('archivo')) {
-            $data['imagen_local_gastronomico'] = $request->file('archivo')->store('imagenes');
+        if ($request->hasFile('imagen_local_gastronomico')) {
+            $data['imagen_local_gastronomico'] = $request->file('imagen_local_gastronomico')->store('imagenes/gastronomia');
         }
 
         Gastronomia::create($data);
@@ -301,7 +310,6 @@ class AdministradorController extends Controller
     }
 
     // Posteos
-
     public function mostrarPosteos()
     {
         $posteos = Posteo::paginate(15);
@@ -311,7 +319,6 @@ class AdministradorController extends Controller
 
     public function verPosteo(int $id)
     {
-
         $posteo = Posteo::findOrFail($id);
 
         return view('panelAdministrador.administrarPosteos.verPosteo', compact('posteo'));
@@ -319,13 +326,12 @@ class AdministradorController extends Controller
 
     public function eliminarPosteo(int $id)
     {
-
         // Buscamos el posteo por su ID
         $posteo = Posteo::findOrFail($id);
 
         // Si tiene una imagen, la borramos.
-        if ($posteo->imagen1 !== null) {
-            Storage::delete($posteo->imagen1);
+        if ($posteo->imagen !== null) {
+            Storage::delete($posteo->imagen);
         }
 
         // Eliminamos el posteo
@@ -337,7 +343,6 @@ class AdministradorController extends Controller
     }
 
     // Actividades Alternativas
-
     public function mostrarActividadesAlternativas()
     {
         $actividadesAlternativas = ActividadAlternativa::paginate(15);
@@ -347,7 +352,6 @@ class AdministradorController extends Controller
 
     public function verActividadAlternativa(int $id)
     {
-
         $actividadAlternativa = ActividadAlternativa::findOrFail($id);
 
         return view('panelAdministrador.administrarAlternativas.verActividadAlternativa', compact('actividadAlternativa'));
@@ -355,8 +359,7 @@ class AdministradorController extends Controller
 
     public function eliminarActividadAlternativa(int $id)
     {
-
-        // Buscamos el posteo por su ID
+        // Buscamos la actividad alternativa por su ID
         $actividadAlternativa = ActividadAlternativa::findOrFail($id);
 
         // Si tiene una imagen, la borramos.
@@ -364,7 +367,17 @@ class AdministradorController extends Controller
             Storage::delete($actividadAlternativa->imagen1);
         }
 
-        // Eliminamos el posteo
+        // Si tiene una imagen, la borramos.
+        if ($actividadAlternativa->imagen2 !== null) {
+            Storage::delete($actividadAlternativa->imagen2);
+        }
+
+        // Si tiene una imagen, la borramos.
+        if ($actividadAlternativa->imagen3 !== null) {
+            Storage::delete($actividadAlternativa->imagen3);
+        }
+
+        // Eliminamos la actividad
         $actividadAlternativa->delete();
 
         // Retornar la vista de lista de posteos con un mensaje de éxito
@@ -372,8 +385,7 @@ class AdministradorController extends Controller
             ->with('success', 'La actividad alternativa ha sido eliminada con éxito.');
     }
 
-    // USUARIOS
-
+    // Usuarios
     public function mostrarUsuarios()
     {
         $usuarios = User::paginate(15);

@@ -95,7 +95,7 @@
             <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                 <a href="{{ route('provincia.detalleGastronomia', ['id' => $provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico, 'idTipoGastronomia' => $localGastronomico->tipo_gastronomia_id]) }}">
                     @if($localGastronomico->imagen_local_gastronomico)
-                    <img class="rounded-t-lg" src="<?= url('storage/imagenes/gastronomia/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="{{ $localGastronomico->nombre_local_gastronomico }}" />
+                    <img class="rounded-t-lg" src="<?= url('storage/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="{{ $localGastronomico->nombre_local_gastronomico }}" />
                     @else
                     <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
                     @endif

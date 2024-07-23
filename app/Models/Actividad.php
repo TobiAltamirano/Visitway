@@ -72,7 +72,6 @@ class Actividad extends Model
         'contacto_actividad.digits' => 'El contacto debe tener :digits dígitos.',
         'provincia_id.required' => 'Debe ingresar un valor valido',
         'tipo_actividad_id.required' => 'Debe ingresar un valor valido'
-        // No se agregan mensajes para los campos opcionales
     ];
 
     // Relación con la tabla Provincias

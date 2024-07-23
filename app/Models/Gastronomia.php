@@ -72,7 +72,6 @@ class Gastronomia extends Model
         'contacto_local_gastronomico.digits' => 'El contacto debe tener :digits dígitos.',
         'provincia_id.required' => 'Debe ingresar un valor valido',
         'tipo_gastronomia_id.required' => 'Debe ingresar un valor valido'
-        // No se agregan mensajes para los campos opcionales
     ];
 
 

@@ -78,19 +78,23 @@ class PosteosController extends Controller
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
 
+        // Guardamos la imagen anterior para poder eliminarla si se sube una nueva
+        $oldImage = $posteo->imagen;
+
         // Upload de la imagen del posteo
         if ($request->hasFile('archivo')) {
             // Guardamos el archivo en la carpeta "img/posteos"
             $data['imagen'] = $request->file('archivo')->store('imagenes/posteos');
+
+            // Borramos la imagen anterior si es necesario
+            if (isset($oldImage) && Storage::has($oldImage)) {
+                Storage::delete($oldImage);
+            }
         }
 
         // Actualizar los datos del posteo con los datos del formulario
         $posteo->update($data);
 
-        // Borramos la imagen anterior si es necesario
-        if (isset($oldCover) && Storage::has($oldCover)) {
-            Storage::delete($oldCover);
-        }
 
         // Retornar la vista de formulario de edición con el posteo
         return redirect('/blog/posteos')
@@ -123,8 +127,8 @@ class PosteosController extends Controller
         }
 
         // Si tiene una imagen, la borramos.
-        if ($posteo->imagen1 !== null) {
-            Storage::delete($posteo->imagen1);
+        if ($posteo->imagen !== null) {
+            Storage::delete($posteo->imagen);
         }
 
         // Eliminamos el posteo

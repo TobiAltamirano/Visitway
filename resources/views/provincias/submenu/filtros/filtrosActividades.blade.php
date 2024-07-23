@@ -56,7 +56,7 @@
             <div class="hover:opacity-75 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white">
                 <a href="{{ route('provincia.detalleActividad', ['id' => $provincia->id_provincia, 'actividadId' => $actividad->id_actividad, 'idTipoActividad' => $actividad->tipo_actividad_id]) }}">
                     @if($actividad->imagen_actividad)
-                    <img class="rounded-t-lg" src="<?= url('storage/imagenes/actividades/' . $actividad->imagen_actividad); ?>" alt="{{ $actividad->nombre_actividad }}" />
+                    <img class="rounded-t-lg" src="<?= url('storage/' . $actividad->imagen_actividad); ?>" alt="{{ $actividad->nombre_actividad }}" />
                     @else
                     <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
                     @endif

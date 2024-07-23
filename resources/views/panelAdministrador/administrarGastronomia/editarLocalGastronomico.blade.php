@@ -37,7 +37,7 @@
                         <label for="imagen_local_gastronomico" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen de la local gastronómico</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>
                         @if($localGastronomico->imagen_local_gastronomico !== null)
-                        <img src="<?= url('storage/imagenes/gastronomia/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="Imagen Local Gastronómico - {{ $localGastronomico->nombre_local_gastronomico }}" class="mb-4">
+                        <img src="<?= url('storage/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="Imagen Local Gastronómico - {{ $localGastronomico->nombre_local_gastronomico }}" class="mb-4">
                         @else
                         <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif
@@ -194,7 +194,7 @@
 
                     <!-- Botón de envío -->
                     <div class="flex gap-2 pt-4" data-id="25">
-                        <button class="inline-flex h-10 w-full sm:w-auto items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 buton-1-cta roboto-flex" type="submit" data-id="27">Crear local gastronomico</button>
+                        <button class="inline-flex h-10 w-full sm:w-auto items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 buton-1-cta roboto-flex" type="submit" data-id="27">Editar local gastronómico</button>
                         <a href="{{ route('administrador.locales_gastronomicos') }}" class="inline-flex h-10 w-full sm:w-auto items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300 roboto-flex azul-principal">
                             Cancelar
                         </a>

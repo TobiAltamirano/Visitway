@@ -119,7 +119,7 @@
                         @if($actividadAlternativa->imagen2 !== null)
                         <img src="<?= url('storage/' . $actividadAlternativa->imagen2); ?>" alt="Imagen Actividad - {{ $actividadAlternativa->titulo }}" class="mb-4">
                         @else
-                        <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
+                        <p class="roboto-flex azul-principal">No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif
                         <input type="file" id="imagen2" name="imagen2" class="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-surface transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:me-3 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-e file:border-solid file:border-inherit file:bg-transparent file:px-3  file:py-[0.32rem] file:text-surface focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none dark:border-white/70 dark:text-white  file:dark:text-white" value="{{ old('imagen2', $actividadAlternativa->imagen2) }}" @error('imagen2') aria-describedby="error-imagen2" aria-invalid="true" @enderror>
                         @error('imagen2')

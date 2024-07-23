@@ -37,7 +37,7 @@
                         <label for="imagen_alojamiento" class="roboto-flex azul-principal text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Imagen del alojamiento</label>
                         <p class="text-sm text-gray-500 azul-principal">Obligatorio</p>
                         @if($alojamiento->imagen_alojamiento !== null)
-                        <img src="<?= url('storage/imagenes/alojamientos/' . $alojamiento->imagen_alojamiento); ?>" alt="Imagen Alojamiento - {{ $alojamiento->nombre_alojamiento }}" class="mb-4">
+                        <img src="<?= url('storage/' . $alojamiento->imagen_alojamiento); ?>" alt="Imagen Alojamiento - {{ $alojamiento->nombre_alojamiento }}" class="mb-4">
                         @else
                         <p>No se ha encontrado la imagen, puede que haya habido un error al cargarla. Por favor, vuelve a intentarlo.</p>
                         @endif

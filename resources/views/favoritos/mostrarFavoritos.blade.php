@@ -27,7 +27,7 @@
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleAlojamiento', ['id' => $alojamiento->provincia->id_provincia, 'alojamientoId' => $alojamiento->id_alojamiento, 'idTipoAlojamiento' => $alojamiento->tipo_alojamiento_id]) }}" class="block">
                 @if($alojamiento->imagen_alojamiento)
-                <img class="rounded-t-lg" src="<?= url('storage/imagenes/alojamientos/' . $alojamiento->imagen_alojamiento); ?>" alt="{{ $alojamiento->nombre_alojamiento }}" />
+                <img class="rounded-t-lg" src="<?= url('storage/' . $alojamiento->imagen_alojamiento); ?>" alt="{{ $alojamiento->nombre_alojamiento }}" />
                 @else
                 <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
                 @endif
@@ -55,7 +55,7 @@
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleActividad', ['id' => $actividad->provincia->id_provincia, 'actividadId' => $actividad->id_actividad, 'idTipoActividad' => $actividad->tipo_actividad_id]) }}" class="block">
                 @if($actividad->imagen_actividad)
-                <img class="rounded-t-lg" src="<?= url('storage/imagenes/actividades/' . $actividad->imagen_actividad); ?>" alt="{{ $actividad->nombre_actividad }}" />
+                <img class="rounded-t-lg" src="<?= url('storage/' . $actividad->imagen_actividad); ?>" alt="{{ $actividad->nombre_actividad }}" />
                 @else
                 <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
                 @endif
@@ -83,7 +83,7 @@
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
             <a href="{{ route('provincia.detalleGastronomia', ['id' => $localGastronomico->provincia->id_provincia, 'gastronomiaId' => $localGastronomico->id_local_gastronomico, 'idTipoGastronomia' => $localGastronomico->tipo_gastronomia_id]) }}" class="block">
                 @if($localGastronomico->imagen_local_gastronomico)
-                <img class="rounded-t-lg" src="<?= url('storage/imagenes/gastronomia/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="{{ $localGastronomico->nombre_local_gastronomico }}" />
+                <img class="rounded-t-lg" src="<?= url('storage/' . $localGastronomico->imagen_local_gastronomico); ?>" alt="{{ $localGastronomico->nombre_local_gastronomico }}" />
                 @else
                 <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
                 @endif

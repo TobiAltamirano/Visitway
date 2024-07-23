@@ -83,10 +83,17 @@ class AlternativasController extends Controller
         }
 
         // Validación de los datos, igual que la función createProcess
-        $request->validate(ActividadAlternativa::REGLAS_VALIDACION,             ActividadAlternativa::MENSAJES_VALIDACION);
+        $request->validate(ActividadAlternativa::REGLAS_VALIDACION, ActividadAlternativa::MENSAJES_VALIDACION);
 
         // Tomamos solo la información necesaria
         $data = $request->except(['_token', '_method']);
+
+        // Guardamos las imágenes anteriores para poder eliminarlas si se sube una nueva
+        $oldImages = [
+            'imagen1' => $actividadAlternativa->imagen1,
+            'imagen2' => $actividadAlternativa->imagen2,
+            'imagen3' => $actividadAlternativa->imagen3,
+        ];
 
         // Array de nombres de los campos de imagen
         $imagenes = ['imagen1', 'imagen2', 'imagen3'];
@@ -101,9 +108,14 @@ class AlternativasController extends Controller
         // Actualizar los datos de la actividad con los datos del formulario
         $actividadAlternativa->update($data);
 
-        // Borramos la imagen anterior si es necesario
-        if (isset($oldCover) && Storage::has($oldCover)) {
-            Storage::delete($oldCover);
+        // Borramos las imágenes anteriores si se ha subido una nueva para ese campo
+        foreach ($imagenes as $imagen) {
+            if (isset($data[$imagen])) {
+                // Borramos la imagen anterior solo si se ha subido una nueva
+                if (isset($oldImages[$imagen]) && Storage::has($oldImages[$imagen])) {
+                    Storage::delete($oldImages[$imagen]);
+                }
+            }
         }
 
         // Retornar la vista de formulario de edición con el posteo

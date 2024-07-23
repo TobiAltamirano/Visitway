@@ -28,7 +28,7 @@ class UsuariosSeeder extends Seeder
                 'email' => 'lucia@visitway.com',
                 'email_verified_at' => null,
                 'password' => Hash::make('visitwayadministrador2024'),
-                'avatar' => 'avatar1.png',
+                'avatar' => 'avatar6.png',
                 'usuario_administrador' => true,
             ],
             [
@@ -44,7 +44,7 @@ class UsuariosSeeder extends Seeder
                 'email' => 'sofirodriguezz@hotmail.com',
                 'email_verified_at' => null,
                 'password' => Hash::make('hola12345'),
-                'avatar' => 'avatar1.png',
+                'avatar' => 'avatar4.png',
                 'usuario_administrador' => false,
             ],
             [
@@ -52,7 +52,7 @@ class UsuariosSeeder extends Seeder
                 'email' => 'albertito21@gmail.com',
                 'email_verified_at' => null,
                 'password' => Hash::make('hola12345'),
-                'avatar' => 'avatar1.png',
+                'avatar' => 'avatar2.png',
                 'usuario_administrador' => false,
             ],
             [
@@ -60,7 +60,7 @@ class UsuariosSeeder extends Seeder
                 'email' => 'martinlamm12@gmail.com',
                 'email_verified_at' => null,
                 'password' => Hash::make('hola12345'),
-                'avatar' => 'avatar1.png',
+                'avatar' => 'avatar5.png',
                 'usuario_administrador' => false,
             ],
             [
@@ -68,15 +68,15 @@ class UsuariosSeeder extends Seeder
                 'email' => 'antonelladiazz@hotmail.com',
                 'email_verified_at' => null,
                 'password' => Hash::make('hola12345'),
-                'avatar' => 'avatar1.png',
+                'avatar' => 'avatar5.png',
                 'usuario_administrador' => false,
             ],
             [
-                'name' => 'Agustin Mernes',
+                'name' => 'Agustín Mernes',
                 'email' => 'mernesagustin@outlook.com',
                 'email_verified_at' => null,
                 'password' => Hash::make('hola12345'),
-                'avatar' => 'avatar1.png',
+                'avatar' => 'avatar3.png',
                 'usuario_administrador' => false,
             ]
         ]);

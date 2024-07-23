@@ -23,7 +23,7 @@
                     @if($posteo->imagen !== null)
                     <img src="<?= url('storage/' . $posteo->imagen); ?>" alt="Imagen Posteo - {{$posteo->titulo }}">
                     @else
-                    No se ha encontrado la imagen, puede que haya habido un error al cargarla. Porfavor, vuelve a intentarlo.
+                    <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
                     @endif
                 </div>
                 <div class="p-4">

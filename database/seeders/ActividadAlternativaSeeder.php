@@ -115,8 +115,8 @@ class ActividadAlternativaSeeder extends Seeder
                 'horarios' => 'Lunes a viernes de 10:00 a 19:00',
                 'costo' => 100,
                 'imagen1' => 'imagenes/actividades-alternativas/muestra_fotografia1.jpg',
-                'imagen2' => 'imagenes/actividades-alternativas/muestra_fotografia2.jpg',
-                'imagen3' => 'imagenes/actividades-alternativas/muestra_fotografia3.jpg',
+                'imagen2' => null,
+                'imagen3' => null,
             ],
             [
                 'id_usuario' => 5,
@@ -219,8 +219,8 @@ class ActividadAlternativaSeeder extends Seeder
                 'horarios' => 'Sábado a las 8:00',
                 'costo' => 300,
                 'imagen1' => 'imagenes/actividades-alternativas/maraton_solidaria1.jpg',
-                'imagen2' => 'imagenes/actividades-alternativas/maraton_solidaria2.jpg',
-                'imagen3' => 'imagenes/actividades-alternativas/maraton_solidaria3.jpg',
+                'imagen2' => null,
+                'imagen3' => null,
             ],
             [
                 'id_usuario' => 3,

@@ -37,7 +37,7 @@ class TipoAlojamientoSeeder extends Seeder
             ], [
                 'id_tipo_alojamiento' => 4,
                 'nombre_tipo_alojamiento' => 'Hostels',
-                'imagen_tipo_alojamiento' => 'alojamiento_hostels.jpg',
+                'imagen_tipo_alojamiento' => 'alojamiento_hosteles.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

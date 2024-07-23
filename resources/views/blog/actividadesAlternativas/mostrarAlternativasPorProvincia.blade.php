@@ -169,7 +169,7 @@
                         @if($actividadAlternativa->imagen1)
                         <img src="<?= url('storage/' . $actividadAlternativa->imagen1); ?>" alt="Actividad Imagen 1" class="rounded-lg object-cover w-full h-full modal-image" style="aspect-ratio: 300 / 200; object-fit: cover; cursor: pointer;" data-twe-toggle="tooltip" title="Ver imagen" />
                         @else
-                        <img src="{{ asset('default-image-path.jpg') }}" alt="Default Image" class="rounded-lg object-cover w-full h-full" style="aspect-ratio: 300 / 200; object-fit: cover;" />
+                        <img class="rounded-t-lg" src="<?= url('storage/imagenes/default.jpg'); ?>" alt="Imagen por defecto - Visitway" />
                         @endif
 
                         @if($actividadAlternativa->imagen2)
