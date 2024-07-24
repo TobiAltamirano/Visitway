@@ -12,14 +12,14 @@
 
     <div class="flex flex-col items-center">
         <section class="text-gray-600 body-font w-full" id="nuestro-equipo">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-5 py-12 mx-auto">
                 <div class="flex flex-col text-center w-full mb-12">
                     <h2 class="text-3xl title-font azul-principal poppins-semibold">Nuestro equipo</h2>
                 </div>
                 <div class="flex flex-wrap justify-center -m-4">
                     <div class="p-4 lg:w-1/4 md:w-1/2">
                         <div class="h-full flex flex-col items-center text-center">
-                            <img alt="Imagen - Lucia Riggio" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/201x201">
+                            <img alt="Imagen - Lucia Riggio" class="flex-shrink-0 rounded-lg w-full h-96 object-cover object-center mb-4 shadow-md" src="<?= url("storage/fotografias/lucia-riggio.png"); ?>">
                             <div class="w-full">
                                 <h3 class="text-lg poppins-bold azul-principal">Lucía Riggio</h3>
                                 <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñadora y Desarrolladora Web</h4>
@@ -29,8 +29,8 @@
                     </div>
                     <div class="p-4 lg:w-1/4 md:w-1/2">
                         <div class="h-full flex flex-col items-center text-center">
-                            <img alt="Imagen - Tobias Altamirano" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/202x202">
-                            <div class="w-full">
+                            <img alt="Imagen - Tobias Altamirano" class="flex-shrink-0 rounded-lg w-full h-96 object-cover object-center mb-4 shadow-md" src="<?= url("storage/fotografias/tobias-altamirano.png"); ?>">
+                            <div class=" w-full">
                                 <h3 class="text-lg poppins-bold azul-principal">Tobías Altamirano</h3>
                                 <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñador y Desarrollador Web</h4>
                                 <p class="mb-4 azul-principal">"La mejor forma de predecir el futuro es implementarlo"</p>
