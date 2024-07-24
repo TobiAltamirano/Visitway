@@ -4,7 +4,7 @@
 
 @section('content')
 <section>
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Actividad en:<br> <span class="span-h1-provincias">{{ $provincia->nombre_provincia }}</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Actividad en<br> <span class="span-h1-provincias">{{ $provincia->nombre_provincia }}</span></h1>
 
     @include('components.lineas-secundarias')
 

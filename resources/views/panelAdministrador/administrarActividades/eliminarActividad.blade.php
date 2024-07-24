@@ -6,7 +6,7 @@
 
 <section>
 
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Eliminar actividad:<span class="span-h1-provincias"><br>{{ $actividad->nombre_actividad }}</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Eliminar actividad<span class="span-h1-provincias"><br>{{ $actividad->nombre_actividad }}</span></h1>
 
     @include('components.lineas-secundarias')
 

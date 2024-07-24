@@ -7,7 +7,7 @@
                 <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 p-4 dark:border-white/10">
                     <!-- Modal title -->
                     <h5 class="text-xl azul-principal font-medium leading-normal text-surface dark:text-white" id="exampleModalScrollableLabel">
-                        Términos y Condiciones de Uso
+                        Términos y condiciones de uso
                     </h5>
                     <!-- Close button -->
                     <button type="button" class="box-content rounded-none border-none text-neutral-500 hover:text-neutral-800 hover:no-underline focus:text-neutral-800 focus:opacity-100 focus:shadow-none focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-300 dark:focus:text-neutral-300" data-twe-modal-dismiss aria-label="Close">

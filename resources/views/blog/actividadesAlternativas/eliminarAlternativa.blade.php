@@ -5,7 +5,7 @@
 @section('content')
 
 <section>
-    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Eliminar Actividad Alternativa<br><span class="azul-principal">"{{$actividadAlternativa->titulo}}"</span></h1>
+    <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Eliminar actividad alternativa<br><span class="azul-principal">"{{$actividadAlternativa->titulo}}"</span></h1>
 
     @include('components.lineas-secundarias')
 

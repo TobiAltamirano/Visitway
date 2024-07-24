@@ -33,7 +33,7 @@
                         <td class="p-4 align-middle">{{ $usuario->name }}</td>
                         <td class="p-4 align-middle">
                             @if($usuario->usuario_administrador == 0)
-                            Estandar
+                            Estándar
                             @elseif($usuario->usuario_administrador == 1)
                             Administrador
                             @else

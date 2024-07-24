@@ -24,7 +24,7 @@ class UsuariosSeeder extends Seeder
                 'usuario_administrador' => true,
             ],
             [
-                'name' => 'Lucia Riggio',
+                'name' => 'Lucía Riggio',
                 'email' => 'lucia@visitway.com',
                 'email_verified_at' => null,
                 'password' => Hash::make('visitwayadministrador2024'),
@@ -40,7 +40,7 @@ class UsuariosSeeder extends Seeder
                 'usuario_administrador' => false,
             ],
             [
-                'name' => 'Sofía Rodriguez',
+                'name' => 'Sofía Rodríguez',
                 'email' => 'sofirodriguezz@hotmail.com',
                 'email_verified_at' => null,
                 'password' => Hash::make('hola12345'),

@@ -6,14 +6,14 @@
 
 <section>
     <section>
-        <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Provincias por región:</h1>
+        <h1 class="h1-provincias text-4xl text-2xl title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Provincias por región</h1>
 
         <p class="lg:w-2/3 mx-auto text-center font-bold leading-relaxed text-base azul-principal roboto-flex">Explora las distintas regiones de Argentina y sus provincias correspondientes</p>
 
         @include('components.lineas-secundarias')
 
         <article>
-            <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Buenos Aires</h2>
+            <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 rojo-secundario poppins-semibold">Centro</h2>
             <div class="mx-6 mt-10">
                 <div class="grid-container">
                     @foreach($provinciaBuenosAires as $provincia)

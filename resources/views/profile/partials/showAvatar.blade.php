@@ -6,20 +6,20 @@
         </h2>
 
         <p class="mt-1 text-md azul-principal roboto-flex">
-            Modifica y escoje el avatar que mas te caracterice
+            Modifica y escoje el avatar que más te caracterice
         </p>
     </div>
 
     <div class="mt-6 flex flex-col items-start">
         <!-- Avatar Actual -->
         <div class="flex flex-col items-center mb-12">
-            <h3 class="font-bold text-lg azul-principal roboto-flex mb-6">Avatar Actual</h3>
-            <img src="{{ asset('storage/avatars/' . $user->avatar ) }}" alt="Avatar Perfil" class="w-32 rounded-full shadow-lg">
+            <h3 class="font-bold text-lg azul-principal roboto-flex mb-6">Avatar actual</h3>
+            <img src="{{ asset('storage/avatars/' . $user->avatar ) }}" alt="Avatar perfil" class="w-32 rounded-full shadow-lg">
         </div>
 
         <!-- Escoje tu Nuevo Avatar -->
         <div>
-            <h3 class="font-bold text-lg mb-2 azul-principal roboto-flex">Escoje tu Nuevo Avatar</h3>
+            <h3 class="font-bold text-lg mb-2 azul-principal roboto-flex">Escoje tu nuevo avatar</h3>
             <form action="{{ route('avatar.actualizar') }}" method="POST" class="flex flex-col items-center gap-4 space-y-4">
                 @csrf
                 <div class="flex flex-wrap justify-center">

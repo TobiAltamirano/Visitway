@@ -65,29 +65,52 @@ class CronogramaController extends Controller
         // Obtener el ID del usuario autenticado
         $userId = Auth::id();
 
-        // Verificar si la actividad ya fue agregada para el mismo usuario, día, hora de inicio y hora de fin
-        $actividadExistente = Cronograma::where('id_usuario', $userId)
-            ->where('id_actividad', $id)
-            ->where('dia_semana', $request->dia_semana)
-            ->where('hora_inicio', $request->hora_inicio)
-            ->where('hora_fin', $request->hora_fin)
-            ->exists();
+        try {
+            // Validar los datos del formulario
+            $validatedData = $request->validate([
+                'dia_semana' => 'required|integer|min:1|max:7',
+                'hora_inicio' => 'required|date_format:H:i',
+                'hora_fin' => 'required|date_format:H:i|after:hora_inicio',
+            ], [
+                'dia_semana.required' => 'El día de la semana es obligatorio.',
+                'dia_semana.integer' => 'El día de la semana debe ser un número entero.',
+                'dia_semana.min' => 'El día de la semana debe ser entre 1 y 7.',
+                'dia_semana.max' => 'El día de la semana debe ser entre 1 y 7.',
+                'hora_inicio.required' => 'La hora de inicio es obligatoria.',
+                'hora_inicio.date_format' => 'La hora de inicio debe tener el formato HH:mm.',
+                'hora_fin.required' => 'La hora de fin es obligatoria.',
+                'hora_fin.date_format' => 'La hora de fin debe tener el formato HH:mm.',
+                'hora_fin.after' => 'La hora de fin debe ser después de la hora de inicio.',
+            ]);
 
-        if ($actividadExistente) {
-            return redirect()->back()->with('error', 'La actividad ya fue agregada previamente en ese mismo día y horario.');
+            // Verificar si la actividad ya fue agregada para el mismo usuario, día, hora de inicio y hora de fin
+            $actividadExistente = Cronograma::where('id_usuario', $userId)
+                ->where('id_actividad', $id)
+                ->where('dia_semana', $request->dia_semana)
+                ->where('hora_inicio', $request->hora_inicio)
+                ->where('hora_fin', $request->hora_fin)
+                ->exists();
+
+            if ($actividadExistente) {
+                return redirect()->back()->with('error', 'La actividad ya fue agregada previamente en ese mismo día y horario.');
+            }
+
+            // Crear una nueva entrada en el cronograma con los detalles actualizados
+            Cronograma::create([
+                'id_usuario' => $userId,
+                'id_actividad' => $id,
+                'dia_semana' => $request->dia_semana,
+                'hora_inicio' => $request->hora_inicio,
+                'hora_fin' => $request->hora_fin,
+            ]);
+
+            return redirect()->back()->with('success', 'La actividad ha sido agregada correctamente.');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            // Manejar errores de validación y enviar mensajes personalizados
+            $errors = $e->validator->errors()->all();
+            $errorMessage = implode(' ', $errors);
+            return redirect()->back()->with('error', $errorMessage);
         }
-
-        // Si la actividad no está en el cronograma, agregarla
-        Cronograma::create([
-            'id_usuario' => $userId,
-            'id_actividad' => $id,
-            'dia_semana' => $request->dia_semana,
-            'hora_inicio' => $request->hora_inicio,
-            'hora_fin' => $request->hora_fin,
-        ]);
-
-        // Pasar la variable $actividadEnCronograma a la vista
-        return redirect()->back()->with('success', 'Actividad agregada al cronograma correctamente.');
     }
 
     public function eliminarDelCronograma($id)

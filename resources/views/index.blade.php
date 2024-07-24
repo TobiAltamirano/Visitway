@@ -19,7 +19,7 @@
 
         <section class="flex flex-col items-center justify-center w-full py-8 md:py-16 lg:py-24">
             <div class="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-                <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="600" height="500" alt="Patagonia Argentina Imagen" class="mx-auto w-full aspect-[3/2] overflow-hidden rounded-xl object-cover object-center" />
+                <img src="https://www.cronista.com/files/image/393/393517/617aeb7754300.jpg" width="600" height="500" alt="Patagonia Argentina Imagen" class="mx-auto w-full aspect-[3/2] overflow-hidden rounded-xl object-cover object-center shadow-secondary-1" />
                 <div class="space-y-4 text-center lg:text-left">
                     <div class="space-y-2">
                         <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight poppins-medium azul-principal">
@@ -60,7 +60,7 @@
                             <div class="px-8 py-10 relative z-10 w-full border-4 div-seccion-2-index opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
                                 <p class="blanco-institucional tracking-widest text-sm title-font mb-1 poppins-regular">Córdoba</p>
                                 <h4 class="poppins-medium title-font text-lg font-semibold mb-3">Ríos Cristalinos</h4>
-                                <p class="leading-relaxed roboto-flex">Los ríos y espejos de agua más cristalinos de la Provincia, nos acostumbran a estas bellas postales.</p>
+                                <p class="leading-relaxed roboto-flex">Los ríos y espejos de agua más cristalinos de la provincia, nos acostumbran a estas bellas postales.</p>
                             </div>
                         </div>
                     </div>
@@ -188,14 +188,14 @@
                         <h2 class="sm:text-3xl text-2xl title-font text-gray-900 poppins-semibold rojo-secundario">Disfruta los platos más aclamados</h2>
                         <div class="linea-seccion-4-index h-1 w-20 rounded"></div>
                     </div>
-                    <p class="lg:w-1/2 w-full leading-relaxed roboto-flex azul-principal">La gastronomía argentina es un festín para los sentidos, destacada por su <span class="span-segunda-seccion-index"> diversidad </span> y <span class="span-segunda-seccion-index"> riqueza </span> de sabores. Desde las famosas parrilladas y empanadas hasta los exquisitos vinos y dulces como el alfajor. Explorar la <span class="span-segunda-seccion-index"> cocina argentina </span> es embarcarse en un <span class="span-segunda-seccion-index"> viaje culinario </span> único, donde cada bocado cuenta una <span class="span-segunda-seccion-index"> historia</span>.</p>
+                    <p class="lg:w-1/2 w-full leading-relaxed roboto-flex azul-principal">La gastronomía Argentina es un festín para los sentidos, destacada por su <span class="span-segunda-seccion-index"> diversidad </span> y <span class="span-segunda-seccion-index"> riqueza </span> de sabores. Desde las famosas parrilladas y empanadas hasta los exquisitos vinos y dulces como el alfajor. Explorar la <span class="span-segunda-seccion-index"> cocina Argentina </span> es embarcarse en un <span class="span-segunda-seccion-index"> viaje culinario </span> único, donde cada bocado cuenta una <span class="span-segunda-seccion-index"> historia</span>.</p>
                 </div>
                 <div class="mt-10">
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 gap-8">
                         <div class="rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white div-card-index transform hover:scale-105 transition-transform duration-300">
                             <img class="rounded-t-lg object-cover h-auto w-full" src="<?= url("storage/fotografias/locro-index.jpg"); ?>" alt="Locro criollo" />
                             <div class="p-4">
-                                <h5 class="text-xl font-medium leading-tight text-center rojo-principal mb-2">Locro Criollo</h5>
+                                <h5 class="text-xl font-medium leading-tight text-center rojo-principal mb-2">Locro criollo</h5>
                                 <p class="mb-4 text-base azul-principal">
                                     Un guiso ancestral que combina maíz, porotos, carne y vegetales, ofreciendo una explosión de sabores y aromas.
                                 </p>

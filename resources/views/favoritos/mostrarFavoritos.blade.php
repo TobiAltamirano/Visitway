@@ -21,7 +21,7 @@
     @else
 
     @if ($alojamientosFavoritos->isNotEmpty())
-    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Alojamientos favoritos:</h2>
+    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Alojamientos favoritos</h2>
     <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($alojamientosFavoritos as $alojamiento)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
@@ -49,7 +49,7 @@
     @endif
 
     @if ($actividadesFavoritas->isNotEmpty())
-    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Actividades favoritas:</h2>
+    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Actividades favoritas</h2>
     <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($actividadesFavoritas as $actividad)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
@@ -77,7 +77,7 @@
     @endif
 
     @if ($localesGastronomicosFavoritos->isNotEmpty())
-    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Locales gastronómicos favoritos:</h2>
+    <h2 class="text-3xl text-2xl text-center mt-12 title-font mb-4 text-gray-900 azul-principal poppins-semibold">Locales gastronómicos favoritos</h2>
     <div class="mx-6 mt-10 flex flex-wrap justify-center gap-8">
         @foreach($localesGastronomicosFavoritos as $localGastronomico)
         <div class="tarjeta rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark dark:text-white w-full sm:w-1/2 md:w-1/3 lg:w-1/4">

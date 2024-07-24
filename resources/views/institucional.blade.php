@@ -22,7 +22,7 @@
                             <img alt="Imagen - Lucia Riggio" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/201x201">
                             <div class="w-full">
                                 <h3 class="text-lg poppins-bold azul-principal">Lucía Riggio</h3>
-                                <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñadora y desarroladora web</h4>
+                                <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñadora y Desarrolladora Web</h4>
                                 <p class="mb-4 azul-principal">"El código que es más fácil de entender es más fácil de mantener"</p>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <img alt="Imagen - Tobias Altamirano" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/202x202">
                             <div class="w-full">
                                 <h3 class="text-lg poppins-bold azul-principal">Tobías Altamirano</h3>
-                                <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñador y desarrolador web</h4>
+                                <h4 class="roboto-flex rojo-principal font-bold pt-2 pb-4">Diseñador y Desarrollador Web</h4>
                                 <p class="mb-4 azul-principal">"La mejor forma de predecir el futuro es implementarlo"</p>
                             </div>
                         </div>

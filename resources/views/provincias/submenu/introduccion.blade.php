@@ -34,11 +34,11 @@
                         {{$provincia->nombre_provincia}},<span class="rojo-principal"> Argentina</span>
                     </h2>
                     <p class="max-w-[600px] mx-auto lg:mx-0 md:text-xl azul-principal roboto-flex">
-                        En un mundo en constante movimiento, <span class=" font-bold">haz que las aventuras cobren vida</span> y convierte la planificación de tus escapadas en una experiencia única. Estamos aquí <span class="font-bold">para que cada viaje sea inolvidable</span>.
+                        {{$provincia->descripcion_provincia}}
                     </p>
                 </div>
             </div>
-            <img src="<?= url('storage/imagenes/provincias/' . $provincia->imagen_provincia); ?>" width="600" height="500" alt="Imagen {{$provincia->nombre_provincia}}" class="mx-auto w-full aspect-[3/2] overflow-hidden rounded-xl object-cover object-center" />
+            <img src="<?= url('storage/imagenes/provincias/' . $provincia->imagen_provincia); ?>" width="600" height="500" alt="Imagen {{$provincia->nombre_provincia}}" class="mx-auto w-full aspect-[3/2] overflow-hidden rounded-xl object-cover object-center rounded-lg bg-white shadow-lg" />
         </div>
     </section>
 
@@ -73,7 +73,7 @@
                                             {{$provincia->ubicacion_provincia}}
                                         </p>
                                     </div>
-                                    <img src="<?= url('storage/imagenes/provincias/' . $provincia->imagen_ubicacion_provincia); ?>" alt="{{ $provincia->nombre_provincia }}" width="400" height="200" class="mt-4 rounded-lg object-cover w-full aspect-[3/2]" />
+                                    <img src="<?= url('storage/imagenes/ubicacion-provincias/' . $provincia->imagen_ubicacion_provincia); ?>" alt="{{ $provincia->nombre_provincia }}" width="400" height="300" class="mt-4 rounded-lg object-cover w-full aspect-[3/2] rounded-lg bg-white transform hover:scale-105 transition-transform duration-300" />
                                 </div>
                             </div>
                         </div>
